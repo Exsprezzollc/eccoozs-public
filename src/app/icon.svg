@@ -1,6 +1,24 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="16" fill="#020817"/>
-  <path d="M16 18C20 14 25 12 32 12H49C51 12 52.5 13.5 52.5 15.5C52.5 17.5 51 19 49 19H31C27 19 24 20 21.5 22.5L16 28V18Z" fill="#149BFF"/>
-  <path d="M15 29H45C47 29 48.5 30.5 48.5 32.5C48.5 34.5 47 36 45 36H15V29Z" fill="#2B57FF"/>
-  <path d="M16 47V37L21.5 42.5C24 45 27 46 31 46H49C51 46 52.5 47.5 52.5 49.5C52.5 51.5 51 53 49 53H32C25 53 20 51 16 47Z" fill="#149BFF"/>
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ECCOOZS icon">
+  <defs>
+    <linearGradient id="eccoozsBlue" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#19B7FF"/>
+      <stop offset="0.48" stop-color="#248CFF"/>
+      <stop offset="1" stop-color="#3057FF"/>
+    </linearGradient>
+  </defs>
+
+  <path
+    d="M48.5 14.5H29.8C21.4 14.5 14.5 21.4 14.5 29.8V31.2H25.1V29.8C25.1 27.2 27.2 25.1 29.8 25.1H48.5C51.4 25.1 53.8 22.7 53.8 19.8C53.8 16.9 51.4 14.5 48.5 14.5Z"
+    fill="url(#eccoozsBlue)"
+  />
+
+  <path
+    d="M12.5 27.7H46.2C49.1 27.7 51.5 30.1 51.5 33C51.5 35.9 49.1 38.3 46.2 38.3H12.5V27.7Z"
+    fill="url(#eccoozsBlue)"
+  />
+
+  <path
+    d="M14.5 34.2V35.6C14.5 44 21.4 50.9 29.8 50.9H48.5C51.4 50.9 53.8 48.5 53.8 45.6C53.8 42.7 51.4 40.3 48.5 40.3H29.8C27.2 40.3 25.1 38.2 25.1 35.6V34.2H14.5Z"
+    fill="url(#eccoozsBlue)"
+  />
 </svg>
