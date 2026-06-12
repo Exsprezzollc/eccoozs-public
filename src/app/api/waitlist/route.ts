@@ -109,8 +109,7 @@ export async function POST(request: Request) {
       city: textOrNull(payload.city),
       state_region: textOrNull(payload.state_region) || textOrNull(payload.region),
       age_confirmed: true,
-      is_18_or_over: true,
-      source: textOrNull(payload.source) || "welcome",
+source: textOrNull(payload.source) || "welcome",
       utm_source: textOrNull(payload.utm_source),
       utm_medium: textOrNull(payload.utm_medium),
       utm_campaign: textOrNull(payload.utm_campaign),
@@ -174,3 +173,4 @@ export async function POST(request: Request) {
     );
   }
 }
+
