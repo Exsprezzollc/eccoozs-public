@@ -21,12 +21,12 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/icon.svg?v=6",
-        type: "image/svg+xml",
+        url: "/brand/eccoozs-wordmark-blue-v2-640.png?v=10",
+        type: "image/png",
       },
     ],
-    shortcut: "/icon.svg?v=6",
-    apple: "/icon.svg?v=6",
+    shortcut: "/brand/eccoozs-wordmark-blue-v2-640.png?v=10",
+    apple: "/brand/eccoozs-wordmark-blue-v2-640.png?v=10",
   },
 };
 
@@ -44,6 +44,8 @@ export default function RootLayout({
     </html>
   );
 }
+
+
 
 
 
