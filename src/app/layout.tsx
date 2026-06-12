@@ -21,12 +21,12 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/icon.svg?v=5",
+        url: "/icon.svg?v=6",
         type: "image/svg+xml",
       },
     ],
-    shortcut: "/icon.svg?v=5",
-    apple: "/icon.svg?v=5",
+    shortcut: "/icon.svg?v=6",
+    apple: "/icon.svg?v=6",
   },
 };
 
@@ -44,5 +44,6 @@ export default function RootLayout({
     </html>
   );
 }
+
 
 
