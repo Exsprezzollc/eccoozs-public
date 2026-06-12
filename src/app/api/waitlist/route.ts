@@ -1,176 +1,216 @@
 ﻿import { NextResponse } from "next/server";
 
-export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
 
-type WaitlistPayload = {
-  email?: unknown;
-  full_name?: unknown;
-  audience_type?: unknown;
-  business_name?: unknown;
-  website?: unknown;
-  city?: unknown;
-  state_region?: unknown;
-  region?: unknown;
-  age_confirmed?: unknown;
-  is_18_or_over?: unknown;
-  source?: unknown;
-  utm_source?: unknown;
-  utm_medium?: unknown;
-  utm_campaign?: unknown;
-  referrer?: unknown;
-  user_agent?: unknown;
-};
+const ROUTE_VERSION = "waitlist-debug-2026-06-12-v4";
 
-function textOrNull(value: unknown): string | null {
+type WaitlistBody = Record<string, unknown>;
+
+function cleanText(value: unknown): string | null {
   if (typeof value !== "string") return null;
-  const trimmed = value.trim();
-  return trimmed.length ? trimmed : null;
+  const cleaned = value.trim();
+  return cleaned.length > 0 ? cleaned : null;
 }
 
-function envText(value: string | undefined): string | null {
-  if (!value) return null;
-  const cleaned = value.trim().replace(/^["']|["']$/g, "").trim();
-  return cleaned.length ? cleaned : null;
+function cleanEmail(value: unknown): string | null {
+  const email = cleanText(value)?.toLowerCase() ?? null;
+
+  if (!email) return null;
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailPattern.test(email) ? email : null;
 }
 
-function cleanServiceRoleKey(value: string | undefined): string | null {
-  if (!value) return null;
+function toBoolean(value: unknown): boolean {
+  if (value === true) return true;
 
-  let cleaned = value.trim();
-  cleaned = cleaned.replace(/^["']|["']$/g, "").trim();
-  cleaned = cleaned.replace(/^Bearer\s+/i, "");
-  cleaned = cleaned.replace(/\s+/g, "");
+  if (typeof value === "string") {
+    const normalized = value.trim().toLowerCase();
+    return ["true", "1", "yes", "on", "checked"].includes(normalized);
+  }
 
-  return cleaned.length ? cleaned : null;
+  return false;
 }
 
-function boolValue(value: unknown): boolean {
-  return value === true || value === "true" || value === "on" || value === "1" || value === 1;
+async function readBody(request: Request): Promise<WaitlistBody> {
+  try {
+    return (await request.json()) as WaitlistBody;
+  } catch {
+    return {};
+  }
 }
 
-function redact(value: string): string {
-  return value.replace(
-    /eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+/g,
-    "[redacted-jwt]"
+function jsonResponse(body: Record<string, unknown>, status = 200) {
+  return NextResponse.json(
+    {
+      routeVersion: ROUTE_VERSION,
+      ...body,
+    },
+    {
+      status,
+      headers: {
+        "x-waitlist-route-version": ROUTE_VERSION,
+      },
+    }
   );
 }
 
 export async function GET() {
-  return NextResponse.json({ ok: true, route: "waitlist" });
+  return jsonResponse({
+    ok: true,
+    message: "ECCOOZS waitlist API route is live.",
+    hasSupabaseUrl: Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL),
+    hasServiceRoleKey: Boolean(process.env.SUPABASE_SERVICE_ROLE_KEY),
+  });
 }
 
 export async function POST(request: Request) {
   try {
-    const payload = (await request.json().catch(() => ({}))) as WaitlistPayload;
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();
+    const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim();
 
-    const email = textOrNull(payload.email)?.toLowerCase() || null;
-    const ageConfirmed = boolValue(payload.age_confirmed) || boolValue(payload.is_18_or_over);
-
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      return NextResponse.json(
-        { ok: false, message: "Please enter a valid email address." },
-        { status: 400 }
+    if (!supabaseUrl || !serviceRoleKey) {
+      return jsonResponse(
+        {
+          ok: false,
+          message: "Waitlist is not configured in Vercel.",
+          hasSupabaseUrl: Boolean(supabaseUrl),
+          hasServiceRoleKey: Boolean(serviceRoleKey),
+        },
+        500
       );
     }
+
+    if (
+      serviceRoleKey.startsWith("Bearer ") ||
+      serviceRoleKey.includes("\n") ||
+      serviceRoleKey.includes("\r") ||
+      serviceRoleKey.startsWith('"') ||
+      serviceRoleKey.endsWith('"')
+    ) {
+      return jsonResponse(
+        {
+          ok: false,
+          message:
+            "SUPABASE_SERVICE_ROLE_KEY is formatted incorrectly in Vercel. Use one raw JWT with no Bearer prefix, quotes, spaces, or line breaks.",
+        },
+        500
+      );
+    }
+
+    const body = await readBody(request);
+    const email = cleanEmail(body.email);
+
+    if (!email) {
+      return jsonResponse(
+        {
+          ok: false,
+          message: "Please enter a valid email address.",
+          receivedKeys: Object.keys(body),
+        },
+        400
+      );
+    }
+
+    const ageConfirmed =
+      toBoolean(body.age_confirmed) ||
+      toBoolean(body.ageConfirmed) ||
+      toBoolean(body.is_18_or_over) ||
+      toBoolean(body.is18OrOver) ||
+      toBoolean(body.over18) ||
+      toBoolean(body.confirmAge) ||
+      toBoolean(body.confirm_age);
 
     if (!ageConfirmed) {
-      return NextResponse.json(
-        { ok: false, message: "Age confirmation is required." },
-        { status: 400 }
+      return jsonResponse(
+        {
+          ok: false,
+          message: "Please confirm that you are 18 or older.",
+          receivedKeys: Object.keys(body),
+          receivedBody: body,
+        },
+        400
       );
     }
 
-    const supabaseUrl = envText(process.env.NEXT_PUBLIC_SUPABASE_URL)?.replace(/\/+$/, "");
-    const serviceRoleKey = cleanServiceRoleKey(process.env.SUPABASE_SERVICE_ROLE_KEY);
-    const tableName =
-      envText(process.env.SUPABASE_WAITLIST_TABLE)?.replace(/^public\./i, "") ||
-      "eccoozs_waitlist";
+    const fullName = cleanText(
+      body.full_name ?? body.fullName ?? body.name ?? body.displayName
+    );
 
-    if (!supabaseUrl || !serviceRoleKey || !tableName) {
-      console.error("WAITLIST_CONFIG_ERROR", {
-        hasSupabaseUrl: Boolean(supabaseUrl),
-        hasServiceRoleKey: Boolean(serviceRoleKey),
-        hasTableName: Boolean(tableName),
-      });
-
-      return NextResponse.json(
-        { ok: false, message: "Waitlist is not configured yet." },
-        { status: 500 }
-      );
-    }
-
-    const row = {
+    const payload = {
       email,
-      full_name: textOrNull(payload.full_name),
-      audience_type: textOrNull(payload.audience_type) || "founding_member",
-      business_name: textOrNull(payload.business_name),
-      website: textOrNull(payload.website),
-      city: textOrNull(payload.city),
-      state_region: textOrNull(payload.state_region) || textOrNull(payload.region),
+      full_name: fullName,
+      is_18_or_over: true,
       age_confirmed: true,
-source: textOrNull(payload.source) || "welcome",
-      utm_source: textOrNull(payload.utm_source),
-      utm_medium: textOrNull(payload.utm_medium),
-      utm_campaign: textOrNull(payload.utm_campaign),
-      referrer: textOrNull(payload.referrer),
-      user_agent: textOrNull(payload.user_agent),
     };
 
-    const insertResponse = await fetch(
-      `${supabaseUrl}/rest/v1/${encodeURIComponent(tableName)}`,
+    const supabaseResponse = await fetch(
+      `${supabaseUrl}/rest/v1/eccoozs_waitlist`,
       {
         method: "POST",
         headers: {
           apikey: serviceRoleKey,
           Authorization: `Bearer ${serviceRoleKey}`,
           "Content-Type": "application/json",
-          Prefer: "return=minimal",
+          Prefer: "return=representation",
         },
-        body: JSON.stringify(row),
-        cache: "no-store",
+        body: JSON.stringify(payload),
       }
     );
 
-    if (insertResponse.status === 409) {
-      return NextResponse.json(
-        { ok: true, message: "You're already on the founding waitlist." },
-        { status: 200 }
-      );
+    const responseText = await supabaseResponse.text();
+
+    let responseBody: unknown = responseText;
+
+    try {
+      responseBody = responseText ? JSON.parse(responseText) : null;
+    } catch {
+      responseBody = responseText;
     }
 
-    if (!insertResponse.ok) {
-      const errorText = await insertResponse.text().catch(() => "");
-
-      console.error("WAITLIST_INSERT_ERROR", {
-        status: insertResponse.status,
-        statusText: insertResponse.statusText,
-        tableName,
-        body: redact(errorText).slice(0, 1200),
+    if (!supabaseResponse.ok) {
+      console.error("WAITLIST_SUPABASE_REST_ERROR", {
+        status: supabaseResponse.status,
+        statusText: supabaseResponse.statusText,
+        body: responseBody,
       });
 
-      return NextResponse.json(
-        { ok: false, message: "Could not save waitlist signup." },
-        { status: 500 }
+      return jsonResponse(
+        {
+          ok: false,
+          message: `Supabase rejected the waitlist insert. Status ${supabaseResponse.status}: ${supabaseResponse.statusText}`,
+          supabaseStatus: supabaseResponse.status,
+          supabaseStatusText: supabaseResponse.statusText,
+          supabaseError: responseBody,
+        },
+        500
       );
     }
 
-    return NextResponse.json(
-      {
-        ok: true,
-        message: "You're on the founding waitlist. We'll be in touch.",
-      },
-      { status: 201 }
-    );
-  } catch (error) {
-    console.error("WAITLIST_ROUTE_ERROR", {
-      message: redact(error instanceof Error ? error.message : String(error)),
+    return jsonResponse({
+      ok: true,
+      message: "You are on the ECCOOZS waitlist.",
+      data: responseBody,
     });
+  } catch (error) {
+    console.error("WAITLIST_ROUTE_ERROR", error);
 
-    return NextResponse.json(
-      { ok: false, message: "Could not save waitlist signup." },
-      { status: 500 }
+    return jsonResponse(
+      {
+        ok: false,
+        message: "Waitlist route crashed before completing.",
+        error:
+          error instanceof Error
+            ? {
+                name: error.name,
+                message: error.message,
+              }
+            : {
+                message: "Unknown error.",
+              },
+      },
+      500
     );
   }
 }
-
