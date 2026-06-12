@@ -3,8 +3,6 @@
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
-const ROUTE_VERSION = "waitlist-debug-2026-06-12-v4";
-
 type WaitlistBody = Record<string, unknown>;
 
 function cleanText(value: unknown): string | null {
@@ -41,28 +39,18 @@ async function readBody(request: Request): Promise<WaitlistBody> {
   }
 }
 
-function jsonResponse(body: Record<string, unknown>, status = 200) {
+function safeMessage(status: number, message: string) {
   return NextResponse.json(
     {
-      routeVersion: ROUTE_VERSION,
-      ...body,
+      ok: false,
+      message,
     },
-    {
-      status,
-      headers: {
-        "x-waitlist-route-version": ROUTE_VERSION,
-      },
-    }
+    { status }
   );
 }
 
 export async function GET() {
-  return jsonResponse({
-    ok: true,
-    message: "ECCOOZS waitlist API route is live.",
-    hasSupabaseUrl: Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL),
-    hasServiceRoleKey: Boolean(process.env.SUPABASE_SERVICE_ROLE_KEY),
-  });
+  return safeMessage(405, "Method not allowed.");
 }
 
 export async function POST(request: Request) {
@@ -71,46 +59,20 @@ export async function POST(request: Request) {
     const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim();
 
     if (!supabaseUrl || !serviceRoleKey) {
-      return jsonResponse(
-        {
-          ok: false,
-          message: "Waitlist is not configured in Vercel.",
-          hasSupabaseUrl: Boolean(supabaseUrl),
-          hasServiceRoleKey: Boolean(serviceRoleKey),
-        },
-        500
-      );
-    }
+      console.error("WAITLIST_ENV_MISSING");
 
-    if (
-      serviceRoleKey.startsWith("Bearer ") ||
-      serviceRoleKey.includes("\n") ||
-      serviceRoleKey.includes("\r") ||
-      serviceRoleKey.startsWith('"') ||
-      serviceRoleKey.endsWith('"')
-    ) {
-      return jsonResponse(
-        {
-          ok: false,
-          message:
-            "SUPABASE_SERVICE_ROLE_KEY is formatted incorrectly in Vercel. Use one raw JWT with no Bearer prefix, quotes, spaces, or line breaks.",
-        },
-        500
+      return safeMessage(
+        500,
+        "The waitlist is temporarily unavailable. Please try again later."
       );
     }
 
     const body = await readBody(request);
+
     const email = cleanEmail(body.email);
 
     if (!email) {
-      return jsonResponse(
-        {
-          ok: false,
-          message: "Please enter a valid email address.",
-          receivedKeys: Object.keys(body),
-        },
-        400
-      );
+      return safeMessage(400, "Please enter a valid email address.");
     }
 
     const ageConfirmed =
@@ -123,15 +85,7 @@ export async function POST(request: Request) {
       toBoolean(body.confirm_age);
 
     if (!ageConfirmed) {
-      return jsonResponse(
-        {
-          ok: false,
-          message: "Please confirm that you are 18 or older.",
-          receivedKeys: Object.keys(body),
-          receivedBody: body,
-        },
-        400
-      );
+      return safeMessage(400, "Please confirm that you are 18 or older.");
     }
 
     const fullName = cleanText(
@@ -153,64 +107,50 @@ export async function POST(request: Request) {
           apikey: serviceRoleKey,
           Authorization: `Bearer ${serviceRoleKey}`,
           "Content-Type": "application/json",
-          Prefer: "return=representation",
+          Prefer: "return=minimal",
         },
         body: JSON.stringify(payload),
       }
     );
 
-    const responseText = await supabaseResponse.text();
-
-    let responseBody: unknown = responseText;
-
-    try {
-      responseBody = responseText ? JSON.parse(responseText) : null;
-    } catch {
-      responseBody = responseText;
-    }
-
     if (!supabaseResponse.ok) {
-      console.error("WAITLIST_SUPABASE_REST_ERROR", {
+      const responseText = await supabaseResponse.text();
+
+      console.error("WAITLIST_INSERT_ERROR", {
         status: supabaseResponse.status,
         statusText: supabaseResponse.statusText,
-        body: responseBody,
+        body: responseText,
       });
 
-      return jsonResponse(
-        {
-          ok: false,
-          message: `Supabase rejected the waitlist insert. Status ${supabaseResponse.status}: ${supabaseResponse.statusText}`,
-          supabaseStatus: supabaseResponse.status,
-          supabaseStatusText: supabaseResponse.statusText,
-          supabaseError: responseBody,
-        },
-        500
+      if (supabaseResponse.status === 409) {
+        return NextResponse.json(
+          {
+            ok: true,
+            message: "You are already on the ECCOOZS waitlist.",
+          },
+          { status: 200 }
+        );
+      }
+
+      return safeMessage(
+        500,
+        "Could not save waitlist signup. Please try again."
       );
     }
 
-    return jsonResponse({
-      ok: true,
-      message: "You are on the ECCOOZS waitlist.",
-      data: responseBody,
-    });
+    return NextResponse.json(
+      {
+        ok: true,
+        message: "You are on the ECCOOZS waitlist.",
+      },
+      { status: 200 }
+    );
   } catch (error) {
     console.error("WAITLIST_ROUTE_ERROR", error);
 
-    return jsonResponse(
-      {
-        ok: false,
-        message: "Waitlist route crashed before completing.",
-        error:
-          error instanceof Error
-            ? {
-                name: error.name,
-                message: error.message,
-              }
-            : {
-                message: "Unknown error.",
-              },
-      },
-      500
+    return safeMessage(
+      500,
+      "Could not save waitlist signup. Please try again."
     );
   }
 }
