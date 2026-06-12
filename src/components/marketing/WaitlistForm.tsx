@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { FormEvent, useState } from "react";
 
@@ -51,7 +51,8 @@ export function WaitlistForm() {
       website: String(formData.get("website") || "").trim() || null,
       city: String(formData.get("city") || "").trim() || null,
       region: String(formData.get("region") || "").trim() || null,
-      is_18_or_over: true,
+      age_confirmed: is18OrOver,
+      is_18_or_over: is18OrOver,
       source: "eccoozs.com",
       utm_source: params.get("utm_source"),
       utm_medium: params.get("utm_medium"),
@@ -240,7 +241,7 @@ export function WaitlistForm() {
       </div>
 
       <button className="wl-submit" disabled={isSubmitting} type="submit">
-        {isSubmitting ? "Reserving…" : reserved ? "You're on the list!" : "Reserve My Spot"}
+        {isSubmitting ? "Reservingâ€¦" : reserved ? "You're on the list!" : "Reserve My Spot"}
       </button>
 
       <p aria-live="polite" className={`wl-msg ${status.type === "idle" ? "" : status.type}`} role="status">
