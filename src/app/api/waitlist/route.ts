@@ -6,19 +6,16 @@ export const dynamic = "force-dynamic";
 
 type WaitlistPayload = {
   email?: string;
-  fullName?: string;
-  full_name?: string;
-  name?: string;
-  joinAs?: string;
-  join_as?: string;
-  businessName?: string;
-  business_name?: string;
-  website?: string;
-  city?: string;
-  stateRegion?: string;
-  state_region?: string;
-  ageConfirmed?: boolean;
-  age_confirmed?: boolean;
+  full_name?: string | null;
+  audience_type?: string | null;
+  business_name?: string | null;
+  website?: string | null;
+  city?: string | null;
+  region?: string | null;
+  state_region?: string | null;
+  age_confirmed?: boolean | string | null;
+  is_18_or_over?: boolean | string | null;
+  source?: string | null;
 };
 
 function clean(value: unknown) {
@@ -27,43 +24,46 @@ function clean(value: unknown) {
   return trimmed.length ? trimmed : null;
 }
 
+function isTrue(value: unknown) {
+  return value === true || value === "true" || value === "on" || value === "1";
+}
+
 export async function POST(request: Request) {
   try {
+    const body = (await request.json().catch(() => ({}))) as WaitlistPayload;
+
+    const email = clean(body.email)?.toLowerCase();
+
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return NextResponse.json(
+        { message: "Please enter a valid email address." },
+        { status: 400 }
+      );
+    }
+
+    const ageConfirmed = isTrue(body.age_confirmed) || isTrue(body.is_18_or_over);
+
+    if (!ageConfirmed) {
+      return NextResponse.json(
+        { message: "Age confirmation is required." },
+        { status: 400 }
+      );
+    }
+
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
     const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
     const tableName = process.env.SUPABASE_WAITLIST_TABLE || "eccoozs_waitlist";
 
     if (!supabaseUrl || !serviceRoleKey) {
-      console.error("Missing Supabase server environment variables", {
-        hasUrl: Boolean(supabaseUrl),
+      console.error("WAITLIST_CONFIG_ERROR", {
+        hasSupabaseUrl: Boolean(supabaseUrl),
         hasServiceRoleKey: Boolean(serviceRoleKey),
         tableName,
       });
 
       return NextResponse.json(
-        { ok: false, error: "Server configuration is missing." },
+        { message: "Waitlist is not configured yet." },
         { status: 500 }
-      );
-    }
-
-    const body = (await request.json()) as WaitlistPayload;
-
-    const email = clean(body.email)?.toLowerCase();
-
-    if (!email || !email.includes("@")) {
-      return NextResponse.json(
-        { ok: false, error: "A valid email is required." },
-        { status: 400 }
-      );
-    }
-
-    const ageConfirmed =
-      body.ageConfirmed === true || body.age_confirmed === true;
-
-    if (!ageConfirmed) {
-      return NextResponse.json(
-        { ok: false, error: "Age confirmation is required." },
-        { status: 400 }
       );
     }
 
@@ -74,44 +74,52 @@ export async function POST(request: Request) {
       },
     });
 
-    const payload = {
+    const row = {
       email,
-      full_name: clean(body.fullName ?? body.full_name ?? body.name),
-      join_as: clean(body.joinAs ?? body.join_as),
-      business_name: clean(body.businessName ?? body.business_name),
+      full_name: clean(body.full_name),
+      audience_type: clean(body.audience_type) || "founding_member",
+      business_name: clean(body.business_name),
       website: clean(body.website),
       city: clean(body.city),
-      state_region: clean(body.stateRegion ?? body.state_region),
-      age_confirmed: ageConfirmed,
-      source: "welcome",
+      state_region: clean(body.state_region) || clean(body.region),
+      age_confirmed: true,
+      source: clean(body.source) || "eccoozs.com",
     };
 
-    const { data, error } = await supabase
-      .from(tableName)
-      .insert(payload)
-      .select("id,email,created_at")
-      .single();
+    const { error } = await supabase.from(tableName).insert(row);
 
     if (error) {
-      console.error("Supabase waitlist insert failed", {
+      console.error("WAITLIST_INSERT_ERROR", {
+        code: error.code,
         message: error.message,
         details: error.details,
         hint: error.hint,
-        code: error.code,
+        tableName,
+        row,
       });
 
+      if (error.code === "23505") {
+        return NextResponse.json(
+          { message: "You're already on the founding waitlist." },
+          { status: 200 }
+        );
+      }
+
       return NextResponse.json(
-        { ok: false, error: "Could not save waitlist signup." },
+        { message: "Could not save waitlist signup." },
         { status: 500 }
       );
     }
 
-    return NextResponse.json({ ok: true, signup: data }, { status: 200 });
+    return NextResponse.json(
+      { message: "You're on the founding waitlist. We'll be in touch." },
+      { status: 200 }
+    );
   } catch (error) {
-    console.error("Waitlist route crashed", error);
+    console.error("WAITLIST_ROUTE_ERROR", error);
 
     return NextResponse.json(
-      { ok: false, error: "Unexpected waitlist error." },
+      { message: "Could not save waitlist signup." },
       { status: 500 }
     );
   }
