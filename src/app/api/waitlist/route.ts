@@ -1,21 +1,24 @@
-import { NextResponse } from "next/server";
-import { getSupabaseAdmin } from "@/lib/supabaseAdmin";
+﻿import { NextResponse } from "next/server";
+import { createClient } from "@supabase/supabase-js";
+
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
 type WaitlistPayload = {
   email?: string;
-  full_name?: string | null;
-  audience_type?: string | null;
-  business_name?: string | null;
-  website?: string | null;
-  city?: string | null;
-  region?: string | null;
-  is_18_or_over?: boolean;
-  source?: string | null;
-  utm_source?: string | null;
-  utm_medium?: string | null;
-  utm_campaign?: string | null;
-  referrer?: string | null;
-  user_agent?: string | null;
+  fullName?: string;
+  full_name?: string;
+  name?: string;
+  joinAs?: string;
+  join_as?: string;
+  businessName?: string;
+  business_name?: string;
+  website?: string;
+  city?: string;
+  stateRegion?: string;
+  state_region?: string;
+  ageConfirmed?: boolean;
+  age_confirmed?: boolean;
 };
 
 function clean(value: unknown) {
@@ -25,69 +28,91 @@ function clean(value: unknown) {
 }
 
 export async function POST(request: Request) {
-  let body: WaitlistPayload;
-
   try {
-    body = await request.json();
-  } catch {
-    return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
-  }
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    const tableName = process.env.SUPABASE_WAITLIST_TABLE || "eccoozs_waitlist";
 
-  const email = clean(body.email)?.toLowerCase();
+    if (!supabaseUrl || !serviceRoleKey) {
+      console.error("Missing Supabase server environment variables", {
+        hasUrl: Boolean(supabaseUrl),
+        hasServiceRoleKey: Boolean(serviceRoleKey),
+        tableName,
+      });
 
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
-  }
+      return NextResponse.json(
+        { ok: false, error: "Server configuration is missing." },
+        { status: 500 }
+      );
+    }
 
-  if (!body.is_18_or_over) {
-    return NextResponse.json(
-      { error: "Please confirm that you are 18 or older to continue." },
-      { status: 400 }
-    );
-  }
+    const body = (await request.json()) as WaitlistPayload;
 
-  const supabase = getSupabaseAdmin();
+    const email = clean(body.email)?.toLowerCase();
 
-  if (!supabase) {
-    return NextResponse.json({
-      ok: true,
-      preview: true,
-      message: "Preview mode: Supabase environment variables are not configured yet.",
+    if (!email || !email.includes("@")) {
+      return NextResponse.json(
+        { ok: false, error: "A valid email is required." },
+        { status: 400 }
+      );
+    }
+
+    const ageConfirmed =
+      body.ageConfirmed === true || body.age_confirmed === true;
+
+    if (!ageConfirmed) {
+      return NextResponse.json(
+        { ok: false, error: "Age confirmation is required." },
+        { status: 400 }
+      );
+    }
+
+    const supabase = createClient(supabaseUrl, serviceRoleKey, {
+      auth: {
+        persistSession: false,
+        autoRefreshToken: false,
+      },
     });
-  }
 
-  const table = process.env.SUPABASE_WAITLIST_TABLE || "eccoozs_waitlist";
+    const payload = {
+      email,
+      full_name: clean(body.fullName ?? body.full_name ?? body.name),
+      join_as: clean(body.joinAs ?? body.join_as),
+      business_name: clean(body.businessName ?? body.business_name),
+      website: clean(body.website),
+      city: clean(body.city),
+      state_region: clean(body.stateRegion ?? body.state_region),
+      age_confirmed: ageConfirmed,
+      source: "welcome",
+    };
 
-  const record = {
-    email,
-    full_name: clean(body.full_name),
-    audience_type: clean(body.audience_type) || "founding_member",
-    business_name: clean(body.business_name),
-    website: clean(body.website),
-    city: clean(body.city),
-    region: clean(body.region),
-    is_18_or_over: true,
-    source: clean(body.source) || "eccoozs.com",
-    utm_source: clean(body.utm_source),
-    utm_medium: clean(body.utm_medium),
-    utm_campaign: clean(body.utm_campaign),
-    referrer: clean(body.referrer),
-    user_agent: clean(body.user_agent),
-  };
+    const { data, error } = await supabase
+      .from(tableName)
+      .insert(payload)
+      .select("id,email,created_at")
+      .single();
 
-  const { error } = await supabase
-    .from(table)
-    .upsert(record, { onConflict: "email", ignoreDuplicates: false });
+    if (error) {
+      console.error("Supabase waitlist insert failed", {
+        message: error.message,
+        details: error.details,
+        hint: error.hint,
+        code: error.code,
+      });
 
-  if (error) {
+      return NextResponse.json(
+        { ok: false, error: "Could not save waitlist signup." },
+        { status: 500 }
+      );
+    }
+
+    return NextResponse.json({ ok: true, signup: data }, { status: 200 });
+  } catch (error) {
+    console.error("Waitlist route crashed", error);
+
     return NextResponse.json(
-      { error: "Something went wrong while saving your spot." },
+      { ok: false, error: "Unexpected waitlist error." },
       { status: 500 }
     );
   }
-
-  return NextResponse.json({
-    ok: true,
-    message: "You're on the founding waitlist. We'll be in touch.",
-  });
 }
