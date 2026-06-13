@@ -20,7 +20,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--td);ov
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 
-/* â”€â”€ NAV â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ NAV Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:200;
   display:flex;align-items:center;justify-content:space-between;gap:1rem;
@@ -51,7 +51,7 @@ nav{
   .nav-join{font-size:.72rem;padding:8px 13px}
 }
 
-/* â”€â”€ HERO (full-bleed with BLUE gradient) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ HERO (full-bleed with BLUE gradient) Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 #hero{
   min-height:100vh;
   position:relative;
@@ -135,7 +135,7 @@ nav{
 .fs-label{font-size:.82rem;font-weight:700;color:#fff;margin-bottom:.1rem;text-transform:uppercase;letter-spacing:.05em}
 .fs-desc{font-size:.7rem;color:rgba(255,255,255,.42);line-height:1.45}
 
-/* â”€â”€ STATS (WHITE) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ STATS (WHITE) Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .stats-strip{background:var(--white);border-bottom:1px solid var(--bdr);padding:2.5rem 5%;display:grid;grid-template-columns:repeat(3,minmax(0,215px));justify-content:center;row-gap:1.6rem}
 .si{text-align:center;padding:.15rem 1.3rem}
 .si:not(:nth-child(3n+1)){border-left:1px solid var(--bdr)}
@@ -143,14 +143,14 @@ nav{
 .sn span{color:var(--blue)}
 .sl{font-size:.74rem;font-weight:500;color:var(--tmut);margin-top:5px;line-height:1.4}
 
-/* â”€â”€ MARQUEE (NAVY) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ MARQUEE (NAVY) Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .mwrap{background:var(--navy-2);padding:1.25rem 0;overflow:hidden}
 .mtrack{display:flex;gap:2.5rem;animation:mq 26s linear infinite;white-space:nowrap}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .mi{display:flex;align-items:center;gap:8px;font-size:.75rem;font-weight:500;color:rgba(255,255,255,.4);letter-spacing:.04em}
 .mi i{width:13px;height:13px;opacity:.6}
 
-/* â”€â”€ SHARED SECTION STYLES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ SHARED SECTION STYLES Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 section{padding:8rem 5%}
 .seyebrow{font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:8px}
 .seyebrow::before{content:'';width:16px;height:1.5px;display:inline-block;flex-shrink:0}
@@ -163,7 +163,7 @@ h2.dark{color:var(--td)}
 .sdesc.light{color:rgba(255,255,255,.45)}
 .sdesc.dark{color:var(--tmut)}
 
-/* â”€â”€ ECHO STANDARD (NAVY + ECHO IMAGE) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ ECHO STANDARD (NAVY + ECHO IMAGE) Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 #echo{
   background:var(--night);
   padding:7.5rem 5%;
@@ -192,7 +192,7 @@ h2.dark{color:var(--td)}
 .echo-quote em{font-style:italic;color:var(--blue-l);text-shadow:0 0 22px rgba(74,118,255,.28)}
 .echo-body{font-size:1rem;color:rgba(232,237,248,.66);line-height:1.85;max-width:580px;margin:0 auto;text-shadow:0 8px 28px rgba(0,0,0,.42)}
 
-/* â”€â”€ FEATURES (CREAM / LIGHT) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ FEATURES (CREAM / LIGHT) Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 #features{background:var(--cream)}
 .fi{max-width:1180px;margin:0 auto 4rem;display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap}
 .fgrid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--bdr);border:1.5px solid var(--bdr);border-radius:20px;overflow:hidden}
@@ -205,13 +205,13 @@ h2.dark{color:var(--td)}
 .ft{font-size:1rem;font-weight:600;color:var(--td);margin-bottom:.4rem}
 .fd{font-size:.84rem;color:var(--tmut);line-height:1.72}
 
-/* â”€â”€ APP PREVIEW (DARK NAVY) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ APP PREVIEW (DARK NAVY) Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 #app-preview{background:var(--night);padding:8rem 5%;position:relative;overflow:hidden}
 .ap-orb{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(rgba(26,62,245,.12) 0%,transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);filter:blur(90px);pointer-events:none}
 .ap-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;position:relative;z-index:1}
 .ap-img-wrap img{width:100%;border-radius:20px;box-shadow:0 30px 80px rgba(0,0,0,.45)}
 
-/* â”€â”€ COMMUNITY (WHITE) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ COMMUNITY (WHITE) Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 #community{background:var(--white)}
 .comm-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
 .comm-img{border-radius:24px;overflow:hidden;box-shadow:0 20px 60px rgba(7,18,64,.1)}
@@ -222,7 +222,7 @@ h2.dark{color:var(--td)}
 .comm-link:hover{border-color:var(--blue)}
 .comm-link i{width:16px;height:16px}
 
-/* â”€â”€ HISTORY (DARK NAVY &mdash; premium archive feel) â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ HISTORY (DARK NAVY &mdash; premium archive feel) Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 #history{background:var(--night);padding:8rem 5%}
 .hist-intro{max-width:1180px;margin:0 auto 3.5rem;text-align:center}
 .hist-intro .seyebrow{justify-content:center}
@@ -259,7 +259,7 @@ h2.dark{color:var(--td)}
 .hc:hover::after{transform:scaleX(1)}
 .hist-note{max-width:1180px;margin:2rem auto 0;text-align:center;font-size:.85rem;color:rgba(255,255,255,.35);font-style:italic}
 
-/* â”€â”€ DOWNLOAD (DARK NAVY WITH GLOW) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ DOWNLOAD (DARK NAVY WITH GLOW) Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 #download{background:var(--navy);padding:8rem 5%;text-align:center;position:relative;overflow:hidden}
 .dl-orb{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(rgba(26,62,245,.15) 0%,transparent 65%);top:-150px;left:50%;transform:translateX(-50%);filter:blur(90px);pointer-events:none}
 .dlinner{position:relative;z-index:1;max-width:600px;margin:0 auto}
@@ -276,7 +276,7 @@ h2.dark{color:var(--td)}
 .sbg strong{display:block;font-size:.9rem;color:#fff}
 .sbg span{font-size:.65rem;color:rgba(255,255,255,.32)}
 
-/* â”€â”€ PRICING (WHITE) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ PRICING (WHITE) Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 #pricing{background:var(--white)}
 .printo{max-width:1180px;margin:0 auto 3.5rem;text-align:center}
 .printo .seyebrow{justify-content:center}
@@ -310,7 +310,7 @@ h2.dark{color:var(--td)}
 .pb.gst:hover{background:rgba(255,255,255,.13)}
 .pb i{width:15px;height:15px}
 
-/* â”€â”€ FOOTER (DARKEST NAVY) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ FOOTER (DARKEST NAVY) Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 footer{background:var(--night);padding:5rem 5% 2.5rem;color:rgba(255,255,255,.4)}
 .footer-inner{max-width:1180px;margin:0 auto}
 .ftop{display:grid;grid-template-columns:1.4fr auto auto;gap:4rem;margin-bottom:4rem}
@@ -328,11 +328,11 @@ footer{background:var(--night);padding:5rem 5% 2.5rem;color:rgba(255,255,255,.4)
 .flg a{font-size:.76rem;color:rgba(255,255,255,.26)}
 .flg a:hover{color:rgba(255,255,255,.6)}
 
-/* â”€â”€ REVEAL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ REVEAL Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .rv{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
 .rv.vis{opacity:1;transform:translateY(0)}
 
-/* â”€â”€ RESPONSIVE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ RESPONSIVE Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 @media(max-width:980px){
   .ap-inner,.comm-inner{grid-template-columns:1fr;gap:3rem}
   .fgrid{grid-template-columns:1fr 1fr}
@@ -361,7 +361,7 @@ footer{background:var(--night);padding:5rem 5% 2.5rem;color:rgba(255,255,255,.4)
   .hist-grid{grid-template-columns:1fr;grid-template-rows:auto}
 }
 
-/* â”€â”€ LIFESTYLE GRID â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ LIFESTYLE GRID Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 #lifestyle{background:var(--navy);padding:8rem 5%}
 .ls-intro{max-width:1180px;margin:0 auto 3.5rem;text-align:center}
 .ls-intro .seyebrow{justify-content:center}
@@ -388,7 +388,7 @@ footer{background:var(--night);padding:5rem 5% 2.5rem;color:rgba(255,255,255,.4)
 .ls-label{font-size:.78rem;font-weight:700;color:#fff;letter-spacing:.14em;text-transform:uppercase}
 .ls-label span{display:block;font-size:.65rem;font-weight:400;color:rgba(255,255,255,.55);letter-spacing:.05em;text-transform:none;margin-top:2px;font-style:italic}
 
-/* â”€â”€ FOUNDING WAITLIST FORM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ FOUNDING WAITLIST FORM Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .wl-card{
   position:relative;z-index:1;max-width:620px;margin:0 auto;text-align:left;
   background:rgba(255,255,255,.045);
@@ -450,7 +450,7 @@ footer{background:var(--night);padding:5rem 5% 2.5rem;color:rgba(255,255,255,.4)
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://eccoozs.com"),
-  title: "ECCOOZS &mdash; Express. Explore. Elevate.",
+  title: "ECCOOZS",
   description: "Join the ECCOOZS founding waitlist.",
 };
 
@@ -548,9 +548,9 @@ export default function HomePage() {
         </section>
 
         <div className="stats-strip rv">
-          <div className="si"><div className="sn">Creators</div><div className="sl">Share Â· Ecco Â· Connect</div></div>
-          <div className="si"><div className="sn">Businesses</div><div className="sl">Directory Â· Highlights Â· Shop</div></div>
-          <div className="si"><div className="sn">Members</div><div className="sl">Discover Â· Support Â· Build</div></div>
+          <div className="si"><div className="sn">Creators</div><div className="sl">Share Ã‚Â· Ecco Ã‚Â· Connect</div></div>
+          <div className="si"><div className="sn">Businesses</div><div className="sl">Directory Ã‚Â· Highlights Ã‚Â· Shop</div></div>
+          <div className="si"><div className="sn">Members</div><div className="sl">Discover Ã‚Â· Support Ã‚Â· Build</div></div>
         </div>
 
         <div className="mwrap">
@@ -855,7 +855,7 @@ export default function HomePage() {
             </div>
 
             <div className="fbot">
-              <span className="fcp">Â© 2026 Eccoozs. All rights reserved.</span>
+              <span className="fcp">Ã‚Â© 2026 Eccoozs. All rights reserved.</span>
             </div>
           </div>
         </footer>

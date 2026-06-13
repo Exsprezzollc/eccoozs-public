@@ -1,10 +1,10 @@
-﻿import type { Metadata, Viewport } from "next";
+import type { Metadata, Viewport } from "next";
 import type React from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://eccoozs.com"),
-  title: "ECCOOZS — Express. Explore. Elevate.",
+  title: "ECCOOZS",
   description: "Join the ECCOOZS founding waitlist.",
   icons: {
     icon: [
