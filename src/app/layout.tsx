@@ -8,11 +8,11 @@ export const metadata: Metadata = {
   description: "Join the ECCOOZS founding waitlist.",
   icons: {
     icon: [
-      { url: "/icon.svg", type: "image/svg+xml" },
-      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/favicon.ico", type: "image/x-icon" },
     ],
-    shortcut: [{ url: "/icon.svg", type: "image/svg+xml" }],
-    apple: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    shortcut: [{ url: "/favicon.ico", type: "image/x-icon" }],
+    apple: [{ url: "/favicon.ico", type: "image/x-icon" }],
   },
 };
 
@@ -31,3 +31,4 @@ export default function RootLayout({
     </html>
   );
 }
+
