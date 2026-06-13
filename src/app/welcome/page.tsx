@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import HeaderLogo from "@/components/brand/HeaderLogo";
 import { MarketingIcon as Icon } from "@/components/marketing/MarketingIcon";
 import { RevealInit } from "@/components/marketing/RevealInit";
@@ -20,7 +20,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--td);ov
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 
-/* â”€â”€ NAV â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── NAV ─────────────────────────────────────────── */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:200;
   display:flex;align-items:center;justify-content:space-between;gap:1rem;
@@ -51,7 +51,7 @@ nav{
   .nav-join{font-size:.72rem;padding:8px 13px}
 }
 
-/* â”€â”€ HERO (full-bleed with BLUE gradient) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── HERO (full-bleed with BLUE gradient) ─────────── */
 #hero{
   min-height:100vh;
   position:relative;
@@ -67,7 +67,7 @@ nav{
   background:rgba(7,18,64,0.42);
   mix-blend-mode:multiply;
 }
-/* Directional navy gradient â€” dense left for text, blue-tinted right */
+/* Directional navy gradient — dense left for text, blue-tinted right */
 .hero-grad{
   position:absolute;inset:0;z-index:2;
   background:linear-gradient(
@@ -135,7 +135,7 @@ nav{
 .fs-label{font-size:.82rem;font-weight:700;color:#fff;margin-bottom:.1rem;text-transform:uppercase;letter-spacing:.05em}
 .fs-desc{font-size:.7rem;color:rgba(255,255,255,.42);line-height:1.45}
 
-/* â”€â”€ STATS (WHITE) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── STATS (WHITE) ─────────────────────────────────── */
 .stats-strip{background:var(--white);border-bottom:1px solid var(--bdr);padding:2.5rem 5%;display:grid;grid-template-columns:repeat(3,minmax(0,215px));justify-content:center;row-gap:1.6rem}
 .si{text-align:center;padding:.15rem 1.3rem}
 .si:not(:nth-child(3n+1)){border-left:1px solid var(--bdr)}
@@ -143,14 +143,14 @@ nav{
 .sn span{color:var(--blue)}
 .sl{font-size:.74rem;font-weight:500;color:var(--tmut);margin-top:5px;line-height:1.4}
 
-/* â”€â”€ MARQUEE (NAVY) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── MARQUEE (NAVY) ───────────────────────────────── */
 .mwrap{background:var(--navy-2);padding:1.25rem 0;overflow:hidden}
 .mtrack{display:flex;gap:2.5rem;animation:mq 26s linear infinite;white-space:nowrap}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .mi{display:flex;align-items:center;gap:8px;font-size:.75rem;font-weight:500;color:rgba(255,255,255,.4);letter-spacing:.04em}
 .mi i{width:13px;height:13px;opacity:.6}
 
-/* â”€â”€ SHARED SECTION STYLES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── SHARED SECTION STYLES ────────────────────────── */
 section{padding:8rem 5%}
 .seyebrow{font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:8px}
 .seyebrow::before{content:'';width:16px;height:1.5px;display:inline-block;flex-shrink:0}
@@ -163,7 +163,7 @@ h2.dark{color:var(--td)}
 .sdesc.light{color:rgba(255,255,255,.45)}
 .sdesc.dark{color:var(--tmut)}
 
-/* â”€â”€ ECHO STANDARD (NAVY + ECHO IMAGE) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── ECHO STANDARD (NAVY + ECHO IMAGE) ────────────── */
 #echo{
   background:var(--night);
   padding:7.5rem 5%;
@@ -192,7 +192,7 @@ h2.dark{color:var(--td)}
 .echo-quote em{font-style:italic;color:var(--blue-l);text-shadow:0 0 22px rgba(74,118,255,.28)}
 .echo-body{font-size:1rem;color:rgba(232,237,248,.66);line-height:1.85;max-width:580px;margin:0 auto;text-shadow:0 8px 28px rgba(0,0,0,.42)}
 
-/* â”€â”€ FEATURES (CREAM / LIGHT) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── FEATURES (CREAM / LIGHT) ─────────────────────── */
 #features{background:var(--cream)}
 .fi{max-width:1180px;margin:0 auto 4rem;display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap}
 .fgrid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--bdr);border:1.5px solid var(--bdr);border-radius:20px;overflow:hidden}
@@ -205,13 +205,13 @@ h2.dark{color:var(--td)}
 .ft{font-size:1rem;font-weight:600;color:var(--td);margin-bottom:.4rem}
 .fd{font-size:.84rem;color:var(--tmut);line-height:1.72}
 
-/* â”€â”€ APP PREVIEW (DARK NAVY) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── APP PREVIEW (DARK NAVY) ──────────────────────── */
 #app-preview{background:var(--night);padding:8rem 5%;position:relative;overflow:hidden}
 .ap-orb{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(rgba(26,62,245,.12) 0%,transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);filter:blur(90px);pointer-events:none}
 .ap-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;position:relative;z-index:1}
 .ap-img-wrap img{width:100%;border-radius:20px;box-shadow:0 30px 80px rgba(0,0,0,.45)}
 
-/* â”€â”€ COMMUNITY (WHITE) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── COMMUNITY (WHITE) ────────────────────────────── */
 #community{background:var(--white)}
 .comm-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
 .comm-img{border-radius:24px;overflow:hidden;box-shadow:0 20px 60px rgba(7,18,64,.1)}
@@ -222,7 +222,7 @@ h2.dark{color:var(--td)}
 .comm-link:hover{border-color:var(--blue)}
 .comm-link i{width:16px;height:16px}
 
-/* â”€â”€ HISTORY (DARK NAVY â€” premium archive feel) â”€â”€â”€â”€ */
+/* ── HISTORY (DARK NAVY — premium archive feel) ──── */
 #history{background:var(--night);padding:8rem 5%}
 .hist-intro{max-width:1180px;margin:0 auto 3.5rem;text-align:center}
 .hist-intro .seyebrow{justify-content:center}
@@ -237,7 +237,7 @@ h2.dark{color:var(--td)}
 .hc.tall{grid-row:span 2}
 .hc img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .45s ease;filter:grayscale(15%) contrast(1.05)}
 .hc:hover img{transform:scale(1.04);filter:grayscale(0%) contrast(1.08)}
-/* Gradient overlay â€” strong at bottom for caption */
+/* Gradient overlay — strong at bottom for caption */
 .hc-ov{
   position:absolute;inset:0;
   background:linear-gradient(
@@ -259,7 +259,7 @@ h2.dark{color:var(--td)}
 .hc:hover::after{transform:scaleX(1)}
 .hist-note{max-width:1180px;margin:2rem auto 0;text-align:center;font-size:.85rem;color:rgba(255,255,255,.35);font-style:italic}
 
-/* â”€â”€ DOWNLOAD (DARK NAVY WITH GLOW) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── DOWNLOAD (DARK NAVY WITH GLOW) ──────────────── */
 #download{background:var(--navy);padding:8rem 5%;text-align:center;position:relative;overflow:hidden}
 .dl-orb{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(rgba(26,62,245,.15) 0%,transparent 65%);top:-150px;left:50%;transform:translateX(-50%);filter:blur(90px);pointer-events:none}
 .dlinner{position:relative;z-index:1;max-width:600px;margin:0 auto}
@@ -276,7 +276,7 @@ h2.dark{color:var(--td)}
 .sbg strong{display:block;font-size:.9rem;color:#fff}
 .sbg span{font-size:.65rem;color:rgba(255,255,255,.32)}
 
-/* â”€â”€ PRICING (WHITE) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── PRICING (WHITE) ──────────────────────────────── */
 #pricing{background:var(--white)}
 .printo{max-width:1180px;margin:0 auto 3.5rem;text-align:center}
 .printo .seyebrow{justify-content:center}
@@ -310,7 +310,7 @@ h2.dark{color:var(--td)}
 .pb.gst:hover{background:rgba(255,255,255,.13)}
 .pb i{width:15px;height:15px}
 
-/* â”€â”€ FOOTER (DARKEST NAVY) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── FOOTER (DARKEST NAVY) ────────────────────────── */
 footer{background:var(--night);padding:5rem 5% 2.5rem;color:rgba(255,255,255,.4)}
 .footer-inner{max-width:1180px;margin:0 auto}
 .ftop{display:grid;grid-template-columns:1.4fr auto auto;gap:4rem;margin-bottom:4rem}
@@ -328,11 +328,11 @@ footer{background:var(--night);padding:5rem 5% 2.5rem;color:rgba(255,255,255,.4)
 .flg a{font-size:.76rem;color:rgba(255,255,255,.26)}
 .flg a:hover{color:rgba(255,255,255,.6)}
 
-/* â”€â”€ REVEAL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── REVEAL ───────────────────────────────────────── */
 .rv{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
 .rv.vis{opacity:1;transform:translateY(0)}
 
-/* â”€â”€ RESPONSIVE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── RESPONSIVE ──────────────────────────────────── */
 @media(max-width:980px){
   .ap-inner,.comm-inner{grid-template-columns:1fr;gap:3rem}
   .fgrid{grid-template-columns:1fr 1fr}
@@ -361,7 +361,7 @@ footer{background:var(--night);padding:5rem 5% 2.5rem;color:rgba(255,255,255,.4)
   .hist-grid{grid-template-columns:1fr;grid-template-rows:auto}
 }
 
-/* â”€â”€ LIFESTYLE GRID â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── LIFESTYLE GRID ──────────────────────────────── */
 #lifestyle{background:var(--navy);padding:8rem 5%}
 .ls-intro{max-width:1180px;margin:0 auto 3.5rem;text-align:center}
 .ls-intro .seyebrow{justify-content:center}
@@ -388,7 +388,7 @@ footer{background:var(--night);padding:5rem 5% 2.5rem;color:rgba(255,255,255,.4)
 .ls-label{font-size:.78rem;font-weight:700;color:#fff;letter-spacing:.14em;text-transform:uppercase}
 .ls-label span{display:block;font-size:.65rem;font-weight:400;color:rgba(255,255,255,.55);letter-spacing:.05em;text-transform:none;margin-top:2px;font-style:italic}
 
-/* â”€â”€ FOUNDING WAITLIST FORM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── FOUNDING WAITLIST FORM ───────────────────────── */
 .wl-card{
   position:relative;z-index:1;max-width:620px;margin:0 auto;text-align:left;
   background:rgba(255,255,255,.045);
@@ -449,7 +449,8 @@ footer{background:var(--night);padding:5rem 5% 2.5rem;color:rgba(255,255,255,.4)
 `;
 
 export const metadata: Metadata = {
-  title: "Eccoozs â€” Express. Explore. Elevate.",
+  metadataBase: new URL("https://eccoozs.com"),
+  title: "ECCOOZS — Express. Explore. Elevate.",
   description: "Join the ECCOOZS founding waitlist.",
 };
 
@@ -459,294 +460,406 @@ export default function HomePage() {
       <style dangerouslySetInnerHTML={{ __html: landingStyles }} />
       <RevealInit />
       <div className="landing-site">
-<nav>
-<a className="nav-logo" href="/welcome" aria-label="ECCOOZS welcome">
-<HeaderLogo width={168} className="nav-header-logo" />
-</a>
-<ul className="nav-links">
-<li><a href="/welcome" className="active">Home</a></li>
-<li><a href="#features">Features</a></li>
-<li><a href="#app-preview">App</a></li>
-<li><a href="#lifestyle">Community</a></li><li><a href="#community">About</a></li>
-<li><a href="#history">Legacy</a></li>
-</ul>
-<div className="nav-right">
-<a className="nav-join" href="#download">Join ECCOOZS</a>
-</div>
-</nav>
-<section id="hero">
-<div className="hero-photo"><img src="/welcome-images/landing-02.png" alt="Eccoozs community â€” Create Culture, Be Real" /></div>
-<div className="hero-color-wash"></div>
-<div className="hero-grad"></div>
-<div className="hero-bottom"></div>
-<div className="hero-content">
-<div className="hero-eyebrow">More than a platform.</div>
-<div className="hero-welcome">Welcome to</div>
-<div className="hero-brand">ECCO<span>OZS</span></div>
-<div className="hero-tagline">Express. Explore. Elevate.</div>
-<p className="hero-desc">ECCOOZS is coming. A warmer, cleaner, more intentional 18+ ecosystem for community, creators, businesses, products, conversations, and trusted discovery.</p>
-<div className="hero-actions">
-<a className="btn-p" href="#download"><Icon name="arrow-right" />Join the Movement</a>
-<a className="btn-g" href="#features"><Icon name="layout-grid" />Explore the Platform</a>
-</div>
-<div className="hero-sp">
-<div className="sp-avs">
-<div className="sp-av">A</div><div className="sp-av">K</div><div className="sp-av">M</div><div className="sp-av">J</div>
-<div className="sp-plus">+8K</div>
-</div>
-<div className="sp-txt">
-<div className="sp-strong">Built for creators. Loved by communities.</div>
-<div className="sp-sub">Be among the first. Founding member spots are limited.</div>
-</div>
-</div>
-</div>
-<div className="feature-strip">
-<div className="fs-item"><div className="fs-icon"><Icon name="mic-2" /></div><div><div className="fs-label">Soundrooms</div><div className="fs-desc">Speak. Listen. Connect.<br />Real conversations. Real time.</div></div></div>
-<div className="fs-item"><div className="fs-icon"><Icon name="layout-grid" /></div><div><div className="fs-label">The Flow</div><div className="fs-desc">Your feed. Your culture.<br />Content that reflects you.</div></div></div>
-<div className="fs-item"><div className="fs-icon"><Icon name="trending-up" /></div><div><div className="fs-label">Elevate</div><div className="fs-desc">Creators. Brands. Impact.<br />Build, grow, inspire.</div></div></div>
-<div className="fs-item"><div className="fs-icon"><Icon name="calendar-check" /></div><div><div className="fs-label">Events</div><div className="fs-desc">Live. Local. Elevated.<br />Experiences that bring us together.</div></div></div>
-</div>
-</section>
-<div className="stats-strip rv">
-<div className="si"><div className="sn">Creators</div><div className="sl">Share Â· Ecco Â· Connect</div></div>
-<div className="si"><div className="sn">Businesses</div><div className="sl">Directory Â· Highlights Â· Shop</div></div>
-<div className="si"><div className="sn">Members</div><div className="sl">Discover Â· Support Â· Build</div></div>
-</div>
-<div className="mwrap">
-<div className="mtrack">
-<span className="mi"><Icon name="mic-2" />Soundrooms</span>
-<span className="mi"><Icon name="video" />Live Streaming</span>
-<span className="mi"><Icon name="shopping-bag" />Eccoozs Shop</span>
-<span className="mi"><Icon name="trending-up" />Monetization</span>
-<span className="mi"><Icon name="layout-grid" />The Flow</span>
-<span className="mi"><Icon name="newspaper" />Newsroom</span>
-<span className="mi"><Icon name="users" />Community</span>
-<span className="mi"><Icon name="mic-2" />Soundrooms</span>
-<span className="mi"><Icon name="video" />Live Streaming</span>
-<span className="mi"><Icon name="shopping-bag" />Eccoozs Shop</span>
-<span className="mi"><Icon name="trending-up" />Monetization</span>
-<span className="mi"><Icon name="layout-grid" />The Flow</span>
-<span className="mi"><Icon name="newspaper" />Newsroom</span>
-<span className="mi"><Icon name="users" />Community</span>
-</div>
-</div>
-<section id="echo">
-<div className="echo-art" aria-hidden="true">
-<img src="/welcome-images/echo.png" alt="" />
-</div>
-<div className="echo-orb"></div>
-<div className="echo-inner rv">
-<div className="seyebrow light" style={{ justifyContent: "center" }}>The Eccoozs Standard</div>
-<p className="echo-quote">On Eccoozs, you don't go <em>"viral."</em><br />What you say or do <em>echoes.</em><br />Make sure you echo in a positive way.</p>
-<p className="echo-body">We built a platform that holds content and creators to a higher standard. No toxic algorithms feeding outrage. No hollow metrics chasing clout. Just authentic voices, resonating with real people.</p>
-</div>
-</section>
-<section id="features">
-<div className="fi rv">
-<div>
-<div className="seyebrow dark">Platform Features</div>
-<h2 className="dark">Preview what's coming.<br />One ecosystem. Many ways to connect, discover, and build.</h2>
-</div>
-<p className="sdesc dark">Stop juggling a dozen apps. Eccoozs brings together every tool a modern creator needs â€” from going live to getting paid.</p>
-</div>
-<div className="fgrid rv">
-<div className="fc"><div className="fic b"><Icon name="mic-2" /></div><div className="ft">Soundrooms</div><div className="fd">Host live audio rooms with your community. Invite co-hosts, take speakers on stage, broadcast your voice to the world.</div></div>
-<div className="fc"><div className="fic n"><Icon name="video" /></div><div className="ft">Live Streaming</div><div className="fd">Go live in seconds. Full video streaming with real-time engagement and monetized viewer interactions built in.</div></div>
-<div className="fc"><div className="fic b"><Icon name="shopping-bag" /></div><div className="ft">Eccoozs Shop</div><div className="fd">Shop Eccoozs merch and spread the culture. Members earn commission promoting the brand â€” more ways to earn coming soon.</div></div>
-<div className="fc"><div className="fic n"><Icon name="layout-grid" /></div><div className="ft">The Flow</div><div className="fd">Your feed. Your culture. Share photos, videos, news, and audio in a beautifully curated feed that puts your content first.</div></div>
-<div className="fc"><div className="fic b"><Icon name="trending-up" /></div><div className="ft">Elevate &amp; Earn</div><div className="fd">Two income streams: shop commissions and ad sharing â€” all tracked in your personal dashboard.</div></div>
-<div className="fc"><div className="fic n"><Icon name="store" /></div><div className="ft">Business Directory</div><div className="fd">A curated discovery space for trusted businesses, creators, products, and services â€” helping members support what aligns with their values.</div></div>
-</div>
-</section>
-<section id="lifestyle">
-<div className="ls-intro rv">
-<div className="seyebrow light" style={{ justifyContent: "center" }}>The Community</div>
-<h2 className="light">Real voices. Real connections.</h2>
-<p className="sdesc light" style={{ margin: "0 auto", textAlign: "center" }}>From bedroom creators to live performers â€” Eccoozs is where your community comes alive.</p>
-</div>
-<div className="ls-grid rv">
+        <nav>
+          <a className="nav-logo" href="/welcome" aria-label="ECCOOZS welcome">
+            <HeaderLogo width={168} className="nav-header-logo" />
+          </a>
+          <ul className="nav-links">
+            <li><a href="/welcome" className="active">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#app-preview">App</a></li>
+            <li><a href="#lifestyle">Community</a></li>
+            <li><a href="#community">About</a></li>
+            <li><a href="#history">Legacy</a></li>
+          </ul>
+          <div className="nav-right">
+            <a className="nav-join" href="#download">Join ECCOOZS</a>
+          </div>
+        </nav>
 
-<div className="ls-cell tall">
-<img src="/welcome-images/landing-03.png" alt="Create on Eccoozs â€” community connecting" />
-<div className="ls-ov">
-<div className="ls-label">Create<span>Express yourself freely</span></div>
-</div>
-</div>
+        <section id="hero">
+          <div className="hero-photo">
+            <img src="/welcome-images/landing-02.png" alt="Eccoozs community — Create Culture, Be Real" />
+          </div>
+          <div className="hero-color-wash"></div>
+          <div className="hero-grad"></div>
+          <div className="hero-bottom"></div>
 
-<div className="ls-cell">
-<img src="/welcome-images/landing-04.png" alt="Live session on Eccoozs" style={{ objectPosition: "center top" }} />
-<div className="ls-ov">
-<div className="ls-label">Connect<span>Live soundrooms &amp; sessions</span></div>
-</div>
-</div>
+          <div className="hero-content">
+            <div className="hero-eyebrow">More than a platform.</div>
+            <div className="hero-welcome">Welcome to</div>
+            <div className="hero-brand">ECCO<span>OZS</span></div>
+            <div className="hero-tagline">Express. Explore. Elevate.</div>
+            <p className="hero-desc">
+              ECCOOZS is coming. A warmer, cleaner, more intentional 18+ ecosystem for community,
+              creators, businesses, products, conversations, and trusted discovery.
+            </p>
 
-<div className="ls-cell">
-<img src="/welcome-images/landing-05.jpg" alt="Creators going live on Eccoozs" />
-<div className="ls-ov">
-<div className="ls-label">Express<span>Your voice, your way</span></div>
-</div>
-</div>
+            <div className="hero-actions">
+              <a className="btn-p" href="#download"><Icon name="arrow-right" />Join the Movement</a>
+              <a className="btn-g" href="#features"><Icon name="layout-grid" />Explore the Platform</a>
+            </div>
 
-<div className="ls-cell">
-<img src="/welcome-images/landing-06.png" alt="Eccoozs soundrooms page" style={{ objectPosition: "center top" }} />
-<div className="ls-ov">
-<div className="ls-label">Stream<span>Go live to the world</span></div>
-</div>
-</div>
+            <div className="hero-sp">
+              <div className="sp-avs">
+                <div className="sp-av">A</div>
+                <div className="sp-av">K</div>
+                <div className="sp-av">M</div>
+                <div className="sp-av">J</div>
+                <div className="sp-plus">+8K</div>
+              </div>
+              <div className="sp-txt">
+                <div className="sp-strong">Built for creators. Loved by communities.</div>
+                <div className="sp-sub">Be among the first. Founding member spots are limited.</div>
+              </div>
+            </div>
+          </div>
 
-<div className="ls-cell">
-<img src="/welcome-images/landing-07.png" alt="Eccoozs community wearing merch on campus" />
-<div className="ls-ov">
-<div className="ls-label">Elevate<span>Wear the culture</span></div>
-</div>
-</div>
-</div>
-</section>
-<section id="app-preview">
-<div className="ap-orb"></div>
-<div className="ap-inner">
-<div className="rv">
-<div className="seyebrow light">The App Experience</div>
-<h2 className="light">Beautifully designed<br />for every screen.</h2>
-<p className="sdesc light" style={{ marginBottom: "2rem" }}>Whether you're on your phone between meetings or at your desk building your audience â€” Eccoozs flows with your life.</p>
-<a className="btn-p" href="#download" style={{ display: "inline-flex" }}><Icon name="arrow-right" />Get Early Access</a>
-</div>
-<div className="ap-img-wrap rv">
-<img src="/welcome-images/landing-08.png" alt="Eccoozs on laptop and phone" style={{ display: "block" }} />
-</div>
-</div>
-</section>
-<section id="community">
-<div className="comm-inner">
-<div className="comm-img rv">
-<img src="/welcome-images/landing-09.jpg" alt="Eccoozs community â€” Create Culture Be Real" />
-</div>
-<div className="rv">
-<div className="seyebrow dark">Our Story</div>
-<h2 className="dark">Built from within.<br />For all who walk<br />with respect.</h2>
-<p className="comm-quote">"I didn't build this to go viral. I built it because there was no place left for our voices to breathe."</p>
-<p className="comm-body">ECCOOZS was built by Foundational Black Americans as a digital sanctuary for culture, faith, and truth. But ALL ARE WELCOME HERE who walk in respect. This isn't just an app â€” it's a movement.</p>
-</div>
-</div>
-</section>
-<section id="history">
-<div className="hist-intro rv">
-<div className="seyebrow light" style={{ justifyContent: "center" }}>American Legacy</div>
-<h2 className="light">Honoring our ancestors.<br />Celebrating our culture.</h2>
-<p style={{ color: "rgba(255,255,255,.45)", maxWidth: "580px", margin: "0 auto", fontSize: ".97rem", lineHeight: "1.8" }}>These moments shaped us. These faces remind us where we come from â€” and why platforms like Eccoozs matter.</p>
-</div>
-<div className="hist-grid rv">
+          <div className="feature-strip">
+            <div className="fs-item">
+              <div className="fs-icon"><Icon name="mic-2" /></div>
+              <div>
+                <div className="fs-label">Soundrooms</div>
+                <div className="fs-desc">Speak. Listen. Connect.<br />Real conversations. Real time.</div>
+              </div>
+            </div>
+            <div className="fs-item">
+              <div className="fs-icon"><Icon name="layout-grid" /></div>
+              <div>
+                <div className="fs-label">The Flow</div>
+                <div className="fs-desc">Your feed. Your culture.<br />Content that reflects you.</div>
+              </div>
+            </div>
+            <div className="fs-item">
+              <div className="fs-icon"><Icon name="trending-up" /></div>
+              <div>
+                <div className="fs-label">Elevate</div>
+                <div className="fs-desc">Creators. Brands. Impact.<br />Build, grow, inspire.</div>
+              </div>
+            </div>
+            <div className="fs-item">
+              <div className="fs-icon"><Icon name="calendar-check" /></div>
+              <div>
+                <div className="fs-label">Events</div>
+                <div className="fs-desc">Live. Local. Elevated.<br />Experiences that bring us together.</div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-<div className="hc tall">
-<img src="/welcome-images/landing-10.png" alt="Enslaved family in cotton field" />
-<div className="hc-ov">
-<span className="hc-tag">Our Foundation</span>
-<span className="hc-caption">Enslaved people who built a nation â€” their story lives in our blood</span>
-</div>
-</div>
+        <div className="stats-strip rv">
+          <div className="si"><div className="sn">Creators</div><div className="sl">Share · Ecco · Connect</div></div>
+          <div className="si"><div className="sn">Businesses</div><div className="sl">Directory · Highlights · Shop</div></div>
+          <div className="si"><div className="sn">Members</div><div className="sl">Discover · Support · Build</div></div>
+        </div>
 
-<div className="hc">
-<img src="/welcome-images/landing-11.png" alt="Native American chiefs at the White House with President Coolidge, 1924" style={{ objectPosition: "center top" }} />
-<div className="hc-ov">
-<span className="hc-tag">Indigenous Heritage</span>
-<span className="hc-caption">Native chiefs at the White House, 1924</span>
-</div>
-</div>
+        <div className="mwrap">
+          <div className="mtrack">
+            <span className="mi"><Icon name="mic-2" />Soundrooms</span>
+            <span className="mi"><Icon name="video" />Live Streaming</span>
+            <span className="mi"><Icon name="shopping-bag" />Eccoozs Shop</span>
+            <span className="mi"><Icon name="trending-up" />Monetization</span>
+            <span className="mi"><Icon name="layout-grid" />The Flow</span>
+            <span className="mi"><Icon name="newspaper" />Newsroom</span>
+            <span className="mi"><Icon name="users" />Community</span>
+            <span className="mi"><Icon name="mic-2" />Soundrooms</span>
+            <span className="mi"><Icon name="video" />Live Streaming</span>
+            <span className="mi"><Icon name="shopping-bag" />Eccoozs Shop</span>
+            <span className="mi"><Icon name="trending-up" />Monetization</span>
+            <span className="mi"><Icon name="layout-grid" />The Flow</span>
+            <span className="mi"><Icon name="newspaper" />Newsroom</span>
+            <span className="mi"><Icon name="users" />Community</span>
+          </div>
+        </div>
 
-<div className="hc">
-<img src="/welcome-images/landing-12.png" alt="Choctaw people in traditional dress" style={{ objectPosition: "center top" }} />
-<div className="hc-ov">
-<span className="hc-tag">Cultural Roots</span>
-<span className="hc-caption">Choctaw people â€” culture, tradition, and resilience</span>
-</div>
-</div>
+        <section id="echo">
+          <div className="echo-art" aria-hidden="true">
+            <img src="/welcome-images/echo.png" alt="" />
+          </div>
+          <div className="echo-orb"></div>
+          <div className="echo-inner rv">
+            <div className="seyebrow light" style={{ justifyContent: "center" }}>The Eccoozs Standard</div>
+            <p className="echo-quote">
+              On Eccoozs, you don't go <em>"viral."</em><br />
+              What you say or do <em>echoes.</em><br />
+              Make sure you echo in a positive way.
+            </p>
+            <p className="echo-body">
+              We built a platform that holds content and creators to a higher standard. No toxic algorithms
+              feeding outrage. No hollow metrics chasing clout. Just authentic voices, resonating with real people.
+            </p>
+          </div>
+        </section>
 
-<div className="hc">
-<img src="/welcome-images/landing-13.png" alt="George Washington Carver in his laboratory at Tuskegee" style={{ objectPosition: "center" }} />
-<div className="hc-ov">
-<span className="hc-tag">Innovation</span>
-<span className="hc-caption">George Washington Carver â€” genius born from struggle</span>
-</div>
-</div>
+        <section id="features">
+          <div className="fi rv">
+            <div>
+              <div className="seyebrow dark">Platform Features</div>
+              <h2 className="dark">Preview what's coming.<br />One ecosystem. Many ways to connect, discover, and build.</h2>
+            </div>
+            <p className="sdesc dark">
+              Stop juggling a dozen apps. Eccoozs brings together every tool a modern creator needs —
+              from going live to getting paid.
+            </p>
+          </div>
 
-<div className="hc">
-<img src="/welcome-images/landing-14.png" alt="Dr. Martin Luther King Jr. and Malcolm X â€” the only time they met, 1964" style={{ objectPosition: "center top" }} />
-<div className="hc-ov">
-<span className="hc-tag">Leadership</span>
-<span className="hc-caption">Dr. King &amp; Malcolm X â€” March 26, 1964. Their only meeting.</span>
-</div>
-</div>
+          <div className="fgrid rv">
+            <div className="fc"><div className="fic b"><Icon name="mic-2" /></div><div className="ft">Soundrooms</div><div className="fd">Host live audio rooms with your community. Invite co-hosts, take speakers on stage, broadcast your voice to the world.</div></div>
+            <div className="fc"><div className="fic n"><Icon name="video" /></div><div className="ft">Live Streaming</div><div className="fd">Go live in seconds. Full video streaming with real-time engagement and monetized viewer interactions built in.</div></div>
+            <div className="fc"><div className="fic b"><Icon name="shopping-bag" /></div><div className="ft">Eccoozs Shop</div><div className="fd">Shop Eccoozs merch and spread the culture. Members earn commission promoting the brand — more ways to earn coming soon.</div></div>
+            <div className="fc"><div className="fic n"><Icon name="layout-grid" /></div><div className="ft">The Flow</div><div className="fd">Your feed. Your culture. Share photos, videos, news, and audio in a beautifully curated feed that puts your content first.</div></div>
+            <div className="fc"><div className="fic b"><Icon name="trending-up" /></div><div className="ft">Elevate &amp; Earn</div><div className="fd">Income streams: shop commissions and future ad sharing — all tracked in your personal dashboard.</div></div>
+            <div className="fc"><div className="fic n"><Icon name="store" /></div><div className="ft">Business Directory</div><div className="fd">A curated discovery space for trusted businesses, creators, products, and services — helping members support what aligns with their values.</div></div>
+          </div>
+        </section>
 
-<div className="hc">
-<img src="https://res.cloudinary.com/aenetworks/image/upload/c_fill,ar_2,w_1080,h_540,g_auto/dpr_auto/f_auto/q_auto:eco/v1/crispus-attucks-gettyimages-517432282?_a=BAVMn6DY0" alt="Crispus Attucks â€” first American killed in the Boston Massacre, March 5 1770" style={{ objectPosition: "center top" }} referrerPolicy="no-referrer" crossOrigin="anonymous" />
-<div className="hc-ov">
-<span className="hc-tag">Revolution</span>
-<span className="hc-caption">Crispus Attucks â€” first American to die for independence, March 5, 1770</span>
-</div>
-</div>
+        <section id="lifestyle">
+          <div className="ls-intro rv">
+            <div className="seyebrow light" style={{ justifyContent: "center" }}>The Community</div>
+            <h2 className="light">Real voices. Real connections.</h2>
+            <p className="sdesc light" style={{ margin: "0 auto", textAlign: "center" }}>
+              From bedroom creators to live performers — Eccoozs is where your community comes alive.
+            </p>
+          </div>
 
-<div className="hc">
-<img src="https://1.bp.blogspot.com/-1Q79RbIkqPM/YHdSF9YVsTI/AAAAAAAArdE/eZHh2hp69Sky35nXQFwBa9s82ktARH4IwCLcBGAsYHQ/s0/black_african_american_civil_rights_soldiers.jpg" alt="Black African American Civil War soldiers" style={{ objectPosition: "center" }} referrerPolicy="no-referrer" crossOrigin="anonymous" />
-<div className="hc-ov">
-<span className="hc-tag">Civil War</span>
-<span className="hc-caption">Black Union soldiers â€” fought for a nation that enslaved their families</span>
-</div>
-</div>
+          <div className="ls-grid rv">
+            <div className="ls-cell tall">
+              <img src="/welcome-images/landing-03.png" alt="Create on Eccoozs — community connecting" />
+              <div className="ls-ov">
+                <div className="ls-label">Create<span>Express yourself freely</span></div>
+              </div>
+            </div>
 
-<div className="hc">
-<img src="/welcome-images/landing-15.png" alt="Buffalo Soldiers â€” Black Union Army regiment" style={{ objectPosition: "center" }} />
-<div className="hc-ov">
-<span className="hc-tag">Sacrifice</span>
-<span className="hc-caption">Buffalo Soldiers â€” defended a nation that denied them rights</span>
-</div>
-</div>
-</div>
+            <div className="ls-cell">
+              <img src="/welcome-images/landing-04.png" alt="Live session on Eccoozs" style={{ objectPosition: "center top" }} />
+              <div className="ls-ov">
+                <div className="ls-label">Connect<span>Live soundrooms &amp; sessions</span></div>
+              </div>
+            </div>
 
-<div style={{ margin: "1.5rem calc(-5%) 0", position: "relative", overflow: "hidden" }}>
-<img src="/welcome-images/landing-16-v2.png" alt="FBA Inventors and Innovators â€” Black American scientists, engineers and pioneers" style={{ display: "block", width: "100%", height: "auto" }} />
-<div style={{ position: "absolute", bottom: "0", left: "0", right: "0", background: "linear-gradient(to top,rgba(4,12,28,.92) 0%,rgba(4,12,28,.4) 60%,transparent 100%)", padding: "1.5rem 2rem 1.2rem" }}>
-<span style={{ fontSize: ".78rem", fontWeight: "700", color: "#fff", letterSpacing: ".14em", textTransform: "uppercase" }}>Inventors &amp; Innovators</span>
-<span style={{ display: "block", fontSize: ".7rem", color: "rgba(255,255,255,.55)", fontStyle: "italic", marginTop: "3px" }}>FBA scientists, engineers, and pioneers whose brilliance shaped the modern world â€” often uncredited, never forgotten</span>
-</div>
-</div>
-<p className="hist-note rv">Our digital museum of history is coming. Contribute your photos and help build the archive.</p>
-</section>
-<section id="download">
-<div className="dl-orb"></div>
-<div className="dlinner rv">
-<div className="seyebrow light" style={{ justifyContent: "center" }}>Early Access</div>
-<h2 className="light" style={{ margin: "0 auto .85rem" }}>Join the movement.<br />Be first.</h2>
-<p className="sdesc light" style={{ margin: "0 auto 2.5rem", textAlign: "center" }}>Be among the first to know when ECCOOZS opens. Members, creators, businesses, advertisers, and beta testers can register interest below.</p>
-<div className="wl-card">
-<h3>Join the 18+ Founding Waitlist</h3>
-<p className="wl-sub">Reserve your founding spot. Founding member access is limited.</p>
+            <div className="ls-cell">
+              <img src="/welcome-images/landing-05.jpg" alt="Creators going live on Eccoozs" />
+              <div className="ls-ov">
+                <div className="ls-label">Express<span>Your voice, your way</span></div>
+              </div>
+            </div>
 
-          <WaitlistForm />
+            <div className="ls-cell">
+              <img src="/welcome-images/landing-06.png" alt="Eccoozs soundrooms page" style={{ objectPosition: "center top" }} />
+              <div className="ls-ov">
+                <div className="ls-label">Stream<span>Go live to the world</span></div>
+              </div>
+            </div>
 
-</div>
-</div>
-</section>
-<footer>
-<div className="footer-inner">
-<div className="ftop">
-<div>
-<div className="fbrand">
-<img className="fbrand-mark" src="/welcome-images/landing-01.png" alt="Eccoozs" />
-<span className="fbwm">Eccoozs</span>
-</div>
-<p className="ftagline">Express. Explore. Elevate.</p>
-</div>
-<div><div className="fct">Platform</div><ul className="fls"><li><a href="#features">Features</a></li><li><a href="#app-preview">App</a></li><li><a href="#download">Join Waitlist</a></li><li><a href="#">Soundrooms</a></li><li><a href="https://eccoozs.com/shop" target="_blank">Shop</a></li></ul></div>
-<div><div className="fct">Legal &amp; Community</div><ul className="fls"><li><a href="/welcome/terms">Terms of Service</a></li><li><a href="/welcome/privacy">Privacy Policy</a></li><li><a href="/welcome/conduct">Code of Conduct</a></li><li><a href="/welcome/support">Community Support</a></li></ul></div>
-</div>
-<div className="fbot">
-<span className="fcp">Â© 2026 Eccoozs. All rights reserved.</span>
-</div>
-</div>
-</footer>
+            <div className="ls-cell">
+              <img src="/welcome-images/landing-07.png" alt="Eccoozs community wearing merch on campus" />
+              <div className="ls-ov">
+                <div className="ls-label">Elevate<span>Wear the culture</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="app-preview">
+          <div className="ap-orb"></div>
+          <div className="ap-inner">
+            <div className="rv">
+              <div className="seyebrow light">The App Experience</div>
+              <h2 className="light">Beautifully designed<br />for every screen.</h2>
+              <p className="sdesc light" style={{ marginBottom: "2rem" }}>
+                Whether you're on your phone between meetings or at your desk building your audience —
+                Eccoozs flows with your life.
+              </p>
+              <a className="btn-p" href="#download" style={{ display: "inline-flex" }}>
+                <Icon name="arrow-right" />Get Early Access
+              </a>
+            </div>
+            <div className="ap-img-wrap rv">
+              <img src="/welcome-images/landing-08.png" alt="Eccoozs on laptop and phone" style={{ display: "block" }} />
+            </div>
+          </div>
+        </section>
+
+        <section id="community">
+          <div className="comm-inner">
+            <div className="comm-img rv">
+              <img src="/welcome-images/landing-09.jpg" alt="Eccoozs community — Create Culture Be Real" />
+            </div>
+            <div className="rv">
+              <div className="seyebrow dark">Our Story</div>
+              <h2 className="dark">Built from within.<br />For all who walk<br />with respect.</h2>
+              <p className="comm-quote">
+                "I didn't build this to go viral. I built it because there was no place left for our voices to breathe."
+              </p>
+              <p className="comm-body">
+                ECCOOZS was built by Foundational Black Americans as a digital sanctuary for culture, faith,
+                and truth. But ALL ARE WELCOME HERE who walk in respect. This isn't just an app — it's a movement.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="history">
+          <div className="hist-intro rv">
+            <div className="seyebrow light" style={{ justifyContent: "center" }}>American Legacy</div>
+            <h2 className="light">Honoring our ancestors.<br />Celebrating our culture.</h2>
+            <p style={{ color: "rgba(255,255,255,.45)", maxWidth: "580px", margin: "0 auto", fontSize: ".97rem", lineHeight: "1.8" }}>
+              These moments shaped us. These faces remind us where we come from — and why platforms like Eccoozs matter.
+            </p>
+          </div>
+
+          <div className="hist-grid rv">
+            <div className="hc tall">
+              <img src="/welcome-images/landing-10.png" alt="Enslaved family in cotton field" />
+              <div className="hc-ov">
+                <span className="hc-tag">Our Foundation</span>
+                <span className="hc-caption">Enslaved people who built a nation — their story lives in our blood</span>
+              </div>
+            </div>
+
+            <div className="hc">
+              <img src="/welcome-images/landing-11.png" alt="Native American chiefs at the White House with President Coolidge, 1924" style={{ objectPosition: "center top" }} />
+              <div className="hc-ov">
+                <span className="hc-tag">Indigenous Heritage</span>
+                <span className="hc-caption">Native chiefs at the White House, 1924</span>
+              </div>
+            </div>
+
+            <div className="hc">
+              <img src="/welcome-images/landing-12.png" alt="Choctaw people in traditional dress" style={{ objectPosition: "center top" }} />
+              <div className="hc-ov">
+                <span className="hc-tag">Cultural Roots</span>
+                <span className="hc-caption">Choctaw people — culture, tradition, and resilience</span>
+              </div>
+            </div>
+
+            <div className="hc">
+              <img src="/welcome-images/landing-13.png" alt="George Washington Carver in his laboratory at Tuskegee" style={{ objectPosition: "center" }} />
+              <div className="hc-ov">
+                <span className="hc-tag">Innovation</span>
+                <span className="hc-caption">George Washington Carver — genius born from struggle</span>
+              </div>
+            </div>
+
+            <div className="hc">
+              <img src="/welcome-images/landing-14.png" alt="Dr. Martin Luther King Jr. and Malcolm X — the only time they met, 1964" style={{ objectPosition: "center top" }} />
+              <div className="hc-ov">
+                <span className="hc-tag">Leadership</span>
+                <span className="hc-caption">Dr. King &amp; Malcolm X — March 26, 1964. Their only meeting.</span>
+              </div>
+            </div>
+
+            <div className="hc">
+              <img
+                src="https://res.cloudinary.com/aenetworks/image/upload/c_fill,ar_2,w_1080,h_540,g_auto/dpr_auto/f_auto/q_auto:eco/v1/crispus-attucks-gettyimages-517432282?_a=BAVMn6DY0"
+                alt="Crispus Attucks — first American killed in the Boston Massacre, March 5 1770"
+                style={{ objectPosition: "center top" }}
+                referrerPolicy="no-referrer"
+                crossOrigin="anonymous"
+              />
+              <div className="hc-ov">
+                <span className="hc-tag">Revolution</span>
+                <span className="hc-caption">Crispus Attucks — first American to die for independence, March 5, 1770</span>
+              </div>
+            </div>
+
+            <div className="hc">
+              <img
+                src="https://1.bp.blogspot.com/-1Q79RbIkqPM/YHdSF9YVsTI/AAAAAAAArdE/eZHh2hp69Sky35nXQFwBa9s82ktARH4IwCLcBGAsYHQ/s0/black_african_american_civil_rights_soldiers.jpg"
+                alt="Black African American Civil War soldiers"
+                style={{ objectPosition: "center" }}
+                referrerPolicy="no-referrer"
+                crossOrigin="anonymous"
+              />
+              <div className="hc-ov">
+                <span className="hc-tag">Civil War</span>
+                <span className="hc-caption">Black Union soldiers — fought for a nation that enslaved their families</span>
+              </div>
+            </div>
+
+            <div className="hc">
+              <img src="/welcome-images/landing-15.png" alt="Buffalo Soldiers — Black Union Army regiment" style={{ objectPosition: "center" }} />
+              <div className="hc-ov">
+                <span className="hc-tag">Sacrifice</span>
+                <span className="hc-caption">Buffalo Soldiers — defended a nation that denied them rights</span>
+              </div>
+            </div>
+          </div>
+
+          <div style={{ margin: "1.5rem calc(-5%) 0", position: "relative", overflow: "hidden" }}>
+            <img
+              src="/welcome-images/landing-16.png"
+              alt="FBA Inventors and Innovators — Black American scientists, engineers and pioneers"
+              style={{ display: "block", width: "100%", height: "auto" }}
+            />
+            <div style={{ position: "absolute", bottom: "0", left: "0", right: "0", background: "linear-gradient(to top,rgba(4,12,28,.92) 0%,rgba(4,12,28,.4) 60%,transparent 100%)", padding: "1.5rem 2rem 1.2rem" }}>
+              <span style={{ fontSize: ".78rem", fontWeight: "700", color: "#fff", letterSpacing: ".14em", textTransform: "uppercase" }}>Inventors &amp; Innovators</span>
+              <span style={{ display: "block", fontSize: ".7rem", color: "rgba(255,255,255,.55)", fontStyle: "italic", marginTop: "3px" }}>
+                FBA scientists, engineers, and pioneers whose brilliance shaped the modern world — often uncredited, never forgotten
+              </span>
+            </div>
+          </div>
+
+          <p className="hist-note rv">Our digital museum of history is coming. Contribute your photos and help build the archive.</p>
+        </section>
+
+        <section id="download">
+          <div className="dl-orb"></div>
+          <div className="dlinner rv">
+            <div className="seyebrow light" style={{ justifyContent: "center" }}>Early Access</div>
+            <h2 className="light" style={{ margin: "0 auto .85rem" }}>Join the movement.<br />Be first.</h2>
+            <p className="sdesc light" style={{ margin: "0 auto 2.5rem", textAlign: "center" }}>
+              Be among the first to know when ECCOOZS opens. Members, creators, businesses, advertisers,
+              and beta testers can register interest below.
+            </p>
+
+            <div className="wl-card">
+              <h3>Join the 18+ Founding Waitlist</h3>
+              <p className="wl-sub">Reserve your founding spot. Founding member access is limited.</p>
+              <WaitlistForm />
+            </div>
+          </div>
+        </section>
+
+        <footer>
+          <div className="footer-inner">
+            <div className="ftop">
+              <div>
+                <div className="fbrand">
+                  <img className="fbrand-mark" src="/welcome-images/landing-01.png" alt="Eccoozs" />
+                  <span className="fbwm">Eccoozs</span>
+                </div>
+                <p className="ftagline">Express. Explore. Elevate.</p>
+              </div>
+
+              <div>
+                <div className="fct">Platform</div>
+                <ul className="fls">
+                  <li><a href="#features">Features</a></li>
+                  <li><a href="#app-preview">App</a></li>
+                  <li><a href="#download">Join Waitlist</a></li>
+                  <li><a href="#">Soundrooms</a></li>
+                  <li><a href="https://eccoozs.com/shop" target="_blank">Shop</a></li>
+                </ul>
+              </div>
+
+              <div>
+                <div className="fct">Legal &amp; Community</div>
+                <ul className="fls">
+                  <li><a href="/welcome/terms">Terms of Service</a></li>
+                  <li><a href="/welcome/privacy">Privacy Policy</a></li>
+                  <li><a href="/welcome/conduct">Code of Conduct</a></li>
+                  <li><a href="/welcome/support">Community Support</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="fbot">
+              <span className="fcp">© 2026 Eccoozs. All rights reserved.</span>
+            </div>
+          </div>
+        </footer>
       </div>
     </>
   );
 }
-
-
