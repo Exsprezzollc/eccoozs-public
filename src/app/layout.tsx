@@ -1,33 +1,20 @@
-// ✅ FILE: src/app/layout.tsx
-
-// ✅ FILE: src/app/layout.tsx
-
-import "./globals.css";
-import type { Metadata } from "next";
+﻿import type { Metadata, Viewport } from "next";
 import type React from "react";
-
-import ClientProviders from "./ClientProviders";
-import { AdsConfigProvider } from "@/lib/ads-config-store";
-import { PostComposerProvider } from "@/components/Post/PostComposerProvider";
-import ScreenTimeHeartbeatClient from "@/components/layout/ScreenTimeHeartbeatClient";
+import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://eccoozs.com"),
-  title: "ECCOOZS",
-  description: "Explore. Express. Elevate.",
+  title: "ECCOOZS — Express. Explore. Elevate.",
+  description: "Join the ECCOOZS founding waitlist.",
   icons: {
-    icon: [
-      {
-        url: "/favicon.ico?v=8",
-        sizes: "any",
-      },
-      {
-        url: "/icon.svg?v=8",
-        type: "image/svg+xml",
-      },
-    ],
-    shortcut: ["/favicon.ico?v=8"],
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    shortcut: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/icon.svg", type: "image/svg+xml" }],
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#040c1c",
 };
 
 export default function RootLayout({
@@ -36,17 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="min-h-screen bg-background text-foreground">
-        <AdsConfigProvider>
-          <PostComposerProvider>
-            <ClientProviders>
-              <ScreenTimeHeartbeatClient />
-              {children}
-            </ClientProviders>
-          </PostComposerProvider>
-        </AdsConfigProvider>
-      </body>
+    <html lang="en">
+      <body>{children}</body>
     </html>
   );
 }
