@@ -7,7 +7,10 @@ export const metadata: Metadata = {
   title: "ECCOOZS — Express. Explore. Elevate.",
   description: "Join the ECCOOZS founding waitlist.",
   icons: {
-    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
     shortcut: [{ url: "/icon.svg", type: "image/svg+xml" }],
     apple: [{ url: "/icon.svg", type: "image/svg+xml" }],
   },
