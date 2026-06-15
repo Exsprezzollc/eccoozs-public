@@ -786,9 +786,26 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div style={{ margin: "1.5rem calc(-5%) 0", position: "relative", overflow: "hidden" }}>
-            <img
-              src="/welcome-images/landing-16-v3.png"
+          <div
+  style={{
+    maxWidth: "1180px",
+    margin: "2rem auto 0",
+    position: "relative",
+    overflow: "hidden",
+    borderRadius: "18px",
+    background: "#000",
+  }}
+>
+  <img
+    src="/welcome-images/landing-16-v3.png?v=16v3"
+    alt="FBA Inventors and Innovators — Black American scientists, engineers and pioneers"
+    style={{
+      display: "block",
+      width: "100%",
+      height: "auto",
+      objectFit: "contain",
+    }}
+  />
               alt="FBA Inventors and Innovators &mdash; Black American scientists, engineers and pioneers"
               style={{ display: "block", width: "100%", height: "auto" }}
             />
