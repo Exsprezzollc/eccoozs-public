@@ -4,401 +4,60 @@ import { MarketingIcon as Icon } from "@/components/marketing/MarketingIcon";
 import { RevealInit } from "@/components/marketing/RevealInit";
 import { WaitlistForm } from "@/components/marketing/WaitlistForm";
 
-const landingStyles = String.raw`
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
+const styles = String.raw`
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Sans:wght@300;400;500;600;700;800&display=swap');
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --night:#040c1c;--navy:#071240;--navy-2:#0b1a3e;
-  --blue:#1a3ef5;--blue-l:#4a76ff;--blue-d:#0d2ec4;--blue-m:rgba(26,62,245,0.15);
-  --cream:#f4f6fb;--cream-2:#e8edf8;--white:#fff;
-  --td:#070f28;--tm:#1c3570;--tmut:#607ab5;
-  --bdr:rgba(7,18,64,0.09);--blight:rgba(255,255,255,0.13);
-}
+:root{--night:#040c1c;--navy:#071240;--navy2:#0b1a3e;--blue:#1f47e0;--blueL:#5c7dff;--blueD:#1738b8;--cream:#f4f6fb;--white:#fff;--text:#07102a;--muted:#607ab5;--border:rgba(7,18,64,.09)}
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--td);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:200;
-  display:flex;align-items:center;justify-content:space-between;gap:1rem;
-  padding:0 4%;height:66px;
-  background:rgba(4,12,28,0.94);
-  backdrop-filter:blur(24px);
-  border-bottom:1px solid var(--blight);
-}
-.nav-logo{display:flex;align-items:center;gap:10px;flex:0 0 auto;min-width:166px}
-.nav-header-logo{display:block;height:auto;max-width:168px}
-.nav-mark,.nav-wm,.nav-tagline{display:none!important}
-.nav-links{display:flex;align-items:center;justify-content:center;gap:1.45rem;list-style:none;flex:1;min-width:0}
-.nav-links a{font-size:.78rem;font-weight:600;color:rgba(255,255,255,.58);transition:color .2s;position:relative;padding-bottom:4px;white-space:nowrap}
-.nav-links a:hover,.nav-links a.active{color:#fff}
-.nav-links a.active::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--blue-l);border-radius:1px}
-.nav-right{display:flex;align-items:center;justify-content:flex-end;gap:10px;flex:0 0 auto}
-.nav-join{background:var(--blue);color:#fff;font-size:.78rem;font-weight:700;padding:9px 16px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;line-height:1;transition:background .2s,transform .15s}
-.nav-join:hover{background:var(--blue-d);transform:translateY(-1px)}
-@media(max-width:1120px){
-  nav{padding:0 3.2%;height:64px;gap:.8rem}
-  .nav-logo{min-width:150px}
-  .nav-header-logo{max-width:152px}
-  .nav-links{gap:1rem}
-  .nav-links a{font-size:.72rem}
-  .nav-join{font-size:.72rem;padding:8px 13px}
-}
+.welcome-nav{position:fixed;inset:0 0 auto 0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:1rem;height:68px;padding:0 4%;background:rgba(4,12,28,.95);backdrop-filter:blur(22px);border-bottom:1px solid rgba(255,255,255,.10)}
+.nav-logo{display:flex;align-items:center;min-width:170px}.nav-logo img{max-width:170px;height:auto}
+.nav-links{list-style:none;display:flex;align-items:center;justify-content:center;gap:1.35rem;flex:1}.nav-links a{font-size:.77rem;font-weight:600;color:rgba(255,255,255,.58);white-space:nowrap}.nav-links a:hover,.nav-links a.active{color:#fff}.nav-links a.active{position:relative}.nav-links a.active::after{content:'';position:absolute;left:0;right:0;bottom:-8px;height:2px;background:var(--blueL);border-radius:2px}
+.nav-join{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 17px;border-radius:9px;background:var(--blue);color:#fff;font-size:.76rem;font-weight:700;white-space:nowrap}.nav-join:hover{background:var(--blueD)}
 
-#hero{
-  min-height:100vh;
-  position:relative;
-  overflow:hidden;
-  display:flex;flex-direction:column;
-}
-.hero-photo{position:absolute;inset:0;z-index:0}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
-.hero-color-wash{
-  position:absolute;inset:0;z-index:1;
-  background:rgba(7,18,64,0.42);
-  mix-blend-mode:multiply;
-}
-.hero-grad{
-  position:absolute;inset:0;z-index:2;
-  background:linear-gradient(
-    108deg,
-    rgba(4,12,28,0.96) 0%,
-    rgba(5,16,42,0.91) 22%,
-    rgba(7,20,58,0.78) 38%,
-    rgba(7,18,64,0.52) 56%,
-    rgba(10,22,70,0.28) 72%,
-    rgba(7,18,64,0.12) 88%,
-    rgba(4,12,28,0.06) 100%
-  );
-}
-.hero-bottom{
-  position:absolute;bottom:0;left:0;right:0;height:200px;z-index:3;
-  background:linear-gradient(to top,rgba(4,12,28,1) 0%,rgba(4,12,28,0) 100%);
-}
-.hero-content{
-  position:relative;z-index:4;
-  flex:1;display:flex;flex-direction:column;justify-content:center;
-  padding:110px 5% 190px;
-  max-width:660px;
-}
-.hero-eyebrow{
-  font-size:.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--blue-l);margin-bottom:1.1rem;
-  display:flex;align-items:center;gap:9px;
-}
-.hero-eyebrow::before{content:'';width:22px;height:2px;background:var(--blue-l);display:inline-block;flex-shrink:0}
-.hero-welcome{font-family:'DM Sans',sans-serif;font-size:clamp(1.5rem,2.8vw,2.2rem);font-weight:400;color:rgba(255,255,255,.85);line-height:1.1;margin-bottom:.15rem}
-.hero-brand{font-family:'DM Sans',sans-serif;font-size:clamp(3rem,6.5vw,5.8rem);font-weight:800;color:#fff;letter-spacing:.02em;line-height:1;margin-bottom:.55rem;text-transform:uppercase}
-.hero-brand span{color:var(--blue-l)}
-.hero-tagline{font-size:clamp(1rem,1.8vw,1.3rem);font-weight:500;color:rgba(255,255,255,.7);margin-bottom:1.25rem;letter-spacing:.01em;font-family:'Cormorant Garant',serif;font-style:italic}
-.hero-desc{font-size:.98rem;font-weight:300;color:rgba(255,255,255,.52);line-height:1.82;max-width:440px;margin-bottom:2.4rem}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:2.4rem}
-.btn-p{padding:13px 28px;background:var(--blue);color:#fff;font-family:'DM Sans',sans-serif;font-weight:600;font-size:.9rem;border:none;border-radius:9px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .15s}
-.btn-p:hover{background:var(--blue-d);transform:translateY(-1px)}
-.btn-g{padding:13px 28px;background:rgba(255,255,255,.09);color:rgba(255,255,255,.88);font-family:'DM Sans',sans-serif;font-weight:500;font-size:.9rem;border:1.5px solid rgba(255,255,255,.25);border-radius:9px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .2s}
-.btn-g:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.4)}
-.hero-sp{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.sp-avs{display:flex}
-.sp-av{width:32px;height:32px;border-radius:50%;border:2px solid rgba(255,255,255,.3);background:linear-gradient(135deg,var(--blue),var(--blue-l));margin-right:-9px;display:flex;align-items:center;justify-content:center;font-size:.62rem;font-weight:700;color:#fff}
-.sp-plus{width:32px;height:32px;border-radius:50%;background:var(--blue);border:2px solid rgba(255,255,255,.3);margin-right:-9px;display:flex;align-items:center;justify-content:center;font-size:.56rem;font-weight:700;color:#fff}
-.sp-txt{margin-left:18px}
-.sp-strong{font-size:.88rem;font-weight:600;color:#fff}
-.sp-sub{font-size:.73rem;color:rgba(255,255,255,.42);margin-top:1px}
+#hero{min-height:760px;position:relative;display:flex;align-items:center;overflow:hidden;padding-top:68px;background:var(--night)}
+.hero-photo{position:absolute;inset:68px 0 0 0}.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}.hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,12,28,.98) 0%,rgba(5,15,38,.92) 30%,rgba(5,15,38,.67) 53%,rgba(4,12,28,.25) 78%,rgba(4,12,28,.10) 100%)}
+.hero-inner{position:relative;z-index:2;width:100%;max-width:1280px;margin:0 auto;padding:7rem 5% 11rem}.eyebrow{display:flex;align-items:center;gap:9px;font-size:.69rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blueL);margin-bottom:1rem}.eyebrow::before{content:'';width:22px;height:2px;background:var(--blueL)}
+.hero-welcome{font-size:clamp(1.45rem,2.4vw,2.1rem);font-weight:400;color:rgba(255,255,255,.86);margin-bottom:.15rem}.hero-title{font-size:clamp(3.5rem,7.2vw,6.5rem);font-weight:800;letter-spacing:.025em;line-height:.92;color:#fff;text-transform:uppercase;margin-bottom:1rem}.hero-title span{color:var(--blueL)}
+.hero-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.15rem,2vw,1.45rem);font-weight:600;color:rgba(255,255,255,.76);margin-bottom:1.2rem}.hero-copy{max-width:560px;font-size:.98rem;font-weight:300;line-height:1.85;color:rgba(255,255,255,.58);margin-bottom:2rem}.hero-actions{display:flex;gap:.75rem;flex-wrap:wrap}.btn-primary,.btn-secondary{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 20px;border-radius:10px;font-size:.84rem;font-weight:700}.btn-primary{background:var(--blue);color:#fff}.btn-primary:hover{background:var(--blueD)}.btn-secondary{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);color:#fff}.btn-secondary:hover{background:rgba(255,255,255,.13)}
+.hero-strip{position:absolute;z-index:3;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(4,1fr);background:rgba(4,12,28,.94);backdrop-filter:blur(18px);border-top:1px solid rgba(92,125,255,.22)}.hero-chip{display:flex;gap:.8rem;align-items:center;padding:1.2rem 1.45rem;border-right:1px solid rgba(92,125,255,.15)}.hero-chip:last-child{border-right:none}.chip-icon{width:39px;height:39px;border-radius:10px;background:rgba(31,71,224,.16);display:grid;place-items:center;color:var(--blueL);flex:0 0 auto}.chip-icon svg{width:18px;height:18px}.chip-title{font-size:.78rem;font-weight:700;color:#fff;letter-spacing:.04em}.chip-copy{font-size:.68rem;line-height:1.45;color:rgba(255,255,255,.42);margin-top:2px}
 
-.feature-strip{
-  position:absolute;bottom:0;left:0;right:0;z-index:5;
-  background:rgba(4,12,28,0.94);
-  backdrop-filter:blur(20px);
-  border-top:1px solid rgba(26,62,245,0.25);
-  display:flex;
-}
-.fs-item{flex:1;padding:1.35rem 1.5rem;display:flex;align-items:center;gap:.9rem;border-right:1px solid rgba(26,62,245,.15);transition:background .2s;cursor:pointer}
-.fs-item:last-child{border-right:none}
-.fs-item:hover{background:rgba(26,62,245,.08)}
-.fs-icon{width:40px;height:40px;border-radius:10px;background:rgba(26,62,245,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--blue-l)}
-.fs-label{font-size:.82rem;font-weight:700;color:#fff;margin-bottom:.1rem;text-transform:uppercase;letter-spacing:.05em}
-.fs-desc{font-size:.7rem;color:rgba(255,255,255,.42);line-height:1.45}
+.ticker{background:var(--navy2);overflow:hidden;padding:1rem 0}.ticker-track{display:flex;gap:2.3rem;white-space:nowrap;animation:tick 30s linear infinite;width:max-content}.ticker-item{display:flex;align-items:center;gap:7px;color:rgba(255,255,255,.48);font-size:.72rem;font-weight:600;letter-spacing:.04em}.ticker-item svg{width:13px;height:13px;opacity:.7}@keyframes tick{to{transform:translateX(-50%)}}
 
-.stats-strip{background:var(--white);border-bottom:1px solid var(--bdr);padding:2.5rem 5%;display:grid;grid-template-columns:repeat(3,minmax(0,215px));justify-content:center;row-gap:1.6rem}
-.si{text-align:center;padding:.15rem 1.3rem}
-.si:not(:nth-child(3n+1)){border-left:1px solid var(--bdr)}
-.sn{font-family:'Cormorant Garant',serif;font-size:1.7rem;font-weight:700;color:var(--td);line-height:1.1}
-.sl{font-size:.74rem;font-weight:500;color:var(--tmut);margin-top:5px;line-height:1.4}
+section{padding:7.5rem 5%}.section-inner{max-width:1180px;margin:0 auto}.section-top{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;margin-bottom:3.2rem}.section-kicker{display:flex;align-items:center;gap:8px;font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin-bottom:.75rem}.section-kicker::before{content:'';width:17px;height:2px;background:var(--blue)}.section-kicker.light{color:var(--blueL)}.section-kicker.light::before{background:var(--blueL)}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.35rem,4.4vw,3.8rem);line-height:1.05;font-weight:700}.section-copy{max-width:520px;color:var(--muted);font-size:.94rem;line-height:1.8}.light{color:#fff}.section-copy.light{color:rgba(255,255,255,.53)}
 
-.mwrap{background:var(--navy-2);padding:1.25rem 0;overflow:hidden}
-.mtrack{display:flex;gap:2.5rem;animation:mq 26s linear infinite;white-space:nowrap}
-@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.mi{display:flex;align-items:center;gap:8px;font-size:.75rem;font-weight:500;color:rgba(255,255,255,.4);letter-spacing:.04em}
+#platform{background:var(--cream)}.platform-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:22px;overflow:hidden}.feature-card{background:var(--cream);padding:2.15rem 1.9rem;min-height:220px;transition:background .2s}.feature-card:hover{background:#fff}.feature-icon{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:rgba(31,71,224,.10);color:var(--blue);margin-bottom:1rem}.feature-icon.alt{background:rgba(7,18,64,.07);color:var(--navy)}.feature-icon svg{width:22px;height:22px}.feature-title{font-size:1rem;font-weight:700;margin-bottom:.45rem}.feature-copy{font-size:.83rem;line-height:1.72;color:var(--muted)}
 
-section{padding:8rem 5%}
-.seyebrow{font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:8px}
-.seyebrow::before{content:'';width:16px;height:1.5px;display:inline-block;flex-shrink:0}
-.seyebrow.light{color:var(--blue-l)}.seyebrow.light::before{background:var(--blue-l)}
-.seyebrow.dark{color:var(--blue)}.seyebrow.dark::before{background:var(--blue)}
-h2{font-family:'Cormorant Garant',serif;font-size:clamp(2.2rem,4vw,3.3rem);font-weight:700;line-height:1.1;margin-bottom:1rem}
-h2.light{color:#fff}
-h2.dark{color:var(--td)}
-.sdesc{font-size:.97rem;line-height:1.8;max-width:520px}
-.sdesc.light{color:rgba(255,255,255,.45)}
-.sdesc.dark{color:var(--tmut)}
+#experience{background:var(--night);position:relative;overflow:hidden}.experience-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:4rem;align-items:center}.experience-panel{background:linear-gradient(145deg,#091630,#0b1a3e);border:1px solid rgba(92,125,255,.22);border-radius:24px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.42)}.panel-top{height:42px;display:flex;align-items:center;gap:6px;padding:0 15px;border-bottom:1px solid rgba(255,255,255,.08)}.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.2)}.panel-body{padding:1rem;display:grid;grid-template-columns:145px 1fr;min-height:390px}.mock-nav{border-right:1px solid rgba(255,255,255,.07);padding:1rem .8rem}.mock-wordmark{width:98px;margin-bottom:1.5rem}.mock-link{padding:.62rem .65rem;border-radius:8px;color:rgba(255,255,255,.48);font-size:.69rem;font-weight:600;margin-bottom:.35rem}.mock-link.active{background:rgba(31,71,224,.16);color:#fff}.mock-main{padding:1rem 1.1rem}.mock-head{display:flex;justify-content:space-between;gap:1rem;align-items:center;margin-bottom:1rem}.mock-head strong{color:#fff;font-size:.9rem}.search-pill{height:30px;min-width:170px;border:1px solid rgba(255,255,255,.1);border-radius:8px;color:rgba(255,255,255,.3);font-size:.61rem;display:flex;align-items:center;padding:0 10px}.mock-hero{height:135px;border-radius:14px;background:radial-gradient(circle at 75% 30%,rgba(92,125,255,.22),transparent 28%),linear-gradient(135deg,#0c214f,#0a142c);border:1px solid rgba(92,125,255,.18);padding:1.2rem;display:flex;flex-direction:column;justify-content:flex-end}.mock-hero small{color:var(--blueL);font-size:.57rem;text-transform:uppercase;letter-spacing:.15em;font-weight:700}.mock-hero b{color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.45rem;margin-top:.25rem}.mock-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;margin-top:.65rem}.mock-card{height:95px;border-radius:11px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);padding:.75rem}.mock-card strong{display:block;color:#fff;font-size:.64rem;margin-bottom:.3rem}.mock-card span{font-size:.55rem;line-height:1.45;color:rgba(255,255,255,.34)}
+.experience-list{display:grid;gap:.8rem;margin-top:1.8rem}.experience-item{display:flex;gap:.9rem;align-items:flex-start;padding:1rem 0;border-top:1px solid rgba(255,255,255,.08)}.experience-item:first-child{border-top:none}.exp-num{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--blueL);line-height:1}.experience-item strong{display:block;color:#fff;font-size:.86rem;margin-bottom:.2rem}.experience-item p{color:rgba(255,255,255,.45);font-size:.78rem;line-height:1.55}
 
-#echo{
-  background:var(--night);
-  padding:7.5rem 5%;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-  min-height:540px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.echo-art{position:absolute;inset:0;z-index:0;pointer-events:none}
-.echo-art img{
-  width:100%;height:100%;object-fit:cover;object-position:center;
-  opacity:.58;filter:saturate(1.08) contrast(1.06);
-}
-.echo-art::after{
-  content:'';position:absolute;inset:0;
-  background:
-    linear-gradient(90deg,rgba(4,12,28,.96) 0%,rgba(7,18,64,.74) 28%,rgba(7,18,64,.58) 50%,rgba(7,18,64,.74) 72%,rgba(4,12,28,.96) 100%),
-    linear-gradient(to bottom,rgba(4,12,28,.84) 0%,rgba(7,18,64,.48) 42%,rgba(4,12,28,.9) 100%);
-}
-.echo-orb{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(rgba(26,62,245,.14) 0%,transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);filter:blur(80px);pointer-events:none;z-index:1}
-.echo-inner{position:relative;z-index:2;max-width:850px;margin:0 auto}
-.echo-quote{font-family:'Cormorant Garant',serif;font-size:clamp(1.9rem,4vw,3.25rem);font-weight:700;color:#fff;line-height:1.28;margin-bottom:1.55rem;text-shadow:0 14px 38px rgba(0,0,0,.48)}
-.echo-quote em{font-style:italic;color:var(--blue-l);text-shadow:0 0 22px rgba(74,118,255,.28)}
-.echo-body{font-size:1rem;color:rgba(232,237,248,.66);line-height:1.85;max-width:580px;margin:0 auto;text-shadow:0 8px 28px rgba(0,0,0,.42)}
+#business{background:#fff}.business-shell{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}.business-card{border-radius:22px;border:1px solid var(--border);padding:2.2rem;background:linear-gradient(180deg,#fff,#f7f9ff)}.business-card.dark-card{background:var(--navy);color:#fff;border-color:transparent}.business-card h3{font-family:'Cormorant Garamond',serif;font-size:2rem;margin-bottom:.65rem}.business-card p{color:var(--muted);font-size:.85rem;line-height:1.72}.dark-card p{color:rgba(255,255,255,.5)}.tier-row{display:grid;grid-template-columns:auto 1fr auto;gap:.9rem;align-items:center;padding:.95rem 0;border-top:1px solid var(--border)}.tier-row:first-of-type{margin-top:1.2rem}.tier-badge{width:33px;height:33px;object-fit:contain}.tier-name{font-size:.79rem;font-weight:700}.tier-desc{font-size:.68rem;color:var(--muted);margin-top:1px}.tier-price{font-size:.74rem;font-weight:700;color:var(--blue)}.dark-card .tier-row{border-color:rgba(255,255,255,.09)}.dark-card .tier-desc{color:rgba(255,255,255,.4)}
 
-#features{background:var(--cream)}
-.fi{max-width:1180px;margin:0 auto 4rem;display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap}
-.fgrid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--bdr);border:1.5px solid var(--bdr);border-radius:20px;overflow:hidden}
-.fc{background:var(--cream);padding:2.3rem 1.9rem;transition:background .22s}
-.fc:hover{background:var(--white)}
-.fic{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.15rem}
-.fic.b{background:rgba(26,62,245,.1);color:var(--blue)}
-.fic.n{background:rgba(7,18,64,.07);color:var(--navy)}
-.ft{font-size:1rem;font-weight:600;color:var(--td);margin-bottom:.4rem}
-.fd{font-size:.84rem;color:var(--tmut);line-height:1.72}
+#learning{background:linear-gradient(135deg,#071240 0%,#0a1838 50%,#07102a 100%);position:relative;overflow:hidden}.learning-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2.5rem}.learn-card{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:2rem;position:relative;overflow:hidden}.learn-card::after{content:'';position:absolute;width:220px;height:220px;border-radius:50%;right:-80px;top:-90px;background:radial-gradient(rgba(92,125,255,.18),transparent 68%)}.learn-num{font-family:'Cormorant Garamond',serif;color:rgba(255,255,255,.12);font-size:5rem;line-height:.8;position:absolute;right:1.3rem;top:1.2rem}.learn-kicker{font-size:.64rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blueL);margin-bottom:.55rem}.learn-card h3{font-family:'Cormorant Garamond',serif;font-size:2.25rem;color:#fff;margin-bottom:.55rem}.learn-card p{position:relative;z-index:1;color:rgba(255,255,255,.5);font-size:.82rem;line-height:1.7;max-width:460px}.learn-tags{display:flex;gap:.45rem;flex-wrap:wrap;margin:1.1rem 0 1.35rem}.learn-tags span{font-size:.65rem;font-weight:600;color:#dce5ff;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.05);padding:.42rem .62rem;border-radius:999px}.learn-actions{display:flex;gap:.6rem;flex-wrap:wrap}.learn-open,.learn-download{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0 13px;border-radius:8px;font-size:.73rem;font-weight:700}.learn-open{background:var(--blue);color:#fff}.learn-download{border:1px solid rgba(255,255,255,.16);color:#fff}.learning-more{margin-top:1.3rem;text-align:center}.learning-more a{font-size:.78rem;font-weight:700;color:var(--blueL)}
 
-#lifestyle{background:var(--navy);padding:8rem 5%}
-.ls-intro{max-width:1180px;margin:0 auto 3.5rem;text-align:center}
-.ls-intro .seyebrow{justify-content:center}
-.ls-grid{
-  max-width:1180px;margin:0 auto;
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  grid-template-rows:280px 280px;
-  gap:.9rem;
-}
-.ls-cell{border-radius:16px;overflow:hidden;position:relative;cursor:pointer}
-.ls-cell.tall{grid-row:span 2}
-.ls-cell img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .4s ease}
-.ls-cell:hover img{transform:scale(1.04)}
-.ls-ov{
-  position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(4,12,28,.78) 0%,rgba(4,12,28,.15) 45%,transparent 70%);
-  display:flex;align-items:flex-end;
-  padding:18px 20px;
-  transition:background .3s;
-}
-.ls-cell:hover .ls-ov{background:linear-gradient(to top,rgba(4,12,28,.9) 0%,rgba(4,12,28,.3) 50%,rgba(4,12,28,.05) 75%)}
-.ls-label{font-size:.78rem;font-weight:700;color:#fff;letter-spacing:.14em;text-transform:uppercase}
-.ls-label span{display:block;font-size:.65rem;font-weight:400;color:rgba(255,255,255,.55);letter-spacing:.05em;text-transform:none;margin-top:2px;font-style:italic}
+#community{background:var(--cream)}.community-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}.community-photo{border-radius:24px;overflow:hidden;min-height:420px;position:relative;background:#0b1a3e}.community-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}.community-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(4,12,28,.55),transparent 60%)}.quote{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-style:italic;line-height:1.55;border-left:3px solid var(--blue);padding-left:1.2rem;margin:1.3rem 0;color:var(--text)}.community-copy{color:var(--muted);font-size:.9rem;line-height:1.82}
 
-#app-preview{background:var(--night);padding:8rem 5%;position:relative;overflow:hidden}
-.ap-orb{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(rgba(26,62,245,.12) 0%,transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);filter:blur(90px);pointer-events:none}
-.ap-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;position:relative;z-index:1}
-.ap-img-wrap img{width:100%;border-radius:20px;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+#legacy{background:var(--night)}.legacy-intro{text-align:center;max-width:680px;margin:0 auto 2.6rem}.legacy-intro .section-kicker{justify-content:center}.legacy-intro p{color:rgba(255,255,255,.45);font-size:.9rem;line-height:1.75}.legacy-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem}.legacy-card{height:250px;border-radius:15px;overflow:hidden;position:relative;background:#09152e}.legacy-card img{width:100%;height:100%;object-fit:cover;filter:grayscale(18%)}.legacy-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(4,12,28,.9),rgba(4,12,28,.08) 65%)}.legacy-label{position:absolute;z-index:2;left:15px;right:15px;bottom:14px}.legacy-label strong{display:block;color:#fff;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}.legacy-label span{font-size:.62rem;color:rgba(255,255,255,.5);line-height:1.4}.legacy-note{text-align:center;color:rgba(255,255,255,.34);font-size:.8rem;font-style:italic;margin-top:1.5rem}
 
-#community{background:var(--white)}
-.comm-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
-.comm-img{border-radius:24px;overflow:hidden;box-shadow:0 20px 60px rgba(7,18,64,.1)}
-.comm-img img{width:100%;height:100%;object-fit:cover;display:block}
-.comm-quote{font-family:'Cormorant Garant',serif;font-size:1.45rem;font-weight:500;color:var(--td);line-height:1.65;font-style:italic;margin-bottom:1.5rem;padding-left:1.5rem;border-left:3px solid var(--blue)}
-.comm-body{font-size:.94rem;color:var(--tmut);line-height:1.84;margin-bottom:2rem}
+#join{background:var(--navy);text-align:center;position:relative;overflow:hidden}.join-inner{max-width:620px;margin:0 auto}.join-inner .section-kicker{justify-content:center}.join-inner>.section-copy{margin:0 auto 2.2rem}.wl-card{position:relative;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:2.25rem;text-align:left;box-shadow:0 30px 80px rgba(0,0,0,.35)}.wl-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#28c0d8,var(--blueL),#7b5bff);border-radius:22px 22px 0 0}.wl-card h3{font-family:'Cormorant Garamond',serif;font-size:1.85rem;color:#fff;margin-bottom:.35rem}.wl-sub{font-size:.85rem;color:rgba(255,255,255,.48);margin-bottom:1.4rem}.wl-field{margin-bottom:1rem}.wl-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.wl-label{display:block;font-size:.64rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blueL);margin-bottom:.45rem}.wl-opt{color:rgba(255,255,255,.3);font-weight:500}.wl-input,.wl-select{width:100%;padding:12px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:9px;color:#fff;font:inherit;font-size:.88rem;outline:none}.wl-input::placeholder{color:rgba(255,255,255,.27)}.wl-select option{color:#071240;background:#fff}.wl-check{display:flex;gap:10px;align-items:flex-start;padding:13px 14px;margin:1.15rem 0;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-radius:9px}.wl-check input{width:17px;height:17px;accent-color:var(--blue);flex:0 0 auto}.wl-check label{font-size:.75rem;line-height:1.45;color:rgba(255,255,255,.68)}.wl-submit{width:100%;border:0;border-radius:9px;background:var(--blue);color:#fff;padding:13px;font:inherit;font-size:.88rem;font-weight:700;cursor:pointer}.wl-msg{margin-top:.8rem;text-align:center;font-size:.8rem;min-height:1rem}.wl-msg.ok{color:#5ce0a8}.wl-msg.err{color:#ff9a9a}.wl-honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
 
-#history{background:var(--night);padding:8rem 5%}
-.hist-intro{max-width:1180px;margin:0 auto 3.5rem;text-align:center}
-.hist-intro .seyebrow{justify-content:center}
-.hist-grid{
-  max-width:1180px;margin:0 auto;
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  grid-template-rows:300px 300px 300px;
-  gap:.9rem;
-}
-.hc{border-radius:16px;overflow:hidden;position:relative;cursor:pointer}
-.hc.tall{grid-row:span 2}
-.hc img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .45s ease;filter:grayscale(15%) contrast(1.05)}
-.hc:hover img{transform:scale(1.04);filter:grayscale(0%) contrast(1.08)}
-.hc-ov{
-  position:absolute;inset:0;
-  background:linear-gradient(
-    to top,
-    rgba(4,12,28,.88) 0%,
-    rgba(4,12,28,.45) 40%,
-    rgba(4,12,28,.12) 65%,
-    transparent 85%
-  );
-  display:flex;flex-direction:column;justify-content:flex-end;
-  padding:18px 20px;
-  transition:background .3s;
-}
-.hc:hover .hc-ov{background:linear-gradient(to top,rgba(4,12,28,.94) 0%,rgba(4,12,28,.55) 50%,rgba(4,12,28,.1) 75%,transparent 90%)}
-.hc-tag{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.95);letter-spacing:.14em;text-transform:uppercase;line-height:1}
-.hc-caption{font-size:.68rem;color:rgba(255,255,255,.55);margin-top:3px;font-style:italic;line-height:1.4}
-.hc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--blue-l);transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
-.hc:hover::after{transform:scaleX(1)}
-.inventors-wrap{
-  max-width:1180px;
-  margin:2rem auto 0;
-  position:relative;
-  overflow:hidden;
-  border-radius:18px;
-  background:#000;
-}
-.inventors-wrap img{
-  display:block;
-  width:100%;
-  height:auto;
-  object-fit:contain;
-}
-.inventors-overlay{
-  position:absolute;
-  bottom:0;
-  left:0;
-  right:0;
-  background:linear-gradient(to top,rgba(4,12,28,.92) 0%,rgba(4,12,28,.4) 60%,transparent 100%);
-  padding:1.5rem 2rem 1.2rem;
-}
-.inventors-title{
-  font-size:.78rem;
-  font-weight:700;
-  color:#fff;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-}
-.inventors-caption{
-  display:block;
-  font-size:.7rem;
-  color:rgba(255,255,255,.55);
-  font-style:italic;
-  margin-top:3px;
-}
-.hist-note{max-width:1180px;margin:2rem auto 0;text-align:center;font-size:.85rem;color:rgba(255,255,255,.35);font-style:italic}
+footer{background:#020817;padding:4rem 5% 2rem;color:rgba(255,255,255,.4)}.footer-inner{max-width:1180px;margin:0 auto}.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem;padding-bottom:3rem}.footer-brand img{width:170px;height:auto;margin-bottom:.75rem}.footer-brand p{font-size:.75rem;color:rgba(255,255,255,.28)}.footer-title{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:.8rem}.footer-links{list-style:none;display:grid;gap:.55rem}.footer-links a{font-size:.79rem;color:rgba(255,255,255,.42)}.footer-links a:hover{color:#fff}.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:1.5rem;font-size:.72rem}
 
-#download{background:var(--navy);padding:8rem 5%;text-align:center;position:relative;overflow:hidden}
-.dl-orb{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(rgba(26,62,245,.15) 0%,transparent 65%);top:-150px;left:50%;transform:translateX(-50%);filter:blur(90px);pointer-events:none}
-.dlinner{position:relative;z-index:1;max-width:600px;margin:0 auto}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.rv.vis{opacity:1;transform:none}
 
-footer{background:var(--night);padding:5rem 5% 2.5rem;color:rgba(255,255,255,.4)}
-.footer-inner{max-width:1180px;margin:0 auto}
-.ftop{display:grid;grid-template-columns:1.4fr auto auto;gap:4rem;margin-bottom:4rem}
-.fbrand{display:flex;align-items:center;gap:10px;margin-bottom:.7rem}
-.fbrand-mark{height:28px;width:28px;object-fit:contain;mix-blend-mode:screen;filter:brightness(1.1)}
-.fbwm{font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:700;color:#fff;letter-spacing:.07em;text-transform:uppercase}
-.ftagline{font-size:.8rem;color:rgba(255,255,255,.27);line-height:1.7;max-width:195px}
-.fct{font-size:.67rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:1rem}
-.fls{list-style:none;display:flex;flex-direction:column;gap:.6rem}
-.fls a{font-size:.84rem;color:rgba(255,255,255,.4);transition:color .2s}
-.fls a:hover{color:#fff}
-.fbot{border-top:1px solid rgba(255,255,255,.07);padding-top:1.8rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.fcp{font-size:.76rem}
-
-.rv{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
-.rv.vis{opacity:1;transform:translateY(0)}
-
-.wl-card{
-  position:relative;z-index:1;max-width:620px;margin:0 auto;text-align:left;
-  background:rgba(255,255,255,.045);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:22px;
-  padding:2.4rem 2.4rem 2.2rem;
-  backdrop-filter:blur(8px);
-  box-shadow:0 30px 80px rgba(0,0,0,.42);
-  overflow:hidden;
-}
-.wl-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:3px;
-  background:linear-gradient(90deg,#28c0d8 0%,var(--blue-l) 50%,#7b5bff 100%);
-}
-.wl-card h3{font-family:'Cormorant Garant',serif;font-size:1.85rem;font-weight:700;color:#fff;line-height:1.15;margin-bottom:.5rem}
-.wl-sub{font-size:.89rem;color:rgba(255,255,255,.5);line-height:1.65;margin-bottom:1.7rem}
-.wl-field{margin-bottom:1.05rem}
-.wl-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.wl-label{display:block;font-size:.66rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--blue-l);margin-bottom:.5rem}
-.wl-opt{color:rgba(255,255,255,.3);font-weight:500}
-.wl-input,.wl-select{
-  width:100%;padding:13px 16px;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.14);
-  border-radius:10px;color:#fff;
-  font-family:'DM Sans',sans-serif;font-size:.92rem;
-  outline:none;transition:border-color .2s,background .2s;
-}
-.wl-input::placeholder{color:rgba(255,255,255,.3)}
-.wl-input:focus,.wl-select:focus{border-color:var(--blue-l);background:rgba(255,255,255,.09)}
-.wl-select{
-  appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:42px;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-opacity='0.55' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 15px center;
-}
-.wl-select option{color:#0b1a3e;background:#fff}
-.wl-check{display:flex;align-items:flex-start;gap:11px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px 16px;margin:1.3rem 0 1.4rem;cursor:pointer}
-.wl-check input{width:18px;height:18px;margin-top:1px;flex-shrink:0;cursor:pointer;accent-color:var(--blue)}
-.wl-check label{font-size:.78rem;font-weight:600;color:rgba(255,255,255,.72);line-height:1.5;letter-spacing:.02em;cursor:pointer}
-.wl-submit{width:100%;padding:15px;background:var(--blue);color:#fff;font-family:'DM Sans',sans-serif;font-weight:600;font-size:.95rem;border:none;border-radius:11px;cursor:pointer;transition:background .2s,transform .15s}
-.wl-submit:hover{background:var(--blue-d);transform:translateY(-1px)}
-.wl-submit:disabled{opacity:.65;cursor:default;transform:none}
-.wl-msg{margin-top:1rem;font-size:.85rem;text-align:center;min-height:1.1rem;line-height:1.5}
-.wl-msg.ok{color:#5ce0a8}
-.wl-msg.err{color:#ff9a9a}
-.wl-honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
-
-.btn-p svg,.btn-g svg{width:16px;height:16px}
-.fs-icon svg{width:19px;height:19px}
-.mi svg{width:13px;height:13px;opacity:.6}
-.fic svg{width:22px;height:22px}
-
-@media(max-width:980px){
-  .ap-inner,.comm-inner{grid-template-columns:1fr;gap:3rem}
-  .fgrid{grid-template-columns:1fr 1fr}
-  .ftop{grid-template-columns:1fr 1fr}
-  .nav-links{display:none}
-  .feature-strip{display:grid;grid-template-columns:1fr 1fr}
-  .fs-item{border-right:none;border-bottom:1px solid rgba(26,62,245,.15)}
-  .stats-strip{grid-template-columns:repeat(2,minmax(0,1fr));max-width:480px;margin:0 auto}
-  .si:not(:nth-child(3n+1)){border-left:none}
-  .si:nth-child(even){border-left:1px solid var(--bdr)}
-  .hist-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
-  .hc.tall{grid-row:span 1}
-  .ls-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
-  .ls-cell.tall{grid-row:span 1}
-}
-@media(max-width:600px){
-  section{padding:5rem 1.25rem}
-  .fgrid{grid-template-columns:1fr}
-  .hero-actions{flex-direction:column;align-items:flex-start}
-  .feature-strip{grid-template-columns:1fr}
-  .ftop{grid-template-columns:1fr}
-  .stats-strip{grid-template-columns:1fr;max-width:300px;row-gap:0}
-  .si:nth-child(even){border-left:none}
-  .si{border-top:1px solid var(--bdr);padding:.95rem 1.3rem}
-  .si:first-child{border-top:none;padding-top:.15rem}
-  .hist-grid{grid-template-columns:1fr;grid-template-rows:auto}
-  .ls-grid{grid-template-columns:1fr}
-  .wl-row{grid-template-columns:1fr}
-  .wl-card{padding:1.9rem 1.4rem}
-}
+@media(max-width:1000px){.nav-links{display:none}.hero-strip{grid-template-columns:1fr 1fr}.experience-grid,.community-grid{grid-template-columns:1fr}.platform-grid{grid-template-columns:1fr 1fr}.business-shell,.learning-grid{grid-template-columns:1fr}.legacy-grid{grid-template-columns:1fr 1fr}.footer-top{grid-template-columns:1fr 1fr}.experience-grid{gap:2.5rem}}
+@media(max-width:640px){.welcome-nav{height:62px;padding:0 4%}.nav-logo{min-width:140px}.nav-logo img{max-width:140px}#hero{padding-top:62px;min-height:900px}.hero-photo{inset:62px 0 0}.hero-inner{padding:5.5rem 1.25rem 18rem}.hero-strip{grid-template-columns:1fr}.hero-chip{padding:.85rem 1.1rem}.hero-title{font-size:3.6rem}section{padding:5rem 1.25rem}.section-top{align-items:flex-start;flex-direction:column}.platform-grid{grid-template-columns:1fr}.panel-body{grid-template-columns:1fr}.mock-nav{display:none}.mock-cards{grid-template-columns:1fr}.legacy-grid{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr}.wl-row{grid-template-columns:1fr}.wl-card{padding:1.55rem}}
 `;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://eccoozs.com"),
-  title: "ECCOOZS",
-  description: "Join the ECCOOZS founding waitlist.",
+  title: "ECCOOZS | Explore · Express · Elevate",
+  description: "ECCOOZS is a culture-centered social technology ecosystem for community, discovery, conversation, business visibility and commerce.",
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
     shortcut: [{ url: "/icon.svg", type: "image/svg+xml" }],
@@ -406,411 +65,139 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HomePage() {
+export default function WelcomePage() {
+  const ticker = [
+    ["layout-grid", "Home + Explore"], ["trending-up", "Ecco"], ["newspaper", "Newsroom"], ["mic-2", "Soundrooms"],
+    ["store", "Business Directory"], ["shopping-bag", "House of ECCOOZS"], ["users", "Community"], ["layout-grid", "ECCOOZS Learning"],
+  ];
+
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: landingStyles }} />
+      <style dangerouslySetInnerHTML={{ __html: styles }} />
       <RevealInit />
-      <div className="landing-site">
-        <nav>
-          <a className="nav-logo" href="/welcome" aria-label="ECCOOZS welcome">
-            <HeaderLogo width={168} className="nav-header-logo" />
-          </a>
+      <main>
+        <nav className="welcome-nav">
+          <a className="nav-logo" href="/welcome" aria-label="ECCOOZS welcome"><HeaderLogo width={170} /></a>
           <ul className="nav-links">
-            <li><a href="/welcome" className="active">Home</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#app-preview">App</a></li>
-            <li><a href="#lifestyle">Community</a></li>
+            <li><a className="active" href="#hero">Home</a></li>
+            <li><a href="#platform">Platform</a></li>
+            <li><a href="#business">Business</a></li>
+            <li><a href="#learning">Learning</a></li>
             <li><a href="#community">About</a></li>
-            <li><a href="#history">Legacy</a></li>
+            <li><a href="#legacy">Legacy</a></li>
           </ul>
-          <div className="nav-right">
-            <a className="nav-join" href="#download">Join ECCOOZS</a>
-          </div>
+          <a className="nav-join" href="#join">Join ECCOOZS</a>
         </nav>
 
         <section id="hero">
-          <div className="hero-photo">
-            <img src="/welcome-images/landing-02.png" alt="Eccoozs community - Create Culture, Be Real" />
-          </div>
-          <div className="hero-color-wash"></div>
-          <div className="hero-grad"></div>
-          <div className="hero-bottom"></div>
-
-          <div className="hero-content">
-            <div className="hero-eyebrow">More than a platform.</div>
+          <div className="hero-photo"><img src="/welcome-images/landing-02.png" alt="ECCOOZS community" /></div>
+          <div className="hero-inner">
+            <div className="eyebrow">A culture-centered technology ecosystem</div>
             <div className="hero-welcome">Welcome to</div>
-            <div className="hero-brand">ECCO<span>OZS</span></div>
-            <div className="hero-tagline">Express. Explore. Elevate.</div>
-            <p className="hero-desc">
-              ECCOOZS is coming. A warmer, cleaner, more intentional 18+ ecosystem for community,
-              creators, businesses, products, conversations, and trusted discovery.
-            </p>
-
+            <h1 className="hero-title">ECCO<span>OZS</span></h1>
+            <div className="hero-tagline">Explore. Express. Elevate.</div>
+            <p className="hero-copy">Community, discovery, conversation, media, business visibility and commerce — brought together in one intentional 18+ platform experience.</p>
             <div className="hero-actions">
-              <a className="btn-p" href="#download"><Icon name="arrow-right" />Join the Movement</a>
-              <a className="btn-g" href="#features"><Icon name="layout-grid" />Explore the Platform</a>
-            </div>
-
-            <div className="hero-sp">
-              <div className="sp-avs">
-                <div className="sp-av">A</div>
-                <div className="sp-av">K</div>
-                <div className="sp-av">M</div>
-                <div className="sp-av">J</div>
-                <div className="sp-plus">+8K</div>
-              </div>
-              <div className="sp-txt">
-                <div className="sp-strong">Built for creators. Loved by communities.</div>
-                <div className="sp-sub">Be among the first. Founding member spots are limited.</div>
-              </div>
+              <a className="btn-primary" href="#join"><Icon name="arrow-right" />Join the Founding Waitlist</a>
+              <a className="btn-secondary" href="#platform"><Icon name="layout-grid" />Explore the Platform</a>
             </div>
           </div>
+          <div className="hero-strip">
+            <div className="hero-chip"><div className="chip-icon"><Icon name="layout-grid" /></div><div><div className="chip-title">Home + Explore</div><div className="chip-copy">Post, discover and participate.</div></div></div>
+            <div className="hero-chip"><div className="chip-icon"><Icon name="trending-up" /></div><div><div className="chip-title">Ecco</div><div className="chip-copy">Reshare with context, not chaos.</div></div></div>
+            <div className="hero-chip"><div className="chip-icon"><Icon name="mic-2" /></div><div><div className="chip-title">Soundrooms</div><div className="chip-copy">Live audio conversations and replay.</div></div></div>
+            <div className="hero-chip"><div className="chip-icon"><Icon name="store" /></div><div><div className="chip-title">Business</div><div className="chip-copy">Discovery, profiles and visibility.</div></div></div>
+          </div>
+        </section>
 
-          <div className="feature-strip">
-            <div className="fs-item">
-              <div className="fs-icon"><Icon name="mic-2" /></div>
-              <div>
-                <div className="fs-label">Soundrooms</div>
-                <div className="fs-desc">Speak. Listen. Connect.<br />Real conversations. Real time.</div>
-              </div>
+        <div className="ticker"><div className="ticker-track">{[...ticker,...ticker].map(([icon,label],i)=><span className="ticker-item" key={`${label}-${i}`}><Icon name={icon} />{label}</span>)}</div></div>
+
+        <section id="platform">
+          <div className="section-inner">
+            <div className="section-top rv">
+              <div><div className="section-kicker">Platform</div><h2>One ecosystem.<br />Multiple reasons to return.</h2></div>
+              <p className="section-copy">ECCOOZS is built around the ways people already move through digital life: discover something, talk about it, share it, support a business, save it, or return later.</p>
             </div>
-            <div className="fs-item">
-              <div className="fs-icon"><Icon name="layout-grid" /></div>
-              <div>
-                <div className="fs-label">The Flow</div>
-                <div className="fs-desc">Your feed. Your culture.<br />Content that reflects you.</div>
-              </div>
-            </div>
-            <div className="fs-item">
-              <div className="fs-icon"><Icon name="trending-up" /></div>
-              <div>
-                <div className="fs-label">Elevate</div>
-                <div className="fs-desc">Creators. Brands. Impact.<br />Build, grow, inspire.</div>
-              </div>
-            </div>
-            <div className="fs-item">
-              <div className="fs-icon"><Icon name="calendar-check" /></div>
-              <div>
-                <div className="fs-label">Events</div>
-                <div className="fs-desc">Live. Local. Elevated.<br />Experiences that bring us together.</div>
-              </div>
+            <div className="platform-grid rv">
+              <article className="feature-card"><div className="feature-icon"><Icon name="layout-grid" /></div><h3 className="feature-title">Home + Explore</h3><p className="feature-copy">Share text, pictures, video and articles. Discover culture, conversations and timely content through a clean community-first experience.</p></article>
+              <article className="feature-card"><div className="feature-icon alt"><Icon name="trending-up" /></div><h3 className="feature-title">Ecco</h3><p className="feature-copy">A dedicated reshare and conversation layer designed so commentary stays connected to the original post and its context.</p></article>
+              <article className="feature-card"><div className="feature-icon"><Icon name="newspaper" /></div><h3 className="feature-title">Newsroom</h3><p className="feature-copy">Discover stories, read at the source, save what matters and move news naturally into community conversation.</p></article>
+              <article className="feature-card"><div className="feature-icon alt"><Icon name="mic-2" /></div><h3 className="feature-title">Soundrooms</h3><p className="feature-copy">Host live audio rooms with hosts, co-hosts, speakers and listeners, with moderation controls and replay workflows.</p></article>
+              <article className="feature-card"><div className="feature-icon"><Icon name="store" /></div><h3 className="feature-title">Business Directory</h3><p className="feature-copy">A structured discovery layer for trusted businesses, products and services, with tiered profiles and optional visibility tools.</p></article>
+              <article className="feature-card"><div className="feature-icon alt"><Icon name="shopping-bag" /></div><h3 className="feature-title">House of ECCOOZS</h3><p className="feature-copy">The owned lifestyle and commerce extension of ECCOOZS — connecting the platform brand to thoughtfully designed products and collections.</p></article>
             </div>
           </div>
         </section>
 
-        <div className="stats-strip rv">
-          <div className="si"><div className="sn">Creators</div><div className="sl">Share / Ecco / Connect</div></div>
-          <div className="si"><div className="sn">Businesses</div><div className="sl">Directory / Highlights / Shop</div></div>
-          <div className="si"><div className="sn">Members</div><div className="sl">Discover / Support / Build</div></div>
-        </div>
-
-        <div className="mwrap">
-          <div className="mtrack">
-            <span className="mi"><Icon name="mic-2" />Soundrooms</span>
-            <span className="mi"><Icon name="video" />Live Streaming</span>
-            <span className="mi"><Icon name="shopping-bag" />Eccoozs Shop</span>
-            <span className="mi"><Icon name="trending-up" />Monetization</span>
-            <span className="mi"><Icon name="layout-grid" />The Flow</span>
-            <span className="mi"><Icon name="newspaper" />Newsroom</span>
-            <span className="mi"><Icon name="users" />Community</span>
-            <span className="mi"><Icon name="mic-2" />Soundrooms</span>
-            <span className="mi"><Icon name="video" />Live Streaming</span>
-            <span className="mi"><Icon name="shopping-bag" />Eccoozs Shop</span>
-            <span className="mi"><Icon name="trending-up" />Monetization</span>
-            <span className="mi"><Icon name="layout-grid" />The Flow</span>
-            <span className="mi"><Icon name="newspaper" />Newsroom</span>
-            <span className="mi"><Icon name="users" />Community</span>
-          </div>
-        </div>
-
-        <section id="echo">
-          <div className="echo-art" aria-hidden="true">
-            <img src="/welcome-images/echo.png" alt="" />
-          </div>
-          <div className="echo-orb"></div>
-          <div className="echo-inner rv">
-            <div className="seyebrow light" style={{ justifyContent: "center" }}>The Eccoozs Standard</div>
-            <p className="echo-quote">
-              On Eccoozs, you don't go <em>"viral."</em><br />
-              What you say or do <em>echoes.</em><br />
-              Make sure you echo in a positive way.
-            </p>
-            <p className="echo-body">
-              We built a platform that holds content and creators to a higher standard. No toxic algorithms
-              feeding outrage. No hollow metrics chasing clout. Just authentic voices, resonating with real people.
-            </p>
-          </div>
-        </section>
-
-        <section id="features">
-          <div className="fi rv">
-            <div>
-              <div className="seyebrow dark">Platform Features</div>
-              <h2 className="dark">Preview what's coming.<br />One ecosystem. Many ways to connect, discover, and build.</h2>
-            </div>
-            <p className="sdesc dark">
-              Stop juggling a dozen apps. Eccoozs brings together every tool a modern creator needs -
-              from going live to getting paid.
-            </p>
-          </div>
-
-          <div className="fgrid rv">
-            <div className="fc"><div className="fic b"><Icon name="mic-2" /></div><div className="ft">Soundrooms</div><div className="fd">Host live audio rooms with your community. Invite co-hosts, take speakers on stage, broadcast your voice to the world.</div></div>
-            <div className="fc"><div className="fic n"><Icon name="video" /></div><div className="ft">Live Streaming</div><div className="fd">Go live in seconds. Full video streaming with real-time engagement and monetized viewer interactions built in.</div></div>
-            <div className="fc"><div className="fic b"><Icon name="shopping-bag" /></div><div className="ft">Eccoozs Shop</div><div className="fd">Shop Eccoozs merch and spread the culture. Members earn commission promoting the brand - more ways to earn coming soon.</div></div>
-            <div className="fc"><div className="fic n"><Icon name="layout-grid" /></div><div className="ft">The Flow</div><div className="fd">Your feed. Your culture. Share photos, videos, news, and audio in a beautifully curated feed that puts your content first.</div></div>
-            <div className="fc"><div className="fic b"><Icon name="trending-up" /></div><div className="ft">Elevate &amp; Earn</div><div className="fd">Two income streams: shop commissions and future ad sharing - all tracked in your personal dashboard.</div></div>
-            <div className="fc"><div className="fic n"><Icon name="store" /></div><div className="ft">Business Directory</div><div className="fd">A curated discovery space for trusted businesses, creators, products, and services - helping members support what aligns with their values.</div></div>
-          </div>
-        </section>
-
-        <section id="lifestyle">
-          <div className="ls-intro rv">
-            <div className="seyebrow light" style={{ justifyContent: "center" }}>The Community</div>
-            <h2 className="light">Real voices. Real connections.</h2>
-            <p className="sdesc light" style={{ margin: "0 auto", textAlign: "center" }}>
-              From bedroom creators to live performers - Eccoozs is where your community comes alive.
-            </p>
-          </div>
-
-          <div className="ls-grid rv">
-            <div className="ls-cell tall">
-              <img src="/welcome-images/landing-03.png" alt="Create on Eccoozs - community connecting" />
-              <div className="ls-ov">
-                <div className="ls-label">Create<span>Express yourself freely</span></div>
-              </div>
-            </div>
-
-            <div className="ls-cell">
-              <img src="/welcome-images/landing-04.png" alt="Live session on Eccoozs" style={{ objectPosition: "center top" }} />
-              <div className="ls-ov">
-                <div className="ls-label">Connect<span>Live soundrooms and sessions</span></div>
-              </div>
-            </div>
-
-            <div className="ls-cell">
-              <img src="/welcome-images/landing-05.jpg" alt="Creators going live on Eccoozs" />
-              <div className="ls-ov">
-                <div className="ls-label">Express<span>Your voice, your way</span></div>
-              </div>
-            </div>
-
-            <div className="ls-cell">
-              <img src="/welcome-images/landing-06.png" alt="Eccoozs soundrooms page" style={{ objectPosition: "center top" }} />
-              <div className="ls-ov">
-                <div className="ls-label">Stream<span>Go live to the world</span></div>
-              </div>
-            </div>
-
-            <div className="ls-cell">
-              <img src="/welcome-images/landing-07.png" alt="Eccoozs community wearing merch on campus" />
-              <div className="ls-ov">
-                <div className="ls-label">Elevate<span>Wear the culture</span></div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="app-preview">
-          <div className="ap-orb"></div>
-          <div className="ap-inner">
+        <section id="experience">
+          <div className="section-inner experience-grid">
             <div className="rv">
-              <div className="seyebrow light">The App Experience</div>
-              <h2 className="light">Beautifully designed<br />for every screen.</h2>
-              <p className="sdesc light" style={{ marginBottom: "2rem" }}>
-                Whether you're on your phone between meetings or at your desk building your audience -
-                Eccoozs flows with your life.
-              </p>
-              <a className="btn-p" href="#download" style={{ display: "inline-flex" }}>
-                <Icon name="arrow-right" />Get Early Access
-              </a>
+              <div className="section-kicker light">The app experience</div>
+              <h2 className="light">Built, not imagined.</h2>
+              <p className="section-copy light">ECCOOZS already spans the major consumer surfaces needed for launch. The public site now reflects the product that actually exists — without presenting deferred live video as a launch feature.</p>
+              <div className="experience-list">
+                <div className="experience-item"><div className="exp-num">01</div><div><strong>Discover and participate</strong><p>Home, Explore, profiles, comments, saved content and messaging.</p></div></div>
+                <div className="experience-item"><div className="exp-num">02</div><div><strong>Move ideas into conversation</strong><p>Ecco and Newsroom connect discovery, context and discussion.</p></div></div>
+                <div className="experience-item"><div className="exp-num">03</div><div><strong>Build community and commerce</strong><p>Soundrooms, Business Directory and House of ECCOOZS extend participation beyond the feed.</p></div></div>
+              </div>
             </div>
-            <div className="ap-img-wrap rv">
-              <img src="/welcome-images/landing-08.png" alt="Eccoozs on laptop and phone" style={{ display: "block" }} />
+            <div className="experience-panel rv" aria-label="Illustration of the ECCOOZS app structure">
+              <div className="panel-top"><span className="dot"></span><span className="dot"></span><span className="dot"></span></div>
+              <div className="panel-body">
+                <aside className="mock-nav"><img className="mock-wordmark" src="/brand/eccoozs-wordmark-mono-white-v2-320.png" alt="ECCOOZS" /><div className="mock-link active">Home</div><div className="mock-link">Explore</div><div className="mock-link">Ecco</div><div className="mock-link">Newsroom</div><div className="mock-link">Soundrooms</div><div className="mock-link">Business</div></aside>
+                <div className="mock-main"><div className="mock-head"><strong>Explore ECCOOZS</strong><div className="search-pill">Search conversations...</div></div><div className="mock-hero"><small>Culture · Community · Connection</small><b>Where discovery becomes conversation.</b></div><div className="mock-cards"><div className="mock-card"><strong>Ecco</strong><span>Reshare with context.</span></div><div className="mock-card"><strong>Soundrooms</strong><span>Live audio conversation.</span></div><div className="mock-card"><strong>Business</strong><span>Discover and support.</span></div></div></div>
+              </div>
             </div>
+          </div>
+        </section>
+
+        <section id="business">
+          <div className="section-inner">
+            <div className="section-top rv"><div><div className="section-kicker">Business + commerce</div><h2>Discovery first.<br />Visibility when it matters.</h2></div><p className="section-copy">ECCOOZS gives businesses a place to be found before asking them to advertise. Profiles can grow from basic discovery into deeper trust, richer presentation and optional promoted visibility.</p></div>
+            <div className="business-shell rv">
+              <article className="business-card"><h3>Business Directory</h3><p>Structured profiles help members discover businesses by category and location while giving owners room to present products, services and contact information.</p><div className="tier-row"><span className="tier-name">Basic</span><div><div className="tier-desc">Discovery entry point</div></div><span className="tier-price">Free</span></div><div className="tier-row"><span className="tier-name">Certified</span><div><div className="tier-desc">Enhanced trust + contact utility</div></div><span className="tier-price">$14.99/mo</span></div><div className="tier-row"><span className="tier-name">Verified</span><div><div className="tier-desc">Premium profile depth + analytics</div></div><span className="tier-price">$29.99/mo</span></div></article>
+              <article className="business-card dark-card"><h3>House of ECCOOZS</h3><p>ECCOOZS also has an owned lifestyle and merchandise system — a brand extension that creates another path from platform attention to commerce without turning the social experience into a storefront.</p><div className="tier-row"><img className="tier-badge" src="/brand/badges/eccoozs-certified-gold.png" alt="Certified gold ECCOOZS badge" /><div><div className="tier-name">Quiet brand language</div><div className="tier-desc">Premium, coordinated and intentionally restrained.</div></div></div><div className="tier-row"><img className="tier-badge" src="/brand/badges/eccoozs-verified-blue.png" alt="Verified blue ECCOOZS badge" /><div><div className="tier-name">Platform → Brand → Commerce</div><div className="tier-desc">A connected ecosystem, not a disconnected merch page.</div></div></div></article>
+            </div>
+          </div>
+        </section>
+
+        <section id="learning">
+          <div className="section-inner">
+            <div className="section-top rv"><div><div className="section-kicker light">ECCOOZS Learning</div><h2 className="light">Practice with purpose.<br />Grow with confidence.</h2></div><p className="section-copy light">Learning apps live alongside the broader ECCOOZS ecosystem while remaining clearly separate from the 18+ social platform.</p></div>
+            <div className="learning-grid rv">
+              <article className="learn-card"><div className="learn-num">01</div><div className="learn-kicker">Math practice · Grades 1–6</div><h3>Math Trail</h3><p>Grade-based math practice with progress tracking, achievement badges, a parent/teacher view and selectable voice guidance.</p><div className="learn-tags"><span>Grades 1–6</span><span>Practice</span><span>Progress</span><span>Badges</span></div><div className="learn-actions"><a className="learn-open" href="/apps/math-trail.html">Open app</a><a className="learn-download" href="/apps/math-trail.html" download>Download HTML</a></div></article>
+              <article className="learn-card"><div className="learn-num">02</div><div className="learn-kicker">Speech + language practice</div><h3>My Voice Journey</h3><p>Guided word, phrase and sentence practice with listening, repetition, pronunciation and recording tools in a focused interface.</p><div className="learn-tags"><span>Words</span><span>Phrases</span><span>Sentences</span><span>Practice</span></div><div className="learn-actions"><a className="learn-open" href="/apps/my-voice-journey.html">Open app</a><a className="learn-download" href="/apps/my-voice-journey.html" download>Download HTML</a></div></article>
+            </div>
+            <div className="learning-more"><a href="/learning">Explore ECCOOZS Learning →</a></div>
           </div>
         </section>
 
         <section id="community">
-          <div className="comm-inner">
-            <div className="comm-img rv">
-              <img src="/welcome-images/landing-09.jpg" alt="Eccoozs community - Create Culture Be Real" />
-            </div>
-            <div className="rv">
-              <div className="seyebrow dark">Our Story</div>
-              <h2 className="dark">Built from within.<br />For all who walk<br />with respect.</h2>
-              <p className="comm-quote">
-                "I didn't build this to go viral. I built it because there was no place left for our voices to breathe."
-              </p>
-              <p className="comm-body">
-                ECCOOZS was built by Foundational Black Americans as a digital sanctuary for culture, faith,
-                and truth. But ALL ARE WELCOME HERE who walk in respect. This isn't just an app - it's a movement.
-              </p>
-            </div>
+          <div className="section-inner community-grid">
+            <div className="community-photo rv"><img src="/welcome-images/landing-03.png" alt="People connecting through ECCOOZS" /></div>
+            <div className="rv"><div className="section-kicker">Our story</div><h2>Built from within.<br />Open to those who walk with respect.</h2><p className="quote">“I didn't build this to go viral. I built it because there was no place left for our voices to breathe.”</p><p className="community-copy">ECCOOZS was built from a Foundational Black American perspective with culture, community and connection at its center. The platform is 18+ at launch, and participation is open to people who respect the community standards and the people in it.</p></div>
           </div>
         </section>
 
-        <section id="history">
-          <div className="hist-intro rv">
-            <div className="seyebrow light" style={{ justifyContent: "center" }}>American Legacy</div>
-            <h2 className="light">Honoring our ancestors.<br />Celebrating our culture.</h2>
-            <p style={{ color: "rgba(255,255,255,.45)", maxWidth: "580px", margin: "0 auto", fontSize: ".97rem", lineHeight: "1.8" }}>
-              These moments shaped us. These faces remind us where we come from - and why platforms like Eccoozs matter.
-            </p>
-          </div>
-
-          <div className="hist-grid rv">
-            <div className="hc tall">
-              <img src="/welcome-images/landing-10.png" alt="Enslaved family in cotton field" />
-              <div className="hc-ov">
-                <span className="hc-tag">Our Foundation</span>
-                <span className="hc-caption">Enslaved people who built a nation - their story lives in our blood</span>
-              </div>
+        <section id="legacy">
+          <div className="section-inner">
+            <div className="legacy-intro rv"><div className="section-kicker light">American Legacy</div><h2 className="light">Honoring our ancestors.<br />Celebrating our culture.</h2><p>History is part of the ECCOOZS identity. The public experience continues to make room for the people, events and innovations that shaped the communities we come from.</p></div>
+            <div className="legacy-grid rv">
+              <div className="legacy-card"><img src="/welcome-images/landing-10.png" alt="Historic Black American family" /><div className="legacy-label"><strong>Our Foundation</strong><span>Remembering the people whose labor and lives shaped the nation.</span></div></div>
+              <div className="legacy-card"><img src="/welcome-images/landing-13.png" alt="George Washington Carver" /><div className="legacy-label"><strong>Innovation</strong><span>Scientific brilliance, ingenuity and invention.</span></div></div>
+              <div className="legacy-card"><img src="/welcome-images/landing-14.png" alt="Dr. Martin Luther King Jr. and Malcolm X" /><div className="legacy-label"><strong>Leadership</strong><span>Voices that changed the direction of American life.</span></div></div>
+              <div className="legacy-card"><img src="/welcome-images/landing-15.png" alt="Buffalo Soldiers" /><div className="legacy-label"><strong>Service</strong><span>Remembering sacrifice, service and resilience.</span></div></div>
             </div>
-
-            <div className="hc">
-              <img src="/welcome-images/landing-11.png" alt="Native American chiefs at the White House with President Coolidge, 1924" style={{ objectPosition: "center top" }} />
-              <div className="hc-ov">
-                <span className="hc-tag">Indigenous Heritage</span>
-                <span className="hc-caption">Native chiefs at the White House, 1924</span>
-              </div>
-            </div>
-
-            <div className="hc">
-              <img src="/welcome-images/landing-12.png" alt="Choctaw people in traditional dress" style={{ objectPosition: "center top" }} />
-              <div className="hc-ov">
-                <span className="hc-tag">Cultural Roots</span>
-                <span className="hc-caption">Choctaw people - culture, tradition, and resilience</span>
-              </div>
-            </div>
-
-            <div className="hc">
-              <img src="/welcome-images/landing-13.png" alt="George Washington Carver in his laboratory at Tuskegee" style={{ objectPosition: "center" }} />
-              <div className="hc-ov">
-                <span className="hc-tag">Innovation</span>
-                <span className="hc-caption">George Washington Carver - genius born from struggle</span>
-              </div>
-            </div>
-
-            <div className="hc">
-              <img src="/welcome-images/landing-14.png" alt="Dr. Martin Luther King Jr. and Malcolm X - the only time they met, 1964" style={{ objectPosition: "center top" }} />
-              <div className="hc-ov">
-                <span className="hc-tag">Leadership</span>
-                <span className="hc-caption">Dr. King and Malcolm X - March 26, 1964. Their only meeting.</span>
-              </div>
-            </div>
-
-            <div className="hc">
-              <img
-                src="https://res.cloudinary.com/aenetworks/image/upload/c_fill,ar_2,w_1080,h_540,g_auto/dpr_auto/f_auto/q_auto:eco/v1/crispus-attucks-gettyimages-517432282?_a=BAVMn6DY0"
-                alt="Crispus Attucks - first American killed in the Boston Massacre, March 5 1770"
-                style={{ objectPosition: "center top" }}
-                referrerPolicy="no-referrer"
-                crossOrigin="anonymous"
-              />
-              <div className="hc-ov">
-                <span className="hc-tag">Revolution</span>
-                <span className="hc-caption">Crispus Attucks - first American to die for independence, March 5, 1770</span>
-              </div>
-            </div>
-
-            <div className="hc">
-              <img
-                src="https://1.bp.blogspot.com/-1Q79RbIkqPM/YHdSF9YVsTI/AAAAAAAArdE/eZHh2hp69Sky35nXQFwBa9s82ktARH4IwCLcBGAsYHQ/s0/black_african_american_civil_rights_soldiers.jpg"
-                alt="Black African American Civil War soldiers"
-                style={{ objectPosition: "center" }}
-                referrerPolicy="no-referrer"
-                crossOrigin="anonymous"
-              />
-              <div className="hc-ov">
-                <span className="hc-tag">Civil War</span>
-                <span className="hc-caption">Black Union soldiers - fought for a nation that enslaved their families</span>
-              </div>
-            </div>
-
-            <div className="hc">
-              <img src="/welcome-images/landing-15.png" alt="Buffalo Soldiers - Black Union Army regiment" style={{ objectPosition: "center" }} />
-              <div className="hc-ov">
-                <span className="hc-tag">Sacrifice</span>
-                <span className="hc-caption">Buffalo Soldiers - defended a nation that denied them rights</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="inventors-wrap rv">
-            <img
-              src="/welcome-images/landing-16-v3.png?v=16v3"
-              alt="FBA Inventors and Innovators - Black American scientists, engineers and pioneers"
-            />
-            <div className="inventors-overlay">
-              <span className="inventors-title">Inventors &amp; Innovators</span>
-              <span className="inventors-caption">
-                FBA scientists, engineers, and pioneers whose brilliance shaped the modern world - often uncredited, never forgotten
-              </span>
-            </div>
-          </div>
-
-          <p className="hist-note rv">Our digital museum of history is coming. Contribute your photos and help build the archive.</p>
-        </section>
-
-        <section id="download">
-          <div className="dl-orb"></div>
-          <div className="dlinner rv">
-            <div className="seyebrow light" style={{ justifyContent: "center" }}>Early Access</div>
-            <h2 className="light" style={{ margin: "0 auto .85rem" }}>Join the movement.<br />Be first.</h2>
-            <p className="sdesc light" style={{ margin: "0 auto 2.5rem", textAlign: "center" }}>
-              Be among the first to know when ECCOOZS opens. Members, creators, businesses, advertisers,
-              and beta testers can register interest below.
-            </p>
-
-            <div className="wl-card">
-              <h3>Join the 18+ Founding Waitlist</h3>
-              <p className="wl-sub">Reserve your founding spot. Founding member access is limited.</p>
-              <WaitlistForm />
-            </div>
+            <p className="legacy-note rv">A larger ECCOOZS digital history archive is planned for a later stage.</p>
           </div>
         </section>
 
-        <footer>
-          <div className="footer-inner">
-            <div className="ftop">
-              <div>
-                <div className="fbrand">
-                  <img className="fbrand-mark" src="/icon.svg" alt="Eccoozs" />
-                  <span className="fbwm">Eccoozs</span>
-                </div>
-                <p className="ftagline">Express. Explore. Elevate.</p>
-              </div>
+        <section id="join">
+          <div className="join-inner rv"><div className="section-kicker light">Early access</div><h2 className="light">Join the founding waitlist.</h2><p className="section-copy light">Be among the first to know when ECCOOZS opens. Members, creators, businesses, advertisers and beta testers can register interest below.</p><div className="wl-card"><h3>Join the 18+ Founding Waitlist</h3><p className="wl-sub">Reserve your founding spot and tell us how you plan to participate.</p><WaitlistForm /></div></div>
+        </section>
 
-              <div>
-                <div className="fct">Platform</div>
-                <ul className="fls">
-                  <li><a href="#features">Features</a></li>
-                  <li><a href="#app-preview">App</a></li>
-                  <li><a href="#download">Join Waitlist</a></li>
-                  <li><a href="#">Soundrooms</a></li>
-                  <li><a href="https://eccoozs.com/shop" target="_blank">Shop</a></li>
-                </ul>
-              </div>
-
-              <div>
-                <div className="fct">Legal and Community</div>
-                <ul className="fls">
-                  <li><a href="/welcome/terms">Terms of Service</a></li>
-                  <li><a href="/welcome/privacy">Privacy Policy</a></li>
-                  <li><a href="/welcome/conduct">Code of Conduct</a></li>
-                  <li><a href="/welcome/support">Community Support</a></li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="fbot">
-              <span className="fcp">© 2026 Eccoozs. All rights reserved.</span>
-            </div>
-          </div>
-        </footer>
-      </div>
+        <footer><div className="footer-inner"><div className="footer-top"><div className="footer-brand"><img src="/brand/eccoozs-wordmark-blue-v2-640.png" alt="ECCOOZS" /><p>Explore. Express. Elevate.</p></div><div><div className="footer-title">Ecosystem</div><ul className="footer-links"><li><a href="#platform">Platform</a></li><li><a href="#business">Business</a></li><li><a href="#learning">Learning</a></li><li><a href="https://eccoozs.com/shop">House of ECCOOZS</a></li></ul></div><div><div className="footer-title">Legal + community</div><ul className="footer-links"><li><a href="/terms">Terms of Service</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/conduct">Code of Conduct</a></li><li><a href="/support">Community Support</a></li></ul></div></div><div className="footer-bottom">© 2026 ECCOOZS Technologies LLC. All rights reserved.</div></div></footer>
+      </main>
     </>
   );
 }
