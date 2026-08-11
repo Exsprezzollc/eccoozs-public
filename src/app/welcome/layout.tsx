@@ -3,6 +3,19 @@ import type { ReactNode } from "react";
 const patchScript = String.raw`
 (function () {
   function patchWelcome() {
+    // Point the old standalone-file URLs at the working cloud app routes.
+    document.querySelectorAll('a').forEach(function (a) {
+      var href = a.getAttribute('href') || '';
+      if (href === '/apps/math-trail.html' || href === 'apps/math-trail.html' || href === 'math-trail.html') {
+        a.setAttribute('href', '/apps/math-trail');
+        a.removeAttribute('download');
+      }
+      if (href === '/apps/my-voice-journey.html' || href === 'apps/my-voice-journey.html' || href === 'my-voice-journey.html') {
+        a.setAttribute('href', '/apps/my-voice-journey');
+        a.removeAttribute('download');
+      }
+    });
+
     // Make every visible House of ECCOOZS entry point lead to the Coming Soon page.
     document.querySelectorAll('a').forEach(function (a) {
       var text = (a.textContent || '').trim().toLowerCase();
@@ -45,7 +58,7 @@ const patchScript = String.raw`
       }
     });
 
-    // Use the labels requested on the public footer while preserving the real routes.
+    // Use the requested footer labels while preserving the existing legal/support routes.
     document.querySelectorAll('footer a').forEach(function (a) {
       var href = a.getAttribute('href');
       if (href === '/conduct') a.textContent = 'Community Guidelines';
