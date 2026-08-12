@@ -5,14 +5,12 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://eccoozs.com"),
   title: "ECCOOZS",
-  description: "Join the ECCOOZS founding waitlist.",
+  description:
+    "Explore ECCOOZS — a growing ecosystem for culture, community, connection, learning, and business discovery.",
   icons: {
-    icon: [
-      { url: "/favicon.ico", type: "image/x-icon" },
-      { url: "/favicon.ico", type: "image/x-icon" },
-    ],
-    shortcut: [{ url: "/favicon.ico", type: "image/x-icon" }],
-    apple: [{ url: "/favicon.ico", type: "image/x-icon" }],
+    icon: [{ url: "/eccoozs-mark-official.png", type: "image/png" }],
+    shortcut: [{ url: "/eccoozs-mark-official.png", type: "image/png" }],
+    apple: [{ url: "/eccoozs-mark-official.png", type: "image/png" }],
   },
 };
 
@@ -31,4 +29,3 @@ export default function RootLayout({
     </html>
   );
 }
-
