@@ -13,26 +13,17 @@ export default function Wordmark({
   width = 140,
   height = 28,
   className = "h-6 md:h-5 w-auto select-none translate-y-[1px]",
-  href = "/",
+  href = "/welcome",
   priority = true,
 }: Props) {
   return (
     <Link href={href} className="inline-flex items-center" aria-label="ECCOOZS Home">
       <Image
-        src="/brand/eccoozs-wordmark-blue-v2-640.png"
+        src="/eccoozs-wordmark.png"
         alt="ECCOOZS"
         width={width}
         height={height}
-        className={`block dark:hidden ${className}`}
-        priority={priority}
-        draggable={false}
-      />
-      <Image
-        src="/brand-mono/eccoozs-wordmark-mono-white-v2-640.png"
-        alt="ECCOOZS"
-        width={width}
-        height={height}
-        className={`hidden dark:block ${className}`}
+        className={`block ${className}`}
         priority={priority}
         draggable={false}
       />
