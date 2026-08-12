@@ -8,7 +8,7 @@ const mathPreview =
   "data:image/svg+xml;charset=UTF-8," +
   encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eef7ff"/><stop offset="1" stop-color="#dff4e5"/></linearGradient></defs><rect width="1200" height="675" fill="url(#g)"/><path d="M0 520C210 430 330 600 520 505s300-150 680-30v200H0z" fill="#b8dfc5"/><circle cx="195" cy="175" r="72" fill="#fff" opacity=".92"/><text x="195" y="195" text-anchor="middle" font-family="Arial,sans-serif" font-size="62" font-weight="700" fill="#245d3d">×</text><text x="600" y="260" text-anchor="middle" font-family="Arial,sans-serif" font-size="72" font-weight="800" fill="#071240">Math Trail</text><text x="600" y="325" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" fill="#3d6c58">Explore · Practice · Grow</text><rect x="430" y="380" width="340" height="76" rx="38" fill="#245d3d"/><text x="600" y="430" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#fff">Grades 1–6</text></svg>`);
 
-export const welcomeV6Markup = [part01, part02, part03, part04, part05]
+const baselineMarkup = [part01, part02, part03, part04, part05]
   .join("")
   .replaceAll("/v6-assets/asset-04.png", "/icon.svg")
   .replaceAll("/v6-assets/asset-05.png", "/welcome-images/landing-02.png")
@@ -28,3 +28,32 @@ export const welcomeV6Markup = [part01, part02, part03, part04, part05]
   .replaceAll("/v6-assets/asset-19.png", "/welcome-images/landing-16-v3.png")
   .replaceAll("/v6-assets/asset-20.png", mathPreview)
   .replaceAll("/v6-assets/asset-21.png", "/learning-assets/voice-journey-showcase.svg");
+
+/**
+ * Requested public-page corrections live here so the V6 source remains easy to
+ * maintain inside src/app/welcome without any browser-time DOM patch layer.
+ */
+export const welcomeV6Markup = baselineMarkup
+  // Pricing is not part of the public launch page. The full founding waitlist
+  // section immediately before it becomes the conversion section in its place.
+  .replace(/<!-- PRICING \(WHITE\) -->[\s\S]*?<\/section>\n<!-- FOOTER/, "<!-- FOOTER")
+  .replace('<li><a href="#pricing">Pricing</a></li>', '<li><a href="#download">Join</a></li>')
+  // Primary navigation.
+  .replace('<a class="nav-logo" href="#">', '<a class="nav-logo" href="/welcome">')
+  .replace('<a class="active" href="#">Home</a>', '<a class="active" href="/welcome">Home</a>')
+  .replace(
+    '<a class="nav-login" href="#">Log In</a>',
+    '<a class="nav-login" href="#download" title="ECCOOZS login opens at launch — join Early Access">Log In</a>'
+  )
+  // House of Eccoozs has a real public Coming Soon route.
+  .replaceAll('href="https://eccoozs.com/shop" rel="noopener" style="text-decoration:none" target="_blank"', 'href="/house-of-eccoozs" style="text-decoration:none"')
+  // Footer/platform destinations.
+  .replace('<a href="#">Soundrooms</a>', '<a href="#features">Soundrooms</a>')
+  .replace('<a href="#">Culture</a>', '<a href="#lifestyle">Culture</a>')
+  .replace('<a href="#">Partnerships</a>', '<a href="/support">Partnerships</a>')
+  .replace('<a href="#">Media Kit</a>', '<a href="/support">Media Kit</a>')
+  .replace('<a href="#">Terms of Service</a>', '<a href="/terms">Terms of Service</a>')
+  .replace('<a href="#">Privacy Policy</a>', '<a href="/privacy">Privacy Policy</a>')
+  .replace('<a href="#">Community Guidelines</a>', '<a href="/conduct">Community Guidelines</a>')
+  .replace('<a href="#">Contact Us</a>', '<a href="/support">Contact Us</a>')
+  .replace('<div class="flg"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Policies</a></div>', '<div class="flg"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/conduct">Policies</a></div>');
