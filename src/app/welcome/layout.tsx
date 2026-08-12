@@ -12,6 +12,22 @@ const patch = String.raw`
       logo.style.minWidth='210px';
     }
 
+    /* If an older/public drop-in contains Pricing, put the real signup section in its place. */
+    var pricing=document.querySelector('#pricing');
+    var download=document.querySelector('#download');
+    if(pricing && download){
+      pricing.replaceWith(download);
+    }else if(pricing){
+      pricing.remove();
+    }
+    document.querySelectorAll('nav a').forEach(function(a){
+      var txt=(a.textContent||'').trim();
+      if(txt==='Pricing'){
+        a.textContent='Join';
+        a.setAttribute('href','#download');
+      }
+    });
+
     /* Restore/keep Ecco and House of Eccoozs terminology everywhere on Welcome. */
     document.querySelectorAll('.mtrack .mi').forEach(function(el){
       var t=(el.textContent||'').trim();
@@ -55,13 +71,27 @@ const patch = String.raw`
       }
     });
 
-    /* Use the existing legal pages instead of dead # links, with the requested labels. */
-    document.querySelectorAll('footer a').forEach(function(a){
+    /* Repair known placeholder links and keep every public link on a real destination. */
+    document.querySelectorAll('a').forEach(function(a){
       var txt=(a.textContent||'').trim();
-      if(txt==='Terms of Service'||txt==='Terms'){ a.href='/terms'; if(txt==='Terms of Service') a.textContent='Terms of Service'; }
-      if(txt==='Privacy Policy'||txt==='Privacy'){ a.href='/privacy'; if(txt==='Privacy Policy') a.textContent='Privacy Policy'; }
-      if(txt==='Code of Conduct'||txt==='Community Guidelines'||txt==='Policies'){ a.href='/conduct'; if(txt!=='Policies') a.textContent='Community Guidelines'; }
-      if(txt==='Community Support'||txt==='Contact Us'){ a.href='/support'; a.textContent='Contact Us'; }
+      var href=a.getAttribute('href')||'';
+
+      if(txt==='Home' && href==='#') a.setAttribute('href','/welcome');
+      if(txt==='Log In' && href==='#'){
+        a.setAttribute('href','#download');
+        a.setAttribute('title','ECCOOZS login opens at launch — join Early Access');
+      }
+      if(txt==='Soundrooms' && href==='#') a.setAttribute('href','#features');
+      if(txt==='Culture' && href==='#') a.setAttribute('href','#lifestyle');
+      if((txt==='Partnerships' || txt==='Media Kit' || txt==='Contact Us' || txt==='Community Support') && href==='#') a.setAttribute('href','/welcome/support');
+
+      if(txt==='Terms of Service' || txt==='Terms') a.setAttribute('href','/welcome/terms');
+      if(txt==='Privacy Policy' || txt==='Privacy') a.setAttribute('href','/welcome/privacy');
+      if(txt==='Code of Conduct' || txt==='Community Guidelines' || txt==='Policies') a.setAttribute('href','/welcome/conduct');
+      if(txt==='Community Support' || txt==='Contact Us') a.setAttribute('href','/welcome/support');
+
+      /* No inert # links are left behind. */
+      if((a.getAttribute('href')||'')==='#') a.setAttribute('href','/welcome');
     });
 
     /* Keep approved Inventors & Innovators art; insert only if an older page somehow omitted it. */
