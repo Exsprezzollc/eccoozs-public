@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import WelcomeV6Client from "./WelcomeV6Client";
 
 export const metadata: Metadata = {
-  title: "Eccoozs \u2014 Culture. Conversation. Community.",
-  description: "ECCOOZS \u2014 Culture. Conversation. Community.",
+  title: "ECCOOZS — Culture. Community. Connection.",
+  description:
+    "Explore ECCOOZS — a growing ecosystem for culture, community, connection, learning, and business discovery.",
 };
 
 export default function WelcomePage() {
