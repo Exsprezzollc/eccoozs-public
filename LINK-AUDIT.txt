@@ -1,0 +1,43 @@
+[eccoozs-v6-final.html]
+  OK: Grades 1–6 Math Trail A guided math adventure with Trail Check, practice sheets, times tables, division, grade trails, and progress tracking. See Math Trail → -> math-trail.html
+  OK: Speaking & English Practice My Voice Journey Step-by-step words, listening, speaking, vocabulary, and conversation practice designed to build confidence. See My Voice Journey → -> my-voice-journey.html
+  OK: Explore all Learning Apps -> learning-apps.html
+  OK: ECCOOZS Learning Apps Math Trail -> math-trail.html
+  OK: ECCOOZS Learning Apps My Voice Journey -> my-voice-journey.html
+  OK: Learning Apps -> learning-apps.html
+
+[learning-apps.html]
+  OK: ECCOOZS LEARNING APPS -> eccoozs-v6-final.html
+  OK: ECCOOZS Home -> eccoozs-v6-final.html
+  OK: Join Waitlist -> eccoozs-v6-final.html#download
+  OK: (image/link) -> math-trail.html
+  OK: Explore Math Trail -> math-trail.html
+  OK: (image/link) -> my-voice-journey.html
+  OK: Explore My Voice Journey -> my-voice-journey.html
+
+[math-trail.html]
+  OK: ECCOOZS LEARNING APPS -> eccoozs-v6-final.html
+  OK: All Apps -> learning-apps.html
+  OK: For Families -> eccoozs-v6-final.html#download
+  OK: About -> eccoozs-v6-final.html#community
+  OK: Open App -> math-trail-app.html
+  OK: Download -> math-trail-download.zip
+  OK: All Learning Apps -> learning-apps.html
+
+[my-voice-journey.html]
+  OK: ECCOOZS LEARNING APPS -> eccoozs-v6-final.html
+  OK: All Apps -> learning-apps.html
+  OK: For Families -> eccoozs-v6-final.html#download
+  OK: About -> eccoozs-v6-final.html#community
+  OK: Open App -> my-voice-journey-app.html
+  OK: Download -> my-voice-journey-download.zip
+  OK: All Learning Apps -> learning-apps.html
+
+[REGRESSION CHECKS]
+  Ecco feature present: YES
+  Live Streaming feature absent: YES
+  House of Eccoozs feature present: YES
+  Eccoozs Shop feature absent: YES
+  Guardian System absent: YES
+  Inventors v3 embedded: YES
+  External House shop URL absent: NO
