@@ -1,277 +1,139 @@
-import {mathTrailPresentation, voiceJourneyAdultPresentation, voiceJourneyYouthPresentation} from "@/components/learning/presentationAssets";
-
+import {
+  mathTrailPresentation,
+  voiceJourneyAdultPresentation,
+  voiceJourneyYouthPresentation,
+} from "@/components/learning/presentationAssets";
 
 export const welcomeV6Markup = String.raw`
 <!-- NAV -->
 <nav>
-<a class="nav-logo" href="/welcome">
-<img alt="Eccoozs E mark" class="nav-mark" src="/icon.svg"/>
-<div>
-<div class="nav-wm">ECCOOZS</div>
-<span class="nav-tagline">Culture · Conversation · Community</span>
-</div>
-</a>
-<ul class="nav-links">
-<li><a class="active" href="/welcome">Home</a></li>
-<li><a href="#features">Features</a></li>
-<li><a href="#app-preview">The App</a></li>
-<li><a href="#learning-apps">Learning Apps</a></li>
-<li><a href="#lifestyle">Community</a></li><li><a href="#community">About</a></li>
-<li><a href="#history">Legacy</a></li>
-<li><a href="#download">Join</a></li>
-</ul>
-<div class="nav-right">
-<a class="nav-login" href="#download" title="ECCOOZS login opens at launch — join Early Access">Log In</a>
-<a class="nav-join" href="#download">Join ECCOOZS</a>
-</div>
+  <a class="nav-logo" href="/welcome" aria-label="ECCOOZS home">
+    <img alt="ECCOOZS e mark" class="nav-mark" src="/eccoozs-mark-official.png"/>
+    <img alt="ECCOOZS" class="nav-wordmark" src="/eccoozs-wordmark.png"/>
+  </a>
+  <ul class="nav-links">
+    <li><a class="active" href="/welcome">Home</a></li>
+    <li><a href="#ecosystem">Products</a></li>
+    <li><a href="#eccoozs-app">The App</a></li>
+    <li><a href="#learning-apps">Learning Apps</a></li>
+    <li><a href="#community">Community</a></li>
+    <li><a href="#community">About</a></li>
+    <li><a href="#history">Legacy</a></li>
+  </ul>
+  <div class="nav-right">
+    <a class="nav-login" href="#download" title="ECCOOZS login opens at launch — join Early Access">Log In</a>
+    <a class="nav-join" href="#download">Join ECCOOZS</a>
+  </div>
 </nav>
-<!-- HERO — office group full bleed + blue gradient -->
+
+<!-- HERO -->
 <section id="hero">
-<div class="hero-photo"><img alt="Eccoozs community — Create Culture, Be Real" src="/welcome-images/landing-02.png"/></div>
-<div class="hero-color-wash"></div>
-<div class="hero-grad"></div>
-<div class="hero-bottom"></div>
-<div class="hero-content">
-<div class="hero-eyebrow">More than a platform.</div>
-<div class="hero-welcome">Welcome to</div>
-<div class="hero-brand">ECCO<span>OZS</span></div>
-<div class="hero-tagline">Explore. Express. Elevate.</div>
-<p class="hero-desc">A culture-first social platform built for real voices, real stories, and elevated connection. No filters. No dilution. No apologies.</p>
-<div class="hero-actions">
-<a class="btn-p" href="#download"><i data-lucide="arrow-right"></i>Join the Movement</a>
-<a class="btn-g" href="#features"><i data-lucide="layout-grid"></i>Explore the Platform</a>
-</div>
-<div class="hero-sp">
-<div class="sp-avs">
-<div class="sp-av">A</div><div class="sp-av">K</div><div class="sp-av">M</div><div class="sp-av">J</div>
-<div class="sp-plus">+8K</div>
-</div>
-<div class="sp-txt">
-<div class="sp-strong">Built for creators. Loved by communities.</div>
-<div class="sp-sub">Be among the first. Founding member spots are limited.</div>
-</div>
-</div>
-</div>
-<div class="feature-strip">
-<div class="fs-item"><div class="fs-icon"><i data-lucide="mic-2"></i></div><div><div class="fs-label">Soundrooms</div><div class="fs-desc">Speak. Listen. Connect.<br/>Real conversations. Real time.</div></div></div>
-<div class="fs-item"><div class="fs-icon"><i data-lucide="layout-grid"></i></div><div><div class="fs-label">The Flow</div><div class="fs-desc">Your feed. Your culture.<br/>Content that reflects you.</div></div></div>
-<div class="fs-item"><div class="fs-icon"><i data-lucide="trending-up"></i></div><div><div class="fs-label">Elevate</div><div class="fs-desc">Creators. Brands. Impact.<br/>Build, grow, inspire.</div></div></div>
-<div class="fs-item"><div class="fs-icon"><i data-lucide="calendar-check"></i></div><div><div class="fs-label">Events</div><div class="fs-desc">Local. Cultural. Elevated.<br/>Experiences that bring us together.</div></div></div>
-</div>
+  <div class="hero-photo"><img alt="ECCOOZS community — Create Culture, Be Real" src="/welcome-images/landing-02.png"/></div>
+  <div class="hero-color-wash"></div>
+  <div class="hero-grad"></div>
+  <div class="hero-content rv">
+    <div class="hero-eyebrow">More than a platform.</div>
+    <h1>Technology for how<br/>we live, learn, connect<br/>and grow.</h1>
+    <p class="hero-desc">ECCOOZS is a growing ecosystem of digital experiences built around culture, community, creativity, learning, and connection.</p>
+    <div class="hero-actions">
+      <a class="btn-p" href="#ecosystem">Explore Products <i data-lucide="arrow-right"></i></a>
+      <a class="btn-g" href="#download">Join ECCOOZS</a>
+    </div>
+  </div>
 </section>
-<!-- STATS (WHITE) -->
-<div class="stats-strip rv">
-<div class="si"><div class="sn">10<span>K+</span></div><div class="sl">Creators Registered</div></div>
-<div class="si"><div class="sn">3</div><div class="sl">Ways to Earn</div></div>
-<div class="si"><div class="sn">50<span>+</span></div><div class="sl">Cities Represented</div></div>
-<div class="si"><div class="sn">1</div><div class="sl">Platform. All of It.</div></div>
-<div class="si"><div class="sn">∞</div><div class="sl">Possibilities</div></div>
-</div>
-<!-- MARQUEE (NAVY) -->
-<div class="mwrap">
-<div class="mtrack">
-<span class="mi"><i data-lucide="mic-2"></i>Soundrooms</span>
-<span class="mi"><i data-lucide="repeat-2"></i>Ecco</span>
-<span class="mi"><i data-lucide="shopping-bag"></i>House of Eccoozs</span>
-<span class="mi"><i data-lucide="trending-up"></i>Monetization</span>
-<span class="mi"><i data-lucide="layout-grid"></i>The Flow</span>
-<span class="mi"><i data-lucide="newspaper"></i>Newsroom</span>
-<span class="mi"><i data-lucide="users"></i>Community</span>
-<span class="mi"><i data-lucide="mic-2"></i>Soundrooms</span>
-<span class="mi"><i data-lucide="repeat-2"></i>Ecco</span>
-<span class="mi"><i data-lucide="shopping-bag"></i>House of Eccoozs</span>
-<span class="mi"><i data-lucide="trending-up"></i>Monetization</span>
-<span class="mi"><i data-lucide="layout-grid"></i>The Flow</span>
-<span class="mi"><i data-lucide="newspaper"></i>Newsroom</span>
-<span class="mi"><i data-lucide="users"></i>Community</span>
-</div>
-</div>
-<!-- ECHO STATEMENT (NAVY) -->
-<section id="echo">
-<div class="echo-orb"></div>
-<div class="echo-inner rv">
-<div class="seyebrow light" style="justify-content:center">The Eccoozs Standard</div>
-<p class="echo-quote">On Eccoozs, you don't go <em>"viral."</em><br/>What you say or do <em>echoes.</em><br/>Make sure you echo in a positive way.</p>
-<p class="echo-body">We built a platform that holds content and creators to a higher standard. No toxic algorithms feeding outrage. No hollow metrics chasing clout. Just authentic voices, resonating with real people.</p>
-</div>
+
+<!-- ECOSYSTEM -->
+<section id="ecosystem">
+  <div class="eco-head rv">
+    <div class="seyebrow dark">The ECCOOZS Ecosystem</div>
+    <h2 class="dark">Everything we build. Connected by purpose.</h2>
+    <p>One growing family of experiences for connection, learning, discovery, and culture.</p>
+  </div>
+  <div class="eco-grid rv">
+    <a class="eco-card" href="#eccoozs-app">
+      <div class="eco-media"><img alt="ECCOOZS community" src="/welcome-images/landing-03.png"/></div>
+      <div class="eco-icon branded"><img alt="" src="/eccoozs-mark-official.png"/></div>
+      <div class="eco-body">
+        <h3>ECCOOZS</h3>
+        <p>Our flagship social platform for culture, community, and connection.</p>
+        <span>Explore ECCOOZS <i data-lucide="arrow-right"></i></span>
+      </div>
+    </a>
+    <a class="eco-card" href="#learning-apps">
+      <div class="eco-media"><img alt="ECCOOZS Learning Apps" src="${mathTrailPresentation}"/></div>
+      <div class="eco-icon"><i data-lucide="graduation-cap"></i></div>
+      <div class="eco-body">
+        <h3>Learning Apps</h3>
+        <p>Engaging tools that help learners explore, practice, and grow—anytime, anywhere.</p>
+        <span>Explore Learning Apps <i data-lucide="arrow-right"></i></span>
+      </div>
+    </a>
+    <a class="eco-card" href="#business">
+      <div class="eco-media business"><img alt="ECCOOZS Business Directory" src="/Business Stack.png"/></div>
+      <div class="eco-icon"><i data-lucide="store"></i></div>
+      <div class="eco-body">
+        <h3>Business Directory</h3>
+        <p>Discover trusted businesses, products, and services built for meaningful discovery.</p>
+        <span>Explore Business <i data-lucide="arrow-right"></i></span>
+      </div>
+    </a>
+    <a class="eco-card" href="/house-of-eccoozs">
+      <div class="eco-media"><img alt="House of ECCOOZS" src="/House of Eccoozs banner.png"/></div>
+      <div class="eco-icon"><i data-lucide="shopping-bag"></i></div>
+      <div class="eco-body">
+        <h3>House of ECCOOZS</h3>
+        <p>Premium apparel, lifestyle pieces, and culture-driven collections that represent who we are.</p>
+        <span>Explore House of ECCOOZS <i data-lucide="arrow-right"></i></span>
+      </div>
+    </a>
+  </div>
 </section>
-<!-- FEATURES (CREAM / LIGHT) -->
-<section id="features">
-<div class="fi rv">
-<div>
-<div class="seyebrow dark">Platform Features</div>
-<h2 class="dark">Everything you need.<br/>All in one place.</h2>
-</div>
-<p class="sdesc dark">Stop juggling a dozen apps. Eccoozs brings together every tool a modern creator needs — from going live to getting paid.</p>
-</div>
-<div class="fgrid rv">
-<div class="fc"><div class="fic b"><i data-lucide="mic-2"></i></div><div class="ft">Soundrooms</div><div class="fd">Host live audio rooms with your community. Invite co-hosts, take speakers on stage, broadcast your voice to the world.</div></div>
-<div class="fc"><div class="fic n"><i data-lucide="repeat-2"></i></div><div class="ft">Ecco</div><div class="fd">Where posts become conversations. Quote eccos, picture eccos, and video eccos — organized for context, not chaos.</div></div>
-<div class="fc"><div class="fic b"><i data-lucide="shopping-bag"></i></div><div class="ft">House of Eccoozs</div><div class="fd">Shop House of Eccoozs merch and spread the culture. Members earn commission promoting the brand — more ways to earn coming soon.</div></div>
-<div class="fc"><div class="fic n"><i data-lucide="layout-grid"></i></div><div class="ft">The Flow</div><div class="fd">Your feed. Your culture. Share photos, videos, news, and audio in a beautifully curated feed that puts your content first.</div></div>
-<div class="fc"><div class="fic b"><i data-lucide="trending-up"></i></div><div class="ft">Elevate &amp; Earn</div><div class="fd">Two income streams: shop commissions and ad sharing — all tracked in your personal dashboard.</div></div>
-<div class="fc"><div class="fic n"><i data-lucide="store"></i></div><div class="ft">Business Directory</div><div class="fd">A curated discovery space for trusted businesses, creators, products, and services — helping members support what aligns with their values.</div></div>
-</div>
+
+<!-- ONE FLAGSHIP APP SECTION -->
+<section id="eccoozs-app">
+  <div class="app-shell">
+    <div class="app-copy rv">
+      <div class="seyebrow light">The ECCOOZS App</div>
+      <h2 class="light">Culture. Community.<br/>Connection.</h2>
+      <p class="sdesc light">ECCOOZS brings culture, conversation, and community together in one powerful platform — a place to share, discover, connect, and grow.</p>
+      <div class="app-feature-grid">
+        <div class="app-feature"><i data-lucide="messages-square"></i><div><strong>Connect &amp; Share</strong><span>Post, interact, and build community.</span></div></div>
+        <div class="app-feature"><i data-lucide="compass"></i><div><strong>Explore</strong><span>Discover people, topics, and trends.</span></div></div>
+        <div class="app-feature"><i data-lucide="repeat-2"></i><div><strong>Ecco</strong><span>Turn posts into conversations with context.</span></div></div>
+        <div class="app-feature"><i data-lucide="mic-2"></i><div><strong>Soundrooms</strong><span>Join live audio rooms and conversations.</span></div></div>
+        <div class="app-feature"><i data-lucide="newspaper"></i><div><strong>Newsroom</strong><span>Stay informed with real stories and updates.</span></div></div>
+        <div class="app-feature"><i data-lucide="store"></i><div><strong>Business Directory</strong><span>Find and support trusted businesses.</span></div></div>
+      </div>
+      <a class="btn-p" href="#download">Get Early Access <i data-lucide="arrow-right"></i></a>
+    </div>
+    <div class="app-visual rv">
+      <img alt="ECCOOZS on laptop and phone" src="/welcome-images/landing-08.png"/>
+    </div>
+  </div>
 </section>
-<!-- LIFESTYLE GRID (NAVY) -->
-<section id="lifestyle">
-<div class="ls-intro rv">
-<div class="seyebrow light" style="justify-content:center">The Community</div>
-<h2 class="light">Real voices. Real connections.</h2>
-<p class="sdesc light" style="margin:0 auto;text-align:center">From bedroom creators to headline artists — Eccoozs is where your community comes together.</p>
-</div>
-<div class="ls-grid rv">
-<!-- CREATE — tall left -->
-<div class="ls-cell tall">
-<img alt="Create on Eccoozs — community connecting" src="/welcome-images/landing-03.png"/>
-<div class="ls-ov">
-<div class="ls-label">Create<span>Express yourself freely</span></div>
-</div>
-</div>
-<!-- CONNECT — top center -->
-<div class="ls-cell">
-<img alt="Eccoozs FBA business directory listing" src="/welcome-images/landing-04.png" style="object-position:center top"/>
-<div class="ls-ov">
-<div class="ls-label">Connect<span>FBA business directory</span></div>
-</div>
-</div>
-<!-- EXPRESS — top right -->
-<div class="ls-cell">
-<img alt="Creators expressing themselves on Eccoozs" src="/welcome-images/landing-05.jpg"/>
-<div class="ls-ov">
-<div class="ls-label">Express<span>Your voice, your way</span></div>
-</div>
-</div>
-<!-- SOUNDROOMS — bottom center -->
-<div class="ls-cell">
-<img alt="Eccoozs soundrooms page" src="/welcome-images/landing-06.png" style="object-position:center top"/>
-<div class="ls-ov">
-<div class="ls-label">Soundrooms<span>Speak. Listen. Connect.</span></div>
-</div>
-</div>
-<!-- ELEVATE — bottom right -->
-<div class="ls-cell">
-<img alt="Eccoozs community wearing merch on campus" src="/welcome-images/landing-07.png"/>
-<div class="ls-ov">
-<div class="ls-label">Elevate<span>Wear the culture</span></div>
-</div>
-</div>
-</div>
+
+<!-- ECCOOZS BUSINESS -->
+<section id="business">
+  <div class="business-shell">
+    <div class="business-copy rv">
+      <div class="seyebrow dark">ECCOOZS Business</div>
+      <h2 class="dark">Find. Support. Grow.</h2>
+      <p class="business-lede">Business discovery, built for connection.</p>
+      <p class="sdesc dark">Discover trusted businesses, explore products and services, and support the people building within the community.</p>
+      <div class="business-points">
+        <span><i data-lucide="search"></i>Curated discovery</span>
+        <span><i data-lucide="badge-check"></i>Verified business tiers</span>
+        <span><i data-lucide="shopping-bag"></i>Products &amp; services</span>
+      </div>
+      <a class="btn-blue" href="#download">Join as a Business <i data-lucide="arrow-right"></i></a>
+    </div>
+    <div class="business-visual rv">
+      <img alt="ECCOOZS business discovery and profile experience" src="/Business Stack.png"/>
+    </div>
+  </div>
 </section>
-<!-- APP PREVIEW (DARK NAVY) -->
-<section id="app-preview">
-<div class="ap-orb"></div>
-<div class="ap-inner">
-<div class="rv">
-<div class="seyebrow light">The App Experience</div>
-<h2 class="light">Beautifully designed<br/>for every screen.</h2>
-<p class="sdesc light" style="margin-bottom:2rem">Whether you're on your phone between meetings or at your desk building your audience — Eccoozs flows with your life.</p>
-<a class="btn-p" href="#download" style="display:inline-flex"><i data-lucide="arrow-right"></i>Get Early Access</a>
-</div>
-<div class="ap-img-wrap rv">
-<img alt="Eccoozs on laptop and phone" src="/welcome-images/landing-08.png" style="display:block"/>
-</div>
-</div>
-</section>
-<!-- COMMUNITY (WHITE) -->
-<section id="community">
-<div class="comm-inner">
-<div class="comm-img rv">
-<img alt="Eccoozs community — Create Culture Be Real" src="/welcome-images/landing-09.jpg"/>
-</div>
-<div class="rv">
-<div class="seyebrow dark">Our Story</div>
-<h2 class="dark">Built from within.<br/>For all who walk<br/>with respect.</h2>
-<p class="comm-quote">"I didn't build this to go viral. I built it because there was no place left for our voices to breathe."</p>
-<p class="comm-body">ECCOOZS was built by Foundational Black Americans as a digital sanctuary for culture, faith, and truth. But ALL ARE WELCOME HERE who walk in respect. This isn't just an app — it's a movement.</p>
-<a class="comm-link" href="#community"><i data-lucide="arrow-right"></i>Read Our Full Story</a>
-</div>
-</div>
-</section>
-<!-- HISTORY / LEGACY (CREAM) -->
-<section id="history">
-<div class="hist-intro rv">
-<div class="seyebrow light" style="justify-content:center">American Legacy</div>
-<h2 class="light">Honoring our ancestors.<br/>Celebrating our culture.</h2>
-<p style="color:rgba(255,255,255,.45);max-width:580px;margin:0 auto;font-size:.97rem;line-height:1.8">These moments shaped us. These faces remind us where we come from — and why platforms like Eccoozs matter.</p>
-</div>
-<div class="hist-grid rv">
-<!-- TALL LEFT (rows 1-2) — Enslaved family in cotton field -->
-<div class="hc tall">
-<img alt="Enslaved family in cotton field" src="/welcome-images/landing-10.png"/>
-<div class="hc-ov">
-<span class="hc-tag">Our Foundation</span>
-<span class="hc-caption">Enslaved people who built a nation — their story lives in our blood</span>
-</div>
-</div>
-<!-- Row 1, Col 2 — Native chiefs at White House -->
-<div class="hc">
-<img alt="Native American chiefs at the White House with President Coolidge, 1924" src="/welcome-images/landing-11.png" style="object-position:center top"/>
-<div class="hc-ov">
-<span class="hc-tag">Indigenous Heritage</span>
-<span class="hc-caption">Native chiefs at the White House, 1924</span>
-</div>
-</div>
-<!-- Row 1, Col 3 — Choctaw people -->
-<div class="hc">
-<img alt="Choctaw people in traditional dress" src="/welcome-images/landing-12.png" style="object-position:center top"/>
-<div class="hc-ov">
-<span class="hc-tag">Cultural Roots</span>
-<span class="hc-caption">Choctaw people — culture, tradition, and resilience</span>
-</div>
-</div>
-<!-- Row 2, Col 2 — George Washington Carver -->
-<div class="hc">
-<img alt="George Washington Carver in his laboratory at Tuskegee" src="/welcome-images/landing-13.png" style="object-position:center"/>
-<div class="hc-ov">
-<span class="hc-tag">Innovation</span>
-<span class="hc-caption">George Washington Carver — genius born from struggle</span>
-</div>
-</div>
-<!-- Row 2, Col 3 — MLK & Malcolm X -->
-<div class="hc">
-<img alt="Dr. Martin Luther King Jr. and Malcolm X — the only time they met, 1964" src="/welcome-images/landing-14.png" style="object-position:center top"/>
-<div class="hc-ov">
-<span class="hc-tag">Leadership</span>
-<span class="hc-caption">Dr. King &amp; Malcolm X — March 26, 1964. Their only meeting.</span>
-</div>
-</div>
-<!-- Row 3, Col 1 — Crispus Attucks / Revolutionary War -->
-<div class="hc">
-<img alt="Crispus Attucks — first American killed in the Boston Massacre, March 5 1770" crossorigin="anonymous" referrerpolicy="no-referrer" src="https://res.cloudinary.com/aenetworks/image/upload/c_fill,ar_2,w_1080,h_540,g_auto/dpr_auto/f_auto/q_auto:eco/v1/crispus-attucks-gettyimages-517432282?_a=BAVMn6DY0" style="object-position:center top"/>
-<div class="hc-ov">
-<span class="hc-tag">Revolution</span>
-<span class="hc-caption">Crispus Attucks — first American to die for independence, March 5, 1770</span>
-</div>
-</div>
-<!-- Row 3, Col 2 — Civil War soldiers -->
-<div class="hc">
-<img alt="Black African American Civil War soldiers" crossorigin="anonymous" referrerpolicy="no-referrer" src="https://1.bp.blogspot.com/-1Q79RbIkqPM/YHdSF9YVsTI/AAAAAAAArdE/eZHh2hp69Sky35nXQFwBa9s82ktARH4IwCLcBGAsYHQ/s0/black_african_american_civil_rights_soldiers.jpg" style="object-position:center"/>
-<div class="hc-ov">
-<span class="hc-tag">Civil War</span>
-<span class="hc-caption">Black Union soldiers — fought for a nation that enslaved their families</span>
-</div>
-</div>
-<!-- Row 3, Col 3 — Buffalo Soldiers -->
-<div class="hc">
-<img alt="Buffalo Soldiers — Black Union Army regiment" src="/welcome-images/landing-15.png" style="object-position:center"/>
-<div class="hc-ov">
-<span class="hc-tag">Sacrifice</span>
-<span class="hc-caption">Buffalo Soldiers — defended a nation that denied them rights</span>
-</div>
-</div>
-</div>
-<!-- INVENTORS & INNOVATORS GRID — current v3 -->
-<div class="inventors-grid-v3" id="inventors-grid" style="margin:1.5rem calc(-5%) 0;position:relative;overflow:hidden;">
-<img alt="FBA Inventors and Innovators — Black American scientists, engineers and pioneers" src="/welcome-images/landing-16-v3.png" style="display:block;width:100%;height:auto;"/>
-<div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(4,12,28,.92) 0%,rgba(4,12,28,.4) 60%,transparent 100%);padding:1.5rem 2rem 1.2rem;">
-<span style="font-size:.78rem;font-weight:700;color:#fff;letter-spacing:.14em;text-transform:uppercase;">Inventors &amp; Innovators</span>
-<span style="display:block;font-size:.7rem;color:rgba(255,255,255,.55);font-style:italic;margin-top:3px;">FBA scientists, engineers, and pioneers whose brilliance shaped the modern world — often uncredited, never forgotten</span>
-</div>
-</div>
-<p class="hist-note rv">Our digital museum of history is coming. Contribute your photos and help build the archive.</p>
-</section>
-<!-- ECCOOZS LEARNING APPS -->
+
+<!-- ECCOOZS LEARNING APPS — PRESERVED -->
 <section id="learning-apps">
 <div class="la-inner rv">
 <div class="la-head">
@@ -296,7 +158,74 @@ export const welcomeV6Markup = String.raw`
 <div class="la-all"><a href="/learning"><i data-lucide="sparkles"></i>Explore all Learning Apps</a></div>
 </div>
 </section>
-<!-- DOWNLOAD (NAVY) -->
+
+<!-- COMMUNITY / ORIGIN STORY — PRESERVED -->
+<section id="community">
+<div class="comm-inner">
+<div class="comm-img rv">
+<img alt="ECCOOZS community — Create Culture Be Real" src="/welcome-images/landing-09.jpg"/>
+</div>
+<div class="rv">
+<div class="seyebrow dark">Our Story</div>
+<h2 class="dark">Built from within.<br/>For all who walk<br/>with respect.</h2>
+<p class="comm-quote">"I didn't build this to go viral. I built it because there was no place left for our voices to breathe."</p>
+<p class="comm-body">ECCOOZS was built by Foundational Black Americans as a digital sanctuary for culture, faith, and truth. But ALL ARE WELCOME HERE who walk in respect. This isn't just an app — it's a movement.</p>
+</div>
+</div>
+</section>
+
+<!-- HISTORY / LEGACY — PRESERVED -->
+<section id="history">
+<div class="hist-intro rv">
+<div class="seyebrow light" style="justify-content:center">American Legacy</div>
+<h2 class="light">Honoring our ancestors.<br/>Celebrating our culture.</h2>
+<p style="color:rgba(255,255,255,.45);max-width:580px;margin:0 auto;font-size:.97rem;line-height:1.8">These moments shaped us. These faces remind us where we come from — and why platforms like Eccoozs matter.</p>
+</div>
+<div class="hist-grid rv">
+<div class="hc tall">
+<img alt="Enslaved family in cotton field" src="/welcome-images/landing-10.png"/>
+<div class="hc-ov"><span class="hc-tag">Our Foundation</span><span class="hc-caption">Enslaved people who built a nation — their story lives in our blood</span></div>
+</div>
+<div class="hc">
+<img alt="Native American chiefs at the White House with President Coolidge, 1924" src="/welcome-images/landing-11.png" style="object-position:center top"/>
+<div class="hc-ov"><span class="hc-tag">Indigenous Heritage</span><span class="hc-caption">Native chiefs at the White House, 1924</span></div>
+</div>
+<div class="hc">
+<img alt="Choctaw people in traditional dress" src="/welcome-images/landing-12.png" style="object-position:center top"/>
+<div class="hc-ov"><span class="hc-tag">Cultural Roots</span><span class="hc-caption">Choctaw people — culture, tradition, and resilience</span></div>
+</div>
+<div class="hc">
+<img alt="George Washington Carver in his laboratory at Tuskegee" src="/welcome-images/landing-13.png" style="object-position:center"/>
+<div class="hc-ov"><span class="hc-tag">Innovation</span><span class="hc-caption">George Washington Carver — genius born from struggle</span></div>
+</div>
+<div class="hc">
+<img alt="Dr. Martin Luther King Jr. and Malcolm X — the only time they met, 1964" src="/welcome-images/landing-14.png" style="object-position:center top"/>
+<div class="hc-ov"><span class="hc-tag">Leadership</span><span class="hc-caption">Dr. King &amp; Malcolm X — March 26, 1964. Their only meeting.</span></div>
+</div>
+<div class="hc">
+<img alt="Crispus Attucks — first American killed in the Boston Massacre, March 5 1770" crossorigin="anonymous" referrerpolicy="no-referrer" src="https://res.cloudinary.com/aenetworks/image/upload/c_fill,ar_2,w_1080,h_540,g_auto/dpr_auto/f_auto/q_auto:eco/v1/crispus-attucks-gettyimages-517432282?_a=BAVMn6DY0" style="object-position:center top"/>
+<div class="hc-ov"><span class="hc-tag">Revolution</span><span class="hc-caption">Crispus Attucks — first American to die for independence, March 5, 1770</span></div>
+</div>
+<div class="hc">
+<img alt="Black African American Civil War soldiers" crossorigin="anonymous" referrerpolicy="no-referrer" src="https://1.bp.blogspot.com/-1Q79RbIkqPM/YHdSF9YVsTI/AAAAAAAArdE/eZHh2hp69Sky35nXQFwBa9s82ktARH4IwCLcBGAsYHQ/s0/black_african_american_civil_rights_soldiers.jpg" style="object-position:center"/>
+<div class="hc-ov"><span class="hc-tag">Civil War</span><span class="hc-caption">Black Union soldiers — fought for a nation that enslaved their families</span></div>
+</div>
+<div class="hc">
+<img alt="Buffalo Soldiers — Black Union Army regiment" src="/welcome-images/landing-15.png" style="object-position:center"/>
+<div class="hc-ov"><span class="hc-tag">Sacrifice</span><span class="hc-caption">Buffalo Soldiers — defended a nation that denied them rights</span></div>
+</div>
+</div>
+<div class="inventors-grid-v3" id="inventors-grid" style="margin:1.5rem calc(-5%) 0;position:relative;overflow:hidden;">
+<img alt="FBA Inventors and Innovators — Black American scientists, engineers and pioneers" src="/welcome-images/landing-16-v3.png" style="display:block;width:100%;height:auto;"/>
+<div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(4,12,28,.92) 0%,rgba(4,12,28,.4) 60%,transparent 100%);padding:1.5rem 2rem 1.2rem;">
+<span style="font-size:.78rem;font-weight:700;color:#fff;letter-spacing:.14em;text-transform:uppercase;">Inventors &amp; Innovators</span>
+<span style="display:block;font-size:.7rem;color:rgba(255,255,255,.55);font-style:italic;margin-top:3px;">FBA scientists, engineers, and pioneers whose brilliance shaped the modern world — often uncredited, never forgotten</span>
+</div>
+</div>
+<p class="hist-note rv">Our digital museum of history is coming. Contribute your photos and help build the archive.</p>
+</section>
+
+<!-- DOWNLOAD / FOUNDING WAITLIST — PRESERVED -->
 <section id="download">
 <div class="dl-orb"></div>
 <div class="dlinner rv">
@@ -321,33 +250,30 @@ export const welcomeV6Markup = String.raw`
 </form>
 </div>
 <div class="sbgs">
-<a class="sbg" href="/apps/math-trail" style="text-decoration:none"><i data-lucide="calculator"></i><div><span>ECCOOZS Learning Apps</span><strong>Math Trail</strong></div></a>
-<a class="sbg" href="/apps/my-voice-journey-youth" style="text-decoration:none"><i data-lucide="message-circle"></i><div><span>Youth communication</span><strong>My Voice Journey Youth</strong></div></a>
-<a class="sbg" href="/apps/my-voice-journey" style="text-decoration:none"><i data-lucide="message-circle"></i><div><span>Adult communication</span><strong>My Voice Journey</strong></div></a>
-<a class="sbg" href="/house-of-eccoozs" style="text-decoration:none"><i data-lucide="shopping-bag"></i><div><span>Wear the culture</span><strong>House of Eccoozs</strong></div></a>
+<a class="sbg" href="/apps/math-trail"><img alt="" src="/fox paw.png"/><div><span>ECCOOZS Learning Apps</span><strong>Math Trail</strong></div></a>
+<a class="sbg" href="/apps/my-voice-journey-youth"><img alt="" src="/voice journey.png"/><div><span>Youth communication</span><strong>My Voice Journey Youth</strong></div></a>
+<a class="sbg" href="/apps/my-voice-journey"><img alt="" src="/voice journey.png"/><div><span>Adult communication</span><strong>My Voice Journey</strong></div></a>
+<a class="sbg" href="/house-of-eccoozs"><i data-lucide="shopping-bag"></i><div><span>Wear the culture</span><strong>House of ECCOOZS</strong></div></a>
 </div>
 </div>
 </section>
-<!-- FOOTER (DARKEST NAVY) -->
+
+<!-- FOOTER -->
 <footer>
 <div class="footer-inner">
 <div class="ftop">
-<div>
-<div class="fbrand">
-<img alt="Eccoozs" class="fbrand-mark" src="/icon.svg">
-<span class="fbwm">Eccoozs</span>
-</img></div>
-<p class="ftagline">Culture. Conversation. Community.</p>
-</div>
-<div><div class="fct">Platform</div><ul class="fls"><li><a href="#features">Features</a></li><li><a href="#app-preview">The App</a></li><li><a href="/learning">Learning Apps</a></li><li><a href="#download">Download</a></li><li><a href="#features">Soundrooms</a></li><li><span style="opacity:.72">House of Eccoozs — Coming Soon</span></li></ul></div>
-<div><div class="fct">Company</div><ul class="fls"><li><a href="#community">About</a></li><li><a href="#lifestyle">Culture</a></li><li><a href="/support">Partnerships</a></li><li><a href="/support">Media Kit</a></li></ul></div>
-<div><div class="fct">Legal</div><ul class="fls"><li><a href="/terms">Terms of Service</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/conduct">Community Guidelines</a></li><li><a href="/support">Contact Us</a></li></ul></div>
+  <div class="footer-brand">
+    <div class="fbrand"><img alt="ECCOOZS e mark" class="fbrand-mark" src="/eccoozs-mark-official.png"/><img alt="ECCOOZS" class="fbrand-wordmark" src="/eccoozs-wordmark.png"/></div>
+    <p class="ftagline">Technology for how we live, learn, connect, and grow.</p>
+  </div>
+  <div><div class="fct">Products</div><ul class="fls"><li><a href="#eccoozs-app">The App</a></li><li><a href="/learning">Learning Apps</a></li><li><a href="#business">Business Directory</a></li><li><a href="/house-of-eccoozs">House of ECCOOZS</a></li></ul></div>
+  <div><div class="fct">Company</div><ul class="fls"><li><a href="#community">About</a></li><li><a href="#history">American Legacy</a></li><li><a href="/support">Support</a></li><li><a href="/support">Contact</a></li></ul></div>
+  <div><div class="fct">Legal</div><ul class="fls"><li><a href="/terms">Terms of Service</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/conduct">Community Guidelines</a></li></ul></div>
 </div>
 <div class="fbot">
-<span class="fcp">© 2026 Eccoozs. All rights reserved.</span>
+<span class="fcp">© 2026 ECCOOZS. All rights reserved.</span>
 <div class="flg"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/conduct">Policies</a></div>
 </div>
 </div>
 </footer>
-
 `;
