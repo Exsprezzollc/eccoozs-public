@@ -98,155 +98,206 @@ export function WaitlistForm() {
   }
 
   return (
-    <form
-      id="wlForm"
-      noValidate
-      onSubmit={handleSubmit}
-      suppressHydrationWarning
-    >
-      <div className="wl-honeypot" aria-hidden="true" suppressHydrationWarning>
-        <label htmlFor="company_url">Company URL</label>
-        <input
-          autoComplete="off"
-          id="company_url"
-          name="company_url"
-          suppressHydrationWarning
-          tabIndex={-1}
-          type="text"
-        />
-      </div>
+    <>
+      <form
+        id="wlForm"
+        noValidate
+        onSubmit={handleSubmit}
+        suppressHydrationWarning
+      >
+        <div className="wl-honeypot" aria-hidden="true" suppressHydrationWarning>
+          <label htmlFor="company_url">Company URL</label>
+          <input
+            autoComplete="off"
+            id="company_url"
+            name="company_url"
+            suppressHydrationWarning
+            tabIndex={-1}
+            type="text"
+          />
+        </div>
 
-      <div className="wl-field">
-        <label className="wl-label" htmlFor="wl-email">Email Address</label>
-        <input
-          autoComplete="email"
-          className="wl-input"
-          id="wl-email"
-          name="email"
-          placeholder="you@example.com"
-          required
-          suppressHydrationWarning
-          type="email"
-        />
-      </div>
+        <div className="wl-field">
+          <label className="wl-label" htmlFor="wl-email">Email Address</label>
+          <input
+            autoComplete="email"
+            className="wl-input"
+            id="wl-email"
+            name="email"
+            placeholder="you@example.com"
+            required
+            suppressHydrationWarning
+            type="email"
+          />
+        </div>
 
-      <div className="wl-field">
-        <label className="wl-label" htmlFor="wl-name">
-          Name <span className="wl-opt">, optional</span>
-        </label>
-        <input
-          autoComplete="name"
-          className="wl-input"
-          id="wl-name"
-          name="full_name"
-          placeholder="Your name"
-          suppressHydrationWarning
-          type="text"
-        />
-      </div>
+        <div className="wl-field">
+          <label className="wl-label" htmlFor="wl-name">
+            Name <span className="wl-opt">, optional</span>
+          </label>
+          <input
+            autoComplete="name"
+            className="wl-input"
+            id="wl-name"
+            name="full_name"
+            placeholder="Your name"
+            suppressHydrationWarning
+            type="text"
+          />
+        </div>
 
-      <div className="wl-field">
-        <label className="wl-label" htmlFor="wl-aud">I Am Joining As</label>
-        <select
-          className="wl-select"
-          defaultValue="founding_member"
-          id="wl-aud"
-          name="audience_type"
-          suppressHydrationWarning
+        <div className="wl-field">
+          <label className="wl-label" htmlFor="wl-aud">I Am Joining As</label>
+          <select
+            className="wl-select"
+            defaultValue="founding_member"
+            id="wl-aud"
+            name="audience_type"
+            suppressHydrationWarning
+          >
+            <option value="founding_member">Founding Member</option>
+            <option value="creator">Creator</option>
+            <option value="business_owner">Business Owner</option>
+            <option value="advertiser_sponsor">Advertiser / Sponsor</option>
+            <option value="beta_tester">Beta Tester</option>
+            <option value="press_partner">Press / Partner</option>
+          </select>
+        </div>
+
+        <div className="wl-row wl-field">
+          <div>
+            <label className="wl-label" htmlFor="wl-biz">
+              Business <span className="wl-opt">, optional</span>
+            </label>
+            <input
+              autoComplete="organization"
+              className="wl-input"
+              id="wl-biz"
+              name="business_name"
+              placeholder="Business name"
+              suppressHydrationWarning
+              type="text"
+            />
+          </div>
+
+          <div>
+            <label className="wl-label" htmlFor="wl-web">
+              Website <span className="wl-opt">, optional</span>
+            </label>
+            <input
+              autoComplete="url"
+              className="wl-input"
+              id="wl-web"
+              name="website"
+              placeholder="https://"
+              suppressHydrationWarning
+              type="url"
+            />
+          </div>
+        </div>
+
+        <div className="wl-row wl-field">
+          <div>
+            <label className="wl-label" htmlFor="wl-city">
+              City <span className="wl-opt">, optional</span>
+            </label>
+            <input
+              autoComplete="address-level2"
+              className="wl-input"
+              id="wl-city"
+              name="city"
+              placeholder="City"
+              suppressHydrationWarning
+              type="text"
+            />
+          </div>
+
+          <div>
+            <label className="wl-label" htmlFor="wl-region">
+              State / Region <span className="wl-opt">, optional</span>
+            </label>
+            <input
+              autoComplete="address-level1"
+              className="wl-input"
+              id="wl-region"
+              name="region"
+              placeholder="State / Region"
+              suppressHydrationWarning
+              type="text"
+            />
+          </div>
+        </div>
+
+        <div className="wl-check">
+          <input
+            id="wl-age"
+            name="is_18_or_over"
+            required
+            suppressHydrationWarning
+            type="checkbox"
+          />
+          <label htmlFor="wl-age">
+            I confirm that I am 18 or older and want to join the ECCOOZS founding waitlist.
+          </label>
+        </div>
+
+        <button className="wl-submit" disabled={isSubmitting} type="submit">
+          {isSubmitting ? "Reserving…" : reserved ? "You're on the list!" : "Reserve My Spot"}
+        </button>
+
+        <p aria-live="polite" className={`wl-msg ${status.type === "idle" ? "" : status.type}`} role="status">
+          {status.message}
+        </p>
+      </form>
+
+      <div
+        style={{
+          marginTop: "1.5rem",
+          paddingTop: "1.35rem",
+          borderTop: "1px solid rgba(7,18,64,.10)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: "1rem",
+          flexWrap: "wrap",
+        }}
+      >
+        <div style={{ maxWidth: "430px" }}>
+          <div
+            style={{
+              fontSize: ".68rem",
+              fontWeight: 700,
+              letterSpacing: ".16em",
+              textTransform: "uppercase",
+              color: "#1a3ef5",
+              marginBottom: ".35rem",
+            }}
+          >
+            ECCOOZS Learning
+          </div>
+          <div style={{ fontSize: ".86rem", lineHeight: 1.6, color: "#607ab5" }}>
+            Explore Math Trail and My Voice Journey — focused learning tools from the ECCOOZS family.
+          </div>
+        </div>
+        <a
+          href="/learning"
+          style={{
+            minHeight: "40px",
+            padding: "0 14px",
+            borderRadius: "8px",
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "#071240",
+            color: "#fff",
+            fontSize: ".76rem",
+            fontWeight: 700,
+            whiteSpace: "nowrap",
+          }}
         >
-          <option value="founding_member">Founding Member</option>
-          <option value="creator">Creator</option>
-          <option value="business_owner">Business Owner</option>
-          <option value="advertiser_sponsor">Advertiser / Sponsor</option>
-          <option value="beta_tester">Beta Tester</option>
-          <option value="press_partner">Press / Partner</option>
-        </select>
+          Explore Learning
+        </a>
       </div>
-
-      <div className="wl-row wl-field">
-        <div>
-          <label className="wl-label" htmlFor="wl-biz">
-            Business <span className="wl-opt">, optional</span>
-          </label>
-          <input
-            autoComplete="organization"
-            className="wl-input"
-            id="wl-biz"
-            name="business_name"
-            placeholder="Business name"
-            suppressHydrationWarning
-            type="text"
-          />
-        </div>
-
-        <div>
-          <label className="wl-label" htmlFor="wl-web">
-            Website <span className="wl-opt">, optional</span>
-          </label>
-          <input
-            autoComplete="url"
-            className="wl-input"
-            id="wl-web"
-            name="website"
-            placeholder="https://"
-            suppressHydrationWarning
-            type="url"
-          />
-        </div>
-      </div>
-
-      <div className="wl-row wl-field">
-        <div>
-          <label className="wl-label" htmlFor="wl-city">
-            City <span className="wl-opt">, optional</span>
-          </label>
-          <input
-            autoComplete="address-level2"
-            className="wl-input"
-            id="wl-city"
-            name="city"
-            placeholder="City"
-            suppressHydrationWarning
-            type="text"
-          />
-        </div>
-
-        <div>
-          <label className="wl-label" htmlFor="wl-region">
-            State / Region <span className="wl-opt">, optional</span>
-          </label>
-          <input
-            autoComplete="address-level1"
-            className="wl-input"
-            id="wl-region"
-            name="region"
-            placeholder="State / Region"
-            suppressHydrationWarning
-            type="text"
-          />
-        </div>
-      </div>
-
-      <div className="wl-check">
-        <input
-          id="wl-age"
-          name="is_18_or_over"
-          required
-          suppressHydrationWarning
-          type="checkbox"
-        />
-        <label htmlFor="wl-age">
-          I confirm that I am 18 or older and want to join the ECCOOZS founding waitlist.
-        </label>
-      </div>
-
-      <button className="wl-submit" disabled={isSubmitting} type="submit">
-        {isSubmitting ? "Reservingâ€¦" : reserved ? "You're on the list!" : "Reserve My Spot"}
-      </button>
-
-      <p aria-live="polite" className={`wl-msg ${status.type === "idle" ? "" : status.type}`} role="status">
-        {status.message}
-      </p>
-    </form>
+    </>
   );
 }
