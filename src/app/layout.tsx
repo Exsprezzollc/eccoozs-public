@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import type React from "react";
 import "./globals.css";
+import eccoozsEMark from "@/assets/eccoozs-public/eccoozs-e-mark-90d0d033.png";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://eccoozs.com"),
@@ -8,9 +9,9 @@ export const metadata: Metadata = {
   description:
     "Explore ECCOOZS — a growing ecosystem for culture, community, connection, learning, and business discovery.",
   icons: {
-    icon: [{ url: "/eccoozs-mark-official.png", type: "image/png" }],
-    shortcut: [{ url: "/eccoozs-mark-official.png", type: "image/png" }],
-    apple: [{ url: "/eccoozs-mark-official.png", type: "image/png" }],
+    icon: [{ url: eccoozsEMark.src, type: "image/png" }],
+    shortcut: [{ url: eccoozsEMark.src, type: "image/png" }],
+    apple: [{ url: eccoozsEMark.src, type: "image/png" }],
   },
 };
 

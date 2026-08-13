@@ -3,13 +3,14 @@ import {
   voiceJourneyAdultPresentation,
   voiceJourneyYouthPresentation,
 } from "@/components/learning/presentationAssets";
+import eccoozsEMark from "@/assets/eccoozs-public/eccoozs-e-mark-90d0d033.png";
 
 export const welcomeV6Markup = String.raw`
 <!-- NAV -->
 <nav>
   <a class="nav-logo" href="/welcome" aria-label="ECCOOZS home">
-    <img alt="ECCOOZS e mark" class="nav-mark" src="/eccoozs-mark-official.png"/>
-    <img alt="ECCOOZS" class="nav-wordmark" src="/eccoozs-wordmark.png"/>
+    <img alt="ECCOOZS e mark" class="nav-mark" src="${eccoozsEMark.src}"/>
+    <span class="nav-wordmark" aria-label="ECCOOZS">eccoozs</span>
   </a>
   <ul class="nav-links">
     <li><a class="active" href="/welcome">Home</a></li>
@@ -52,7 +53,7 @@ export const welcomeV6Markup = String.raw`
   <div class="eco-grid rv">
     <a class="eco-card" href="#eccoozs-app">
       <div class="eco-media"><img alt="ECCOOZS community" src="/welcome-images/landing-03.png"/></div>
-      <div class="eco-icon branded"><img alt="" src="/eccoozs-mark-official.png"/></div>
+      <div class="eco-icon branded"><img alt="ECCOOZS e mark" src="${eccoozsEMark.src}"/></div>
       <div class="eco-body">
         <h3>ECCOOZS</h3>
         <p>Our flagship social platform for culture, community, and connection.</p>
@@ -263,7 +264,7 @@ export const welcomeV6Markup = String.raw`
 <div class="footer-inner">
 <div class="ftop">
   <div class="footer-brand">
-    <div class="fbrand"><img alt="ECCOOZS e mark" class="fbrand-mark" src="/eccoozs-mark-official.png"/><img alt="ECCOOZS" class="fbrand-wordmark" src="/eccoozs-wordmark.png"/></div>
+    <div class="fbrand"><img alt="ECCOOZS e mark" class="fbrand-mark" src="${eccoozsEMark.src}"/><span class="fbrand-wordmark" aria-label="ECCOOZS">eccoozs</span></div>
     <p class="ftagline">Technology for how we live, learn, connect, and grow.</p>
   </div>
   <div><div class="fct">Products</div><ul class="fls"><li><a href="#eccoozs-app">The App</a></li><li><a href="/learning">Learning Apps</a></li><li><a href="#business">Business Directory</a></li><li><a href="/house-of-eccoozs">House of ECCOOZS</a></li></ul></div>
