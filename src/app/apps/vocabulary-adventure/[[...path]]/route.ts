@@ -7,7 +7,6 @@ import chunk4 from "./_pack/chunk4";
 import chunk5 from "./_pack/chunk5";
 
 export const runtime = "nodejs";
-export const dynamic = "force-static";
 
 const BASE = "/apps/vocabulary-adventure";
 
