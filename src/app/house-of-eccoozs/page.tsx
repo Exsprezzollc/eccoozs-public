@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "House of ECCOOZS — Coming Soon",
-  description: "House of ECCOOZS is coming soon.",
+  title: "House of Eccoozs — Coming Soon",
+  description: "House of Eccoozs is coming soon.",
 };
 
 export default function HouseComingSoon() {
@@ -32,7 +32,7 @@ export default function HouseComingSoon() {
         style={{
           position: "relative",
           zIndex: 1,
-          maxWidth: 780,
+          width: "min(820px, 100%)",
           textAlign: "center",
           padding: "56px 34px",
           border: "1px solid rgba(255,255,255,.13)",
@@ -43,22 +43,16 @@ export default function HouseComingSoon() {
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/eccoozs-mark-official.png"
-          alt="ECCOOZS"
-          style={{ width: 58, height: 58, margin: "0 auto 20px" }}
-        />
-        <div
+          src="/brand/HOUSE%20OF.png"
+          alt="House of Eccoozs"
           style={{
-            fontSize: 12,
-            fontWeight: 800,
-            letterSpacing: ".18em",
-            textTransform: "uppercase",
-            color: "#6f8cff",
-            marginBottom: 14,
+            width: "min(400px, 82vw)",
+            height: "auto",
+            display: "block",
+            margin: "0 auto 28px",
+            objectFit: "contain",
           }}
-        >
-          House of ECCOOZS
-        </div>
+        />
         <h1
           style={{
             fontFamily: "Georgia, serif",
@@ -73,8 +67,8 @@ export default function HouseComingSoon() {
           style={{
             maxWidth: 610,
             margin: "0 auto 28px",
-            color: "rgba(255,255,255,.62)",
-            fontSize: 17,
+            color: "rgba(255,255,255,.72)",
+            fontSize: 18,
             lineHeight: 1.75,
           }}
         >
@@ -86,7 +80,7 @@ export default function HouseComingSoon() {
             display: "inline-flex",
             alignItems: "center",
             justifyContent: "center",
-            minHeight: 46,
+            minHeight: 48,
             padding: "0 22px",
             borderRadius: 10,
             background: "#2448ee",
