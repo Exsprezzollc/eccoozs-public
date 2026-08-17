@@ -117,7 +117,7 @@ export default function Learning() {
             aria-label="Play ECCOOZS Vocabulary Adventure"
           >
             <img
-              src="/api/learning/vocabulary-adventure-feature"
+              src="/learning-assets/vocabulary-adventure-feature-fixed.webp"
               alt="ECCOOZS Vocabulary Adventure showing Foundational Black American learners progressing from Elementary through Junior High and High School in the Garden Estate world"
             />
           </a>
