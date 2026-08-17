@@ -46,17 +46,17 @@ const stages = [
   {
     name: "Elementary",
     subtitle: "Explore & Learn",
-    copy: "Words are introduced in small, clear steps before the learner is asked to use them.",
+    copy: "Meet new words in clear, guided steps and begin growing the Cottage Garden.",
   },
   {
     name: "Junior High",
     subtitle: "Discover & Reason",
-    copy: "Learners strengthen spelling, distinguish similar meanings, repair misconceptions, and use vocabulary more independently.",
+    copy: "Strengthen spelling, meaning, contrast and independent word use as the Garden Estate expands.",
   },
   {
     name: "High School",
     subtitle: "Apply & Decide",
-    copy: "Advanced vocabulary becomes a tool for understanding evidence, communicating clearly, and making thoughtful real-world decisions.",
+    copy: "Use advanced vocabulary to evaluate evidence, explain decisions and complete real-world projects.",
   },
 ] as const;
 
@@ -64,7 +64,15 @@ export default function Learning() {
   return (
     <main className="learn">
       <style>{`
-        *{box-sizing:border-box}.learn{margin:0;min-height:100vh;font-family:Arial,sans-serif;color:#071240;background:#f7f9ff}.nav{height:76px;padding:0 5%;display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid #e7ebf5;position:sticky;top:0;z-index:20}.brand{display:flex;align-items:center;gap:15px}.brandLogo{display:block;width:156px;height:auto}.brand span{font-size:13px;font-weight:900;color:#6070a0;letter-spacing:.16em;white-space:nowrap}.nav a{color:#071240;text-decoration:none;font-weight:800}.hero{position:relative;min-height:430px;display:flex;align-items:center;overflow:hidden;background:#071240}.hero:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,12,28,.95),rgba(7,18,64,.73),rgba(7,18,64,.18)),url('/learning-assets/math-trail/asset-07.webp') center/cover}.hi{position:relative;z-index:1;width:100%;max-width:1240px;margin:auto;padding:76px 5%;color:#fff}.k{font-size:12px;letter-spacing:.2em;font-weight:900;color:#8ca4ff}.hi h1{font-family:Georgia,serif;font-size:clamp(3.3rem,7vw,6.6rem);line-height:.91;margin:12px 0 19px}.hi p{max-width:720px;color:rgba(255,255,255,.72);font-size:18px;line-height:1.72}.main{max-width:1240px;margin:auto;padding:62px 5% 90px}.mainHead h2{font-family:Georgia,serif;font-size:42px;margin:0 0 9px}.lead{color:#607ab5;line-height:1.7;margin:0 0 31px;max-width:800px}.feature{position:relative;overflow:hidden;border-radius:30px;background:linear-gradient(135deg,#07241f 0%,#0b332b 48%,#173f31 100%);color:#fff;box-shadow:0 28px 80px rgba(7,18,64,.22);border:1px solid rgba(218,180,88,.35);margin:0 0 58px}.feature:before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 78% 18%,rgba(226,187,88,.18),transparent 34%);pointer-events:none}.featureGrid{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(380px,.95fr);min-height:570px}.featureCopy{padding:54px 50px 50px;display:flex;flex-direction:column;justify-content:center;z-index:2}.featureKicker{font-size:12px;font-weight:950;letter-spacing:.2em;color:#e0bc66;margin-bottom:15px}.feature h2{font-family:Georgia,serif;font-size:clamp(3rem,5vw,5rem);line-height:.98;margin:0 0 14px;max-width:620px}.featureIntro{font-size:20px;line-height:1.55;color:rgba(255,255,255,.84);max-width:610px;margin:0 0 27px}.stageList{display:grid;gap:13px;margin-bottom:28px}.stage{padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1)}.stageTitle{font-weight:900;font-size:15px;color:#fff}.stageTitle span{color:#e5c36e}.stage p{margin:5px 0 0;color:rgba(255,255,255,.73);font-size:14px;line-height:1.5}.play{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;min-height:54px;padding:0 24px;border-radius:12px;background:#e1b956;color:#12251f;text-decoration:none;font-weight:950;letter-spacing:.015em;box-shadow:0 12px 30px rgba(0,0,0,.22);transition:transform .2s,filter .2s}.play:hover{transform:translateY(-2px);filter:brightness(1.05)}.featureNote{margin:17px 0 0;color:rgba(255,255,255,.68);font-size:13px;line-height:1.55}.featureVisual{position:relative;min-height:570px;overflow:hidden}.featureVisual:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#0d3028 0%,rgba(13,48,40,.2) 28%,rgba(13,48,40,.05)),url('/apps/vocabulary-adventure/assets/elementary-orchard.avif') center/cover;transform:scale(1.02)}.featureVisual:after{content:'';position:absolute;inset:auto 0 0;height:44%;background:linear-gradient(transparent,rgba(4,20,17,.72))}.learners{position:absolute;z-index:2;right:1%;bottom:-5%;width:min(58%,390px);height:auto;filter:drop-shadow(0 18px 25px rgba(0,0,0,.35))}.growth{position:absolute;z-index:3;left:26px;right:26px;bottom:22px;padding:15px 17px;border-radius:16px;background:rgba(5,26,22,.82);border:1px solid rgba(230,196,113,.3);backdrop-filter:blur(8px)}.growth strong{display:block;color:#f0d58d;font-size:14px;margin-bottom:7px}.growthPath{display:flex;align-items:center;gap:8px;flex-wrap:wrap;color:#fff;font-size:12px;font-weight:800}.growthPath i{font-style:normal;color:#e0bc66}.promise{font-family:Georgia,serif;text-align:center;color:#12372e;font-size:clamp(1.65rem,3vw,2.5rem);margin:0 0 52px}.moreHead{margin-bottom:26px}.moreHead h2{font-family:Georgia,serif;font-size:38px;margin:0 0 8px}.moreHead p{color:#607ab5;line-height:1.65;margin:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.card{background:#fff;border:1px solid #e1e7f3;border-radius:24px;overflow:hidden;box-shadow:0 18px 54px #07124012;display:flex;flex-direction:column;transition:transform .22s,box-shadow .22s}.card:hover{transform:translateY(-4px);box-shadow:0 24px 68px #07124020}.visual{aspect-ratio:4/3;overflow:hidden;background:#eef3ff}.visual img{width:100%;height:100%;object-fit:cover;display:block}.body{padding:23px;display:flex;flex-direction:column;flex:1}.label{font-size:11px;font-weight:950;letter-spacing:.12em;color:#1f47e0}.card.youth .label{color:#7140d9}.card.adult .label{color:#5545a5}.body h3{font-size:27px;margin:8px 0}.body p{color:#607ab5;line-height:1.65;font-size:14px;flex:1}.actions{margin-top:18px}.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:11px;text-decoration:none;font-weight:900;color:#fff;background:#1f47e0}.card.youth .btn{background:#7140d9}.card.adult .btn{background:#30236f}.note{margin-top:28px;padding:18px 20px;border:1px solid #e1e7f3;border-radius:16px;background:#fff;color:#607ab5;line-height:1.65}.back{margin-top:32px;text-align:center}.back a{color:#1f47e0;font-weight:850;text-decoration:none}@media(max-width:1000px){.featureGrid{grid-template-columns:1fr}.featureVisual{min-height:430px}.grid{grid-template-columns:1fr 1fr}.card.adult{grid-column:1/-1;max-width:600px}}@media(max-width:720px){.grid{grid-template-columns:1fr}.card.adult{grid-column:auto;max-width:none}.nav{padding:0 4%;height:70px}.brand{gap:10px}.brandLogo{width:134px}.brand span{font-size:11px;letter-spacing:.12em}.hi{padding:60px 6%}.main{padding:46px 5% 72px}.featureCopy{padding:42px 28px 35px}.featureVisual{min-height:360px}.learners{width:min(52%,300px)}.growth{left:18px;right:18px;bottom:16px}}@media(max-width:470px){.brand span{display:none}.brandLogo{width:142px}.nav a{font-size:14px}.feature{border-radius:22px}.featureCopy{padding:36px 22px 30px}.featureIntro{font-size:17px}.stage{padding:12px 13px}.play{width:100%;padding:0 14px}.featureVisual{min-height:330px}.learners{right:-7%;width:62%}.growthPath{font-size:11px}}
+        *{box-sizing:border-box}.learn{margin:0;min-height:100vh;font-family:Arial,sans-serif;color:#071240;background:linear-gradient(180deg,#f8faff 0%,#fffdf8 48%,#f7f9ff 100%)}
+        .nav{height:76px;padding:0 5%;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.96);border-bottom:1px solid #e7ebf5;position:sticky;top:0;z-index:30;backdrop-filter:blur(12px)}.brand{display:flex;align-items:center;gap:15px}.brandLogo{display:block;width:156px;height:auto}.brand span{font-size:13px;font-weight:900;color:#6070a0;letter-spacing:.16em;white-space:nowrap}.nav a{color:#071240;text-decoration:none;font-weight:800}
+        .intro{position:relative;overflow:hidden;text-align:center;padding:58px 5% 44px;background:radial-gradient(circle at 20% 0%,rgba(53,101,238,.09),transparent 35%),radial-gradient(circle at 82% 10%,rgba(96,171,117,.1),transparent 30%)}.introKicker{font-size:12px;letter-spacing:.22em;font-weight:950;color:#1f47e0}.intro h1{font-family:Georgia,serif;font-size:clamp(3rem,5.8vw,5.25rem);line-height:.96;margin:12px 0 16px;color:#071240}.intro p{max-width:850px;margin:0 auto;color:#607ab5;font-size:18px;line-height:1.65}
+        .main{max-width:1320px;margin:auto;padding:28px 4% 90px}.feature{position:relative;min-height:690px;overflow:hidden;border-radius:34px;background:linear-gradient(90deg,rgba(255,251,239,.98) 0%,rgba(255,251,239,.92) 27%,rgba(255,251,239,.5) 43%,rgba(255,251,239,.08) 62%,rgba(255,251,239,0) 100%),url('/apps/vocabulary-adventure/assets/garden-house.avif') center/cover no-repeat;box-shadow:0 30px 85px rgba(24,54,47,.2);border:1px solid rgba(86,119,74,.2);isolation:isolate}.feature:before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.16),transparent 52%,rgba(6,25,21,.66) 100%);z-index:1;pointer-events:none}.featureCopy{position:absolute;z-index:8;top:48px;left:52px;width:min(585px,48%)}.featureKicker{font-size:13px;font-weight:950;letter-spacing:.15em;color:#174f3d;margin-bottom:13px}.feature h2{font-family:Georgia,serif;font-size:clamp(3.5rem,5.8vw,5.8rem);line-height:.9;letter-spacing:-.035em;margin:0;color:#0b2b22;text-shadow:0 2px 20px rgba(255,255,255,.55)}.journeyLine{font-size:17px;font-weight:850;color:#184d3b;margin:18px 0 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}.journeyLine i{font-style:normal;color:#c88732;font-size:20px}.featureIntro{font-size:17px;line-height:1.55;color:#405f55;max-width:500px;margin:0 0 20px}.play{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 25px;border-radius:999px;background:#174f3d;color:#fff;text-decoration:none;font-weight:950;letter-spacing:.01em;border:2px solid #d6a64c;box-shadow:0 13px 30px rgba(13,55,43,.23);transition:transform .2s,box-shadow .2s}.play:hover{transform:translateY(-2px);box-shadow:0 17px 34px rgba(13,55,43,.28)}.featureNote{margin:13px 0 0;color:#4d695f;font-size:13px;font-weight:700}
+        .pair{position:absolute;z-index:4;height:auto;object-fit:contain;filter:drop-shadow(0 18px 20px rgba(0,0,0,.25));pointer-events:none}.pairElementary{left:3.5%;bottom:-7%;width:27%;max-width:335px}.pairJunior{left:42%;bottom:-5%;width:23%;max-width:295px}.pairHigh{right:2.5%;bottom:-7%;width:27%;max-width:330px}.stageLabels{position:absolute;z-index:9;left:0;right:0;bottom:20px;display:grid;grid-template-columns:1fr 1fr 1fr;padding:0 4.5%;pointer-events:none}.stageLabel{font-family:Georgia,serif;color:#fff;font-size:20px;text-shadow:0 2px 10px rgba(0,0,0,.8);display:flex;align-items:center;gap:9px}.stageLabel:nth-child(2){justify-content:center}.stageLabel:nth-child(3){justify-content:flex-end}.stageLabel b{font-family:Arial,sans-serif;color:#efc76d;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+        .stageStory{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin:20px 0 58px}.stageCard{position:relative;padding:20px 22px 21px;border-radius:19px;background:rgba(255,255,255,.9);border:1px solid #e0e8df;box-shadow:0 12px 36px rgba(24,54,47,.08)}.stageCard:before{content:'';position:absolute;top:0;left:22px;width:46px;height:3px;background:#d3a44a;border-radius:0 0 4px 4px}.stageNum{font-size:10px;letter-spacing:.17em;font-weight:950;color:#72917f}.stageCard h3{margin:7px 0 5px;color:#153d32;font-size:18px}.stageCard h3 span{color:#b47a29}.stageCard p{margin:0;color:#667d75;font-size:13px;line-height:1.55}.promise{font-family:Georgia,serif;text-align:center;color:#12372e;font-size:clamp(1.75rem,3vw,2.7rem);margin:0 0 58px}.moreHead{text-align:center;margin-bottom:28px}.moreHead h2{font-family:Georgia,serif;font-size:42px;margin:0 0 8px}.moreHead p{color:#607ab5;line-height:1.65;margin:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.card{background:#fff;border:1px solid #e1e7f3;border-radius:24px;overflow:hidden;box-shadow:0 18px 54px #07124012;display:flex;flex-direction:column;transition:transform .22s,box-shadow .22s}.card:hover{transform:translateY(-4px);box-shadow:0 24px 68px #07124020}.visual{aspect-ratio:4/3;overflow:hidden;background:#eef3ff}.visual img{width:100%;height:100%;object-fit:cover;display:block}.body{padding:23px;display:flex;flex-direction:column;flex:1}.label{font-size:11px;font-weight:950;letter-spacing:.12em;color:#1f47e0}.card.youth .label{color:#7140d9}.card.adult .label{color:#5545a5}.body h3{font-size:27px;margin:8px 0}.body p{color:#607ab5;line-height:1.65;font-size:14px;flex:1}.actions{margin-top:18px}.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:11px;text-decoration:none;font-weight:900;color:#fff;background:#1f47e0}.card.youth .btn{background:#7140d9}.card.adult .btn{background:#30236f}.note{margin-top:28px;padding:18px 20px;border:1px solid #e1e7f3;border-radius:16px;background:#fff;color:#607ab5;line-height:1.65}.back{margin-top:32px;text-align:center}.back a{color:#1f47e0;font-weight:850;text-decoration:none}
+        @media(max-width:1050px){.feature{min-height:650px}.featureCopy{width:56%}.pairElementary{width:30%;left:1%}.pairJunior{width:26%;left:39%}.pairHigh{width:30%;right:0}.grid{grid-template-columns:1fr 1fr}.card.adult{grid-column:1/-1;max-width:620px;margin:auto}}
+        @media(max-width:760px){.nav{padding:0 4%;height:70px}.brand{gap:10px}.brandLogo{width:134px}.brand span{font-size:11px;letter-spacing:.12em}.intro{padding:46px 6% 34px}.intro p{font-size:16px}.main{padding:20px 4% 72px}.feature{min-height:700px;border-radius:24px;background:linear-gradient(180deg,rgba(255,251,239,.97) 0%,rgba(255,251,239,.86) 34%,rgba(255,251,239,.08) 59%,rgba(4,24,19,.12) 100%),url('/apps/vocabulary-adventure/assets/garden-house.avif') 48% center/cover no-repeat}.featureCopy{top:30px;left:25px;right:25px;width:auto}.feature h2{font-size:clamp(3.1rem,13vw,4.6rem)}.journeyLine{font-size:14px;gap:7px}.featureIntro{max-width:430px;font-size:15px}.pairElementary{left:-5%;bottom:-4%;width:43%}.pairJunior{left:32%;bottom:-2%;width:38%}.pairHigh{right:-8%;bottom:-4%;width:42%}.stageLabels{padding:0 3%;bottom:14px}.stageLabel{font-size:14px}.stageLabel b{display:none}.stageStory{grid-template-columns:1fr;margin-bottom:48px}.grid{grid-template-columns:1fr}.card.adult{grid-column:auto;max-width:none}}
+        @media(max-width:500px){.brand span{display:none}.brandLogo{width:142px}.nav a{font-size:14px}.intro h1{font-size:3.15rem}.feature{min-height:650px}.featureCopy{left:20px;right:20px}.feature h2{font-size:3.35rem}.featureIntro{display:none}.play{width:100%;min-height:52px;padding:0 14px}.featureNote{font-size:11px}.pairElementary{width:47%;left:-8%}.pairJunior{width:42%;left:29%}.pairHigh{width:47%;right:-11%}.stageLabel{font-size:12px}.stageLabels{bottom:11px}.stageStory{gap:10px}.stageCard{padding:18px}.moreHead h2{font-size:34px}}
       `}</style>
 
       <nav className="nav">
@@ -75,70 +83,53 @@ export default function Learning() {
         <a href="/welcome">Back to ECCOOZS</a>
       </nav>
 
-      <section className="hero">
-        <div className="hi">
-          <div className="k">ECCOOZS LEARNING APPS</div>
-          <h1>Explore. Practice.<br />Grow.</h1>
-          <p>
-            Purpose-built learning and communication tools that teach clearly,
-            build confidence, and grow with the learner.
-          </p>
-        </div>
+      <section className="intro">
+        <div className="introKicker">ECCOOZS LEARNING APPS</div>
+        <h1>Explore. Practice. Grow.</h1>
+        <p>
+          Friendly learning tools that teach clearly, build confidence, and
+          grow with the learner — from first foundations to real-world application.
+        </p>
       </section>
 
       <section className="main">
-        <div className="mainHead">
-          <h2>Choose the right journey.</h2>
-          <p className="lead">
-            Start with our featured vocabulary experience, or continue to the
-            math and communication apps below. Each opens directly in the browser.
-          </p>
-        </div>
-
-        <article className="feature">
-          <div className="featureGrid">
-            <div className="featureCopy">
-              <div className="featureKicker">ECCOOZS VOCABULARY ADVENTURE</div>
-              <h2>Learn words.<br />Build your world.</h2>
-              <p className="featureIntro">
-                One vocabulary adventure that grows with the learner.
-              </p>
-
-              <div className="stageList">
-                {stages.map((stage) => (
-                  <div className="stage" key={stage.name}>
-                    <div className="stageTitle">
-                      {stage.name} — <span>{stage.subtitle}</span>
-                    </div>
-                    <p>{stage.copy}</p>
-                  </div>
-                ))}
-              </div>
-
-              <a className="play" href="/apps/vocabulary-adventure">
-                PLAY VOCABULARY ADVENTURE →
-              </a>
-              <p className="featureNote">
-                Learn vocabulary · Earn Estate Credits · Grow your garden,
-                estate and accomplishments
-              </p>
+        <article className="feature" aria-label="ECCOOZS Vocabulary Adventure featured learning experience">
+          <div className="featureCopy">
+            <div className="featureKicker">ECCOOZS VOCABULARY ADVENTURE</div>
+            <h2>Learn words.<br />Build your world.</h2>
+            <div className="journeyLine">
+              <span>Cottage Garden</span><i>→</i><span>Garden Estate</span><i>→</i><span>Real-World Growth</span>
             </div>
+            <p className="featureIntro">
+              One vocabulary adventure that grows from guided discovery to
+              independent reasoning and applied decision-making.
+            </p>
+            <a className="play" href="/apps/vocabulary-adventure">
+              PLAY VOCABULARY ADVENTURE →
+            </a>
+            <p className="featureNote">Learn vocabulary · Earn Estate Credits · Grow your world</p>
+          </div>
 
-            <div className="featureVisual" aria-label="Vocabulary Adventure garden world">
-              <img
-                className="learners"
-                src="/apps/vocabulary-adventure/assets/learner-pair.avif"
-                alt="Two Vocabulary Adventure learners"
-              />
-              <div className="growth">
-                <strong>Your learning changes the world around you.</strong>
-                <div className="growthPath">
-                  <span>Cottage Garden</span><i>→</i><span>Garden Estate</span><i>→</i><span>Professional Projects</span>
-                </div>
-              </div>
-            </div>
+          <img className="pair pairElementary" src="/apps/vocabulary-adventure/assets/elementary-pair.avif" alt="Elementary Vocabulary Adventure learner pair" />
+          <img className="pair pairJunior" src="/apps/vocabulary-adventure/assets/learner-pair.avif" alt="Junior High Vocabulary Adventure learner pair" />
+          <img className="pair pairHigh" src="/apps/vocabulary-adventure/assets/high-school-pair.avif" alt="High School Vocabulary Adventure learner pair" />
+
+          <div className="stageLabels" aria-hidden="true">
+            <div className="stageLabel"><b>01</b> Elementary</div>
+            <div className="stageLabel"><b>02</b> Junior High</div>
+            <div className="stageLabel"><b>03</b> High School</div>
           </div>
         </article>
+
+        <div className="stageStory">
+          {stages.map((stage, index) => (
+            <div className="stageCard" key={stage.name}>
+              <div className="stageNum">0{index + 1} · {stage.name.toUpperCase()}</div>
+              <h3>{stage.name} — <span>{stage.subtitle}</span></h3>
+              <p>{stage.copy}</p>
+            </div>
+          ))}
+        </div>
 
         <p className="promise">The more you learn, the more your world grows.</p>
 
