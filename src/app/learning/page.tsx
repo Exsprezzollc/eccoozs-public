@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const vocabularyAdventureFeature = `data:image/webp;base64,${readFileSync(
   join(process.cwd(), "public", "learning-assets", "vocabulary-adventure-feature-fixed.webp"),
   "utf8",
-).trim()}`;
+).replace(/\s+/g, "")}`;
 
 const apps = [
   {
