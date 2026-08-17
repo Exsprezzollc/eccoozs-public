@@ -1,0 +1,43 @@
+name: Serai Vocabulary Import
+
+on:
+  push:
+    branches:
+      - serai/vocabulary-adventure-payload
+    paths:
+      - '.payload/READY'
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout payload branch
+        uses: actions/checkout@v4
+        with:
+          ref: serai/vocabulary-adventure-payload
+          fetch-depth: 0
+      - name: Rebuild website update archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .payload/chunk-*.txt | base64 --decode > /tmp/vocab-website-update.zip
+          unzip -t /tmp/vocab-website-update.zip
+      - name: Apply update to main
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "ECCOOZS Build"
+          git config user.email "actions@users.noreply.github.com"
+          git fetch origin main
+          git checkout main
+          unzip -o /tmp/vocab-website-update.zip -d .
+          git add next.config.ts src/app/learning/page.tsx src/components/learning/VocabularyShowcaseArt.tsx public/apps/vocabulary-adventure
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Add Vocabulary Adventure to Learning Apps"
+          git push origin main
