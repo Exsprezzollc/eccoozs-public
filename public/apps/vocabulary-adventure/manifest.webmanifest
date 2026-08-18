@@ -1,0 +1,18 @@
+{
+  "name": "ECCOOZS Vocabulary Adventure",
+  "short_name": "Vocabulary Adventure",
+  "description": "Three-stage vocabulary learning through discovery, reasoning, and real-world application.",
+  "start_url": "/apps/vocabulary-adventure",
+  "display": "standalone",
+  "background_color": "#08231e",
+  "theme_color": "#08231e",
+  "icons": [
+    {
+      "src": "/apps/vocabulary-adventure/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "scope": "/apps/vocabulary-adventure/"
+}
