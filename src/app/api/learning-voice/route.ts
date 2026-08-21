@@ -63,7 +63,20 @@ function isVoiceAlias(value: unknown): value is EccoozsVoiceAlias {
 }
 
 export async function GET() {
-  return jsonError(405, "Method not allowed.");
+  return NextResponse.json(
+    {
+      ok: true,
+      service: "eccoozs-learning-voice",
+      configured: Boolean(process.env.ELEVENLABS_API_KEY?.trim()),
+      aliases: ECCOOZS_VOICE_ALIASES,
+    },
+    {
+      status: 200,
+      headers: {
+        "Cache-Control": "no-store",
+      },
+    }
+  );
 }
 
 export async function POST(request: Request) {
