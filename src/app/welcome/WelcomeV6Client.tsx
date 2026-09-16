@@ -91,7 +91,7 @@ export default function WelcomeV6Client() {
     return () => { observer.disconnect(); form?.removeEventListener("submit", handleSubmit); };
   }, [iconsReady]);
 
-  const marker = "<!-- ONE FLAGSHIP APP SECTION -->";
+  const marker = "<!-- FOOTER -->";
   const [beforeBellmont, afterBellmont = ""] = welcomeV6Markup.split(marker);
 
   return (
