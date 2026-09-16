@@ -18,15 +18,28 @@ export default async function BellmontShowcasePage({ params }: { params: Promise
   const { slug } = await params;
   const page = bellmontPages[slug];
   if (!page) notFound();
+
   return (
     <main className="bellmont-static-shell">
       <div className="bellmont-static-meta">
         <a href="/bellmont">← Back to Bellmont</a>
-        <div><h1>{page.title}</h1><p>{page.caption}</p></div>
+        <div>
+          <h1>{page.title}</h1>
+          <p>{page.caption}</p>
+        </div>
         <a href="https://www.youtube.com/@Eccoozs" target="_blank" rel="noreferrer">ECCOOZS YouTube ↗</a>
       </div>
+
       <div className="bellmont-static-frame">
-        <BellmontArt className="bellmont-static-art" index={page.index} alt={page.alt} />
+        {page.image ? (
+          <img
+            src={page.image}
+            alt={page.alt}
+            className="bellmont-static-art bellmont-static-image"
+          />
+        ) : typeof page.index === "number" ? (
+          <BellmontArt className="bellmont-static-art" index={page.index} alt={page.alt} />
+        ) : null}
       </div>
     </main>
   );
