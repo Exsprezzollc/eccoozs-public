@@ -26,7 +26,7 @@ const timeline = [
   {
     title: "Ideas & Industry",
     period: "1900–1950",
-    image: "/history/history-innovation-and-industry.png"
+    image: "/history/history-ideas-and-innovation.png"
   },
   {
     title: "Rights & Opportunity",
@@ -46,21 +46,21 @@ const stories = [
     kicker: "People",
     title: "Lives worth knowing.",
     copy: "Profiles of builders, thinkers, veterans, organizers, families, and everyday people whose lives belong in the record.",
-    image: "/history/history-leadership-and-culture.png"
+    image: "/history/history-lives-worth-knowing.png"
   },
   {
     id: "ideas",
     kicker: "Ideas & Innovation",
     title: "The work behind progress.",
     copy: "Invention, engineering, research, enterprise, craftsmanship, and the ideas that changed how people lived and worked.",
-    image: "/history/history-innovation-and-industry.png"
+    image: "/history/history-ideas-and-innovation.png"
   },
   {
     id: "service",
     kicker: "Service & Sacrifice",
     title: "Duty across generations.",
     copy: "Military service, public service, family sacrifice, civic duty, and the stories of those who answered a call larger than themselves.",
-    image: "/history/history-military-and-service.png"
+    image: "/history/history-duty-across-generations.png"
   },
   {
     id: "culture",
@@ -153,7 +153,7 @@ export default function HistoryPage() {
         <div className={styles.featureImage}>
           <img
             src="/history/history-foundational-black-american-history.png"
-            alt="Dignified Black American military service members represented in a historical tribute scene"
+            alt="Black American military service members represented in a historical tribute scene"
           />
         </div>
         <blockquote className={styles.featureQuote}>
@@ -223,14 +223,14 @@ export default function HistoryPage() {
           </div>
         </article>
         <article>
-          <img src="/history/history-indigenous-heritage.png" alt="Indigenous community represented beside a river landscape" />
+          <img src="/history/history-indigenous-heritage.png" alt="Historical Indigenous community portrait" />
           <div>
             <span>COLLECTION</span>
             <h3>Indigenous Heritage</h3>
           </div>
         </article>
         <article>
-          <img src="/history/history-military-and-service.png" alt="Black American service members represented at a memorial" />
+          <img src="/history/history-duty-across-generations.png" alt="Black American military service members pictured together" />
           <div>
             <span>COLLECTION</span>
             <h3>Military &amp; Service</h3>
