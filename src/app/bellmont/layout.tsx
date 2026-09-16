@@ -13,6 +13,7 @@ export default function BellmontLayout({ children }: { children: ReactNode }) {
           <a href="/bellmont">Bellmont State</a>
           <a href="/bellmont/explore">Explore</a>
           <a href="/bellmont/circle">Characters</a>
+          <a href="/bellmont/student-organizations">Organizations</a>
           <a href="/bellmont/everyday-life">Student Life</a>
           <a href="/bellmont/traditions">Traditions</a>
           <a href="/bellmont/sounds-of-triumph">Sounds of Triumph</a>
