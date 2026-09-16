@@ -53,11 +53,20 @@ export default async function BellmontShowcasePage({
 
       <div className="bellmont-static-frame bellmont-static-frame-wide">
         {page.image ? (
-          <img
-            src={page.image}
-            alt={page.alt}
-            className="bellmont-static-art bellmont-static-image"
-          />
+          <div className="bellmont-static-art-wrap">
+            <img
+              src={page.image}
+              alt={page.alt}
+              className="bellmont-static-art bellmont-static-image"
+            />
+            {slug === "student-organizations" ? (
+              <img
+                src="/bellmont/club-sports-special-interest.webp"
+                alt="Bellmont students connecting through club sports and special-interest organizations"
+                className="club-sports-overlay"
+              />
+            ) : null}
+          </div>
         ) : (
           <section className="bellmont-art-pending" aria-label={page.alt}>
             <img src="/bellmont/turtle-white.webp" alt="" aria-hidden="true" />
@@ -81,14 +90,33 @@ export default async function BellmontShowcasePage({
               max-width: 1440px;
             }
 
-            .bellmont-static-frame-wide .bellmont-static-art {
+            .bellmont-static-art-wrap {
+              position: relative;
               width: min(94vw, 1280px);
+              max-width: 100%;
+              line-height: 0;
+            }
+
+            .bellmont-static-frame-wide .bellmont-static-art {
+              display: block;
+              width: 100%;
               max-width: 100%;
               height: auto;
             }
 
             .bellmont-static-image {
               object-fit: contain;
+            }
+
+            .club-sports-overlay {
+              position: absolute;
+              left: 33.79%;
+              top: 71.88%;
+              width: 32.32%;
+              height: 9.70%;
+              display: block;
+              object-fit: cover;
+              object-position: center;
             }
 
             .bellmont-art-pending {
@@ -139,7 +167,7 @@ export default async function BellmontShowcasePage({
                 padding-right: 10px;
               }
 
-              .bellmont-static-frame-wide .bellmont-static-art,
+              .bellmont-static-art-wrap,
               .bellmont-art-pending {
                 width: 100%;
               }
