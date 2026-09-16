@@ -1,13 +1,21 @@
 export default function BellmontFeature() {
   return (
-    <section className="bm-feature-static" aria-label="Bellmont State University — A Higher Story">
-      <a href="/bellmont" className="bm-feature-link" aria-label="Explore Bellmont State University">
+    <section
+      className="bm-feature-static"
+      aria-label="Bellmont State University — A Higher Story"
+    >
+      <a
+        href="/bellmont"
+        className="bm-feature-link"
+        aria-label="Explore Bellmont State University"
+      >
         <img
-          src="/bellmont/bellmont-home.webp"
+          src="/bellmont/eccoozs-bellmont-feature.png"
           alt="Bellmont State University — A Higher Story"
           className="bm-feature-image"
         />
       </a>
+
       <style jsx>{`
         .bm-feature-static {
           width: 100%;
@@ -16,6 +24,7 @@ export default function BellmontFeature() {
           background: #061c3b;
           overflow: hidden;
         }
+
         .bm-feature-link {
           display: block;
           width: 100%;
@@ -23,6 +32,7 @@ export default function BellmontFeature() {
           text-decoration: none;
           line-height: 0;
         }
+
         .bm-feature-image {
           display: block;
           width: 100%;
@@ -31,9 +41,10 @@ export default function BellmontFeature() {
           object-fit: contain;
           background: #061c3b;
         }
+
         @media (min-width: 1700px) {
           .bm-feature-link {
-            max-width: 1531px;
+            max-width: 1536px;
           }
         }
       `}</style>
