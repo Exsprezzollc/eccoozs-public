@@ -1,0 +1,240 @@
+:root {
+  --bsu-navy: #061c3b;
+  --bsu-navy-2: #0b2a55;
+  --bsu-ink: #071b38;
+  --bsu-cream: #f6f1e7;
+  --bsu-gold: #d7aa49;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bellmont-site {
+  min-height: 100vh;
+  background: var(--bsu-cream);
+  color: var(--bsu-ink);
+  font-family: Arial, "Helvetica Neue", sans-serif;
+}
+
+.bellmont-topbar {
+  min-height: 72px;
+  background: linear-gradient(90deg, #04152f, #071f43);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 0 3vw;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.bellmont-eccoozs {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  text-decoration: none;
+  line-height: 1;
+  flex: 0 0 auto;
+}
+
+.bellmont-eccoozs strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.bellmont-eccoozs span {
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.bellmont-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 1.4vw, 22px);
+  margin-left: auto;
+  min-width: 0;
+}
+
+.bellmont-nav a {
+  color: rgba(255, 255, 255, 0.86);
+  text-decoration: none;
+  font-size: clamp(10px, 0.78vw, 12px);
+  white-space: nowrap;
+}
+
+.bellmont-nav a:hover {
+  color: #fff;
+}
+
+.bellmont-join {
+  color: #fff;
+  text-decoration: none;
+  background: #1f47e0;
+  border-radius: 999px;
+  padding: 11px 18px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+.bellmont-static-shell {
+  padding: 34px 2.5vw 64px;
+  background:
+    linear-gradient(
+      180deg,
+      #061c3b 0,
+      #0a315f 250px,
+      #f4efe5 250px
+    );
+  min-height: calc(100vh - 72px);
+}
+
+.bellmont-static-meta {
+  width: min(94vw, 1440px);
+  margin: 0 auto 18px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.bellmont-static-meta a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.bellmont-static-meta > div {
+  text-align: center;
+}
+
+.bellmont-static-meta h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  font-size: 20px;
+  margin: 0;
+}
+
+.bellmont-static-meta p {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.67);
+  font-size: 12px;
+  margin: 4px 0 0;
+}
+
+.bellmont-static-frame {
+  width: min(94vw, 1440px);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.bellmont-static-art {
+  display: block;
+  width: min(94vw, 1280px);
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  box-shadow: 0 24px 70px rgba(4, 19, 41, 0.28);
+  background: #fff;
+}
+
+.bellmont-footer {
+  min-height: 84px;
+  background: #04152f;
+  color: rgba(255, 255, 255, 0.76);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 4vw;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: 0.12em;
+  font-size: 11px;
+}
+
+.bellmont-footer div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bellmont-footer img {
+  width: 25px;
+  height: auto;
+}
+
+.bellmont-footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (max-width: 1180px) {
+  .bellmont-nav {
+    gap: 11px;
+  }
+
+  .bellmont-nav a {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 940px) {
+  .bellmont-nav {
+    display: none;
+  }
+
+  .bellmont-static-meta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .bellmont-static-meta > div {
+    text-align: left;
+  }
+}
+
+@media (max-width: 560px) {
+  .bellmont-topbar {
+    min-height: 64px;
+    padding: 0 15px;
+    gap: 12px;
+  }
+
+  .bellmont-eccoozs strong {
+    font-size: 21px;
+  }
+
+  .bellmont-join {
+    padding: 9px 12px;
+  }
+
+  .bellmont-static-shell {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .bellmont-static-meta,
+  .bellmont-static-frame,
+  .bellmont-static-art {
+    width: 100%;
+  }
+
+  .bellmont-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
