@@ -2,135 +2,274 @@ import type { Metadata } from "next";
 import styles from "./history.module.css";
 
 export const metadata: Metadata = {
-  title: "ECCOOZS History — American Legacy",
+  title: "ECCOOZS History & Legacy",
   description:
-    "A growing ECCOOZS historical archive for Foundational Black American history, American legacy, innovation, service, culture, and memory."
+    "ECCOOZS History & Legacy is a growing digital archive for historical memory, Foundational Black American history, service, innovation, culture, collections, and primary records."
 };
 
-const collections = [
+const timeline = [
   {
-    title: "Foundational Black American History",
-    copy: "People, families, communities, institutions, work, struggle, achievement, and the long American story carried across generations.",
-    image: "/welcome-images/landing-10.png"
+    title: "Foundations",
+    period: "Before 1600",
+    image: "/history/history-foundations-mounds-and-willows.png"
   },
   {
-    title: "Inventors & Innovators",
-    copy: "Scientists, engineers, builders, researchers, and pioneers whose ideas helped shape modern American life.",
-    image: "/welcome-images/landing-16-v3.png"
+    title: "Resistance & Survival",
+    period: "1600–1865",
+    image: "/history/history-foundational-black-american-history.png"
   },
   {
-    title: "Leadership & Civil Rights",
-    copy: "Movements, organizers, thinkers, institutions, and public figures who shaped debates over citizenship, dignity, and equal treatment.",
-    image: "/welcome-images/landing-14.png"
+    title: "Rebuilding & Rising",
+    period: "1865–1900",
+    image: "/history/history-leadership-and-culture.png"
   },
   {
-    title: "Military Service & Sacrifice",
-    copy: "Stories of service, courage, family, and duty across generations of American military history.",
-    image: "/welcome-images/landing-15.png"
+    title: "Ideas & Industry",
+    period: "1900–1950",
+    image: "/history/history-innovation-and-industry.png"
   },
   {
-    title: "Indigenous Heritage",
-    copy: "Historical records, photographs, communities, nations, cultural continuity, and the connections that form part of the American story.",
-    image: "/welcome-images/landing-11.png"
+    title: "Rights & Opportunity",
+    period: "1950–2000",
+    image: "/history/history-leadership-and-culture.png"
   },
   {
-    title: "Research, Documents & Archives",
-    copy: "A future home for timelines, primary documents, archival photographs, profiles, citations, and deeper historical collections.",
-    image: "/welcome-images/landing-13.png"
+    title: "A Brighter Tomorrow",
+    period: "2000–Present",
+    image: "/history/history-innovation-and-industry.png"
+  }
+];
+
+const stories = [
+  {
+    id: "people",
+    kicker: "People",
+    title: "Lives worth knowing.",
+    copy: "Profiles of builders, thinkers, veterans, organizers, families, and everyday people whose lives belong in the record.",
+    image: "/history/history-leadership-and-culture.png"
+  },
+  {
+    id: "ideas",
+    kicker: "Ideas & Innovation",
+    title: "The work behind progress.",
+    copy: "Invention, engineering, research, enterprise, craftsmanship, and the ideas that changed how people lived and worked.",
+    image: "/history/history-innovation-and-industry.png"
+  },
+  {
+    id: "service",
+    kicker: "Service & Sacrifice",
+    title: "Duty across generations.",
+    copy: "Military service, public service, family sacrifice, civic duty, and the stories of those who answered a call larger than themselves.",
+    image: "/history/history-military-and-service.png"
+  },
+  {
+    id: "culture",
+    kicker: "Culture & Community",
+    title: "What people built together.",
+    copy: "Faith, art, music, education, neighborhoods, institutions, traditions, and the communities that carried memory forward.",
+    image: "/history/history-leadership-and-culture.png"
+  },
+  {
+    id: "collections",
+    kicker: "Collections",
+    title: "History with room to go deeper.",
+    copy: "Curated subject collections that gather people, photographs, records, and context into focused historical experiences.",
+    image: "/history/history-foundational-black-american-history.png"
+  },
+  {
+    id: "archive",
+    kicker: "Archive",
+    title: "The record itself.",
+    copy: "Photographs, documents, maps, letters, patents, oral histories, citations, and other primary materials preserved for deeper study.",
+    image: "/history/history-archives-and-records.png"
   }
 ];
 
 export default function HistoryPage() {
   return (
-    <main className={styles.page}>
+    <main id="top" className={styles.page}>
       <header className={styles.header}>
         <a className={styles.brand} href="/" aria-label="ECCOOZS Technologies home">
-          <object
+          <img
             className={styles.logo}
-            data="/brand/eccoozs-technologies-wordmark.png"
-            type="image/png"
-            aria-label="ECCOOZS"
-          >
-            <img src="/eccoozs-wordmark-blue-v2-640.png" alt="ECCOOZS" />
-          </object>
-          <span>HISTORY &amp; ARCHIVE</span>
+            src="/brand/eccoozs-technologies-wordmark.png"
+            alt="ECCOOZS Technologies"
+          />
+          <span>HISTORY &amp; LEGACY</span>
         </a>
-        <nav className={styles.nav} aria-label="History navigation">
-          <a href="/">Technologies</a>
-          <a href="/welcome">ECCOOZS Social</a>
-          <a href="/learning">Learning</a>
-          <a href="/bellmont">Bellmont</a>
-          <a href="/house-of-eccoozs">House of Eccoozs</a>
+
+        <nav className={styles.nav} aria-label="ECCOOZS History and Legacy navigation">
+          <a className={styles.active} href="#top">Home</a>
+          <a href="#timeline">Timeline</a>
+          <a href="#people">People</a>
+          <a href="#ideas">Ideas &amp; Innovation</a>
+          <a href="#service">Service &amp; Sacrifice</a>
+          <a href="#culture">Culture &amp; Community</a>
+          <a href="#collections">Collections</a>
+          <a href="#archive">Archive</a>
         </nav>
+
+        <a className={styles.exploreButton} href="#collections">Explore</a>
       </header>
 
-      <section className={styles.hero}>
-        <div className={styles.heroInner}>
-          <p className={styles.kicker}>AMERICAN LEGACY</p>
-          <h1>History deserves room to breathe.</h1>
-          <p className={styles.lead}>
-            ECCOOZS History is being built as a dedicated destination for historical memory,
-            cultural context, archival discovery, and the people whose lives shaped what came next.
+      <section className={styles.hero} aria-labelledby="history-title">
+        <div className={styles.heroCopy}>
+          <p className={styles.eyebrow}>OUR HISTORY. A BRIGHTER TOMORROW.</p>
+          <h1 id="history-title">
+            <span>ECCOOZS</span>
+            HISTORY &amp; LEGACY
+          </h1>
+          <p className={styles.heroLine}>The record. The people. The inheritance.</p>
+          <p className={styles.heroText}>
+            Preserving the people, ideas, sacrifice, and achievement that shaped the American
+            story — and the possibilities ahead.
           </p>
           <div className={styles.heroActions}>
-            <a href="#collections">Explore the collections</a>
-            <a href="/welcome">Return to ECCOOZS Social</a>
+            <a className={styles.goldButton} href="#collections">Explore the Collections <b>→</b></a>
+            <a className={styles.ghostButton} href="#timeline">Explore the Timeline</a>
+          </div>
+          <div className={styles.heroKeywords}>
+            <span>People</span><span>Ideas</span><span>Sacrifice</span><span>Achievement</span><span>Tomorrow</span>
           </div>
         </div>
-        <div className={styles.heroImage} aria-hidden="true">
-          <img src="/welcome-images/landing-16-v3.png" alt="" />
+
+        <div className={styles.heroCollage} aria-hidden="true">
+          <div className={`${styles.collageImage} ${styles.collageMain}`}>
+            <img src="/history/history-leadership-and-culture.png" alt="" />
+          </div>
+          <div className={`${styles.collageImage} ${styles.collageTop}`}>
+            <img src="/history/history-military-and-service.png" alt="" />
+          </div>
+          <div className={`${styles.collageImage} ${styles.collageBottom}`}>
+            <img src="/history/history-innovation-and-industry.png" alt="" />
+          </div>
+          <div className={styles.collageGlow} />
+          <p className={styles.script}>History inspires what comes next.</p>
         </div>
       </section>
 
-      <section id="collections" className={styles.collections}>
-        <div className={styles.sectionHead}>
-          <div>
-            <small>A GROWING DIGITAL ARCHIVE</small>
-            <h2>History organized for deeper exploration.</h2>
-          </div>
+      <section id="collections" className={styles.featured}>
+        <div className={styles.featureCopy}>
+          <p className={styles.sectionKicker}>FEATURED COLLECTION</p>
+          <h2>Foundational<br/>Black American History</h2>
           <p>
-            This page is intentionally becoming its own destination so the historical material
-            can expand without crowding the ECCOOZS Social experience.
+            A deeper destination for the people, families, service, work, institutions,
+            achievement, sacrifice, and contributions carried across generations of the American story.
+          </p>
+          <a className={styles.outlineButton} href="#archive">Explore This Collection <b>→</b></a>
+        </div>
+        <div className={styles.featureImage}>
+          <img
+            src="/history/history-foundational-black-american-history.png"
+            alt="Dignified Black American military service members represented in a historical tribute scene"
+          />
+        </div>
+        <blockquote className={styles.featureQuote}>
+          <span>“</span>
+          To know where we come from is to see further than we’ve ever seen.
+        </blockquote>
+      </section>
+
+      <section id="timeline" className={styles.timelineSection}>
+        <div className={styles.sectionTitleRow}>
+          <div>
+            <p className={styles.sectionKicker}>EXPLORE BY ERA</p>
+            <h2>A timeline designed for discovery.</h2>
+          </div>
+          <a href="#archive">See the full archive →</a>
+        </div>
+
+        <div className={styles.timelineGrid}>
+          {timeline.map((item, index) => (
+            <article className={styles.timelineCard} key={item.title}>
+              <div className={styles.timelineImage}>
+                <img src={item.image} alt="" />
+              </div>
+              <div className={styles.timelineBody}>
+                <strong>{item.title}</strong>
+                <span>{item.period}</span>
+              </div>
+              <i aria-hidden="true" className={index === timeline.length - 1 ? styles.lastDot : ""} />
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.storiesSection} aria-labelledby="stories-title">
+        <div className={styles.sectionTitleRow}>
+          <div>
+            <p className={styles.sectionKicker}>EXPLORE OUR STORIES</p>
+            <h2 id="stories-title">People. Ideas. Service. Culture.</h2>
+          </div>
+          <p className={styles.sectionIntro}>
+            Explore history through the lives, work, service, institutions, and records that make the larger story visible.
           </p>
         </div>
 
-        <div className={styles.grid}>
-          {collections.map((item) => (
-            <article className={styles.card} key={item.title}>
-              <div className={styles.cardImage}><img src={item.image} alt="" /></div>
-              <div className={styles.cardBody}>
-                <h3>{item.title}</h3>
-                <p>{item.copy}</p>
-                <span>Collection expanding →</span>
+        <div className={styles.storyGrid}>
+          {stories.map((story) => (
+            <article id={story.id} className={styles.storyCard} key={story.id}>
+              <div className={styles.storyImage}><img src={story.image} alt="" /></div>
+              <div className={styles.storyOverlay} />
+              <div className={styles.storyBody}>
+                <span>{story.kicker}</span>
+                <h3>{story.title}</h3>
+                <p>{story.copy}</p>
+                <a href={story.id === "archive" ? "#digital-archive" : `#${story.id}`}>Explore →</a>
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className={styles.archiveCallout}>
-        <div>
-          <small>WHAT COMES NEXT</small>
-          <h2>Timelines. Profiles. Documents. Photographs. Sources.</h2>
-          <p>
-            The structure is ready for a much larger historical library. As research is completed,
-            new collections can be added here without turning the Social landing page into a museum.
-          </p>
+      <section className={styles.collectionStrip} aria-label="Featured historical collections">
+        <article>
+          <img src="/history/history-foundations-mounds-and-willows.png" alt="Earthen mounds near water beneath willow trees at dawn" />
+          <div>
+            <span>FOUNDATIONS</span>
+            <h3>Landscape, memory, and the questions that invite investigation.</h3>
+          </div>
+        </article>
+        <article>
+          <img src="/history/history-indigenous-heritage.png" alt="Indigenous community represented beside a river landscape" />
+          <div>
+            <span>COLLECTION</span>
+            <h3>Indigenous Heritage</h3>
+          </div>
+        </article>
+        <article>
+          <img src="/history/history-military-and-service.png" alt="Black American service members represented at a memorial" />
+          <div>
+            <span>COLLECTION</span>
+            <h3>Military &amp; Service</h3>
+          </div>
+        </article>
+      </section>
+
+      <section id="digital-archive" className={styles.archiveFeature}>
+        <div className={styles.archiveImage}>
+          <img src="/history/history-archives-and-records.png" alt="Historical records, maps, photographs, books, and research materials in an archive" />
         </div>
-        <div className={styles.archiveList}>
-          <span>Foundational Black American History</span>
-          <span>American Innovation &amp; Invention</span>
-          <span>Military History</span>
-          <span>Indigenous Heritage</span>
-          <span>Leadership &amp; Civil Rights</span>
-          <span>Primary Sources &amp; Archives</span>
+        <div className={styles.archiveCopy}>
+          <p className={styles.sectionKicker}>THE DIGITAL ARCHIVE</p>
+          <h2>More Than History.<br/>A Living Record.</h2>
+          <p>
+            Explore photographs, documents, maps, letters, patents, oral histories, and citations.
+            As the archive grows, every collection can lead back to the records that support the story.
+          </p>
+          <a className={styles.goldButton} href="#archive">Explore the Archive <b>→</b></a>
+        </div>
+        <div className={styles.archiveWords} aria-label="Archive values">
+          <span>Preserve</span><span>Educate</span><span>Honor</span><span>Inspire</span><span>Build</span>
         </div>
       </section>
 
       <footer className={styles.footer}>
-        <span>ECCOOZS TECHNOLOGIES</span>
-        <span>History &amp; Archive</span>
-        <a href="/">Explore. Express. Elevate.</a>
+        <a href="/">ECCOOZS TECHNOLOGIES</a>
+        <span className={styles.footerLine} />
+        <em>The past is not behind us. It lives in us.</em>
+        <span className={styles.footerLine} />
+        <span>EXPLORE. EXPRESS. ELEVATE.</span>
       </footer>
     </main>
   );
