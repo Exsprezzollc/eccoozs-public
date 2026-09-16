@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Script from "next/script";
-import { welcomeV6Markup } from "./welcomeV6Markup";
+import { welcomeV6SocialMarkup } from "./welcomeV6SocialMarkup";
 import { welcomeV6Styles } from "./welcomeV6Styles";
-import BellmontFeature from "./BellmontFeature";
+import { welcomeSocialOverrides } from "./welcomeSocialOverrides";
 
 declare global {
   interface Window { lucide?: { createIcons: () => void } }
@@ -91,18 +91,11 @@ export default function WelcomeV6Client() {
     return () => { observer.disconnect(); form?.removeEventListener("submit", handleSubmit); };
   }, [iconsReady]);
 
-  const marker = "<!-- FOOTER -->";
-  const [beforeBellmont, afterBellmont = ""] = welcomeV6Markup.split(marker);
-
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: welcomeV6Styles }} />
+      <style dangerouslySetInnerHTML={{ __html: `${welcomeV6Styles}\n${welcomeSocialOverrides}` }} />
       <Script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" strategy="afterInteractive" onLoad={() => setIconsReady(true)} />
-      <div className="eccoozs-v6-root">
-        <div dangerouslySetInnerHTML={{ __html: beforeBellmont }} />
-        <BellmontFeature />
-        <div dangerouslySetInnerHTML={{ __html: `${marker}${afterBellmont}` }} />
-      </div>
+      <div className="eccoozs-v6-root" dangerouslySetInnerHTML={{ __html: welcomeV6SocialMarkup }} />
     </>
   );
 }
