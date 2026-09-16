@@ -20,8 +20,8 @@ export default async function BellmontShowcasePage({ params }: { params: Promise
   if (!page) notFound();
 
   return (
-    <main className="bellmont-static-shell">
-      <div className="bellmont-static-meta">
+    <main className="bellmont-static-shell bellmont-static-shell-wide">
+      <div className="bellmont-static-meta bellmont-static-meta-wide">
         <a href="/bellmont">← Back to Bellmont</a>
         <div>
           <h1>{page.title}</h1>
@@ -30,7 +30,7 @@ export default async function BellmontShowcasePage({ params }: { params: Promise
         <a href="https://www.youtube.com/@Eccoozs" target="_blank" rel="noreferrer">ECCOOZS YouTube ↗</a>
       </div>
 
-      <div className="bellmont-static-frame">
+      <div className="bellmont-static-frame bellmont-static-frame-wide">
         {page.image ? (
           <img
             src={page.image}
@@ -41,6 +41,22 @@ export default async function BellmontShowcasePage({ params }: { params: Promise
           <BellmontArt className="bellmont-static-art" index={page.index} alt={page.alt} />
         ) : null}
       </div>
+
+      <style dangerouslySetInnerHTML={{ __html: `
+        .bellmont-static-shell-wide { padding-left: 2.5vw; padding-right: 2.5vw; }
+        .bellmont-static-meta-wide,
+        .bellmont-static-frame-wide { max-width: 1440px; }
+        .bellmont-static-frame-wide .bellmont-static-art {
+          width: min(94vw, 1280px);
+          max-width: 100%;
+          height: auto;
+        }
+        .bellmont-static-image { object-fit: contain; }
+        @media (max-width: 820px) {
+          .bellmont-static-shell-wide { padding-left: 10px; padding-right: 10px; }
+          .bellmont-static-frame-wide .bellmont-static-art { width: 100%; }
+        }
+      ` }} />
     </main>
   );
 }
