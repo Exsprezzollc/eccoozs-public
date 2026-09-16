@@ -1,0 +1,5 @@
+History card image mapping
+Lives Worth Knowing -> /history/history-lives-worth-knowing.png
+Ideas & Innovation -> /history/history-ideas-and-innovation.png
+Duty Across Generations -> /history/history-duty-across-generations.png
+Indigenous Heritage -> /history/history-indigenous-heritage.png
