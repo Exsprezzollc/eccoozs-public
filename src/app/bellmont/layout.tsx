@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { ReactNode } from "next";
 import "./bellmont.css";
 
 export default function BellmontLayout({ children }: { children: ReactNode }) {
@@ -11,8 +11,9 @@ export default function BellmontLayout({ children }: { children: ReactNode }) {
         </a>
         <nav className="bellmont-nav" aria-label="Bellmont navigation">
           <a href="/bellmont">Bellmont State</a>
+          <a href="/bellmont/explore">Explore</a>
           <a href="/bellmont/circle">Characters</a>
-          <a href="/bellmont/campus-life">Campus Life</a>
+          <a href="/bellmont/everyday-life">Student Life</a>
           <a href="/bellmont/traditions">Traditions</a>
           <a href="/bellmont/sounds-of-triumph">Sounds of Triumph</a>
           <a href="https://www.youtube.com/@Eccoozs" target="_blank" rel="noreferrer">Watch</a>
