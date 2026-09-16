@@ -61,6 +61,31 @@ export default function BellmontLayout({ children }: { children: ReactNode }) {
 
       {children}
 
+      <aside
+        aria-label="Bellmont fictional world notice"
+        style={{
+          background: "#061c3b",
+          color: "rgba(255,255,255,.72)",
+          borderTop: "1px solid rgba(255,255,255,.10)",
+          padding: "22px 4vw 18px",
+          textAlign: "center",
+          fontFamily: "Arial, Helvetica, sans-serif",
+          fontSize: 11,
+          lineHeight: 1.65
+        }}
+      >
+        <p style={{ margin: "0 auto", maxWidth: 1120 }}>
+          <strong style={{ color: "#fff" }}>Fictional World Notice:</strong>{" "}
+          Bellmont State University is a fictional institution created as part of the ECCOOZS original world.
+          All characters, organizations, events, and locations depicted are fictional. Any resemblance to actual
+          persons, institutions, events, or places is coincidental and unintentional.
+        </p>
+        <p style={{ margin: "7px auto 0", maxWidth: 1120, color: "rgba(255,255,255,.52)" }}>
+          © ECCOOZS Technologies LLC. Bellmont State University and related characters, stories, names, artwork,
+          and fictional properties are part of the ECCOOZS original world.
+        </p>
+      </aside>
+
       <footer className="bellmont-footer">
         <div>
           <img src="/bellmont/turtle-white.webp" alt="" aria-hidden="true" />
