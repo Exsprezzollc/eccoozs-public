@@ -1,4 +1,10 @@
-export type BellmontPageInfo = { title: string; index: number; alt: string; caption: string };
+export type BellmontPageInfo = {
+  title: string;
+  index?: number;
+  image?: string;
+  alt: string;
+  caption: string;
+};
 
 export const bellmontPages: Record<string, BellmontPageInfo> = {
   welcome: { title: "A Welcome from Bellmont", index: 0, alt: "Bellmont State University welcome page", caption: "Rooted in history. Preparing leaders for tomorrow." },
@@ -18,7 +24,25 @@ export const bellmontPages: Record<string, BellmontPageInfo> = {
   academics: { title: "Academic Life at Bellmont", index: 14, alt: "Bellmont academic life", caption: "Knowledge with purpose. Preparation for life." },
   "financial-aid": { title: "Financing Your Bellmont Education", index: 15, alt: "Bellmont financial aid", caption: "Opportunity should be understood. Planning should be clear." },
   "sounds-of-triumph": { title: "Bellmont Sounds of Triumph", index: 16, alt: "Bellmont Sounds of Triumph marching band", caption: "Tradition. Precision. Power in motion." },
-  "blue-belles": { title: "Bellmont Blue Belles", index: 17, alt: "Bellmont Blue Belles dance line", caption: "Performance. Pride. Purpose." }
+  "blue-belles": { title: "Bellmont Blue Belles", index: 17, alt: "Bellmont Blue Belles dance line", caption: "Performance. Pride. Purpose." },
+  "student-organizations": {
+    title: "Student Organizations & Leadership",
+    image: "/bellmont/student-organizations-leadership.png",
+    alt: "Bellmont State University student organizations and leadership page",
+    caption: "Find your people. Build your voice. Leave your mark."
+  },
+  "everyday-life": {
+    title: "Everyday Life at Bellmont",
+    image: "/bellmont/everyday-life.png",
+    alt: "Everyday life and student services at Bellmont State University",
+    caption: "Everything you need. Right where you need it."
+  },
+  explore: {
+    title: "Explore Bellmont",
+    image: "/bellmont/explore-bellmont.png",
+    alt: "Explore Bellmont State University campus",
+    caption: "Historic beauty. Modern opportunity."
+  }
 };
 
 export const bellmontOrder = Object.entries(bellmontPages).map(([slug, page]) => ({ slug, ...page }));
