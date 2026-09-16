@@ -1,4 +1,4 @@
-import type { ReactNode } from "next";
+import type { ReactNode } from "react";
 import "./bellmont.css";
 
 export default function BellmontLayout({ children }: { children: ReactNode }) {
