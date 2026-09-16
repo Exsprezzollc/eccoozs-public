@@ -112,40 +112,32 @@ export default function HistoryPage() {
         <a className={styles.exploreButton} href="#collections">Explore</a>
       </header>
 
-      <section className={styles.hero} aria-labelledby="history-title">
-        <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}>OUR HISTORY. A BRIGHTER TOMORROW.</p>
-          <h1 id="history-title">
-            <span>ECCOOZS</span>
-            HISTORY &amp; LEGACY
-          </h1>
-          <p className={styles.heroLine}>The record. The people. The inheritance.</p>
-          <p className={styles.heroText}>
-            Preserving the people, ideas, sacrifice, and achievement that shaped the American
-            story — and the possibilities ahead.
-          </p>
-          <div className={styles.heroActions}>
-            <a className={styles.goldButton} href="#collections">Explore the Collections <b>→</b></a>
-            <a className={styles.ghostButton} href="#timeline">Explore the Timeline</a>
-          </div>
-          <div className={styles.heroKeywords}>
-            <span>People</span><span>Ideas</span><span>Sacrifice</span><span>Achievement</span><span>Tomorrow</span>
-          </div>
-        </div>
-
-        <div className={styles.heroCollage} aria-hidden="true">
-          <div className={`${styles.collageImage} ${styles.collageMain}`}>
-            <img src="/history/history-leadership-and-culture.png" alt="" />
-          </div>
-          <div className={`${styles.collageImage} ${styles.collageTop}`}>
-            <img src="/history/history-military-and-service.png" alt="" />
-          </div>
-          <div className={`${styles.collageImage} ${styles.collageBottom}`}>
-            <img src="/history/history-innovation-and-industry.png" alt="" />
-          </div>
-          <div className={styles.collageGlow} />
-          <p className={styles.script}>History inspires what comes next.</p>
-        </div>
+      <section
+        className={styles.hero}
+        aria-labelledby="history-title"
+        style={{ display: "block", minHeight: 0, background: "#020711", overflow: "hidden", position: "relative" }}
+      >
+        <h1
+          id="history-title"
+          style={{
+            position: "absolute",
+            width: 1,
+            height: 1,
+            padding: 0,
+            margin: -1,
+            overflow: "hidden",
+            clip: "rect(0, 0, 0, 0)",
+            whiteSpace: "nowrap",
+            border: 0
+          }}
+        >
+          ECCOOZS History &amp; Legacy
+        </h1>
+        <img
+          src="/history/history-hero-banner.png"
+          alt="ECCOOZS History & Legacy — The record. The people. The inheritance."
+          style={{ display: "block", width: "100%", height: "auto" }}
+        />
       </section>
 
       <section id="collections" className={styles.featured}>
