@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import "./bellmont.css";
+import "./bellmont-nav.css";
 
 export default function BellmontLayout({ children }: { children: ReactNode }) {
   return (
