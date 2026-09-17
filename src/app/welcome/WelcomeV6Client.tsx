@@ -5,6 +5,7 @@ import Script from "next/script";
 import { welcomeV6SocialMarkup } from "./welcomeV6SocialMarkup";
 import { welcomeV6Styles } from "./welcomeV6Styles";
 import { welcomeSocialOverrides } from "./welcomeSocialOverrides";
+import { welcomeSocialViewportFix } from "./welcomeSocialViewportFix";
 
 declare global {
   interface Window { lucide?: { createIcons: () => void } }
@@ -93,7 +94,7 @@ export default function WelcomeV6Client() {
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: `${welcomeV6Styles}\n${welcomeSocialOverrides}` }} />
+      <style dangerouslySetInnerHTML={{ __html: `${welcomeV6Styles}\n${welcomeSocialOverrides}\n${welcomeSocialViewportFix}` }} />
       <Script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" strategy="afterInteractive" onLoad={() => setIconsReady(true)} />
       <div className="eccoozs-v6-root" dangerouslySetInnerHTML={{ __html: welcomeV6SocialMarkup }} />
     </>
