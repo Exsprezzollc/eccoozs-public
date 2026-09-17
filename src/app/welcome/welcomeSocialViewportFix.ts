@@ -1,5 +1,11 @@
 export const welcomeSocialViewportFix = String.raw`
 /* Keep the approved desktop composition at normal browser zoom on midsize desktop windows. */
+@media (min-width:1181px){
+  .social-access-layout{position:relative!important;display:block!important;min-height:520px!important}
+  .social-waitlist-card{width:min(650px,62vw)!important;margin:0 auto!important}
+  .social-access-values{position:absolute!important;right:0!important;top:50%!important;transform:translateY(-50%)!important;width:230px!important;grid-template-columns:1fr!important}
+}
+
 @media (min-width:860px) and (max-width:1180px){
   .social-section-shell{width:min(1460px,94vw)!important}
 
@@ -26,8 +32,9 @@ export const welcomeSocialViewportFix = String.raw`
   .social-story-quote{font-size:1.05rem!important;margin:18px 0 16px!important}
 
   .social-access-inner{width:min(1040px,92vw)!important}
-  .social-access-layout{grid-template-columns:minmax(0,1fr) 220px!important;gap:20px!important;align-items:center!important}
-  .social-access-values{grid-template-columns:1fr!important;gap:9px!important}
+  .social-access-layout{display:block!important;text-align:left!important}
+  .social-waitlist-card{width:min(640px,78vw)!important;margin:0 auto!important}
+  .social-access-values{position:static!important;width:min(760px,86vw)!important;margin:18px auto 0!important;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:9px!important;transform:none!important}
   .social-access-values div{padding:11px 13px!important}
   .social-access-section{padding:62px 0 68px!important}
   .social-access-inner h2{font-size:clamp(40px,4.7vw,60px)!important}
