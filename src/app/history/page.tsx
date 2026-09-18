@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import HistorySearch from "./HistorySearch";
+import { historyPages } from "./historyPages";
 import styles from "./history.module.css";
 
 export const metadata: Metadata = {
@@ -46,42 +48,48 @@ const stories = [
     kicker: "People",
     title: "Lives worth knowing.",
     copy: "Profiles of builders, thinkers, veterans, organizers, families, and everyday people whose lives belong in the record.",
-    image: "/history/history-lives-worth-knowing.png"
+    image: "/history/history-lives-worth-knowing.png",
+    href: "/history/people/carter-g-woodson"
   },
   {
     id: "ideas",
     kicker: "Ideas & Innovation",
     title: "The work behind progress.",
     copy: "Invention, engineering, research, enterprise, craftsmanship, and the ideas that changed how people lived and worked.",
-    image: "/history/history-ideas-and-innovation.png"
+    image: "/history/history-ideas-and-innovation.png",
+    href: "/history/innovation/garrett-morgan"
   },
   {
     id: "service",
     kicker: "Service & Sacrifice",
     title: "Duty across generations.",
     copy: "Military service, public service, family sacrifice, civic duty, and the stories of those who answered a call larger than themselves.",
-    image: "/history/history-duty-across-generations.png"
+    image: "/history/history-duty-across-generations.png",
+    href: "/history/service/tuskegee-airmen"
   },
   {
     id: "culture",
     kicker: "Culture & Community",
     title: "What people built together.",
     copy: "Faith, art, music, education, neighborhoods, institutions, traditions, and the communities that carried memory forward.",
-    image: "/history/history-leadership-and-culture.png"
+    image: "/history/history-leadership-and-culture.png",
+    href: "/history/events/great-migration"
   },
   {
     id: "collections",
     kicker: "Collections",
     title: "History with room to go deeper.",
     copy: "Curated subject collections that gather people, photographs, records, and context into focused historical experiences.",
-    image: "/history/history-foundational-black-american-history.png"
+    image: "/history/history-foundational-black-american-history.png",
+    href: "/history/indigenous/who-decided-your-race"
   },
   {
     id: "archive",
     kicker: "Archive",
     title: "The record itself.",
     copy: "Photographs, documents, maps, letters, patents, oral histories, citations, and other primary materials preserved for deeper study.",
-    image: "/history/history-archives-and-records.png"
+    image: "/history/history-archives-and-records.png",
+    href: "#digital-archive"
   }
 ];
 
@@ -106,10 +114,10 @@ export default function HistoryPage() {
           <a href="#service">Service &amp; Sacrifice</a>
           <a href="#culture">Culture &amp; Community</a>
           <a href="#collections">Collections</a>
-          <a href="#archive">Archive</a>
+          <a href="#digital-archive">Archive</a>
         </nav>
 
-        <a className={styles.exploreButton} href="#collections">Explore</a>
+        <a className={styles.exploreButton} href="#search-history">Search</a>
       </header>
 
       <section
@@ -140,6 +148,10 @@ export default function HistoryPage() {
         />
       </section>
 
+      <div id="search-history">
+        <HistorySearch />
+      </div>
+
       <section id="collections" className={styles.featured}>
         <div className={styles.featureCopy}>
           <p className={styles.sectionKicker}>FEATURED COLLECTION</p>
@@ -148,7 +160,7 @@ export default function HistoryPage() {
             A deeper destination for the people, families, service, work, institutions,
             achievement, sacrifice, and contributions carried across generations of the American story.
           </p>
-          <a className={styles.outlineButton} href="#archive">Explore This Collection <b>→</b></a>
+          <a className={styles.outlineButton} href="#latest">Explore New Pages <b>→</b></a>
         </div>
         <div className={styles.featureImage}>
           <img
@@ -168,7 +180,7 @@ export default function HistoryPage() {
             <p className={styles.sectionKicker}>EXPLORE BY ERA</p>
             <h2>A timeline designed for discovery.</h2>
           </div>
-          <a href="#archive">See the full archive →</a>
+          <a href="#digital-archive">See the full archive →</a>
         </div>
 
         <div className={styles.timelineGrid}>
@@ -207,9 +219,41 @@ export default function HistoryPage() {
                 <span>{story.kicker}</span>
                 <h3>{story.title}</h3>
                 <p>{story.copy}</p>
-                <a href={story.id === "archive" ? "#digital-archive" : `#${story.id}`}>Explore →</a>
+                <a href={story.href}>Explore →</a>
               </div>
             </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="latest" className={styles.latestSection} aria-labelledby="latest-history-title">
+        <div className={styles.sectionTitleRow}>
+          <div>
+            <p className={styles.sectionKicker}>NEW IN THE RECORD</p>
+            <h2 id="latest-history-title">The archive is beginning to take shape.</h2>
+          </div>
+          <p className={styles.sectionIntro}>
+            These are the first full ECCOOZS History exhibits now connected to the live History experience.
+          </p>
+        </div>
+
+        <div className={styles.latestGrid}>
+          {historyPages.map((page) => (
+            <a
+              className={styles.latestCard}
+              href={`/history/${page.section}/${page.slug}`}
+              key={`${page.section}-${page.slug}`}
+            >
+              <div className={styles.latestImage}>
+                <img src={page.thumbnail} alt="" />
+              </div>
+              <div className={styles.latestBody}>
+                <span>{page.category}</span>
+                <h3>{page.title}</h3>
+                <p>{page.subtitle}</p>
+                <b>Open Exhibit →</b>
+              </div>
+            </a>
           ))}
         </div>
       </section>
@@ -222,20 +266,24 @@ export default function HistoryPage() {
             <h3>Landscape, memory, and the questions that invite investigation.</h3>
           </div>
         </article>
-        <article>
-          <img src="/history/history-indigenous-heritage.png" alt="Historical Indigenous community portrait" />
-          <div>
-            <span>COLLECTION</span>
-            <h3>Indigenous Heritage</h3>
-          </div>
-        </article>
-        <article>
-          <img src="/history/history-duty-across-generations.png" alt="Black American military service members pictured together" />
-          <div>
-            <span>COLLECTION</span>
-            <h3>Military &amp; Service</h3>
-          </div>
-        </article>
+        <a className={styles.collectionLink} href="/history/indigenous/who-decided-your-race">
+          <article>
+            <img src="/history/history-indigenous-heritage.png" alt="Historical Indigenous community portrait" />
+            <div>
+              <span>COLLECTION</span>
+              <h3>Indigenous</h3>
+            </div>
+          </article>
+        </a>
+        <a className={styles.collectionLink} href="/history/service/tuskegee-airmen">
+          <article>
+            <img src="/history/history-duty-across-generations.png" alt="Black American military service members pictured together" />
+            <div>
+              <span>COLLECTION</span>
+              <h3>Military &amp; Service</h3>
+            </div>
+          </article>
+        </a>
       </section>
 
       <section id="digital-archive" className={styles.archiveFeature}>
@@ -249,7 +297,7 @@ export default function HistoryPage() {
             Explore photographs, documents, maps, letters, patents, oral histories, and citations.
             As the archive grows, every collection can lead back to the records that support the story.
           </p>
-          <a className={styles.goldButton} href="#archive">Explore the Archive <b>→</b></a>
+          <a className={styles.goldButton} href="#search-history">Search the Record <b>→</b></a>
         </div>
         <div className={styles.archiveWords} aria-label="Archive values">
           <span>Preserve</span><span>Educate</span><span>Honor</span><span>Inspire</span><span>Build</span>
