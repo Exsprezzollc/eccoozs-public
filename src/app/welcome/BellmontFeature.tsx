@@ -10,7 +10,7 @@ export default function BellmontFeature() {
         aria-label="Explore Bellmont State University"
       >
         <img
-          src="/bellmont/bellmont-home.webp"
+          src="/bellmont/eccoozs-bellmont-feature.png"
           alt="Bellmont State University — A Higher Story"
           className="bm-feature-image"
         />
@@ -44,7 +44,7 @@ export default function BellmontFeature() {
 
         @media (min-width: 1700px) {
           .bm-feature-link {
-            max-width: 1531px;
+            max-width: 1536px;
           }
         }
       `}</style>
