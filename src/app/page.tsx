@@ -14,7 +14,7 @@ const destinations = [
     title: "ECCOOZS Social",
     description:
       "The community platform at the center of the ECCOOZS ecosystem — built for connection, discovery, expression, and opportunity.",
-    href: "/welcome"
+    href: "https://eccoozs.com/welcome"
   },
   {
     id: "learning",
@@ -22,7 +22,7 @@ const destinations = [
     title: "ECCOOZS Learning",
     description:
       "A growing collection of thoughtful learning experiences designed to make discovery clearer, more engaging, and more useful.",
-    href: "/learning"
+    href: "https://eccoozslearning.com/"
   },
   {
     id: "worlds",
@@ -30,7 +30,7 @@ const destinations = [
     title: "Bellmont State University",
     description:
       "An original ECCOOZS world built around people, purpose, possibility, campus life, story, and tradition.",
-    href: "/bellmont"
+    href: "https://eccoozs.com/bellmont"
   },
   {
     id: "commerce",
@@ -38,7 +38,7 @@ const destinations = [
     title: "House of Eccoozs",
     description:
       "Premium lifestyle, considered design, and high standards — the commerce and lifestyle expression of the ECCOOZS brand.",
-    href: "/house-of-eccoozs"
+    href: "https://eccoozs.com/house-of-eccoozs"
   },
   {
     id: "history",
@@ -46,7 +46,7 @@ const destinations = [
     title: "ECCOOZS History",
     description:
       "A growing home for Foundational Black American history, American legacy, innovation, service, culture, and archival discovery.",
-    href: "/history"
+    href: "https://eccoozs.com/history"
   }
 ];
 
@@ -77,12 +77,12 @@ export default function HomePage() {
           <a href="#learning">Learning</a>
           <a href="#worlds">Media</a>
           <a href="#commerce">Commerce</a>
-          <a href="/welcome">Community</a>
+          <a href="https://eccoozs.com/welcome">Community</a>
           <a href="#history">History</a>
           <a href="#about">About</a>
         </nav>
 
-        <a className={styles.join} href="/welcome">
+        <a className={styles.join} href="https://eccoozs.com/welcome">
           Join ECCOOZS
         </a>
       </header>
@@ -98,7 +98,7 @@ export default function HomePage() {
           </p>
           <div className={styles.actions}>
             <a className={styles.primary} href="#ecosystem">Explore the ecosystem →</a>
-            <a className={styles.secondary} href="/welcome">Enter ECCOOZS Social</a>
+            <a className={styles.secondary} href="https://eccoozs.com/welcome">Enter ECCOOZS Social</a>
           </div>
           <div className={styles.heroStats} aria-label="ECCOOZS Technologies overview">
             <span><strong>5</strong><small>DESTINATIONS</small></span>
@@ -178,7 +178,7 @@ export default function HomePage() {
           <span>Technologies</span>
         </div>
         <div className={styles.footerLinks}>
-          <a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/conduct">Conduct</a><a href="/support">Support</a><a href="/welcome">ECCOOZS Social</a><a href="/history">History</a>
+          <a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/conduct">Conduct</a><a href="/support">Support</a><a href="https://eccoozs.com/welcome">ECCOOZS Social</a><a href="https://eccoozs.com/history">History</a>
         </div>
         <span>Explore. Express. Elevate.</span>
       </footer>
