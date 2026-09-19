@@ -49,7 +49,7 @@ const stories = [
     title: "Lives worth knowing.",
     copy: "Profiles of builders, thinkers, veterans, organizers, families, and everyday people whose lives belong in the record.",
     image: "/history/history-lives-worth-knowing.png",
-    href: "/history/people/carter-g-woodson"
+    href: "/history/people"
   },
   {
     id: "ideas",
@@ -57,7 +57,7 @@ const stories = [
     title: "The work behind progress.",
     copy: "Invention, engineering, research, enterprise, craftsmanship, and the ideas that changed how people lived and worked.",
     image: "/history/history-ideas-and-innovation.png",
-    href: "/history/innovation/garrett-morgan"
+    href: "/history/innovation"
   },
   {
     id: "service",
@@ -65,7 +65,7 @@ const stories = [
     title: "Duty across generations.",
     copy: "Military service, public service, family sacrifice, civic duty, and the stories of those who answered a call larger than themselves.",
     image: "/history/history-duty-across-generations.png",
-    href: "/history/service/tuskegee-airmen"
+    href: "/history/service"
   },
   {
     id: "culture",
@@ -73,7 +73,7 @@ const stories = [
     title: "What people built together.",
     copy: "Faith, art, music, education, neighborhoods, institutions, traditions, and the communities that carried memory forward.",
     image: "/history/history-leadership-and-culture.png",
-    href: "/history/events/great-migration"
+    href: "/history/events"
   },
   {
     id: "collections",
@@ -81,7 +81,7 @@ const stories = [
     title: "History with room to go deeper.",
     copy: "Curated subject collections that gather people, photographs, records, and context into focused historical experiences.",
     image: "/history/history-foundational-black-american-history.png",
-    href: "/history/indigenous/who-decided-your-race"
+    href: "/history/indigenous"
   },
   {
     id: "archive",
@@ -109,10 +109,10 @@ export default function HistoryPage() {
         <nav className={styles.nav} aria-label="ECCOOZS History and Legacy navigation">
           <a className={styles.active} href="#top">Home</a>
           <a href="#timeline">Timeline</a>
-          <a href="#people">People</a>
-          <a href="#ideas">Ideas &amp; Innovation</a>
-          <a href="#service">Service &amp; Sacrifice</a>
-          <a href="#culture">Culture &amp; Community</a>
+          <a href="/history/people">People</a>
+          <a href="/history/innovation">Ideas &amp; Innovation</a>
+          <a href="/history/service">Service &amp; Sacrifice</a>
+          <a href="/history/events">Culture &amp; Community</a>
           <a href="#collections">Collections</a>
           <a href="#digital-archive">Archive</a>
         </nav>
@@ -160,7 +160,7 @@ export default function HistoryPage() {
             A deeper destination for the people, families, service, work, institutions,
             achievement, sacrifice, and contributions carried across generations of the American story.
           </p>
-          <a className={styles.outlineButton} href="#latest">Explore New Pages <b>→</b></a>
+          <a className={styles.outlineButton} href="#people">Explore the Sections <b>→</b></a>
         </div>
         <div className={styles.featureImage}>
           <img
@@ -226,38 +226,6 @@ export default function HistoryPage() {
         </div>
       </section>
 
-      <section id="latest" className={styles.latestSection} aria-labelledby="latest-history-title">
-        <div className={styles.sectionTitleRow}>
-          <div>
-            <p className={styles.sectionKicker}>NEW IN THE RECORD</p>
-            <h2 id="latest-history-title">The archive is beginning to take shape.</h2>
-          </div>
-          <p className={styles.sectionIntro}>
-            These are the first full ECCOOZS History exhibits now connected to the live History experience.
-          </p>
-        </div>
-
-        <div className={styles.latestGrid}>
-          {historyPages.map((page) => (
-            <a
-              className={styles.latestCard}
-              href={`/history/${page.section}/${page.slug}`}
-              key={`${page.section}-${page.slug}`}
-            >
-              <div className={styles.latestImage}>
-                <img src={page.thumbnail} alt="" />
-              </div>
-              <div className={styles.latestBody}>
-                <span>{page.category}</span>
-                <h3>{page.title}</h3>
-                <p>{page.subtitle}</p>
-                <b>Open Exhibit →</b>
-              </div>
-            </a>
-          ))}
-        </div>
-      </section>
-
       <section className={styles.collectionStrip} aria-label="Featured historical collections">
         <article>
           <img src="/history/history-foundations-mounds-and-willows.png" alt="Earthen mounds near water beneath willow trees at dawn" />
@@ -266,7 +234,7 @@ export default function HistoryPage() {
             <h3>Landscape, memory, and the questions that invite investigation.</h3>
           </div>
         </article>
-        <a className={styles.collectionLink} href="/history/indigenous/who-decided-your-race">
+        <a className={styles.collectionLink} href="/history/indigenous">
           <article>
             <img src="/history/history-indigenous-heritage.png" alt="Historical Indigenous community portrait" />
             <div>
@@ -275,7 +243,7 @@ export default function HistoryPage() {
             </div>
           </article>
         </a>
-        <a className={styles.collectionLink} href="/history/service/tuskegee-airmen">
+        <a className={styles.collectionLink} href="/history/service">
           <article>
             <img src="/history/history-duty-across-generations.png" alt="Black American military service members pictured together" />
             <div>

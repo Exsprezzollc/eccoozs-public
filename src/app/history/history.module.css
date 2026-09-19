@@ -824,3 +824,74 @@
   .latestGrid{grid-template-columns:1fr}
   .searchResultCard{grid-template-columns:82px minmax(0,1fr)}
 }
+
+
+/* History section landing pages */
+.sectionShelf{
+  padding:18px clamp(18px,4vw,64px) 82px;
+}
+.sectionGrid{
+  width:min(1180px,100%);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,340px));
+  justify-content:center;
+  gap:22px;
+}
+.sectionCard{
+  overflow:hidden;
+  border:1px solid rgba(70,139,225,.28);
+  border-radius:12px;
+  color:inherit;
+  text-decoration:none;
+  background:#061221;
+  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+.sectionCard:hover{
+  transform:translateY(-3px);
+  border-color:rgba(102,184,255,.62);
+  box-shadow:0 18px 34px rgba(0,0,0,.28),0 0 22px rgba(30,104,255,.1);
+}
+.sectionCardImage{
+  height:320px;
+  overflow:hidden;
+  background:#020711;
+}
+.sectionCardImage img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:top center;
+  transition:transform .3s ease;
+}
+.sectionCard:hover .sectionCardImage img{transform:scale(1.025)}
+.sectionCardBody{padding:20px 20px 22px}
+.sectionCardBody>span{
+  display:block;
+  color:#d7aa66;
+  font-size:8px;
+  font-weight:850;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+}
+.sectionCardBody h2{
+  margin:7px 0 6px;
+  color:#fff;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:25px;
+  font-weight:400;
+  line-height:1.08;
+}
+.sectionCardBody p{
+  margin:0;
+  color:#94a9c4;
+  font-size:11px;
+  line-height:1.55;
+}
+.sectionCardBody b{
+  display:block;
+  margin-top:15px;
+  color:#7bbcff;
+  font-size:9px;
+  letter-spacing:.04em;
+}
