@@ -236,6 +236,23 @@ const legalStyles = String.raw`
   .table-wrap tr:nth-child(even) td {
     background: var(--cream);
   }
+
+  .membership-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    font-weight: 700;
+    color: var(--td);
+    white-space: nowrap;
+  }
+
+  .membership-badge img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+  }
  
   /* Copyright */
   .content-wrap .copyright {
@@ -478,8 +495,8 @@ export default function TermsPage() {
 <div className="spacer"></div>
 <div className="table-wrap"><table>
 <thead><tr><th>Tier</th><th>Badge</th><th>Price</th><th>Key Benefits</th></tr></thead><tbody>
-<tr><td>Certified</td><td>🥇 Gold Badge</td><td>$9.99/mo</td><td>Host soundrooms, go live, creator monetization tools, advanced analytics, priority in Explore feed</td></tr>
-<tr><td>Verified</td><td>🔵 Blue Badge</td><td>$14.99/mo</td><td>All Certified benefits + merch shelf on profile, 15% shop referral commission, ad revenue sharing at platform scale, early feature access</td></tr>
+<tr><td>Certified</td><td><span className="membership-badge"><img src="/assets/badges/certified_badge.svg" alt="" aria-hidden="true" />Certified badge</span></td><td>$9.99/mo</td><td>Host soundrooms, go live, creator monetization tools, advanced analytics, priority in Explore feed</td></tr>
+<tr><td>Verified</td><td><span className="membership-badge"><img src="/assets/badges/verified_badge.svg" alt="" aria-hidden="true" />Verified badge</span></td><td>$14.99/mo</td><td>All Certified benefits + merch shelf on profile, 15% shop referral commission, ad revenue sharing at platform scale, early feature access</td></tr>
 </tbody></table></div>
 <div className="spacer"></div>
 <p>ECCOOZS reserves the right to revoke Verified or Certified status at any time for conduct violations. Subscription fees are non-refundable for the current billing period. Subscriptions renew monthly until cancelled.</p>
