@@ -30,7 +30,7 @@ html = html.replace(
   /<!-- NAV -->[\s\S]*?<\/nav>/,
   String.raw`<!-- NAV -->
 <nav>
-  <a class="nav-logo social-prestige-link" href="/" aria-label="ECCOOZS Technologies home">
+  <a class="nav-logo social-prestige-link" href="https://eccoozstechnologies.com/" aria-label="ECCOOZS Technologies home">
     <object class="social-prestige-logo" data="/brand/eccoozs-technologies-wordmark.png" type="image/png" aria-label="ECCOOZS">
       <img alt="ECCOOZS" src="/eccoozs-wordmark-blue-v2-640.png"/>
     </object>
@@ -40,7 +40,7 @@ html = html.replace(
     <li><a href="#eccoozs-app">The App</a></li>
     <li><a href="#business">Business</a></li>
     <li><a href="#community">Community</a></li>
-    <li><a href="/#about">About</a></li>
+    <li><a href="https://eccoozstechnologies.com/#about">About</a></li>
     <li><a href="/history">History</a></li>
   </ul>
   <div class="nav-right">
@@ -184,7 +184,7 @@ html = html.replace(
 <div class="footer-inner">
 <div class="ftop social-footer-top">
   <div class="footer-brand social-footer-brand">
-    <a href="/" aria-label="ECCOOZS Technologies home">
+    <a href="https://eccoozstechnologies.com/" aria-label="ECCOOZS Technologies home">
       <object class="social-footer-logo" data="/brand/eccoozs-technologies-wordmark.png" type="image/png" aria-label="ECCOOZS">
         <img alt="ECCOOZS" src="/eccoozs-wordmark-blue-v2-640.png"/>
       </object>
@@ -192,7 +192,7 @@ html = html.replace(
     <p class="ftagline">Culture. Community. Connection.</p>
   </div>
   <div><div class="fct">ECCOOZS Social</div><ul class="fls"><li><a href="#eccoozs-app">The App</a></li><li><a href="#business">Business Directory</a></li><li><a href="#community">Our Story</a></li><li><a href="#download">Early Access</a></li></ul></div>
-  <div><div class="fct">ECCOOZS Technologies</div><ul class="fls"><li><a href="/">Corporate Home</a></li><li><a href="/learning">Learning</a></li><li><a href="/bellmont">Bellmont State</a></li><li><a href="/history">History</a></li><li><a href="/house-of-eccoozs">House of ECCOOZS</a></li></ul></div>
+  <div><div class="fct">ECCOOZS Technologies</div><ul class="fls"><li><a href="https://eccoozstechnologies.com/">Corporate Home</a></li><li><a href="https://eccoozslearning.com/">Learning</a></li><li><a href="/bellmont">Bellmont State</a></li><li><a href="/history">History</a></li><li><a href="/house-of-eccoozs">House of ECCOOZS</a></li></ul></div>
   <div><div class="fct">Legal</div><ul class="fls"><li><a href="/terms">Terms of Service</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/conduct">Community Guidelines</a></li><li><a href="/support">Support</a></li></ul></div>
 </div>
 <div class="fbot">
