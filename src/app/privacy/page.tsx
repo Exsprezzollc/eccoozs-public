@@ -374,7 +374,7 @@ export default function PrivacyPage() {
 <h1>Privacy Policy</h1>
 <p className="page-hero-sub">Effective June 2026 · Version 2.0</p>
 <div className="page-hero-meta">
-<span className="meta-tag">© 2026 ECCOOZS LLC</span>
+<span className="meta-tag">© 2026 ECCOOZS Technologies LLC</span>
 <span className="meta-tag">All Rights Reserved</span>
 <span className="meta-tag">privacy@eccoozs.com</span>
 </div>
@@ -394,7 +394,7 @@ export default function PrivacyPage() {
 <div className="toc" aria-label="On this page"><div className="toc-title">On this page</div><ol><li><a href="#1-who-we-are">1. Who We Are</a></li><li><a href="#2-information-we-collect">2. Information We Collect</a></li><li><a href="#3-how-we-use-your-information">3. How We Use Your Information</a></li><li><a href="#4-how-we-share-your-information">4. How We Share Your Information</a></li><li><a href="#6-data-retention">5. Data Retention</a></li><li><a href="#7-your-rights-and-choices">6. Your Rights and Choices</a></li><li><a href="#8-data-security">7. Data Security</a></li><li><a href="#9-cookies-and-tracking">8. Cookies and Tracking</a></li><li><a href="#10-international-users">9. International Users</a></li><li><a href="#11-changes-to-this-policy">10. Changes to This Policy</a></li></ol></div>
 <h2 id="1-who-we-are">1. Who We Are<a className="anchor" href="#1-who-we-are" aria-label="Link to section">#</a></h2>
 <div className="spacer"></div>
-<p>ECCOOZS is a culture-first social platform operated by ECCOOZS LLC. Our platform allows users to post content, join soundrooms, go live, read and discuss news, and connect with a community grounded in truth, heritage, and creativity.</p>
+<p>ECCOOZS is a culture-first social platform operated by ECCOOZS Technologies LLC. Our platform allows users to post content, join soundrooms, go live, read and discuss news, and connect with a community grounded in truth, heritage, and creativity.</p>
 <div className="spacer"></div>
 <p>For questions about this policy, contact us at: <strong>privacy@eccoozs.com</strong></p>
 <div className="spacer"></div>
@@ -432,9 +432,9 @@ export default function PrivacyPage() {
 <div className="spacer"></div>
 <p><strong>Payment Information</strong></p>
 <ul>
-<li>Billing information for Certified ($9.99/mo) and Verified ($14.99/mo) subscriptions — processed securely by Stripe or PayPal</li>
-<li>Payout details for Verified members receiving shop referral commissions</li>
-<li>ECCOOZS does not store full credit card numbers. All payment data is handled by PCI-compliant processors</li>
+<li>Billing information for paid subscriptions and eligible purchases — processed securely by third-party payment processors</li>
+<li>Payout information where applicable for eligible creators, businesses, or other program participants</li>
+<li>ECCOOZS does not store full credit card numbers. Payment-card data is handled by payment processors that maintain applicable payment-security standards</li>
 </ul>
 <div className="spacer"></div>
 <hr className="section-rule" />
@@ -447,7 +447,7 @@ export default function PrivacyPage() {
 <li>Operate and maintain the ECCOOZS platform and all its features</li>
 <li>Verify account eligibility, identity, and age requirements</li>
 <li>Moderate content and enforce our Community Guidelines and Terms of Service</li>
-<li>Process subscription payments and commission payouts</li>
+<li>Process subscription payments, purchases, and eligible payouts</li>
 <li>Detect AI-generated abuse, bots, spam, and impersonation attempts</li>
 <li>Respond to user support requests and reported content</li>
 <li>Send account notices, security alerts, and policy updates</li>
@@ -462,17 +462,9 @@ export default function PrivacyPage() {
 <div className="spacer"></div>
 <p><strong>Service Providers</strong></p>
 <div className="spacer"></div>
-<p>We share limited data with trusted service providers who help us operate the platform. These providers are contractually prohibited from using your data for any purpose beyond providing their service to us.</p>
+<p>We share only the information reasonably necessary with trusted service providers that help us operate and protect ECCOOZS. Depending on the service being used, these providers may support platform hosting and infrastructure, authentication, payments and eligible payouts, commerce and order processing, communications, security and fraud prevention, customer support, analytics, and performance monitoring.</p>
 <div className="spacer"></div>
-<div className="table-wrap"><table>
-<thead><tr><th>Provider</th><th>Purpose</th></tr></thead><tbody>
-<tr><td>Supabase</td><td>Database hosting, authentication, and real-time platform infrastructure</td></tr>
-<tr><td>Stripe</td><td>Subscription payment processing</td></tr>
-<tr><td>PayPal</td><td>Commission payouts to Verified members</td></tr>
-<tr><td>Shopify</td><td>ECCOOZS Shop order processing and referral commission tracking</td></tr>
-<tr><td>FingerprintJS</td><td>Device identification used to enforce account bans</td></tr>
-<tr><td>Vercel</td><td>Platform hosting and global content delivery</td></tr>
-</tbody></table></div>
+<p>Service providers may process information only for the services they provide to ECCOOZS, subject to applicable contracts, privacy obligations, and law. We do not provide service providers with personal information for their own independent advertising purposes.</p>
 <div className="spacer"></div>
 <p><strong>Legal Requirements</strong></p>
 <div className="spacer"></div>
