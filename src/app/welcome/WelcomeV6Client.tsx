@@ -6,6 +6,7 @@ import { welcomeV6SocialMarkup } from "./welcomeV6SocialMarkup";
 import { welcomeV6Styles } from "./welcomeV6Styles";
 import { welcomeSocialOverrides } from "./welcomeSocialOverrides";
 import { welcomeSocialViewportFix } from "./welcomeSocialViewportFix";
+import { trackEccoozsEvent } from "@/lib/analytics";
 
 declare global {
   interface Window { lucide?: { createIcons: () => void } }
@@ -68,21 +69,46 @@ export default function WelcomeV6Client() {
         referrer: document.referrer || null,
         user_agent: navigator.userAgent || null
       };
+      trackEccoozsEvent("waitlist_start", {
+        page_path: window.location.pathname,
+        audience_type: payload.audience_type,
+      });
+
       if (button) { button.disabled = true; button.textContent = "Reserving…"; }
       show("", "Submitting your waitlist request…");
       try {
         const response = await fetch("/api/waitlist", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
         const result = await response.json().catch(() => ({}));
         if (response.ok) {
+          trackEccoozsEvent("waitlist_complete", {
+            page_path: window.location.pathname,
+            audience_type: payload.audience_type,
+            conversion_status:
+              typeof result?.message === "string" &&
+              result.message.toLowerCase().includes("already")
+                ? "already_registered"
+                : "new",
+          });
+
           form.reset();
           show("ok", result?.message || "You are on the ECCOOZS founding waitlist.");
           if (button) button.textContent = "You're on the list!";
         } else {
+          trackEccoozsEvent("waitlist_error", {
+            page_path: window.location.pathname,
+            audience_type: payload.audience_type,
+            response_status: response.status,
+          });
           show("err", result?.message || result?.error || "Something went wrong while saving your spot. Please try again.");
           if (button) button.textContent = "Reserve My Spot";
         }
       } catch (error) {
         console.error(error);
+        trackEccoozsEvent("waitlist_error", {
+          page_path: window.location.pathname,
+          audience_type: payload.audience_type,
+          response_status: 0,
+        });
         show("err", "Network error. Please try again.");
         if (button) button.textContent = "Reserve My Spot";
       } finally { if (button) button.disabled = false; }
