@@ -3,6 +3,7 @@ import type React from "react";
 import "./globals.css";
 import eccoozsEMark from "@/assets/eccoozs-public/eccoozs-e-mark-90d0d033.png";
 import { GoogleAnalyticsConsent } from "@/components/analytics/GoogleAnalyticsConsent";
+import { SiteAnalytics } from "@/components/analytics/SiteAnalytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://eccoozs.com"),
@@ -50,6 +51,7 @@ export default function RootLayout({
       <body>
         {children}
         <GoogleAnalyticsConsent />
+        <SiteAnalytics />
       </body>
     </html>
   );
