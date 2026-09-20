@@ -122,6 +122,12 @@ export function GoogleAnalyticsConsent() {
     if (nextChoice === "granted") {
       loadGoogleAnalytics();
     }
+
+    window.dispatchEvent(
+      new CustomEvent("eccoozs:analytics-consent", {
+        detail: { choice: nextChoice },
+      })
+    );
   }
 
   if (!ready) {
