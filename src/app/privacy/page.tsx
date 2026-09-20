@@ -372,7 +372,7 @@ export default function PrivacyPage() {
 <div className="page-hero-inner">
 <div className="page-eyebrow">ECCOOZS Legal &amp; Community</div>
 <h1>Privacy Policy</h1>
-<p className="page-hero-sub">Effective June 2026 · Version 2.0</p>
+<p className="page-hero-sub">Effective June 2026 · Updated September 2026 · Version 2.1</p>
 <div className="page-hero-meta">
 <span className="meta-tag">© 2026 ECCOOZS Technologies LLC</span>
 <span className="meta-tag">All Rights Reserved</span>
@@ -383,7 +383,7 @@ export default function PrivacyPage() {
 <main>
 <div className="content-wrap">
 <div className="spacer"></div>
-<p className="meta"><strong>Effective Date:</strong> June 2026 | <strong>Version:</strong> 2.0</p>
+<p className="meta"><strong>Effective Date:</strong> June 2026 | <strong>Last Updated:</strong> September 2026 | <strong>Version:</strong> 2.1</p>
 <div className="spacer"></div>
 <hr className="section-rule" />
 <div className="spacer"></div>
@@ -466,6 +466,10 @@ export default function PrivacyPage() {
 <div className="spacer"></div>
 <p>Service providers may process information only for the services they provide to ECCOOZS, subject to applicable contracts, privacy obligations, and law. We do not provide service providers with personal information for their own independent advertising purposes.</p>
 <div className="spacer"></div>
+<p><strong>Google Analytics</strong></p>
+<div className="spacer"></div>
+<p>When you choose to allow optional analytics, Google Analytics 4 may process limited website usage information on our behalf to help us understand traffic sources, campaign performance, and page engagement. ECCOOZS keeps Google advertising signals and advertising personalization disabled for this analytics implementation.</p>
+<div className="spacer"></div>
 <p><strong>Legal Requirements</strong></p>
 <div className="spacer"></div>
 <p>We may disclose your information when required by law, court order, or governmental authority. We will notify you of such requests when legally permitted to do so.</p>
@@ -526,16 +530,16 @@ export default function PrivacyPage() {
 <div className="spacer"></div>
 <h2 id="9-cookies-and-tracking">8. Cookies and Tracking<a className="anchor" href="#9-cookies-and-tracking" aria-label="Link to section">#</a></h2>
 <div className="spacer"></div>
-<p>ECCOOZS uses essential cookies and similar technologies to operate the platform. We do not use advertising cookies or allow third-party trackers to profile your behavior.</p>
+<p>ECCOOZS uses essential cookies and similar technologies to operate the platform. With your permission, we also use Google Analytics 4 (GA4) to understand aggregate site usage, traffic sources, campaign performance, and page engagement. We do not use advertising cookies or enable Google advertising personalization for ECCOOZS analytics.</p>
 <div className="spacer"></div>
 <ul>
 <li><strong>Session cookies</strong> — keep you logged in during your visit</li>
 <li><strong>Preference cookies</strong> — remember your settings and display choices</li>
 <li><strong>Security cookies</strong> — protect against unauthorized access and fraud</li>
-<li><strong>Analytics</strong> — aggregate, non-personal usage data to improve the platform</li>
+<li><strong>Optional analytics</strong> — Google Analytics 4 is loaded only after you choose to allow analytics. It may process limited device, browser, referrer, approximate location, and interaction information to produce measurement reports for ECCOOZS</li>
 </ul>
 <div className="spacer"></div>
-<p>You can control cookies through your browser settings. Disabling essential cookies may affect your ability to use the platform.</p>
+<p>You can choose Essential only or Allow analytics through the ECCOOZS Privacy choices control and change that choice later. Declining optional analytics does not prevent you from using ECCOOZS. You can also control cookies through your browser settings. Disabling essential storage may affect your ability to use the platform.</p>
 <div className="spacer"></div>
 <hr className="section-rule" />
 <div className="spacer"></div>
