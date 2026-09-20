@@ -5,6 +5,7 @@ import styles from "./GoogleAnalyticsConsent.module.css";
 
 const MEASUREMENT_ID = "G-MK8CE7ED6J";
 const STORAGE_KEY = "eccoozs.analytics.consent";
+const CONSENT_COOKIE = "eccoozs_analytics_consent";
 
 type AnalyticsConsent = "granted" | "denied" | null;
 
@@ -34,6 +35,37 @@ function setGoogleConsent(analyticsStorage: "granted" | "denied") {
     ad_user_data: "denied",
     ad_personalization: "denied",
   });
+}
+
+function readStoredConsent(): AnalyticsConsent {
+  try {
+    const stored = window.localStorage.getItem(STORAGE_KEY);
+    if (stored === "granted" || stored === "denied") {
+      return stored;
+    }
+  } catch {
+    // Some browser/debug contexts can restrict localStorage.
+  }
+
+  const cookieMatch = document.cookie
+    .split("; ")
+    .find((entry) => entry.startsWith(`${CONSENT_COOKIE}=`));
+
+  const cookieValue = cookieMatch?.split("=")[1];
+  return cookieValue === "granted" || cookieValue === "denied"
+    ? cookieValue
+    : null;
+}
+
+function persistConsent(choice: Exclude<AnalyticsConsent, null>) {
+  try {
+    window.localStorage.setItem(STORAGE_KEY, choice);
+  } catch {
+    // Cookie fallback below keeps the user's choice available.
+  }
+
+  document.cookie =
+    `${CONSENT_COOKIE}=${choice}; Path=/; Max-Age=31536000; SameSite=Lax; Secure`;
 }
 
 function loadGoogleAnalytics() {
@@ -75,9 +107,7 @@ export function GoogleAnalyticsConsent() {
       wait_for_update: 500,
     });
 
-    const stored = window.localStorage.getItem(STORAGE_KEY);
-    const initialChoice: AnalyticsConsent =
-      stored === "granted" || stored === "denied" ? stored : null;
+    const initialChoice = readStoredConsent();
 
     setChoice(initialChoice);
     setReady(true);
@@ -91,9 +121,12 @@ export function GoogleAnalyticsConsent() {
   }, []);
 
   function saveChoice(nextChoice: Exclude<AnalyticsConsent, null>) {
-    window.localStorage.setItem(STORAGE_KEY, nextChoice);
+    // Update the interface first so the choice always responds immediately,
+    // even in browser/debug contexts where storage access may be restricted.
     setChoice(nextChoice);
     setSettingsOpen(false);
+
+    persistConsent(nextChoice);
     setGoogleConsent(nextChoice);
 
     if (nextChoice === "granted") {
