@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import type React from "react";
 import "./globals.css";
 import eccoozsEMark from "@/assets/eccoozs-public/eccoozs-e-mark-90d0d033.png";
+import { GoogleAnalyticsConsent } from "@/components/analytics/GoogleAnalyticsConsent";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://eccoozs.com"),
@@ -26,7 +27,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <GoogleAnalyticsConsent />
+      </body>
     </html>
   );
 }
