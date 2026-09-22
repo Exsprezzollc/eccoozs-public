@@ -26,10 +26,10 @@ const destinations = [
   },
   {
     id: "worlds",
-    type: "Media & Worlds",
+    type: "An ECCOOZS Original Storyworld",
     title: "Bellmont State University",
     description:
-      "An original ECCOOZS world built around people, purpose, possibility, campus life, story, and tradition.",
+      "A fictional campus universe created for entertainment, storytelling, and original ECCOOZS media experiences.",
     href: "https://eccoozs.com/bellmont"
   },
   {
@@ -42,10 +42,11 @@ const destinations = [
   },
   {
     id: "history",
-    type: "History & Archive",
+    type: "History · Records · Research · Education",
     title: "ECCOOZS History",
     description:
-      "A growing home for Foundational Black American history, American legacy, innovation, service, culture, and archival discovery.",
+      "An evolving historical research and educational initiative exploring records, people, places, and historical context.",
+    status: "Growing Over Time",
     href: "https://eccoozs.com/history"
   }
 ];
@@ -137,7 +138,7 @@ export default function HomePage() {
               <a key={item.title} id={item.id} className={styles.card} href={item.href}>
                 <div className={styles.cardTop}>
                   <span className={styles.cardType}>{item.type}</span>
-                  <span className={styles.live}>Explore</span>
+                  <span className={styles.live}>{"status" in item ? item.status : "Explore"}</span>
                 </div>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
