@@ -75,7 +75,7 @@ export default function HouseComingSoon() {
           The lifestyle and commerce extension of ECCOOZS is being prepared with the same premium, intentional approach as the platform.
         </p>
         <a
-          href="/welcome"
+          href="https://eccoozstechnologies.com/"
           style={{
             display: "inline-flex",
             alignItems: "center",

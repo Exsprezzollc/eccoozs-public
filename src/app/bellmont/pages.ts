@@ -1,6 +1,6 @@
 export type BellmontPageInfo = {
   title: string;
-  image: string;
+  image?: string;
   alt: string;
   caption: string;
 };
@@ -42,9 +42,14 @@ export const bellmontPages: Record<string, BellmontPageInfo> = {
     alt: "Bellmont career and professional development",
     caption: "Work. Build. Lead. Own."
   },
+  "career-development": {
+    title: "Career & Professional Development",
+    image: "/bellmont/career-development.png",
+    alt: "Bellmont career and professional development",
+    caption: "Work. Build. Lead. Own."
+  },
   soundrooms: {
     title: "Bellmont Soundrooms",
-    image: "/bellmont/soundrooms.png",
     alt: "Bellmont Soundrooms",
     caption: "Listen. Speak. Reflect. Connect."
   },
@@ -116,7 +121,7 @@ export const bellmontPages: Record<string, BellmontPageInfo> = {
   },
   "student-organizations": {
     title: "Student Organizations & Leadership",
-    image: "/bellmont/student-organizations-leadership.png",
+    image: "/bellmont/student-organizations.png",
     alt: "Bellmont State University student organizations and leadership page",
     caption: "Find your people. Build your voice. Leave your mark."
   },
@@ -128,12 +133,13 @@ export const bellmontPages: Record<string, BellmontPageInfo> = {
   },
   explore: {
     title: "Explore Bellmont",
-    image: "/bellmont/explore-bellmont.png",
+    image: "/bellmont/explore.png",
     alt: "Explore Bellmont State University campus",
     caption: "Historic beauty. Modern opportunity."
   }
 };
 
-export const bellmontOrder = Object.entries(bellmontPages).map(
-  ([slug, page]) => ({ slug, ...page })
-);
+export const bellmontOrder = Object.entries(bellmontPages).map(([slug, page]) => ({
+  slug,
+  ...page
+}));

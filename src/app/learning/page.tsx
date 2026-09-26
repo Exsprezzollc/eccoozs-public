@@ -94,10 +94,12 @@ export default function Learning() {
 
       <nav className="nav">
         <div className="brand">
-          <HeaderLogo width={156} className="brandLogo" />
+          <a href="https://eccoozstechnologies.com/" aria-label="ECCOOZS Technologies home">
+            <HeaderLogo width={156} className="brandLogo" />
+          </a>
           <span>LEARNING APPS</span>
         </div>
-        <a href="/welcome">Back to ECCOOZS</a>
+        <a href="https://eccoozstechnologies.com/">Back to ECCOOZS</a>
       </nav>
 
       <section className="intro">
@@ -160,7 +162,7 @@ export default function Learning() {
         <div className="note">
           <strong>My Voice Journey split:</strong> Youth opens directly into Learning to Speak with Leo. Adults open into English Practice and can move between English Practice and My Words without entering the youth experience.
         </div>
-        <div className="back"><a href="/welcome">← Return to ECCOOZS</a></div>
+        <div className="back"><a href="https://eccoozstechnologies.com/">← Return to ECCOOZS</a></div>
       </section>
     </main>
   );
