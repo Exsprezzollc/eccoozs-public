@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "ECCOOZS Journal | Social Media, Community, Business & Culture",
   description:
     "Ideas and practical guides about social media alternatives, community, creators, business discovery, culture, and the future of online connection.",
-  alternates: { canonical: "/blog" },
+  alternates: { canonical: "/blog", types: { "application/rss+xml": "/blog/rss.xml" } },
   openGraph: {
     title: "ECCOOZS Journal",
     description:
@@ -39,9 +39,32 @@ const topicId = (topic: string) => topic.toLowerCase().replace(/\s+/g, "-");
 
 export default function BlogPage() {
   const visibleSocialLinks = socialLinks.filter(([, href]) => Boolean(href));
+  const journalJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": "https://eccoozs.com/blog#journal",
+    url: "https://eccoozs.com/blog",
+    name: "ECCOOZS Journal",
+    description:
+      "Ideas and practical guides about social media alternatives, community, creators, business discovery, culture, and the future of online connection.",
+    publisher: { "@id": "https://eccoozs.com/#organization" },
+    inLanguage: "en-US",
+    blogPost: blogPosts.map((post) => ({
+      "@type": "BlogPosting",
+      headline: post.title,
+      url: `https://eccoozs.com/blog/${post.slug}`,
+      datePublished: post.published,
+      dateModified: post.updated,
+      image: `https://eccoozs.com${post.image}`,
+    })),
+  };
 
   return (
     <main className={styles.page}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(journalJsonLd).replace(/</g, "\\u003c") }}
+      />
       <header className={styles.header}>
         <Link className={styles.wordmark} href="/welcome" aria-label="ECCOOZS Social">
           <img src="/eccoozs-wordmark-blue-v2-640.png" alt="ECCOOZS" />
