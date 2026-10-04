@@ -188,7 +188,7 @@ export const blogPosts: BlogPost[] = [
     keywords: ["where to promote a small business online", "places to promote small business", "small business directories", "community platforms for business", "emerging social networks for business", "ECCOOZS Business"],
     image: "/blog/small-business-promotion-online.png",
     imageAlt: "A Black small-business owner promoting her boutique through online discovery and community engagement.",
-    intro: "This is a channel-choice question: where should a small business actually show up online? The answer depends on how customers discover, evaluate, and return to the business. Social networks are one option, but search, directories, email, partnerships, local communities, and emerging platforms can each play a different role."
+    intro: "This is a channel-choice question: where should a small business actually show up online? The answer depends on how customers discover, evaluate, and return to the business. Social networks are one option, but search, directories, email, partnerships, local communities, and emerging platforms can each play a different role.",
     sections: [
       {
         heading: "Start with search intent",
@@ -238,7 +238,7 @@ export const blogPosts: BlogPost[] = [
     keywords: ["social media incentives and toxicity", "social media moderation design", "healthy engagement systems", "conversation design social media", "respectful social media", "ECCOOZS"],
     image: "/blog/social-media-without-chaos.png",
     imageAlt: "A calm social media experience replacing chaotic, negative feeds with respectful community conversation.",
-    intro: "This article focuses on platform mechanics. The question is not whether people will disagree; they will. The question is whether ranking systems, moderation rules, discovery, replies, and conversation tools repeatedly reward the most disruptive behavior or create room for lively interaction without making harassment the growth engine."
+    intro: "This article focuses on platform mechanics. The question is not whether people will disagree; they will. The question is whether ranking systems, moderation rules, discovery, replies, and conversation tools repeatedly reward the most disruptive behavior or create room for lively interaction without making harassment the growth engine.",
     sections: [
       {
         heading: "Incentives shape behavior",
@@ -281,7 +281,7 @@ export const blogPosts: BlogPost[] = [
     keywords: ["creator-first social networks", "general social network vs creator platform", "social platforms for ordinary users", "creator economy social network", "ECCOOZS creators"],
     image: "/blog/creators-and-everyone-else.png",
     imageAlt: "Creators, small businesses, and everyday Black community members sharing one connected social ecosystem.",
-    intro: "This article is about product identity. A creator platform can succeed by serving creators exceptionally well, but a general social network has a different job. It has to work for people who create, people who watch, people who talk, businesses, communities, and members who never intend to build an audience at all."
+    intro: "This article is about product identity. A creator platform can succeed by serving creators exceptionally well, but a general social network has a different job. It has to work for people who create, people who watch, people who talk, businesses, communities, and members who never intend to build an audience at all.",
     sections: [
       {
         heading: "Creator opportunity should not require celebrity",
@@ -524,7 +524,7 @@ export const blogPosts: BlogPost[] = [
     keywords: ["small business marketing strategy 2026", "how to promote a small business online", "small business marketing plan", "online marketing system for small business", "repeat customer marketing", "ECCOOZS Business"],
     image: "/blog/small-business-promotion-2026.png",
     imageAlt: "A small-business owner using a phone and laptop while a naturally blended group of customers interacts in a polished modern shop.",
-    intro: "This is a strategy question rather than a platform list. Small-business marketing works best when several channels reinforce one another: search creates discovery, content builds familiarity, directories organize intent, email supports return visits, referrals transfer trust, and community keeps the business visible over time."
+    intro: "This is a strategy question rather than a platform list. Small-business marketing works best when several channels reinforce one another: search creates discovery, content builds familiarity, directories organize intent, email supports return visits, referrals transfer trust, and community keeps the business visible over time.",
     sections: [
       {
         heading: "Make sure people can find you when they are already looking",
@@ -574,7 +574,7 @@ export const blogPosts: BlogPost[] = [
     keywords: ["how customers discover small businesses", "small business discovery", "word of mouth online", "business directory discovery", "repeat exposure marketing", "ECCOOZS Business"],
     image: "/blog/business-discovery-without-going-viral.png",
     imageAlt: "A neighborhood business owner and a naturally blended customer group connected through search, recommendations, and community discovery.",
-    intro: "This article focuses on the mechanics of discovery. A customer may hear a recommendation, notice a business later, search the name, read reviews, encounter it again in a directory, and only then make a purchase. That sequence is less dramatic than virality, but it is much closer to how many sustainable businesses actually grow."
+    intro: "This article focuses on the mechanics of discovery. A customer may hear a recommendation, notice a business later, search the name, read reviews, encounter it again in a directory, and only then make a purchase. That sequence is less dramatic than virality, but it is much closer to how many sustainable businesses actually grow.",
     sections: [
       {
         heading: "Virality is not a business model",
@@ -774,7 +774,7 @@ export const blogPosts: BlogPost[] = [
     keywords: ["fun social media without drama", "social media culture without outrage", "healthy online community culture", "humor and debate online", "social network community energy", "ECCOOZS"],
     image: "/blog/social-media-fun-without-chaos.png",
     imageAlt: "A lively naturally blended group enjoying conversation and digital interaction while chaotic feed fragments fade into the background.",
-    intro: "This article focuses on social culture rather than moderation systems. People come online for humor, sports, music, style, debate, creativity, friendships, and personality. Those things can generate plenty of energy on their own. A platform does not need constant outrage to feel alive."
+    intro: "This article focuses on social culture rather than moderation systems. People come online for humor, sports, music, style, debate, creativity, friendships, and personality. Those things can generate plenty of energy on their own. A platform does not need constant outrage to feel alive.",
     sections: [
       {
         heading: "Conflict is an efficient attention signal",
@@ -824,7 +824,7 @@ export const blogPosts: BlogPost[] = [
     keywords: ["creators or community first", "social network launch strategy", "creator recruitment for new platforms", "empty room problem social network", "community first social media", "ECCOOZS"],
     image: "/blog/creators-or-community-first.png",
     imageAlt: "A naturally blended social scene connecting a creator, small-business owner, and everyday community members.",
-    intro: "This is a sequencing question for new platforms: what should come first at launch? Creators can solve the empty-room problem by bringing activity and recognizable content, but community design determines whether ordinary members become participants or remain spectators. Sustainable growth requires both, introduced in the right relationship."
+    intro: "This is a sequencing question for new platforms: what should come first at launch? Creators can solve the empty-room problem by bringing activity and recognizable content, but community design determines whether ordinary members become participants or remain spectators. Sustainable growth requires both, introduced in the right relationship.",
     sections: [
       {
         heading: "Creators solve the empty-room problem",
@@ -1424,7 +1424,7 @@ export const blogPosts: BlogPost[] = [
     keywords: ["best platforms for small creators 2026", "small creator platform comparison", "YouTube TikTok Instagram for small creators", "creator membership platforms", "emerging creator platforms", "ECCOOZS creators"],
     image: "/blog/best-platforms-small-creators-2026.png",
     imageAlt: "A blended group of emerging creators producing audio, video, writing, and social content in a collaborative studio.",
-    intro: "This is a platform-comparison guide for small creators across formats. Short video, long video, writing, memberships, community tools, and emerging social networks solve different problems. The goal is to match the platform to the creator's format, discovery needs, and stage of growth."
+    intro: "This is a platform-comparison guide for small creators across formats. Short video, long video, writing, memberships, community tools, and emerging social networks solve different problems. The goal is to match the platform to the creator's format, discovery needs, and stage of growth.",
     sections: [
       {
         heading: "TikTok and Instagram: enormous discovery, intense competition",
@@ -1644,7 +1644,7 @@ export const blogPosts: BlogPost[] = [
     keywords: ["platforms for male creators", "male creators starting from zero", "sports gaming fitness creator platforms", "business creator platform", "new male content creator 2026", "ECCOOZS creators"],
     image: "/blog/male-creators-starting-from-zero-2026.png",
     imageAlt: "Several male creators working across video, podcasting, sports commentary, gaming, and business content in a modern studio.",
-    intro: "This article is specifically about starting from zero as a male creator in interest-driven categories such as sports, gaming, fitness, trades, business, commentary, music, or comedy. The first decision is not which platform is largest; it is which format and community give the creator a realistic way to become recognizable."
+    intro: "This article is specifically about starting from zero as a male creator in interest-driven categories such as sports, gaming, fitness, trades, business, commentary, music, or comedy. The first decision is not which platform is largest; it is which format and community give the creator a realistic way to become recognizable.",
     sections: [
       { heading: "Choose the format before the platform", paragraphs: ["A sports commentator, gamer, barber, trainer, financial educator, comedian, musician, reviewer, and business creator may all need different tools.", "Platform choice becomes easier once the creator knows whether the core format is long video, short video, audio, writing, live conversation, or visual storytelling."] },
       { heading: "Large platforms offer reach but heavy competition", paragraphs: ["The biggest platforms provide enormous potential audiences, but new creators compete with established accounts, professional production, and constant content supply.", "That does not make large platforms a bad choice. It means the creator needs a clear subject and repeated formats."] },
@@ -1724,7 +1724,7 @@ export const blogPosts: BlogPost[] = [
     keywords: ["local service business marketing", "how to get local customers", "promote contractor online", "promote plumber stylist mechanic online", "local search for service businesses", "ECCOOZS Business"],
     image: "/blog/local-service-business-without-virality.png",
     imageAlt: "Local service business owners connecting with nearby customers through search, recommendations, and community discovery.",
-    intro: "This article is specifically for local service businesses. A plumber, stylist, cleaner, photographer, accountant, tutor, mechanic, landscaper, consultant, or contractor does not need national attention. The marketing job is to become visible, credible, and easy to contact when nearby customers need that service."
+    intro: "This article is specifically for local service businesses. A plumber, stylist, cleaner, photographer, accountant, tutor, mechanic, landscaper, consultant, or contractor does not need national attention. The marketing job is to become visible, credible, and easy to contact when nearby customers need that service.",
     sections: [
       { heading: "Prioritize local intent", paragraphs: ["People searching for a service near them are more valuable than random viewers from across the country. Business information should clearly communicate location, service area, category, and how to make contact.", "Local search and directory visibility should be treated as core marketing assets."] },
       { heading: "Build proof before chasing reach", paragraphs: ["Reviews, finished work, testimonials, credentials, transparent pricing information, and clear policies reduce uncertainty.", "Customers often choose the business that feels trustworthy and easy to understand, not the business with the biggest follower count."] },
