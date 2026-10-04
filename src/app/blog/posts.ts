@@ -1307,7 +1307,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Independent Black-centered platforms are part of the next chapter",
         paragraphs: [
-          "Platforms such as ECCOOZS, Circl, and other emerging products are exploring what it looks like to build digital environments with Black communities at the center rather than treating them only as audiences inside someone else's network.",
+          "Emerging Black-centered products are exploring what it looks like to build digital environments with Black communities at the center rather than treating them only as audiences inside someone else's network. ECCOOZS is a Black American-centered general social network being built around community, conversation, business discovery, creator opportunity, and standards-led participation.",
           "The important question will be whether those platforms can combine cultural relevance with strong products, healthy community, and reasons for people from many backgrounds to participate respectfully."
         ]
       }
