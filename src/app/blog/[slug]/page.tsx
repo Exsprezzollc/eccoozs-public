@@ -49,20 +49,33 @@ export default async function BlogArticle({ params }: Props) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": `${url}#article`,
     headline: post.title,
     description: post.description,
     datePublished: post.published,
     dateModified: post.updated,
     mainEntityOfPage: url,
-    author: { "@type": "Organization", name: "ECCOOZS" },
-    publisher: { "@type": "Organization", name: "ECCOOZS Technologies LLC", url: "https://eccoozs.com" },
+    author: { "@id": "https://eccoozs.com/#organization" },
+    publisher: { "@id": "https://eccoozs.com/#organization" },
+    isPartOf: { "@id": "https://eccoozs.com/blog#journal" },
     keywords: post.keywords.join(", "),
     image: `https://eccoozs.com${post.image}`,
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "ECCOOZS", item: "https://eccoozs.com" },
+      { "@type": "ListItem", position: 2, name: "Journal", item: "https://eccoozs.com/blog" },
+      { "@type": "ListItem", position: 3, name: post.title, item: url },
+    ],
   };
 
   return (
     <main className={styles.page}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, "\\u003c") }} />
       <header className={styles.header}><Link href="/blog">← ECCOOZS Journal</Link><Link href="/welcome">ECCOOZS Social</Link></header>
 
       <article className={styles.article}>
