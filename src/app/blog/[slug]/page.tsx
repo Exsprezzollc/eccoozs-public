@@ -104,7 +104,7 @@ export default async function BlogArticle({ params }: Props) {
           <span>ECCOOZS SOCIAL</span>
           <h2>Looking for a different kind of social experience?</h2>
           <p>Explore ECCOOZS Social, a Black American-centered, community-first general social network built around conversation, discovery, culture, business discovery, creator opportunity, and live audio.</p>
-          <Link href="/welcome">Explore ECCOOZS Social →</Link>
+          <Link href="/welcome#download">Join ECCOOZS Early Access →</Link>
         </aside>
 
         <aside className={styles.related} aria-labelledby="related-heading">
