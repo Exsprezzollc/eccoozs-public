@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://eccoozs.com"),
   title: { default: "ECCOOZS | Social Media, Community, Culture & Opportunity", template: "%s" },
   description:
-    "ECCOOZS is a Black American-centered social platform for conversation, discovery, culture, community, business, creators, and opportunity.",
+    "ECCOOZS is a Black American-centered, community-first general social network for conversation, discovery, culture, business discovery, creator opportunity, and live audio.",
   alternates: { canonical: "https://eccoozs.com" },
   openGraph: {
     title: "ECCOOZS | Culture. Community. Connection.",
-    description: "A social platform for conversation, discovery, culture, community, business, creators, and opportunity.",
+    description: "A Black American-centered, community-first general social network for conversation, discovery, culture, business discovery, creator opportunity, and live audio.",
     url: "https://eccoozs.com",
     siteName: "ECCOOZS",
     type: "website",
@@ -88,6 +88,19 @@ export default function RootLayout({
                   name: "ECCOOZS",
                   publisher: { "@id": "https://eccoozs.com/#organization" },
                   inLanguage: "en-US"
+                },
+                {
+                  "@type": "WebApplication",
+                  "@id": "https://eccoozs.com/welcome#social",
+                  name: "ECCOOZS Social",
+                  alternateName: "ECCOOZS",
+                  url: "https://eccoozs.com/welcome",
+                  applicationCategory: "SocialNetworkingApplication",
+                  operatingSystem: "Web",
+                  description:
+                    "ECCOOZS is a Black American-centered, community-first general social network built for conversation, discovery, culture, business discovery, creator opportunity, and live audio through Soundrooms.",
+                  provider: { "@id": "https://eccoozs.com/#organization" },
+                  isPartOf: { "@id": "https://eccoozs.com/#website" }
                 }
               ]
             }).replace(/</g, "\\u003c")
