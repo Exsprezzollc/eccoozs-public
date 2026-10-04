@@ -190,7 +190,7 @@ export default function HomePage() {
           <span>Technologies</span>
         </div>
         <div className={styles.footerLinks}>
-          <a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/conduct">Conduct</a><a href="/support">Support</a><a href="/blog">Journal</a><a href="https://eccoozs.com/welcome">ECCOOZS Social</a><a href="https://eccoozs.com/history">History</a>
+          <a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/conduct">Conduct</a><a href="/support">Support</a><a href="/press">Press</a><a href="/blog">Journal</a><a href="https://eccoozs.com/welcome">ECCOOZS Social</a><a href="https://eccoozs.com/history">History</a>
         </div>
         <span>Explore. Express. Elevate.</span>
       </footer>
