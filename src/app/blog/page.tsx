@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "ECCOOZS Journal | Social Media, Community, Business & Culture",
   description:
     "Ideas and practical guides about social media alternatives, community, creators, business discovery, culture, and the future of online connection.",
-  alternates: { canonical: "/blog" },
+  alternates: { canonical: "/blog", types: { "application/rss+xml": "/blog/rss.xml" } },
   openGraph: {
     title: "ECCOOZS Journal",
     description:
@@ -34,10 +34,37 @@ const socialLinks = [
   ["X", process.env.NEXT_PUBLIC_ECCOOZS_X],
 ] as const;
 
+const topicOrder = ["Social Media", "Community", "Business", "Creators", "Culture"] as const;
+const topicId = (topic: string) => topic.toLowerCase().replace(/\s+/g, "-");
+
 export default function BlogPage() {
   const visibleSocialLinks = socialLinks.filter(([, href]) => Boolean(href));
+  const journalJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": "https://eccoozs.com/blog#journal",
+    url: "https://eccoozs.com/blog",
+    name: "ECCOOZS Journal",
+    description:
+      "Ideas and practical guides about social media alternatives, community, creators, business discovery, culture, and the future of online connection.",
+    publisher: { "@id": "https://eccoozs.com/#organization" },
+    inLanguage: "en-US",
+    blogPost: blogPosts.map((post) => ({
+      "@type": "BlogPosting",
+      headline: post.title,
+      url: `https://eccoozs.com/blog/${post.slug}`,
+      datePublished: post.published,
+      dateModified: post.updated,
+      image: `https://eccoozs.com${post.image}`,
+    })),
+  };
+
   return (
     <main className={styles.page}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(journalJsonLd).replace(/</g, "\\u003c") }}
+      />
       <header className={styles.header}>
         <Link className={styles.wordmark} href="/welcome" aria-label="ECCOOZS Social">
           <img src="/eccoozs-wordmark-blue-v2-640.png" alt="ECCOOZS" />
@@ -60,28 +87,67 @@ export default function BlogPage() {
         </p>
       </section>
 
-      <section className={styles.grid} aria-label="Latest ECCOOZS Journal articles">
-        {blogPosts.map((post, index) => (
-          <article className={index === 0 ? styles.featuredCard : styles.card} key={post.slug}>
-            <Link className={styles.cardImage} href={`/blog/${post.slug}`} aria-label={`Read ${post.title}`}>
-              <Image
-                src={post.image}
-                alt={post.imageAlt}
-                width={1672}
-                height={941}
-                sizes={index === 0 ? "(max-width: 800px) 100vw, 1180px" : "(max-width: 800px) 100vw, 580px"}
-                priority={index === 0}
-              />
-            </Link>
-            <div className={styles.cardBody}>
-            <div className={styles.meta}><span>{post.category}</span><time dateTime={post.published}>{new Date(`${post.published}T12:00:00`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</time></div>
-            <h2><Link href={`/blog/${post.slug}`}>{post.title}</Link></h2>
-            <p>{post.description}</p>
-            <div className={styles.cardFooter}><span>{post.readingTime}</span><Link href={`/blog/${post.slug}`}>Read article →</Link></div>
-            </div>
-          </article>
-        ))}
-      </section>
+      <nav className={styles.topicNav} aria-label="Browse Journal topics">
+        <span>Explore by topic</span>
+        <div>
+          {topicOrder.map((topic) => (
+            <a href={`#${topicId(topic)}`} key={topic}>{topic}</a>
+          ))}
+        </div>
+      </nav>
+
+      <div className={styles.topicGroups}>
+        {topicOrder.map((topic, topicIndex) => {
+          const posts = blogPosts.filter((post) => post.category === topic);
+          if (posts.length === 0) return null;
+
+          return (
+            <section className={styles.topicSection} id={topicId(topic)} key={topic}>
+              <div className={styles.topicHeader}>
+                <div>
+                  <p className={styles.kicker}>TOPIC</p>
+                  <h2>{topic}</h2>
+                </div>
+                <span>{posts.length} {posts.length === 1 ? "article" : "articles"}</span>
+              </div>
+
+              <div className={styles.grid}>
+                {posts.map((post, postIndex) => {
+                  const featured = topicIndex === 0 && postIndex === 0;
+                  return (
+                    <article className={featured ? styles.featuredCard : styles.card} key={post.slug}>
+                      <Link className={styles.cardImage} href={`/blog/${post.slug}`} aria-label={`Read ${post.title}`}>
+                        <Image
+                          src={post.image}
+                          alt={post.imageAlt}
+                          width={1672}
+                          height={941}
+                          sizes={featured ? "(max-width: 800px) 100vw, 1180px" : "(max-width: 800px) 100vw, 580px"}
+                          priority={featured}
+                        />
+                      </Link>
+                      <div className={styles.cardBody}>
+                        <div className={styles.meta}>
+                          <span>{post.category}</span>
+                          <time dateTime={post.published}>
+                            {new Date(`${post.published}T12:00:00`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
+                          </time>
+                        </div>
+                        <h2><Link href={`/blog/${post.slug}`}>{post.title}</Link></h2>
+                        <p>{post.description}</p>
+                        <div className={styles.cardFooter}>
+                          <span>{post.readingTime}</span>
+                          <Link href={`/blog/${post.slug}`}>Read article →</Link>
+                        </div>
+                      </div>
+                    </article>
+                  );
+                })}
+              </div>
+            </section>
+          );
+        })}
+      </div>
 
       <section className={styles.discovery}>
         <div><p className={styles.kicker}>DISCOVER ECCOOZS</p><h2>Community first. Opportunity built in.</h2></div>
