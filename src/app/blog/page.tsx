@@ -151,7 +151,7 @@ export default function BlogPage() {
 
       <section className={styles.discovery}>
         <div><p className={styles.kicker}>DISCOVER ECCOOZS</p><h2>Community first. Opportunity built in.</h2></div>
-        <p>Explore ECCOOZS Social, join the founding community, and see how conversation, discovery, business, and creator opportunity come together.</p>
+        <p>Explore ECCOOZS Social, a Black American-centered, community-first general social network where conversation, discovery, culture, business discovery, creator opportunity, and live audio come together.</p>
         <Link href="/welcome">Explore ECCOOZS Social →</Link>
       </section>
 
