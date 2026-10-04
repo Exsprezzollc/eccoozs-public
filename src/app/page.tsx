@@ -2,9 +2,18 @@ import type { Metadata } from "next";
 import styles from "./CorporateHome.module.css";
 
 export const metadata: Metadata = {
-  title: "ECCOOZS Technologies — Explore. Express. Elevate.",
+  title: "ECCOOZS Technologies | Social, Media, Learning, Commerce & Culture",
   description:
-    "ECCOOZS Technologies builds connected platforms, learning experiences, media worlds, commerce brands, and cultural archives with purpose."
+    "ECCOOZS Technologies builds connected platforms across social media, learning, original media, commerce, business discovery, and cultural education.",
+  alternates: { canonical: "https://eccoozs.com" },
+  openGraph: {
+    title: "ECCOOZS Technologies",
+    description:
+      "Connected platforms across social media, learning, original media, commerce, business discovery, and cultural education.",
+    url: "https://eccoozs.com",
+    siteName: "ECCOOZS",
+    type: "website",
+  },
 };
 
 const destinations = [

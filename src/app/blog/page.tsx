@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { blogPosts } from "./posts";
 import styles from "./blog.module.css";
 
@@ -14,6 +15,13 @@ export const metadata: Metadata = {
       "Social media, community, business, creators, culture, and the future of online connection.",
     url: "https://eccoozs.com/blog",
     type: "website",
+    images: [{ url: "/blog/facebook-alternative-guide.png", width: 1672, height: 941, alt: "ECCOOZS Journal" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ECCOOZS Journal",
+    description: "Social media, community, business, creators, culture, and the future of online connection.",
+    images: ["/blog/facebook-alternative-guide.png"],
   },
 };
 
@@ -55,10 +63,22 @@ export default function BlogPage() {
       <section className={styles.grid} aria-label="Latest ECCOOZS Journal articles">
         {blogPosts.map((post, index) => (
           <article className={index === 0 ? styles.featuredCard : styles.card} key={post.slug}>
+            <Link className={styles.cardImage} href={`/blog/${post.slug}`} aria-label={`Read ${post.title}`}>
+              <Image
+                src={post.image}
+                alt={post.imageAlt}
+                width={1672}
+                height={941}
+                sizes={index === 0 ? "(max-width: 800px) 100vw, 1180px" : "(max-width: 800px) 100vw, 580px"}
+                priority={index === 0}
+              />
+            </Link>
+            <div className={styles.cardBody}>
             <div className={styles.meta}><span>{post.category}</span><time dateTime={post.published}>{new Date(`${post.published}T12:00:00`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</time></div>
             <h2><Link href={`/blog/${post.slug}`}>{post.title}</Link></h2>
             <p>{post.description}</p>
             <div className={styles.cardFooter}><span>{post.readingTime}</span><Link href={`/blog/${post.slug}`}>Read article →</Link></div>
+            </div>
           </article>
         ))}
       </section>

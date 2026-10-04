@@ -62,19 +62,34 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "ECCOOZS Technologies LLC",
-              alternateName: "ECCOOZS",
-              url: "https://eccoozs.com",
-              logo: "https://eccoozs.com/eccoozs-wordmark-blue-v2-640.png",
-              sameAs: [
-                process.env.NEXT_PUBLIC_ECCOOZS_INSTAGRAM,
-                process.env.NEXT_PUBLIC_ECCOOZS_FACEBOOK,
-                process.env.NEXT_PUBLIC_ECCOOZS_TIKTOK,
-                process.env.NEXT_PUBLIC_ECCOOZS_YOUTUBE,
-                process.env.NEXT_PUBLIC_ECCOOZS_THREADS,
-                process.env.NEXT_PUBLIC_ECCOOZS_X
-              ].filter(Boolean)
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://eccoozs.com/#organization",
+                  name: "ECCOOZS Technologies LLC",
+                  alternateName: "ECCOOZS",
+                  url: "https://eccoozs.com",
+                  logo: "https://eccoozs.com/eccoozs-wordmark-blue-v2-640.png",
+                  description:
+                    "ECCOOZS Technologies builds connected platforms across social media, learning, original media, commerce, business discovery, and cultural education.",
+                  sameAs: [
+                    process.env.NEXT_PUBLIC_ECCOOZS_INSTAGRAM,
+                    process.env.NEXT_PUBLIC_ECCOOZS_FACEBOOK,
+                    process.env.NEXT_PUBLIC_ECCOOZS_TIKTOK,
+                    process.env.NEXT_PUBLIC_ECCOOZS_YOUTUBE,
+                    process.env.NEXT_PUBLIC_ECCOOZS_THREADS,
+                    process.env.NEXT_PUBLIC_ECCOOZS_X
+                  ].filter(Boolean)
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://eccoozs.com/#website",
+                  url: "https://eccoozs.com",
+                  name: "ECCOOZS",
+                  publisher: { "@id": "https://eccoozs.com/#organization" },
+                  inLanguage: "en-US"
+                }
+              ]
             }).replace(/</g, "\\u003c")
           }}
         />

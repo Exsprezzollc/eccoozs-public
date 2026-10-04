@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { blogPosts, getBlogPost } from "../posts";
 import styles from "./article.module.css";
@@ -19,8 +20,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${post.title} | ECCOOZS Journal`,
     description: post.description,
     alternates: { canonical: url },
-    openGraph: { title: post.title, description: post.description, url, type: "article", publishedTime: post.published, modifiedTime: post.updated },
-    twitter: { card: "summary_large_image", title: post.title, description: post.description },
+    openGraph: { title: post.title, description: post.description, url, type: "article", publishedTime: post.published, modifiedTime: post.updated, images: [{ url: post.image, width: 1672, height: 941, alt: post.imageAlt }] },
+    twitter: { card: "summary_large_image", title: post.title, description: post.description, images: [post.image] },
   };
 }
 
@@ -40,6 +41,7 @@ export default async function BlogArticle({ params }: Props) {
     author: { "@type": "Organization", name: "ECCOOZS" },
     publisher: { "@type": "Organization", name: "ECCOOZS Technologies LLC", url: "https://eccoozs.com" },
     keywords: post.keywords.join(", "),
+    image: `https://eccoozs.com${post.image}`,
   };
   return (
     <main className={styles.page}>
@@ -48,6 +50,9 @@ export default async function BlogArticle({ params }: Props) {
       <article className={styles.article}>
         <div className={styles.meta}><span>{post.category}</span><time dateTime={post.published}>{new Date(`${post.published}T12:00:00`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}</time><span>{post.readingTime}</span></div>
         <h1>{post.title}</h1>
+        <figure className={styles.heroImage}>
+          <Image src={post.image} alt={post.imageAlt} width={1672} height={941} sizes="(max-width: 850px) 100vw, 800px" priority />
+        </figure>
         <p className={styles.intro}>{post.intro}</p>
         {post.sections.map((section) => <section key={section.heading}><h2>{section.heading}</h2>{section.paragraphs.map((p) => <p key={p}>{p}</p>)}{section.bullets && <ul>{section.bullets.map((item) => <li key={item}>{item}</li>)}</ul>}</section>)}
         <aside className={styles.cta}><span>ECCOOZS SOCIAL</span><h2>Looking for a different kind of social experience?</h2><p>Explore ECCOOZS and join a community built around conversation, discovery, culture, community, and opportunity.</p><Link href="/welcome">Explore ECCOOZS Social →</Link></aside>

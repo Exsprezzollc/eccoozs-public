@@ -13,6 +13,8 @@ export type BlogPost = {
   updated: string;
   readingTime: string;
   keywords: string[];
+  image: string;
+  imageAlt: string;
   intro: string;
   sections: BlogSection[];
 };
@@ -27,6 +29,8 @@ export const blogPosts: BlogPost[] = [
     updated: "2026-10-04",
     readingTime: "7 min read",
     keywords: ["Facebook alternatives", "alternative to Facebook", "new social media platforms", "community social network", "ECCOOZS"],
+    image: "/blog/facebook-alternative-guide.png",
+    imageAlt: "A Black woman thoughtfully comparing noisy social media with a calmer community-centered online experience.",
     intro: "People rarely look for a new social platform because they want another app icon. They are usually trying to solve a problem: better conversation, more useful discovery, less noise, stronger community, better support for businesses, or a place where participation feels worthwhile again.",
     sections: [
       {
@@ -82,6 +86,8 @@ export const blogPosts: BlogPost[] = [
     updated: "2026-10-04",
     readingTime: "6 min read",
     keywords: ["new social media platforms 2026", "social media alternatives", "better social media", "community social media", "ECCOOZS"],
+    image: "/blog/new-social-media-platforms-2026.png",
+    imageAlt: "Black adults comparing overwhelming social feeds with hopeful, community-focused social experiences.",
     intro: "The social web is not disappearing. It is fragmenting. People still want to talk, share, discover, laugh, debate, find businesses, follow creators, and keep up with what matters to them. What is changing is their willingness to accept one kind of experience as the only option.",
     sections: [
       {
@@ -130,6 +136,8 @@ export const blogPosts: BlogPost[] = [
     updated: "2026-10-04",
     readingTime: "7 min read",
     keywords: ["Black social media platform", "Black social network", "social media for Black Americans", "Black community app", "ECCOOZS"],
+    image: "/blog/black-centered-social-platform.png",
+    imageAlt: "Black adults connecting through conversation, community, business discovery, and creator opportunities online.",
     intro: "A platform does not become useful to Black communities simply by changing the color palette or writing culturally familiar marketing copy. It has to solve real social, cultural, and economic problems while still being enjoyable enough for people to use every day.",
     sections: [
       {
@@ -178,6 +186,8 @@ export const blogPosts: BlogPost[] = [
     updated: "2026-10-04",
     readingTime: "8 min read",
     keywords: ["where to promote small business online", "social media for small business", "promote Black owned business", "business directory", "ECCOOZS business"],
+    image: "/blog/small-business-promotion-online.png",
+    imageAlt: "A Black small-business owner promoting her boutique through online discovery and community engagement.",
     intro: "For a small business, visibility is not the same thing as posting. The best promotion channels help the right people discover you, understand what you offer, trust you, and take action. That can happen on social networks, but it can also happen through directories, search, partnerships, email, and community recommendations.",
     sections: [
       {
@@ -226,6 +236,8 @@ export const blogPosts: BlogPost[] = [
     updated: "2026-10-04",
     readingTime: "6 min read",
     keywords: ["social media without toxicity", "respectful social media", "community focused social media", "better online conversation", "ECCOOZS"],
+    image: "/blog/social-media-without-chaos.png",
+    imageAlt: "A calm social media experience replacing chaotic, negative feeds with respectful community conversation.",
     intro: "The false choice in social media is that a platform must either tolerate constant disorder or become dull. People can be funny, sharp, competitive, opinionated, creative, and spontaneous without harassment becoming the main mechanism for attention.",
     sections: [
       {
@@ -267,6 +279,8 @@ export const blogPosts: BlogPost[] = [
     updated: "2026-10-04",
     readingTime: "6 min read",
     keywords: ["new social platforms for creators", "creator monetization platforms", "social network for creators", "new social media apps", "ECCOOZS creators"],
+    image: "/blog/creators-and-everyone-else.png",
+    imageAlt: "Creators, small businesses, and everyday Black community members sharing one connected social ecosystem.",
     intro: "Creators help social platforms become interesting. They produce videos, commentary, art, music, education, humor, and culture. But a healthy social network cannot consist only of people trying to build an audience. It also needs people who came simply to connect, discover, participate, and enjoy the community.",
     sections: [
       {
