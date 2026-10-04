@@ -42,6 +42,7 @@ html = html.replace(
     <li><a href="#community">Community</a></li>
     <li><a href="https://eccoozstechnologies.com/#about">About</a></li>
     <li><a href="/history">History</a></li>
+    <li><a href="/blog">Journal</a></li>
   </ul>
   <div class="nav-right">
     <a class="nav-login" href="#download" title="ECCOOZS login opens at launch — join Early Access">Log In</a>
@@ -192,7 +193,7 @@ html = html.replace(
     <p class="ftagline">Culture. Community. Connection.</p>
   </div>
   <div><div class="fct">ECCOOZS Social</div><ul class="fls"><li><a href="#eccoozs-app">The App</a></li><li><a href="#business">Business Directory</a></li><li><a href="#community">Our Story</a></li><li><a href="#download">Early Access</a></li></ul></div>
-  <div><div class="fct">ECCOOZS Technologies</div><ul class="fls"><li><a href="https://eccoozstechnologies.com/">Corporate Home</a></li><li><a href="https://eccoozslearning.com/">Learning</a></li><li><a href="/bellmont">Bellmont State</a></li><li><a href="/history">History</a></li><li><a href="/house-of-eccoozs">House of ECCOOZS</a></li></ul></div>
+  <div><div class="fct">ECCOOZS Technologies</div><ul class="fls"><li><a href="https://eccoozstechnologies.com/">Corporate Home</a></li><li><a href="https://eccoozslearning.com/">Learning</a></li><li><a href="/bellmont">Bellmont State</a></li><li><a href="/history">History</a></li><li><a href="/blog">Journal</a></li><li><a href="/house-of-eccoozs">House of ECCOOZS</a></li></ul></div>
   <div><div class="fct">Legal</div><ul class="fls"><li><a href="/terms">Terms of Service</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/conduct">Community Guidelines</a></li><li><a href="/support">Support</a></li></ul></div>
 </div>
 <div class="fbot">

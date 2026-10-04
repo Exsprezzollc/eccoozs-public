@@ -7,9 +7,17 @@ import { SiteAnalytics } from "@/components/analytics/SiteAnalytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://eccoozs.com"),
-  title: "ECCOOZS",
+  title: { default: "ECCOOZS | Social Media, Community, Culture & Opportunity", template: "%s" },
   description:
-    "Explore ECCOOZS — a growing ecosystem for culture, community, connection, learning, and business discovery.",
+    "ECCOOZS is a Black American-centered social platform for conversation, discovery, culture, community, business, creators, and opportunity.",
+  alternates: { canonical: "https://eccoozs.com" },
+  openGraph: {
+    title: "ECCOOZS | Culture. Community. Connection.",
+    description: "A social platform for conversation, discovery, culture, community, business, creators, and opportunity.",
+    url: "https://eccoozs.com",
+    siteName: "ECCOOZS",
+    type: "website",
+  },
   icons: {
     icon: [{ url: eccoozsEMark.src, type: "image/png" }],
     shortcut: [{ url: eccoozsEMark.src, type: "image/png" }],
@@ -49,6 +57,27 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "ECCOOZS Technologies LLC",
+              alternateName: "ECCOOZS",
+              url: "https://eccoozs.com",
+              logo: "https://eccoozs.com/eccoozs-wordmark-blue-v2-640.png",
+              sameAs: [
+                process.env.NEXT_PUBLIC_ECCOOZS_INSTAGRAM,
+                process.env.NEXT_PUBLIC_ECCOOZS_FACEBOOK,
+                process.env.NEXT_PUBLIC_ECCOOZS_TIKTOK,
+                process.env.NEXT_PUBLIC_ECCOOZS_YOUTUBE,
+                process.env.NEXT_PUBLIC_ECCOOZS_THREADS,
+                process.env.NEXT_PUBLIC_ECCOOZS_X
+              ].filter(Boolean)
+            }).replace(/</g, "\\u003c")
+          }}
+        />
         {children}
         <GoogleAnalyticsConsent />
         <SiteAnalytics />
