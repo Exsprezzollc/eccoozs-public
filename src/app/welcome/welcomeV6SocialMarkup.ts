@@ -60,10 +60,10 @@ html = replaceSection(
   <div class="social-hero-copy rv">
     <div class="social-kicker">ECCOOZS SOCIAL</div>
     <h1>Culture.<br/>Community.<br/>Connection.</h1>
-    <p>A social platform for conversation, discovery, culture, community, and opportunity.</p>
+    <p>ECCOOZS is a Black American-centered, community-first general social network for conversation, discovery, culture, business discovery, creator opportunity, and live audio.</p>
     <div class="social-hero-actions">
-      <a class="btn-p" href="#eccoozs-app">Explore the App <i data-lucide="arrow-right"></i></a>
-      <a class="btn-g" href="#download">Join ECCOOZS</a>
+      <a class="btn-p" href="#download">Join Early Access <i data-lucide="arrow-right"></i></a>
+      <a class="btn-g" href="#eccoozs-app">See What's Inside</a>
     </div>
     <div class="social-values"><span>Real People</span><span>Stronger Communities</span><span>A Brighter Tomorrow</span></div>
   </div>
@@ -148,7 +148,7 @@ html = replaceSection(
   <div class="social-access-inner rv">
     <div class="social-kicker centered">EARLY ACCESS</div>
     <h2>Join the movement.<br/>Be first.</h2>
-    <p class="social-access-lede">Reserve your place in the founding ECCOOZS community.</p>
+    <p class="social-access-lede">Reserve your place in the founding ECCOOZS community. Launch access is for adults 18 and older.</p>
     <div class="social-access-layout">
       <div class="waitlist-card social-waitlist-card">
         <form id="waitlistForm" novalidate="">
@@ -157,10 +157,15 @@ html = replaceSection(
             <div class="waitlist-field full"><label class="waitlist-label" for="wl-email">Email address</label><input autocomplete="email" class="waitlist-input" id="wl-email" name="email" placeholder="you@example.com" required="" type="email"/></div>
             <div class="waitlist-field"><label class="waitlist-label" for="wl-name">Name, optional</label><input autocomplete="name" class="waitlist-input" id="wl-name" name="full_name" placeholder="Your name" type="text"/></div>
             <div class="waitlist-field"><label class="waitlist-label" for="wl-audience">I am joining as</label><select class="waitlist-select" id="wl-audience" name="audience_type"><option value="founding_member">Founding Member</option><option value="creator">Creator</option><option value="business_owner">Business Owner</option><option value="advertiser_sponsor">Advertiser / Sponsor</option><option value="beta_tester">Beta Tester</option><option value="press_partner">Press / Partner</option></select></div>
-            <div class="waitlist-field"><label class="waitlist-label" for="wl-business">Business, optional</label><input autocomplete="organization" class="waitlist-input" id="wl-business" name="business_name" placeholder="Business name" type="text"/></div>
-            <div class="waitlist-field"><label class="waitlist-label" for="wl-website">Website, optional</label><input autocomplete="url" class="waitlist-input" id="wl-website" name="website" placeholder="https://" type="url"/></div>
-            <div class="waitlist-field"><label class="waitlist-label" for="wl-city">City, optional</label><input autocomplete="address-level2" class="waitlist-input" id="wl-city" name="city" placeholder="City" type="text"/></div>
-            <div class="waitlist-field"><label class="waitlist-label" for="wl-region">State / Region, optional</label><input autocomplete="address-level1" class="waitlist-input" id="wl-region" name="region" placeholder="State / Region" type="text"/></div>
+            <details class="waitlist-more full">
+              <summary>Add optional business or location details</summary>
+              <div class="waitlist-more-grid">
+                <div class="waitlist-field"><label class="waitlist-label" for="wl-business">Business, optional</label><input autocomplete="organization" class="waitlist-input" id="wl-business" name="business_name" placeholder="Business name" type="text"/></div>
+                <div class="waitlist-field"><label class="waitlist-label" for="wl-website">Website, optional</label><input autocomplete="url" class="waitlist-input" id="wl-website" name="website" placeholder="https://" type="url"/></div>
+                <div class="waitlist-field"><label class="waitlist-label" for="wl-city">City, optional</label><input autocomplete="address-level2" class="waitlist-input" id="wl-city" name="city" placeholder="City" type="text"/></div>
+                <div class="waitlist-field"><label class="waitlist-label" for="wl-region">State / Region, optional</label><input autocomplete="address-level1" class="waitlist-input" id="wl-region" name="region" placeholder="State / Region" type="text"/></div>
+              </div>
+            </details>
           </div>
           <label class="waitlist-check" for="wl-age"><input id="wl-age" name="is_18_or_over" required="" type="checkbox"/><span>I confirm that I am 18 or older and want to join the ECCOOZS founding waitlist.</span></label>
           <button class="waitlist-submit" id="waitlistSubmit" type="submit">Reserve My Spot</button>
