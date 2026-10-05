@@ -137,10 +137,24 @@ html = replaceSection(
 
 html = html.replace(
   '<section id="business"',
-  '<section id="creator-showcase" class="social-creator-showcase">\n  <div class="social-section-shell social-creator-shell">\n    <div class="social-creator-copy rv">\n      <div class="social-kicker">FOR CREATORS</div>\n      <h2>Create. Build. Earn.</h2>\n      <p class="social-creator-lead">Creators have room to build — without taking over the room.</p>\n      <p class="social-lede">Share across formats, build an audience, join conversations, host Soundrooms, earn Certified or Verified status, and showcase products through the Creator Shelf.</p>\n      <div class="social-creator-tags"><span>Build an audience</span><span>Publish across formats</span><span>Host Soundrooms</span><span>Creator Shelf</span><span>Certified &amp; Verified</span></div>\n      <a class="btn-p" href="#download">Join Early Access <i data-lucide="arrow-right"></i></a>\n    </div>\n    <div class="social-creator-media rv" aria-label="ECCOOZS creator profile and Creator Shelf">
+  String.raw`<section id="creator-showcase" class="social-creator-showcase">
+  <div class="social-section-shell social-creator-shell">
+    <div class="social-creator-copy rv">
+      <div class="social-kicker">FOR CREATORS</div>
+      <h2>Create. Build. Earn.</h2>
+      <p class="social-creator-lead">Creators have room to build — without taking over the room.</p>
+      <p class="social-lede">Share across formats, build an audience, join conversations, host Soundrooms, earn Certified or Verified status, and showcase products through the Creator Shelf.</p>
+      <div class="social-creator-tags"><span>Build an audience</span><span>Publish across formats</span><span>Host Soundrooms</span><span>Creator Shelf</span><span>Certified &amp; Verified</span></div>
+      <a class="btn-p" href="#download">Join Early Access <i data-lucide="arrow-right"></i></a>
+    </div>
+    <div class="social-creator-media rv" aria-label="ECCOOZS creator profile and Creator Shelf">
       <img class="social-creator-computer" src="/phone/profile_computer.png" alt="ECCOOZS creator profile on desktop"/>
       <img class="social-creator-phone" src="/phone/profile_page.png" alt="ECCOOZS Certified Creator profile and Creator Shelf on mobile"/>
-    </div>\n  </div>\n</section>\n\n<section id="business"'
+    </div>
+  </div>
+</section>
+
+<section id="business"`
 );
 
 html = replaceSection(
