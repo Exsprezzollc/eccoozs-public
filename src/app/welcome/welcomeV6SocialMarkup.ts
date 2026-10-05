@@ -60,10 +60,10 @@ html = replaceSection(
   <div class="social-hero-copy rv">
     <div class="social-kicker">ECCOOZS SOCIAL</div>
     <h1>Culture.<br/>Community.<br/>Connection.</h1>
-    <p>A social platform for conversation, discovery, culture, community, and opportunity.</p>
+    <p>ECCOOZS is a Foundational Black American-centered, community-first general social network for conversation, discovery, culture, business discovery, creator opportunity, and live audio. Rooted in FBA culture and perspective, ECCOOZS welcomes respectful participation from people of all backgrounds.</p>
     <div class="social-hero-actions">
-      <a class="btn-p" href="#eccoozs-app">Explore the App <i data-lucide="arrow-right"></i></a>
-      <a class="btn-g" href="#download">Join ECCOOZS</a>
+      <a class="btn-p" href="#download">Join Early Access <i data-lucide="arrow-right"></i></a>
+      <a class="btn-g" href="#eccoozs-app">See What's Inside</a>
     </div>
     <div class="social-values"><span>Real People</span><span>Stronger Communities</span><span>A Brighter Tomorrow</span></div>
   </div>
@@ -95,7 +95,45 @@ html = replaceSection(
       <img class="social-mobile-shot" src="/social/social-mobile-showcase.png" alt="ECCOOZS mobile experience"/>
     </div>
   </div>
+
+  <div class="social-section-shell social-inside-showcase rv">
+    <div class="social-inside-heading">
+      <div>
+        <div class="social-kicker">INSIDE ECCOOZS</div>
+        <h3>One social network. More ways to take part.</h3>
+      </div>
+      <p>Move from discovery to conversation, live audio, news, and community without leaving the ECCOOZS experience.</p>
+    </div>
+
+    <div class="social-product-preview-grid" aria-label="ECCOOZS product previews">
+      <article class="social-product-preview">
+        <div class="social-product-sprite social-sprite-home" role="img" aria-label="ECCOOZS Home and discovery experience"></div>
+        <div class="social-product-preview-copy"><strong>Home</strong><span>Posts, pictures, video, news, people, and ideas.</span></div>
+      </article>
+      <article class="social-product-preview">
+        <div class="social-product-sprite social-sprite-explore" role="img" aria-label="ECCOOZS Explore experience"></div>
+        <div class="social-product-preview-copy"><strong>Explore</strong><span>Discover what is happening across ECCOOZS.</span></div>
+      </article>
+      <article class="social-product-preview">
+        <div class="social-product-sprite social-sprite-ecco" role="img" aria-label="ECCOOZS Ecco conversations"></div>
+        <div class="social-product-preview-copy"><strong>Ecco</strong><span>Where posts become organized conversations.</span></div>
+      </article>
+      <article class="social-product-preview">
+        <div class="social-product-sprite social-sprite-soundrooms" role="img" aria-label="ECCOOZS Soundrooms live audio"></div>
+        <div class="social-product-preview-copy"><strong>Soundrooms</strong><span>Host, listen, speak, chat, and connect live.</span></div>
+      </article>
+      <article class="social-product-preview">
+        <div class="social-product-sprite social-sprite-newsroom" role="img" aria-label="ECCOOZS Newsroom"></div>
+        <div class="social-product-preview-copy"><strong>Newsroom</strong><span>Stories, articles, topics, and perspectives.</span></div>
+      </article>
+    </div>
+  </div>
 </section>`
+);
+
+html = html.replace(
+  '<section id="business"',
+  '<section id="creator-showcase" class="social-creator-showcase">\n  <div class="social-section-shell social-creator-shell">\n    <div class="social-creator-copy rv">\n      <div class="social-kicker">FOR CREATORS</div>\n      <h2>Create. Build. Earn.</h2>\n      <p class="social-creator-lead">Creators have room to build — without taking over the room.</p>\n      <p class="social-lede">Share across formats, build an audience, join conversations, host Soundrooms, earn Certified or Verified status, and showcase products through the Creator Shelf.</p>\n      <div class="social-creator-tags"><span>Build an audience</span><span>Publish across formats</span><span>Host Soundrooms</span><span>Creator Shelf</span><span>Certified &amp; Verified</span></div>\n      <a class="btn-p" href="#download">Join Early Access <i data-lucide="arrow-right"></i></a>\n    </div>\n    <div class="social-creator-phone-wrap rv"><div class="social-product-sprite social-sprite-creator social-creator-phone" role="img" aria-label="ECCOOZS Certified Creator profile and Creator Shelf"></div></div>\n  </div>\n</section>\n\n<section id="business"'
 );
 
 html = replaceSection(
@@ -148,7 +186,7 @@ html = replaceSection(
   <div class="social-access-inner rv">
     <div class="social-kicker centered">EARLY ACCESS</div>
     <h2>Join the movement.<br/>Be first.</h2>
-    <p class="social-access-lede">Reserve your place in the founding ECCOOZS community.</p>
+    <p class="social-access-lede">Reserve your place in the founding ECCOOZS community. Launch access is for adults 18 and older.</p>
     <div class="social-access-layout">
       <div class="waitlist-card social-waitlist-card">
         <form id="waitlistForm" novalidate="">
@@ -157,10 +195,15 @@ html = replaceSection(
             <div class="waitlist-field full"><label class="waitlist-label" for="wl-email">Email address</label><input autocomplete="email" class="waitlist-input" id="wl-email" name="email" placeholder="you@example.com" required="" type="email"/></div>
             <div class="waitlist-field"><label class="waitlist-label" for="wl-name">Name, optional</label><input autocomplete="name" class="waitlist-input" id="wl-name" name="full_name" placeholder="Your name" type="text"/></div>
             <div class="waitlist-field"><label class="waitlist-label" for="wl-audience">I am joining as</label><select class="waitlist-select" id="wl-audience" name="audience_type"><option value="founding_member">Founding Member</option><option value="creator">Creator</option><option value="business_owner">Business Owner</option><option value="advertiser_sponsor">Advertiser / Sponsor</option><option value="beta_tester">Beta Tester</option><option value="press_partner">Press / Partner</option></select></div>
-            <div class="waitlist-field"><label class="waitlist-label" for="wl-business">Business, optional</label><input autocomplete="organization" class="waitlist-input" id="wl-business" name="business_name" placeholder="Business name" type="text"/></div>
-            <div class="waitlist-field"><label class="waitlist-label" for="wl-website">Website, optional</label><input autocomplete="url" class="waitlist-input" id="wl-website" name="website" placeholder="https://" type="url"/></div>
-            <div class="waitlist-field"><label class="waitlist-label" for="wl-city">City, optional</label><input autocomplete="address-level2" class="waitlist-input" id="wl-city" name="city" placeholder="City" type="text"/></div>
-            <div class="waitlist-field"><label class="waitlist-label" for="wl-region">State / Region, optional</label><input autocomplete="address-level1" class="waitlist-input" id="wl-region" name="region" placeholder="State / Region" type="text"/></div>
+            <details class="waitlist-more full">
+              <summary>Add optional business or location details</summary>
+              <div class="waitlist-more-grid">
+                <div class="waitlist-field"><label class="waitlist-label" for="wl-business">Business, optional</label><input autocomplete="organization" class="waitlist-input" id="wl-business" name="business_name" placeholder="Business name" type="text"/></div>
+                <div class="waitlist-field"><label class="waitlist-label" for="wl-website">Website, optional</label><input autocomplete="url" class="waitlist-input" id="wl-website" name="website" placeholder="https://" type="url"/></div>
+                <div class="waitlist-field"><label class="waitlist-label" for="wl-city">City, optional</label><input autocomplete="address-level2" class="waitlist-input" id="wl-city" name="city" placeholder="City" type="text"/></div>
+                <div class="waitlist-field"><label class="waitlist-label" for="wl-region">State / Region, optional</label><input autocomplete="address-level1" class="waitlist-input" id="wl-region" name="region" placeholder="State / Region" type="text"/></div>
+              </div>
+            </details>
           </div>
           <label class="waitlist-check" for="wl-age"><input id="wl-age" name="is_18_or_over" required="" type="checkbox"/><span>I confirm that I am 18 or older and want to join the ECCOOZS founding waitlist.</span></label>
           <button class="waitlist-submit" id="waitlistSubmit" type="submit">Reserve My Spot</button>
@@ -193,7 +236,7 @@ html = html.replace(
     <p class="ftagline">Culture. Community. Connection.</p>
   </div>
   <div><div class="fct">ECCOOZS Social</div><ul class="fls"><li><a href="#eccoozs-app">The App</a></li><li><a href="#business">Business Directory</a></li><li><a href="#community">Our Story</a></li><li><a href="#download">Early Access</a></li></ul></div>
-  <div><div class="fct">ECCOOZS Technologies</div><ul class="fls"><li><a href="https://eccoozstechnologies.com/">Corporate Home</a></li><li><a href="https://eccoozslearning.com/">Learning</a></li><li><a href="/bellmont">Bellmont State</a></li><li><a href="/history">History</a></li><li><a href="/blog">Journal</a></li><li><a href="/house-of-eccoozs">House of ECCOOZS</a></li></ul></div>
+  <div><div class="fct">ECCOOZS Technologies</div><ul class="fls"><li><a href="https://eccoozstechnologies.com/">Corporate Home</a></li><li><a href="https://eccoozslearning.com/">Learning</a></li><li><a href="/bellmont">Bellmont State</a></li><li><a href="/history">History</a></li><li><a href="/blog">Journal</a></li><li><a href="/press">Press &amp; Media</a></li><li><a href="/house-of-eccoozs">House of ECCOOZS</a></li></ul></div>
   <div><div class="fct">Legal</div><ul class="fls"><li><a href="/terms">Terms of Service</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/conduct">Community Guidelines</a></li><li><a href="/support">Support</a></li></ul></div>
 </div>
 <div class="fbot">

@@ -22,7 +22,7 @@ const destinations = [
     type: "Platform",
     title: "ECCOOZS Social",
     description:
-      "The community platform at the center of the ECCOOZS ecosystem — built for connection, discovery, expression, and opportunity.",
+      "The Foundational Black American-centered, community-first general social network at the center of the ECCOOZS ecosystem — built for conversation, discovery, culture, business discovery, creator opportunity, and live audio, while welcoming respectful participation from people of all backgrounds.",
     href: "https://eccoozs.com/welcome"
   },
   {
@@ -84,12 +84,13 @@ export default function HomePage() {
 
         <nav className={styles.nav} aria-label="ECCOOZS Technologies navigation">
           <a href="#platforms">Platforms</a>
-          <a href="#learning">Learning</a>
-          <a href="#worlds">Media</a>
-          <a href="#commerce">Commerce</a>
+          <a href="https://eccoozslearning.com/">Learning</a>
+          <a href="/bellmont">Media</a>
+          <a href="/house-of-eccoozs">Commerce</a>
           <a href="https://eccoozs.com/welcome">Community</a>
-          <a href="#history">History</a>
+          <a href="/history">History</a>
           <a href="/blog">Journal</a>
+          <a href="/press">Press</a>
           <a href="#about">About</a>
         </nav>
 
@@ -165,9 +166,11 @@ export default function HomePage() {
           <h2>Technology with range. Identity with purpose.</h2>
           <p>
             ECCOOZS Technologies develops connected digital experiences across community,
-            learning, media, commerce, and cultural discovery. The corporate brand provides
-            one polished front door while allowing every product and story world to maintain
-            a distinct identity of its own.
+            learning, media, commerce, and cultural discovery. Its flagship social product,
+            ECCOOZS Social, is a Foundational Black American-centered, community-first general social network
+            built for conversation, discovery, culture, business discovery, creator opportunity,
+            and live audio through Soundrooms. Rooted in FBA culture and perspective, it welcomes
+            respectful participation from people of all backgrounds.
           </p>
           <p>
             Complete a project, give it a destination, and add it to the ECCOOZS Technologies
@@ -189,7 +192,7 @@ export default function HomePage() {
           <span>Technologies</span>
         </div>
         <div className={styles.footerLinks}>
-          <a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/conduct">Conduct</a><a href="/support">Support</a><a href="/blog">Journal</a><a href="https://eccoozs.com/welcome">ECCOOZS Social</a><a href="https://eccoozs.com/history">History</a>
+          <a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/conduct">Conduct</a><a href="/support">Support</a><a href="/press">Press</a><a href="/blog">Journal</a><a href="https://eccoozs.com/welcome">ECCOOZS Social</a><a href="https://eccoozs.com/history">History</a>
         </div>
         <span>Explore. Express. Elevate.</span>
       </footer>

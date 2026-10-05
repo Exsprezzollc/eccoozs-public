@@ -74,6 +74,7 @@ export default function BlogPage() {
           <Link href="/history">History</Link>
           <Link href="/house-of-eccoozs">House of ECCOOZS</Link>
           <Link className={styles.active} href="/blog">Journal</Link>
+          <Link href="/press">Press</Link>
         </nav>
         <Link className={styles.join} href="/welcome#download">Join ECCOOZS</Link>
       </header>
@@ -151,8 +152,8 @@ export default function BlogPage() {
 
       <section className={styles.discovery}>
         <div><p className={styles.kicker}>DISCOVER ECCOOZS</p><h2>Community first. Opportunity built in.</h2></div>
-        <p>Explore ECCOOZS Social, join the founding community, and see how conversation, discovery, business, and creator opportunity come together.</p>
-        <Link href="/welcome">Explore ECCOOZS Social →</Link>
+        <p>Explore ECCOOZS Social, a Black American-centered, community-first general social network where conversation, discovery, culture, business discovery, creator opportunity, and live audio come together.</p>
+        <Link href="/welcome#download">Join ECCOOZS Early Access →</Link>
       </section>
 
       {visibleSocialLinks.length > 0 && (
@@ -164,7 +165,7 @@ export default function BlogPage() {
 
       <footer className={styles.footer}>
         <span>© 2026 ECCOOZS Technologies LLC.</span>
-        <div><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link><Link href="/conduct">Community Guidelines</Link><Link href="/support">Support</Link></div>
+        <div><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link><Link href="/conduct">Community Guidelines</Link><Link href="/support">Support</Link><Link href="/press">Press</Link></div>
       </footer>
     </main>
   );

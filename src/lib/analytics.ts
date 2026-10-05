@@ -100,6 +100,8 @@ export function getCampaignAttribution(): CampaignContext {
 export function pageCategory(pathname: string): string {
   if (pathname === "/") return "corporate";
   if (pathname.startsWith("/welcome")) return "social";
+  if (pathname === "/blog") return "journal";
+  if (pathname.startsWith("/blog/")) return "journal_article";
   if (pathname.startsWith("/bellmont")) return "bellmont";
   if (pathname.startsWith("/history")) return "history";
   if (pathname.startsWith("/house-of-eccoozs")) return "commerce";
