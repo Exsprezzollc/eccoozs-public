@@ -22,7 +22,7 @@ const destinations = [
     type: "Platform",
     title: "ECCOOZS Social",
     description:
-      "The Black American-centered, community-first general social network at the center of the ECCOOZS ecosystem — built for conversation, discovery, culture, business discovery, creator opportunity, and live audio.",
+      "The Foundational Black American-centered, community-first general social network at the center of the ECCOOZS ecosystem — built for conversation, discovery, culture, business discovery, creator opportunity, and live audio, while welcoming respectful participation from people of all backgrounds.",
     href: "https://eccoozs.com/welcome"
   },
   {
@@ -167,9 +167,10 @@ export default function HomePage() {
           <p>
             ECCOOZS Technologies develops connected digital experiences across community,
             learning, media, commerce, and cultural discovery. Its flagship social product,
-            ECCOOZS Social, is a Black American-centered, community-first general social network
+            ECCOOZS Social, is a Foundational Black American-centered, community-first general social network
             built for conversation, discovery, culture, business discovery, creator opportunity,
-            and live audio through Soundrooms.
+            and live audio through Soundrooms. Rooted in FBA culture and perspective, it welcomes
+            respectful participation from people of all backgrounds.
           </p>
           <p>
             Complete a project, give it a destination, and add it to the ECCOOZS Technologies
