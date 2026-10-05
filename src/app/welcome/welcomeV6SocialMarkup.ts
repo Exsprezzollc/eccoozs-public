@@ -75,12 +75,12 @@ html = replaceSection(
   html,
   "eccoozs-app",
   String.raw`<section id="eccoozs-app" class="social-app-section">
-  <div class="social-section-shell social-app-shell">
+  <div class="social-section-shell social-app-intro">
     <div class="social-app-copy rv">
       <div class="social-kicker">THE ECCOOZS APP</div>
       <h2>Share. Discover. Belong.</h2>
-      <p class="social-lede">ECCOOZS brings culture, conversation, and community together in one powerful platform — a place to share, discover, connect, and grow.</p>
-      <div class="social-feature-grid">
+      <p class="social-lede">ECCOOZS brings culture, conversation, and community together in one social network — with multiple ways to participate.</p>
+      <div class="social-feature-grid social-feature-grid-compact">
         <div class="social-feature"><i data-lucide="messages-square"></i><div><strong>Connect &amp; Share</strong><span>Post, interact, and build community.</span></div></div>
         <div class="social-feature"><i data-lucide="compass"></i><div><strong>Explore</strong><span>Discover people, topics, and trends.</span></div></div>
         <div class="social-feature"><i data-lucide="repeat-2"></i><div><strong>Ecco</strong><span>Turn posts into conversations with context.</span></div></div>
@@ -88,13 +88,69 @@ html = replaceSection(
         <div class="social-feature"><i data-lucide="newspaper"></i><div><strong>Newsroom</strong><span>Stay informed with real stories and updates.</span></div></div>
         <div class="social-feature"><i data-lucide="store"></i><div><strong>Business Directory</strong><span>Find and support trusted businesses.</span></div></div>
       </div>
-      <a class="btn-p" href="#download">Get Early Access <i data-lucide="arrow-right"></i></a>
     </div>
     <div class="social-device-stage rv" aria-label="ECCOOZS desktop and mobile product previews">
       <div class="social-device-glow"></div>
       <img class="social-desktop-shot" src="/social/social-desktop-showcase.png" alt="ECCOOZS desktop experience"/>
       <img class="social-mobile-shot" src="/social/social-mobile-showcase.png" alt="ECCOOZS mobile experience"/>
     </div>
+  </div>
+
+  <div class="social-section-shell social-walkthrough">
+    <article class="social-product-row rv">
+      <div class="social-product-copy">
+        <div class="social-product-number">01</div>
+        <div class="social-kicker">DISCOVER</div>
+        <h3>Explore what’s happening.</h3>
+        <p>Discover people, posts, pictures, video, news, businesses, creators, ideas, and conversations across ECCOOZS.</p>
+        <div class="social-product-pills"><span>For You</span><span>Trending</span><span>New</span><span>Topics</span></div>
+      </div>
+      <div class="social-product-visual"><img src="/social/explore.webp" alt="ECCOOZS Explore discovery experience"/></div>
+    </article>
+
+    <article class="social-product-row social-product-row-reverse rv">
+      <div class="social-product-copy">
+        <div class="social-product-number">02</div>
+        <div class="social-kicker">TALK</div>
+        <h3>Where posts become conversations.</h3>
+        <p>Posts don’t have to end at reactions. Ecco turns posts, pictures, and video into organized conversations with context.</p>
+        <div class="social-product-pills"><span>Quote Eccos</span><span>Picture Eccos</span><span>Video Eccos</span></div>
+      </div>
+      <div class="social-product-visual social-product-visual-tall"><img src="/social/ecco.webp" alt="ECCOOZS Ecco conversation experience"/></div>
+    </article>
+
+    <article class="social-product-row rv">
+      <div class="social-product-copy">
+        <div class="social-product-number">03</div>
+        <div class="social-kicker">GO LIVE</div>
+        <h3>Live conversations with purpose.</h3>
+        <p>Host a room, join a conversation, listen, speak, chat, and build community in real time through Soundrooms.</p>
+        <div class="social-product-pills"><span>Host</span><span>Co-host</span><span>Live chat</span><span>Listeners</span></div>
+      </div>
+      <div class="social-product-visual social-product-visual-tall"><img src="/social/soundrooms.webp" alt="ECCOOZS Soundrooms live audio experience"/></div>
+    </article>
+
+    <article class="social-product-row social-product-row-reverse rv">
+      <div class="social-product-copy">
+        <div class="social-product-number">04</div>
+        <div class="social-kicker">MESSAGE</div>
+        <h3>Keep the conversation going.</h3>
+        <p>Connect privately through direct messages, message requests, and group conversations without leaving ECCOOZS.</p>
+        <div class="social-product-pills"><span>Direct messages</span><span>Requests</span><span>Groups</span></div>
+      </div>
+      <div class="social-product-visual social-product-visual-tall"><img src="/social/messages.webp" alt="ECCOOZS Messages experience"/></div>
+    </article>
+
+    <article class="social-product-row rv">
+      <div class="social-product-copy">
+        <div class="social-product-number">05</div>
+        <div class="social-kicker">STAY INFORMED</div>
+        <h3>News and ideas in one place.</h3>
+        <p>Discover articles, stories, trending topics, and perspectives through the ECCOOZS Newsroom.</p>
+        <div class="social-product-pills"><span>Articles</span><span>Trending</span><span>Topics</span><span>Perspectives</span></div>
+      </div>
+      <div class="social-product-visual"><img src="/social/newsroom.webp" alt="ECCOOZS Newsroom experience"/></div>
+    </article>
   </div>
 </section>`
 );
