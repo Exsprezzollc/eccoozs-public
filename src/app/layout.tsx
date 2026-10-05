@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://eccoozs.com"),
   title: { default: "ECCOOZS | Social Media, Community, Culture & Opportunity", template: "%s" },
   description:
-    "ECCOOZS is a Black American-centered, community-first general social network for conversation, discovery, culture, business discovery, creator opportunity, and live audio.",
+    "ECCOOZS is a Foundational Black American-centered, community-first general social network for conversation, discovery, culture, business discovery, creator opportunity, and live audio, welcoming respectful participation from people of all backgrounds.",
   alternates: { canonical: "https://eccoozs.com" },
   openGraph: {
     title: "ECCOOZS | Culture. Community. Connection.",
-    description: "A Black American-centered, community-first general social network for conversation, discovery, culture, business discovery, creator opportunity, and live audio.",
+    description: "A Foundational Black American-centered, community-first general social network for conversation, discovery, culture, business discovery, creator opportunity, and live audio, welcoming respectful participation from people of all backgrounds.",
     url: "https://eccoozs.com",
     siteName: "ECCOOZS",
     type: "website",
@@ -98,7 +98,7 @@ export default function RootLayout({
                   applicationCategory: "SocialNetworkingApplication",
                   operatingSystem: "Web",
                   description:
-                    "ECCOOZS is a Black American-centered, community-first general social network built for conversation, discovery, culture, business discovery, creator opportunity, and live audio through Soundrooms.",
+                    "ECCOOZS is a Foundational Black American-centered, community-first general social network built for conversation, discovery, culture, business discovery, creator opportunity, and live audio through Soundrooms, welcoming respectful participation from people of all backgrounds.",
                   provider: { "@id": "https://eccoozs.com/#organization" },
                   isPartOf: { "@id": "https://eccoozs.com/#website" }
                 }
