@@ -84,11 +84,11 @@ export default function HomePage() {
 
         <nav className={styles.nav} aria-label="ECCOOZS Technologies navigation">
           <a href="#platforms">Platforms</a>
-          <a href="#learning">Learning</a>
-          <a href="#worlds">Media</a>
-          <a href="#commerce">Commerce</a>
+          <a href="https://eccoozslearning.com/">Learning</a>
+          <a href="/bellmont">Media</a>
+          <a href="/house-of-eccoozs">Commerce</a>
           <a href="https://eccoozs.com/welcome">Community</a>
-          <a href="#history">History</a>
+          <a href="/history">History</a>
           <a href="/blog">Journal</a>
           <a href="/press">Press</a>
           <a href="#about">About</a>
