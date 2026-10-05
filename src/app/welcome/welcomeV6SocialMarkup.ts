@@ -75,86 +75,37 @@ html = replaceSection(
   "eccoozs-app",
   String.raw`<section id="eccoozs-app" class="social-app-section">
   <div class="social-section-shell social-app-shell">
-    <div class="social-app-copy rv">
-      <div class="social-kicker">THE ECCOOZS APP</div>
-      <h2>Share. Discover. Belong.</h2>
-      <p class="social-lede">ECCOOZS brings culture, conversation, and community together in one powerful platform — a place to share, discover, connect, and grow.</p>
-      <div class="social-feature-grid">
-        <div class="social-feature"><i data-lucide="messages-square"></i><div><strong>Connect &amp; Share</strong><span>Post, interact, and build community.</span></div></div>
-        <div class="social-feature"><i data-lucide="compass"></i><div><strong>Explore</strong><span>Discover people, topics, and trends.</span></div></div>
-        <div class="social-feature"><i data-lucide="repeat-2"></i><div><strong>Ecco</strong><span>Turn posts into conversations with context.</span></div></div>
-        <div class="social-feature"><i data-lucide="mic-2"></i><div><strong>Soundrooms</strong><span>Join live audio rooms and conversations.</span></div></div>
-        <div class="social-feature"><i data-lucide="newspaper"></i><div><strong>Newsroom</strong><span>Stay informed with real stories and updates.</span></div></div>
-        <div class="social-feature"><i data-lucide="store"></i><div><strong>Business Directory</strong><span>Find and support trusted businesses.</span></div></div>
+    <div class="social-app-hero-row">
+      <div class="social-app-intro rv">
+        <div class="social-kicker">THE ECCOOZS APP</div>
+        <h2>One social network.<br/>More ways to take part.</h2>
+        <p class="social-lede">Move from discovery to conversation, live audio, news, business, creator opportunity, and community without leaving the ECCOOZS experience.</p>
+        <div class="social-app-actions">
+          <a class="btn-p" href="#download">Join Early Access <i data-lucide="arrow-right"></i></a>
+          <a class="btn-g" href="#business">Explore the App</a>
+        </div>
       </div>
-      <a class="btn-p" href="#download">Get Early Access <i data-lucide="arrow-right"></i></a>
-    </div>
-    <div class="social-device-stage rv" aria-label="ECCOOZS desktop and mobile product previews">
-      <div class="social-device-glow"></div>
-      <img class="social-desktop-shot" src="/social/social-desktop-showcase.png" alt="ECCOOZS desktop experience"/>
-      <img class="social-mobile-shot" src="/social/social-mobile-showcase.png" alt="ECCOOZS mobile experience"/>
-    </div>
-  </div>
 
-  <div class="social-section-shell social-inside-showcase rv">
-    <div class="social-inside-heading">
-      <div>
-        <div class="social-kicker">INSIDE ECCOOZS</div>
-        <h3>One social network. More ways to take part.</h3>
+      <div class="social-device-stage rv" aria-label="ECCOOZS product experience across devices">
+        <div class="social-device-glow"></div>
+        <img class="social-app-device social-app-laptop" src="/phone/profile_computer.png" alt="ECCOOZS creator profile on desktop"/>
+        <img class="social-app-device social-app-home-phone" src="/phone/home-page.png" alt="ECCOOZS Home experience on mobile"/>
+        <img class="social-app-device social-app-message-phone" src="/phone/message_page.png" alt="ECCOOZS Messages experience on mobile"/>
+        <img class="social-app-device social-app-ecco-phone" src="/phone/ecco_page.png" alt="ECCOOZS Ecco experience on mobile"/>
       </div>
-      <p>Move from discovery to conversation, live audio, news, and community without leaving the ECCOOZS experience.</p>
     </div>
 
-    <div class="social-product-preview-grid" aria-label="ECCOOZS product previews">
-      <article class="social-product-preview">
-        <img class="social-product-preview-image" src="/phone/home-page.png" alt="ECCOOZS Home experience"/>
-        <div class="social-product-preview-copy"><strong>Home</strong><span>Posts, pictures, video, news, people, and ideas.</span></div>
-      </article>
-      <article class="social-product-preview">
-        <img class="social-product-preview-image" src="/phone/explore_page.png" alt="ECCOOZS Explore experience"/>
-        <div class="social-product-preview-copy"><strong>Explore</strong><span>Discover what is happening across ECCOOZS.</span></div>
-      </article>
-      <article class="social-product-preview">
-        <img class="social-product-preview-image" src="/phone/ecco_page.png" alt="ECCOOZS Ecco conversations"/>
-        <div class="social-product-preview-copy"><strong>Ecco</strong><span>Where posts become organized conversations.</span></div>
-      </article>
-      <article class="social-product-preview">
-        <img class="social-product-preview-image" src="/phone/soundroom_page.png" alt="ECCOOZS Soundrooms live audio"/>
-        <div class="social-product-preview-copy"><strong>Soundrooms</strong><span>Host, listen, speak, chat, and connect live.</span></div>
-      </article>
-      <article class="social-product-preview">
-        <img class="social-product-preview-image" src="/phone/message_page.png" alt="ECCOOZS Messages experience"/>
-        <div class="social-product-preview-copy"><strong>Message</strong><span>Keep conversations going privately and in groups.</span></div>
-      </article>
-      <article class="social-product-preview">
-        <img class="social-product-preview-image" src="/phone/profile_page.png" alt="ECCOOZS creator profile"/>
-        <div class="social-product-preview-copy"><strong>Creator Profile</strong><span>Build an audience and showcase creator work.</span></div>
-      </article>
+    <div class="social-feature-grid social-feature-grid-wide rv">
+      <div class="social-feature"><i data-lucide="home"></i><div><strong>Home</strong><span>Posts, pictures, video, news, people, and ideas.</span></div></div>
+      <div class="social-feature"><i data-lucide="compass"></i><div><strong>Explore</strong><span>Discover what is happening across ECCOOZS.</span></div></div>
+      <div class="social-feature"><i data-lucide="repeat-2"></i><div><strong>Ecco</strong><span>Turn posts into organized conversations with context.</span></div></div>
+      <div class="social-feature"><i data-lucide="mic-2"></i><div><strong>Soundrooms</strong><span>Host, listen, speak, chat, and connect live.</span></div></div>
+      <div class="social-feature"><i data-lucide="newspaper"></i><div><strong>Newsroom</strong><span>Stories, articles, topics, and perspectives.</span></div></div>
+      <div class="social-feature"><i data-lucide="store"></i><div><strong>Business</strong><span>Find and support trusted businesses.</span></div></div>
+      <div class="social-feature"><i data-lucide="users"></i><div><strong>Community</strong><span>Real connections, shared interests, stronger together.</span></div></div>
     </div>
   </div>
 </section>`
-);
-
-html = html.replace(
-  '<section id="business"',
-  String.raw`<section id="creator-showcase" class="social-creator-showcase">
-  <div class="social-section-shell social-creator-shell">
-    <div class="social-creator-copy rv">
-      <div class="social-kicker">FOR CREATORS</div>
-      <h2>Create. Build. Earn.</h2>
-      <p class="social-creator-lead">Creators have room to build — without taking over the room.</p>
-      <p class="social-lede">Share across formats, build an audience, join conversations, host Soundrooms, earn Certified or Verified status, and showcase products through the Creator Shelf.</p>
-      <div class="social-creator-tags"><span>Build an audience</span><span>Publish across formats</span><span>Host Soundrooms</span><span>Creator Shelf</span><span>Certified &amp; Verified</span></div>
-      <a class="btn-p" href="#download">Join Early Access <i data-lucide="arrow-right"></i></a>
-    </div>
-    <div class="social-creator-media rv" aria-label="ECCOOZS creator profile and Creator Shelf">
-      <img class="social-creator-computer" src="/phone/profile_computer.png" alt="ECCOOZS creator profile on desktop"/>
-      <img class="social-creator-phone" src="/phone/profile_page.png" alt="ECCOOZS Certified Creator profile and Creator Shelf on mobile"/>
-    </div>
-  </div>
-</section>
-
-<section id="business"`
 );
 
 html = replaceSection(
