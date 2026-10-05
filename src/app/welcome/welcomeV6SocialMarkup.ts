@@ -155,6 +155,11 @@ html = replaceSection(
 </section>`
 );
 
+html = html.replace(
+  '<section id="business"',
+  '<section id="creators" class="social-creator-section">\n  <div class="social-section-shell social-creator-shell">\n    <div class="social-creator-copy rv">\n      <div class="social-kicker">FOR CREATORS</div>\n      <h2>Create. Build. Earn.</h2>\n      <p class="social-creator-lead">Creators have room to build — without taking over the room.</p>\n      <p class="social-lede">Share posts, pictures, video, and articles. Build an audience. Join conversations. Host Soundrooms. Become Certified or Verified. Unlock creator tools and showcase products through the Creator Shelf.</p>\n      <div class="social-creator-points"><span>Build an audience</span><span>Publish across formats</span><span>Host Soundrooms</span><span>Creator Shelf</span><span>Certified &amp; Verified</span><span>Discovery opportunities</span></div>\n      <a class="btn-p" href="#download">Join as a Creator <i data-lucide="arrow-right"></i></a>\n    </div>\n    <div class="social-creator-visual rv"><div class="social-creator-glow"></div><img src="/social/creator.webp" alt="ECCOOZS Certified Creator profile and Creator Shelf"/></div>\n  </div>\n</section>\n\n<section id="business"'
+);
+
 html = replaceSection(
   html,
   "business",
@@ -172,13 +177,18 @@ html = replaceSection(
       </div>
       <a class="btn-p" href="#download">Join as a Business <i data-lucide="arrow-right"></i></a>
     </div>
-    <div class="social-business-gallery rv">
-      <img class="social-business-main" src="/social/business-directory-showcase.png" alt="ECCOOZS Business Directory"/>
-      <img class="social-business-card social-business-card-one" src="/social/verified-business-profile.png" alt="ECCOOZS Verified Business profile"/>
-      <img class="social-business-card social-business-card-two" src="/social/business-highlights-showcase.png" alt="ECCOOZS Business Highlights"/>
+    <div class="social-business-gallery social-business-gallery-focused rv">
+      <div class="social-business-glow"></div>
+      <img class="social-business-prime" src="/social/prime-builders.webp" alt="ECCOOZS Verified Business profile for Prime Builders"/>
+      <img class="social-business-context" src="/social/business-directory-showcase.png" alt="ECCOOZS Business Directory discovery experience"/>
     </div>
   </div>
 </section>`
+);
+
+html = html.replace(
+  '<section id="community"',
+  '<section class="social-connect-section">\n  <div class="social-section-shell social-connect-shell rv">\n    <div class="social-kicker centered">ONE COMMUNITY</div>\n    <h2>Multiple ways to participate.</h2>\n    <div class="social-connect-flow"><span>Post</span><b>→</b><span>Explore</span><b>→</b><span>Ecco</span><b>→</b><span>Soundroom</span><b>→</b><span>Message</span><b>→</b><span>Profile</span><b>→</b><span>Business</span><b>→</b><span>Creator opportunity</span></div>\n    <p>You do not have to be a creator, business owner, influencer, or public personality to belong on ECCOOZS. Come to talk, discover, share, listen, learn, build, or simply be part of the community.</p>\n    <p class="social-connect-rooted">Rooted in Foundational Black American culture and perspective. Welcoming respectful participation from people of all backgrounds.</p>\n  </div>\n</section>\n\n<section id="community"'
 );
 
 html = replaceSection(
