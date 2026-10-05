@@ -4,7 +4,7 @@ import WelcomeV6Client from "./WelcomeV6Client";
 export const metadata: Metadata = {
   title: "ECCOOZS Social | Black American-Centered Social Media & Community",
   description:
-    "ECCOOZS is a Black American-centered, community-first general social network for conversation, discovery, culture, business discovery, creator opportunity, and live audio.",
+    "ECCOOZS is a Foundational Black American-centered, community-first general social network for conversation, discovery, culture, business discovery, creator opportunity, and live audio, welcoming respectful participation from people of all backgrounds.",
   alternates: { canonical: "https://eccoozs.com/welcome" },
   keywords: [
     "ECCOOZS",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "ECCOOZS Social | Community. Conversation. Culture. Opportunity.",
     description:
-      "A Black American-centered, community-first general social network built for conversation, discovery, culture, business discovery, creator opportunity, and live audio.",
+      "A Foundational Black American-centered, community-first general social network built for conversation, discovery, culture, business discovery, creator opportunity, and live audio, welcoming respectful participation from people of all backgrounds.",
     url: "https://eccoozs.com/welcome",
     siteName: "ECCOOZS",
     type: "website",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ECCOOZS Social",
     description:
-      "A Black American-centered social platform built for community, conversation, discovery, creators, businesses, and opportunity.",
+      "A Foundational Black American-centered social platform that welcomes respectful participation from people of all backgrounds.",
     images: ["/blog/black-centered-social-platform.png"],
   },
 };
@@ -49,7 +49,7 @@ export default function WelcomePage() {
     applicationCategory: "SocialNetworkingApplication",
     operatingSystem: "Web",
     description:
-      "ECCOOZS is a Black American-centered, community-first general social network built for conversation, discovery, culture, business discovery, creator opportunity, and live audio through Soundrooms.",
+      "ECCOOZS is a Foundational Black American-centered, community-first general social network built for conversation, discovery, culture, business discovery, creator opportunity, and live audio through Soundrooms, welcoming respectful participation from people of all backgrounds.",
     provider: { "@id": "https://eccoozs.com/#organization" },
     isPartOf: { "@id": "https://eccoozs.com/#website" },
     inLanguage: "en-US",
