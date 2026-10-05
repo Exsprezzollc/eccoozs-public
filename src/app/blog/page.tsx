@@ -74,6 +74,7 @@ export default function BlogPage() {
           <Link href="/history">History</Link>
           <Link href="/house-of-eccoozs">House of ECCOOZS</Link>
           <Link className={styles.active} href="/blog">Journal</Link>
+          <Link href="/press">Press</Link>
         </nav>
         <Link className={styles.join} href="/welcome#download">Join ECCOOZS</Link>
       </header>
@@ -164,7 +165,7 @@ export default function BlogPage() {
 
       <footer className={styles.footer}>
         <span>© 2026 ECCOOZS Technologies LLC.</span>
-        <div><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link><Link href="/conduct">Community Guidelines</Link><Link href="/support">Support</Link></div>
+        <div><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link><Link href="/conduct">Community Guidelines</Link><Link href="/support">Support</Link><Link href="/press">Press</Link></div>
       </footer>
     </main>
   );
