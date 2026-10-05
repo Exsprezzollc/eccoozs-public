@@ -136,7 +136,7 @@ html = replaceSection(
   "community",
   String.raw`<section id="community" class="social-story-section">
   <div class="social-section-shell social-story-shell">
-    <div class="social-story-image rv"><img alt="ECCOOZS community" src="/welcome-images/landing-09.jpg"/></div>
+    <div class="social-story-image rv"><img alt="Diverse ECCOOZS community gathered around a laptop" src="/phone/friends_laughing_around_a_laptop.png"/></div>
     <div class="social-story-copy rv">
       <div class="social-kicker">OUR STORY</div>
       <h2>Built from within.<br/>For all who walk<br/>with respect.</h2>
