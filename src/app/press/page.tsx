@@ -66,7 +66,9 @@ export default function PressPage() {
             <p className={styles.quote}>
               ECCOOZS is a Foundational Black American-centered, community-first general social network
               built for conversation, discovery, culture, business discovery, creator
-              opportunity, and live audio through Soundrooms.
+              opportunity, and live audio through Soundrooms. Rooted in Foundational Black
+              American culture and perspective, ECCOOZS welcomes respectful participation
+              from people of all backgrounds.
             </p>
 
             <h3>What makes ECCOOZS different</h3>
@@ -79,8 +81,8 @@ export default function PressPage() {
 
             <h3>Community approach</h3>
             <p>
-              ECCOOZS has a clear Black American cultural center while welcoming respectful
-              participation from people of different backgrounds. The platform is designed
+              ECCOOZS has a clear Foundational Black American cultural center while welcoming respectful
+              participation from people of all backgrounds. The platform is designed
               around standards, conversation, discovery, and community without making chaos
               the primary engine for attention.
             </p>
