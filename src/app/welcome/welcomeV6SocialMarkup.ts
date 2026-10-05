@@ -75,22 +75,24 @@ html = replaceSection(
   "eccoozs-app",
   String.raw`<section id="eccoozs-app" class="social-app-section">
   <div class="social-section-shell social-app-shell">
-    <div class="social-app-intro rv">
-      <div class="social-kicker">THE ECCOOZS APP</div>
-      <h2>One social network.<br/>More ways to take part.</h2>
-      <p class="social-lede">Move from discovery to conversation, live audio, news, business, creator opportunity, and community without leaving the ECCOOZS experience.</p>
-      <div class="social-app-actions">
-        <a class="btn-p" href="#download">Join Early Access <i data-lucide="arrow-right"></i></a>
-        <a class="btn-g" href="#business">Explore the App</a>
+    <div class="social-app-hero-row">
+      <div class="social-app-intro rv">
+        <div class="social-kicker">THE ECCOOZS APP</div>
+        <h2>One social network.<br/>More ways to take part.</h2>
+        <p class="social-lede">Move from discovery to conversation, live audio, news, business, creator opportunity, and community without leaving the ECCOOZS experience.</p>
+        <div class="social-app-actions">
+          <a class="btn-p" href="#download">Join Early Access <i data-lucide="arrow-right"></i></a>
+          <a class="btn-g" href="#business">Explore the App</a>
+        </div>
       </div>
-    </div>
 
-    <div class="social-device-stage rv" aria-label="ECCOOZS product experience across devices">
-      <div class="social-device-glow"></div>
-      <img class="social-app-device social-app-laptop" src="/phone/profile_computer.png" alt="ECCOOZS creator profile on desktop"/>
-      <img class="social-app-device social-app-home-phone" src="/phone/home-page.png" alt="ECCOOZS Home experience on mobile"/>
-      <img class="social-app-device social-app-message-phone" src="/phone/message_page.png" alt="ECCOOZS Messages experience on mobile"/>
-      <img class="social-app-device social-app-ecco-phone" src="/phone/ecco_page.png" alt="ECCOOZS Ecco experience on mobile"/>
+      <div class="social-device-stage rv" aria-label="ECCOOZS product experience across devices">
+        <div class="social-device-glow"></div>
+        <img class="social-app-device social-app-laptop" src="/phone/profile_computer.png" alt="ECCOOZS creator profile on desktop"/>
+        <img class="social-app-device social-app-home-phone" src="/phone/home-page.png" alt="ECCOOZS Home experience on mobile"/>
+        <img class="social-app-device social-app-message-phone" src="/phone/message_page.png" alt="ECCOOZS Messages experience on mobile"/>
+        <img class="social-app-device social-app-ecco-phone" src="/phone/ecco_page.png" alt="ECCOOZS Ecco experience on mobile"/>
+      </div>
     </div>
 
     <div class="social-feature-grid social-feature-grid-wide rv">
