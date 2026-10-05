@@ -75,24 +75,32 @@ html = replaceSection(
   "eccoozs-app",
   String.raw`<section id="eccoozs-app" class="social-app-section">
   <div class="social-section-shell social-app-shell">
-    <div class="social-app-copy rv">
+    <div class="social-app-intro rv">
       <div class="social-kicker">THE ECCOOZS APP</div>
-      <h2>Share. Discover. Belong.</h2>
-      <p class="social-lede">ECCOOZS brings culture, conversation, and community together in one powerful platform — a place to share, discover, connect, and grow.</p>
-      <div class="social-feature-grid">
-        <div class="social-feature"><i data-lucide="messages-square"></i><div><strong>Connect &amp; Share</strong><span>Post, interact, and build community.</span></div></div>
-        <div class="social-feature"><i data-lucide="compass"></i><div><strong>Explore</strong><span>Discover people, topics, and trends.</span></div></div>
-        <div class="social-feature"><i data-lucide="repeat-2"></i><div><strong>Ecco</strong><span>Turn posts into conversations with context.</span></div></div>
-        <div class="social-feature"><i data-lucide="mic-2"></i><div><strong>Soundrooms</strong><span>Join live audio rooms and conversations.</span></div></div>
-        <div class="social-feature"><i data-lucide="newspaper"></i><div><strong>Newsroom</strong><span>Stay informed with real stories and updates.</span></div></div>
-        <div class="social-feature"><i data-lucide="store"></i><div><strong>Business Directory</strong><span>Find and support trusted businesses.</span></div></div>
+      <h2>One social network.<br/>More ways to take part.</h2>
+      <p class="social-lede">Move from discovery to conversation, live audio, news, business, creator opportunity, and community without leaving the ECCOOZS experience.</p>
+      <div class="social-app-actions">
+        <a class="btn-p" href="#download">Join Early Access <i data-lucide="arrow-right"></i></a>
+        <a class="btn-g" href="#business">Explore the App</a>
       </div>
-      <a class="btn-p" href="#download">Get Early Access <i data-lucide="arrow-right"></i></a>
     </div>
-    <div class="social-device-stage rv" aria-label="ECCOOZS desktop and mobile product previews">
+
+    <div class="social-device-stage rv" aria-label="ECCOOZS product experience across devices">
       <div class="social-device-glow"></div>
-      <img class="social-desktop-shot" src="/social/social-desktop-showcase.png" alt="ECCOOZS desktop experience"/>
-      <img class="social-mobile-shot" src="/social/social-mobile-showcase.png" alt="ECCOOZS mobile experience"/>
+      <img class="social-app-device social-app-laptop" src="/phone/profile_computer.png" alt="ECCOOZS creator profile on desktop"/>
+      <img class="social-app-device social-app-home-phone" src="/phone/home-page.png" alt="ECCOOZS Home experience on mobile"/>
+      <img class="social-app-device social-app-message-phone" src="/phone/message_page.png" alt="ECCOOZS Messages experience on mobile"/>
+      <img class="social-app-device social-app-ecco-phone" src="/phone/ecco_page.png" alt="ECCOOZS Ecco experience on mobile"/>
+    </div>
+
+    <div class="social-feature-grid social-feature-grid-wide rv">
+      <div class="social-feature"><i data-lucide="home"></i><div><strong>Home</strong><span>Posts, pictures, video, news, people, and ideas.</span></div></div>
+      <div class="social-feature"><i data-lucide="compass"></i><div><strong>Explore</strong><span>Discover what is happening across ECCOOZS.</span></div></div>
+      <div class="social-feature"><i data-lucide="repeat-2"></i><div><strong>Ecco</strong><span>Turn posts into organized conversations with context.</span></div></div>
+      <div class="social-feature"><i data-lucide="mic-2"></i><div><strong>Soundrooms</strong><span>Host, listen, speak, chat, and connect live.</span></div></div>
+      <div class="social-feature"><i data-lucide="newspaper"></i><div><strong>Newsroom</strong><span>Stories, articles, topics, and perspectives.</span></div></div>
+      <div class="social-feature"><i data-lucide="store"></i><div><strong>Business</strong><span>Find and support trusted businesses.</span></div></div>
+      <div class="social-feature"><i data-lucide="users"></i><div><strong>Community</strong><span>Real connections, shared interests, stronger together.</span></div></div>
     </div>
   </div>
 </section>`
