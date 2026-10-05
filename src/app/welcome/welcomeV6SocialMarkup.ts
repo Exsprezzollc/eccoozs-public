@@ -95,7 +95,45 @@ html = replaceSection(
       <img class="social-mobile-shot" src="/social/social-mobile-showcase.png" alt="ECCOOZS mobile experience"/>
     </div>
   </div>
+
+  <div class="social-section-shell social-inside-showcase rv">
+    <div class="social-inside-heading">
+      <div>
+        <div class="social-kicker">INSIDE ECCOOZS</div>
+        <h3>One social network. More ways to take part.</h3>
+      </div>
+      <p>Move from discovery to conversation, live audio, news, and community without leaving the ECCOOZS experience.</p>
+    </div>
+
+    <div class="social-product-preview-grid" aria-label="ECCOOZS product previews">
+      <article class="social-product-preview">
+        <div class="social-product-sprite social-sprite-home" role="img" aria-label="ECCOOZS Home and discovery experience"></div>
+        <div class="social-product-preview-copy"><strong>Home</strong><span>Posts, pictures, video, news, people, and ideas.</span></div>
+      </article>
+      <article class="social-product-preview">
+        <div class="social-product-sprite social-sprite-explore" role="img" aria-label="ECCOOZS Explore experience"></div>
+        <div class="social-product-preview-copy"><strong>Explore</strong><span>Discover what is happening across ECCOOZS.</span></div>
+      </article>
+      <article class="social-product-preview">
+        <div class="social-product-sprite social-sprite-ecco" role="img" aria-label="ECCOOZS Ecco conversations"></div>
+        <div class="social-product-preview-copy"><strong>Ecco</strong><span>Where posts become organized conversations.</span></div>
+      </article>
+      <article class="social-product-preview">
+        <div class="social-product-sprite social-sprite-soundrooms" role="img" aria-label="ECCOOZS Soundrooms live audio"></div>
+        <div class="social-product-preview-copy"><strong>Soundrooms</strong><span>Host, listen, speak, chat, and connect live.</span></div>
+      </article>
+      <article class="social-product-preview">
+        <div class="social-product-sprite social-sprite-newsroom" role="img" aria-label="ECCOOZS Newsroom"></div>
+        <div class="social-product-preview-copy"><strong>Newsroom</strong><span>Stories, articles, topics, and perspectives.</span></div>
+      </article>
+    </div>
+  </div>
 </section>`
+);
+
+html = html.replace(
+  '<section id="business"',
+  '<section id="creator-showcase" class="social-creator-showcase">\n  <div class="social-section-shell social-creator-shell">\n    <div class="social-creator-copy rv">\n      <div class="social-kicker">FOR CREATORS</div>\n      <h2>Create. Build. Earn.</h2>\n      <p class="social-creator-lead">Creators have room to build — without taking over the room.</p>\n      <p class="social-lede">Share across formats, build an audience, join conversations, host Soundrooms, earn Certified or Verified status, and showcase products through the Creator Shelf.</p>\n      <div class="social-creator-tags"><span>Build an audience</span><span>Publish across formats</span><span>Host Soundrooms</span><span>Creator Shelf</span><span>Certified &amp; Verified</span></div>\n      <a class="btn-p" href="#download">Join Early Access <i data-lucide="arrow-right"></i></a>\n    </div>\n    <div class="social-creator-phone-wrap rv"><div class="social-product-sprite social-sprite-creator social-creator-phone" role="img" aria-label="ECCOOZS Certified Creator profile and Creator Shelf"></div></div>\n  </div>\n</section>\n\n<section id="business"'
 );
 
 html = replaceSection(
