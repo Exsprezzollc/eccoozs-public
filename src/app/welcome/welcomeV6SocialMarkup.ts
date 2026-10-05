@@ -60,7 +60,7 @@ html = replaceSection(
   <div class="social-hero-copy rv">
     <div class="social-kicker">ECCOOZS SOCIAL</div>
     <h1>Culture.<br/>Community.<br/>Connection.</h1>
-    <p>ECCOOZS is a Black American-centered, community-first general social network for conversation, discovery, culture, business discovery, creator opportunity, and live audio.</p>
+    <p>ECCOOZS is a Foundational Black American-centered, community-first general social network for conversation, discovery, culture, business discovery, creator opportunity, and live audio. Rooted in FBA culture and perspective, ECCOOZS welcomes respectful participation from people of all backgrounds.</p>
     <div class="social-hero-actions">
       <a class="btn-p" href="#download">Join Early Access <i data-lucide="arrow-right"></i></a>
       <a class="btn-g" href="#eccoozs-app">See What's Inside</a>
