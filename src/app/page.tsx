@@ -90,6 +90,7 @@ export default function HomePage() {
           <a href="https://eccoozs.com/welcome">Community</a>
           <a href="#history">History</a>
           <a href="/blog">Journal</a>
+          <a href="/press">Press</a>
           <a href="#about">About</a>
         </nav>
 
