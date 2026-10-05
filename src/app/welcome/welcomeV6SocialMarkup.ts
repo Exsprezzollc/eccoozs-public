@@ -55,7 +55,7 @@ html = replaceSection(
   html,
   "hero",
   String.raw`<section id="hero" class="social-hero">
-  <div class="social-hero-photo"><img alt="ECCOOZS community" src="/welcome-images/landing-02.png"/></div>
+  <div class="social-hero-photo"><img alt="ECCOOZS community using the social platform, including Ecco and Soundrooms" src="/phone/eccoozs_hero.png"/></div>
   <div class="social-hero-wash"></div>
   <div class="social-hero-copy rv">
     <div class="social-kicker">ECCOOZS SOCIAL</div>
