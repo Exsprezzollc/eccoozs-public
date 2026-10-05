@@ -64,7 +64,7 @@ export default function PressPage() {
           <section className={styles.card}>
             <h2>Approved brand description</h2>
             <p className={styles.quote}>
-              ECCOOZS is a Black American-centered, community-first general social network
+              ECCOOZS is a Foundational Black American-centered, community-first general social network
               built for conversation, discovery, culture, business discovery, creator
               opportunity, and live audio through Soundrooms.
             </p>
