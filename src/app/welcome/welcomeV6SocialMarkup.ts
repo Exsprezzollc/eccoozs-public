@@ -86,12 +86,9 @@ html = replaceSection(
         </div>
       </div>
 
-      <div class="social-device-stage rv" aria-label="ECCOOZS product experience across devices">
+      <div class="social-device-stage rv" aria-label="ECCOOZS mobile product experience">
         <div class="social-device-glow"></div>
-        <img class="social-app-device social-app-laptop" src="/phone/profile_computer.png" alt="ECCOOZS creator profile on desktop"/>
-        <img class="social-app-device social-app-home-phone" src="/phone/home-page.png" alt="ECCOOZS Home experience on mobile"/>
-        <img class="social-app-device social-app-message-phone" src="/phone/message_page.png" alt="ECCOOZS Messages experience on mobile"/>
-        <img class="social-app-device social-app-ecco-phone" src="/phone/ecco_page.png" alt="ECCOOZS Ecco experience on mobile"/>
+        <img class="social-phone-showcase" src="/phone/phone_showcase.png" alt="ECCOOZS app experiences including Ecco, creator profiles, Soundrooms, Messages, Explore, and Home"/>
       </div>
     </div>
 
