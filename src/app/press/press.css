@@ -278,3 +278,106 @@
   .phone-collage { width: 128%; margin-left: -14%; max-width: none; }
   .press-footer { align-items: flex-start; flex-direction: column; justify-content: center; padding: 28px 0; }
 }
+
+.newsroom-feature {
+  margin-top: 92px;
+  padding: 42px;
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(480px, 1.35fr);
+  align-items: center;
+  gap: 42px;
+  border: 1px solid #e4e8ee;
+  border-radius: 26px;
+  background: linear-gradient(145deg, #fbfaf6 0%, #ffffff 64%);
+  box-shadow: 0 22px 54px rgba(25, 42, 70, .07);
+  overflow: hidden;
+}
+
+.newsroom-copy h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(38px, 4vw, 56px);
+  line-height: 1.02;
+  font-weight: 500;
+  letter-spacing: -.035em;
+  color: #252c38;
+}
+
+.newsroom-lede {
+  margin: 14px 0 18px !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 23px !important;
+  color: #4b5567 !important;
+}
+
+.newsroom-copy > p:not(.eyebrow) {
+  margin: 0;
+  color: #6d7582;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.newsroom-points {
+  margin-top: 26px;
+  display: grid;
+  gap: 14px;
+}
+
+.newsroom-points > div {
+  padding: 15px 16px;
+  border-left: 3px solid var(--press-blue);
+  background: rgba(255,255,255,.7);
+}
+
+.newsroom-points strong,
+.newsroom-points span {
+  display: block;
+}
+
+.newsroom-points strong {
+  margin-bottom: 4px;
+  color: #293142;
+  font-size: 15px;
+}
+
+.newsroom-points span {
+  color: #7a8290;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.newsroom-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.newsroom-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 760px;
+  filter: drop-shadow(0 26px 24px rgba(32, 41, 59, .15));
+}
+
+@media (max-width: 980px) {
+  .newsroom-feature {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .newsroom-visual { order: -1; }
+  .newsroom-visual img { max-width: 720px; }
+}
+
+@media (max-width: 640px) {
+  .newsroom-feature {
+    width: min(100% - 28px, 1160px);
+    margin-top: 66px;
+    padding: 24px 18px 28px;
+    border-radius: 20px;
+  }
+  .newsroom-copy h2 { font-size: 38px; }
+  .newsroom-lede { font-size: 20px !important; }
+  .newsroom-visual img { width: 116%; max-width: none; }
+}

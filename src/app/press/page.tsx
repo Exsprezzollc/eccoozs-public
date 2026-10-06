@@ -182,6 +182,39 @@ export default function PressPage() {
         </div>
       </section>
 
+      <section className="wrap newsroom-feature">
+        <div className="newsroom-copy">
+          <p className="eyebrow">FEATURED SURFACE</p>
+          <h2>ECCOOZS Newsroom</h2>
+          <p className="newsroom-lede">News discovery without losing the conversation.</p>
+          <p>
+            ECCOOZS Newsroom gives members a dedicated place to discover current stories,
+            browse by topic, read at the source, save articles, and move stories into ECCOOZS
+            conversation when they want to discuss them with the community.
+          </p>
+          <div className="newsroom-points">
+            <div>
+              <strong>Read at the source</strong>
+              <span>Follow stories back to original reporting and source material.</span>
+            </div>
+            <div>
+              <strong>Discover by topic</strong>
+              <span>Browse politics, business, finance, science, technology, health, sports, arts, and more.</span>
+            </div>
+            <div>
+              <strong>Bring news into community discussion</strong>
+              <span>Save a story or move it into Ecco when the community wants to talk about it.</span>
+            </div>
+          </div>
+        </div>
+        <div className="newsroom-visual">
+          <img
+            src="/phone/newsroom_page.png"
+            alt="ECCOOZS Newsroom shown on a laptop with topic navigation, trending stories, most popular stories, and latest news"
+          />
+        </div>
+      </section>
+
       <section className="wrap copy-section">
         <div className="section-heading">
           <p className="eyebrow">PRESS COPY</p>
@@ -245,6 +278,10 @@ export default function PressPage() {
           <a className="asset-card" href="/phone/explore_page.png" target="_blank" rel="noreferrer">
             <strong>Explore</strong>
             <span>Discovery surface</span>
+          </a>
+          <a className="asset-card" href="/phone/newsroom_page.png" target="_blank" rel="noreferrer">
+            <strong>Newsroom</strong>
+            <span>Desktop news and information surface</span>
           </a>
           <a className="asset-card" href="/phone/message_page.png" target="_blank" rel="noreferrer">
             <strong>Messages</strong>
