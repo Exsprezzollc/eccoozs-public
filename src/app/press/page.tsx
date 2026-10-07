@@ -59,10 +59,10 @@ export default function PressPage() {
       <header className="press-header">
         <a className="brand" href="/" aria-label="ECCOOZS home">eccoozs</a>
         <nav className="press-nav" aria-label="Press navigation">
-          <a href="/">ECCOOZS Social</a>
-          <a href="/journal">Journal</a>
+          <a href="/welcome">ECCOOZS Social</a>
+          <a href="/blog">Journal</a>
           <a href="/house-of-eccoozs">House of ECCOOZS</a>
-          <a href="/technologies">ECCOOZS Technologies</a>
+          <a href="/">ECCOOZS Technologies</a>
         </nav>
       </header>
 
