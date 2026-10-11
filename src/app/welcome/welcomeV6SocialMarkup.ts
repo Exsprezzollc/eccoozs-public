@@ -141,7 +141,7 @@ html = replaceSection(
       <div class="social-kicker">OUR STORY</div>
       <h2>Built from within.<br/>For all who walk<br/>with respect.</h2>
       <p class="social-story-quote">“I didn't build this to go viral. I built it because there was no place left for our voices to breathe.”</p>
-      <p class="social-story-body">ECCOOZS was built by Foundational Black Americans as a digital sanctuary for culture, faith, and truth. But ALL ARE WELCOME HERE who walk in respect. This isn't just an app — it's a movement.</p>
+      <p class="social-story-body">ECCOOZS was built by Foundational Black Americans as a digital sanctuary for culture, faith, and truth. But ALL ARE WELCOME HERE who walk in respect.</p>
     </div>
   </div>
 </section>`

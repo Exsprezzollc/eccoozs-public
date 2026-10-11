@@ -3900,6 +3900,10 @@ html[data-large-text="true"] .domain-insight-grid small { font-size: 23px !impor
   .stage-junior-high .home-scene .hero-copy { margin-top: 0; }
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> f28d31235d9dc9baec4390c957a8a141e7f4eaaf
 /* ===== 2.16.1 fixes ===================================================== */
 /* Keep the main "next step" button visible inside scrolling challenge cards,
    so learners never have to discover a hidden inner scroll to continue. */
