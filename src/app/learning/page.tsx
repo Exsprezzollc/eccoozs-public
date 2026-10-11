@@ -74,11 +74,10 @@ export default function Learning() {
         .intro{text-align:center;padding:50px 5% 34px;background:radial-gradient(circle at 18% 0%,rgba(31,71,224,.09),transparent 34%),radial-gradient(circle at 82% 10%,rgba(91,147,105,.11),transparent 30%)}
         .introKicker{font-size:12px;letter-spacing:.22em;font-weight:950;color:#1f47e0}.intro h1{font-family:Georgia,serif;font-size:clamp(3rem,5.7vw,5.1rem);line-height:.96;margin:12px 0 15px}.intro p{max-width:820px;margin:0 auto;color:#607ab5;font-size:17px;line-height:1.65}
         .main{max-width:1320px;margin:auto;padding:24px 4% 90px}
-        .featureWrap{margin-bottom:20px}
-        .featureArt{position:relative;display:block;overflow:hidden;border-radius:30px;border:1px solid rgba(64,102,77,.22);box-shadow:0 28px 76px rgba(17,47,39,.2);background:#eef2ea;text-decoration:none}
-        .featureArt img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
-        .featureArt:after{content:'OPEN READING DETECTIVE  →';position:absolute;right:22px;top:22px;padding:12px 17px;border-radius:999px;background:rgba(9,52,39,.92);border:1px solid rgba(235,196,99,.85);color:#fff;font:900 11px/1 Arial,sans-serif;letter-spacing:.08em;box-shadow:0 9px 24px rgba(0,0,0,.2)}
-        .featureArt:hover{transform:translateY(-2px);box-shadow:0 34px 88px rgba(17,47,39,.25)}.featureArt{transition:transform .2s,box-shadow .2s}
+        .featureWrap{margin:0 0 26px}
+        .featurePanel{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.3fr);align-items:stretch;overflow:hidden;border-radius:30px;border:1px solid #dce5df;background:linear-gradient(135deg,#f8fbf8 0%,#eef5ef 100%);box-shadow:0 24px 70px rgba(17,47,39,.14)}
+        .featureCopy{padding:42px 38px 38px;display:flex;flex-direction:column;justify-content:center}.featureKicker{font-size:11px;letter-spacing:.18em;font-weight:950;color:#2f6a54}.featureCopy h2{font-family:Georgia,serif;font-size:clamp(2.4rem,4vw,4rem);line-height:.98;margin:10px 0 16px;color:#113b30}.featureCopy p{margin:0;color:#5e766e;font-size:15px;line-height:1.7;max-width:560px}.featurePoints{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0}.featurePoints span{padding:8px 11px;border-radius:999px;border:1px solid #cbdacf;background:#fff;color:#315e4f;font-size:12px;font-weight:850}.featureBtn{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;min-height:48px;padding:0 18px;border-radius:12px;background:#123f33;color:#fff;text-decoration:none;font-weight:900;box-shadow:0 9px 22px rgba(18,63,51,.16)}
+        .featureArt{display:block;min-height:430px;background:#dfe9e1;overflow:hidden}.featureArt img{width:100%;height:100%;object-fit:cover;display:block}
         .featureCaption{text-align:center;color:#557064;font-size:13px;font-weight:750;margin:14px 0 0}.featureCaption strong{color:#174f3d}
         .stageStory{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin:22px 0 52px}
         .stageCard{position:relative;padding:20px 22px 21px;border-radius:19px;background:rgba(255,255,255,.93);border:1px solid #e0e8df;box-shadow:0 12px 36px rgba(24,54,47,.07)}
@@ -87,8 +86,8 @@ export default function Learning() {
         .moreHead{text-align:center;margin-bottom:28px}.moreHead h2{font-family:Georgia,serif;font-size:42px;margin:0 0 8px}.moreHead p{color:#607ab5;line-height:1.65;margin:0}
         .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.card{background:#fff;border:1px solid #e1e7f3;border-radius:24px;overflow:hidden;box-shadow:0 18px 54px #07124012;display:flex;flex-direction:column;transition:transform .22s,box-shadow .22s}.card:hover{transform:translateY(-4px);box-shadow:0 24px 68px #07124020}.visual{aspect-ratio:4/3;overflow:hidden;background:#eef3ff}.visual img{width:100%;height:100%;object-fit:cover;display:block}.body{padding:23px;display:flex;flex-direction:column;flex:1}.label{font-size:11px;font-weight:950;letter-spacing:.12em;color:#1f47e0}.card.youth .label{color:#7140d9}.card.adult .label{color:#5545a5}.body h3{font-size:27px;margin:8px 0}.body p{color:#607ab5;line-height:1.65;font-size:14px;flex:1}.actions{margin-top:18px}.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:11px;text-decoration:none;font-weight:900;color:#fff;background:#1f47e0}.card.youth .btn{background:#7140d9}.card.adult .btn{background:#30236f}
         .note{margin-top:28px;padding:18px 20px;border:1px solid #e1e7f3;border-radius:16px;background:#fff;color:#607ab5;line-height:1.65}.back{margin-top:32px;text-align:center}.back a{color:#1f47e0;font-weight:850;text-decoration:none}
-        @media(max-width:900px){.grid{grid-template-columns:1fr 1fr}.card.adult{grid-column:1/-1;max-width:620px;margin:auto}.featureArt:after{right:14px;top:14px;font-size:10px;padding:10px 13px}}
-        @media(max-width:720px){.nav{padding:0 4%;height:70px}.brand{gap:10px}.brandLogo{width:134px}.brand span{font-size:11px;letter-spacing:.12em}.intro{padding:42px 6% 30px}.intro p{font-size:15px}.main{padding:18px 4% 72px}.featureArt{border-radius:20px}.featureArt:after{content:'PLAY →';font-size:10px}.stageStory{grid-template-columns:1fr;margin-bottom:46px}.grid{grid-template-columns:1fr}.card.adult{grid-column:auto;max-width:none}.moreHead h2{font-size:35px}}
+        @media(max-width:900px){.grid{grid-template-columns:1fr 1fr}.card.adult{grid-column:1/-1;max-width:620px;margin:auto}.featurePanel{grid-template-columns:1fr}.featureArt{min-height:360px;order:-1}.featureCopy{padding:30px}}
+        @media(max-width:720px){.nav{padding:0 4%;height:70px}.brand{gap:10px}.brandLogo{width:134px}.brand span{font-size:11px;letter-spacing:.12em}.intro{padding:42px 6% 30px}.intro p{font-size:15px}.main{padding:18px 4% 72px}.featurePanel{border-radius:20px}.featureArt{min-height:280px}.featureCopy{padding:25px 22px 27px}.featureCopy h2{font-size:2.55rem}.stageStory{grid-template-columns:1fr;margin-bottom:46px}.grid{grid-template-columns:1fr}.card.adult{grid-column:auto;max-width:none}.moreHead h2{font-size:35px}}
         @media(max-width:470px){.brand span{display:none}.brandLogo{width:142px}.nav a{font-size:14px}.intro h1{font-size:3rem}.featureCaption{font-size:11px}.stageCard{padding:18px}}
       `}</style>
 
@@ -113,16 +112,35 @@ export default function Learning() {
 
       <section className="main">
         <div className="featureWrap">
-          <a
-            className="featureArt"
-            href="/apps/reading-detective/"
-            aria-label="Open ECCOOZS Reading Detective"
-          >
-            <img
-              src="/apps/reading-detective/assets/reference/detective-selection-approved.jpg"
-              alt="ECCOOZS Reading Detective investigator selection experience"
-            />
-          </a>
+          <section className="featurePanel" aria-label="Reading Detective">
+            <div className="featureCopy">
+              <div className="featureKicker">FEATURED LEARNING EXPERIENCE</div>
+              <h2>Reading Detective</h2>
+              <p>
+                Reading becomes an investigation. Learners build comprehension, vocabulary,
+                evidence skills, source awareness, and reasoning by solving cases instead of
+                completing disconnected drills.
+              </p>
+              <div className="featurePoints">
+                <span>Young Investigator</span>
+                <span>Investigator</span>
+                <span>Lead Investigator</span>
+              </div>
+              <a className="featureBtn" href="/apps/reading-detective/">
+                Open Reading Detective →
+              </a>
+            </div>
+            <a
+              className="featureArt"
+              href="/apps/reading-detective/"
+              aria-label="Open ECCOOZS Reading Detective"
+            >
+              <img
+                src="/learning-assets/reading-detective-feature.jpg"
+                alt="ECCOOZS Reading Detective investigator selection experience"
+              />
+            </a>
+          </section>
           <p className="featureCaption">
             <strong>Investigate what you read</strong> · Build evidence skills · Strengthen comprehension and reasoning
           </p>
