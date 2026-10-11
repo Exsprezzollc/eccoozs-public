@@ -42,7 +42,7 @@ import {
 
 const repository = createPlayerRepository();
 const app = document.querySelector("#app");
-const validScreens = new Set(["home", "trail", "project", "shop", "estate", "collection", "settings", "progress", "summary"]);
+const validScreens = new Set(["home", "trail", "project", "shop", "estate", "collection", "settings", "progress", "educator-progress", "summary"]);
 const requestedScreen = new URLSearchParams(window.location.search).get("screen");
 
 let profile = repository.load();
@@ -389,7 +389,7 @@ function highSchoolHomeScreen() {
       </div>
       ${activeProject ? `<div class="hs-role-card"><span>CURRENT PROJECT</span><strong>${escapeHTML(activeProject.title)}</strong><em>${escapeHTML(activeProject.domainName)} · You are working as ${escapeHTML(activeProject.role)}.</em></div>` : `<div class="hs-role-card start-here-card"><span>START HERE</span><strong>Click “Start my first project.”</strong><em>The game chooses an assignment and guides you through every step.</em></div>`}
     </section>
-    <div class="hs-home-pair" aria-hidden="true"><img src="/apps/vocabulary-adventure/assets/high-school-pair.webp" alt=""></div>
+    <div class="hs-home-pair" aria-hidden="true"><img src="assets/high-school-pair.webp" alt=""></div>
     ${highSchoolImpactOverlay()}
     ${completed ? `<aside class="hs-status-ledger"><p class="folio-label">Your progress</p><div><span>Projects finished</span><strong>${completed}</strong></div><div><span>Career areas explored</span><strong>${touched}/${highSchoolDomains.length}</strong></div><div><span>Vocabulary used</span><strong>${records.length}</strong></div></aside>` : ""}
   </main>${bottomNavigation("home")}`;
@@ -415,7 +415,7 @@ function homeScreen() {
         </div>
         <button class="home-path-change" data-action="go-settings">Change learning path</button>
       </section>
-      <div class="elementary-home-pair" aria-hidden="true"><img src="/apps/vocabulary-adventure/assets/elementary-pair.webp" alt=""></div>`
+      <div class="elementary-home-pair" aria-hidden="true"><img src="assets/elementary-pair.webp" alt=""></div>`
     : `<section class="hero-copy">
         <p class="eyebrow">${icon("leaf", 15)} Garden House · Junior High</p>
         <h1>Words make<br><i>the world move.</i></h1>
@@ -469,7 +469,7 @@ function trailWorld(session) {
     return `<span class="trail-stone stone-${index + 1} ${state}" aria-label="Vocabulary stone ${index + 1}: ${state}"><i>${elementary ? icon("leaf", 12) : index + 1}</i></span>`;
   }).join("");
   const pair = trailPairPosition(profile.stage, progress);
-  const pairAsset = elementary ? "/apps/vocabulary-adventure/assets/elementary-pair.webp" : "/apps/vocabulary-adventure/assets/learner-pair.webp";
+  const pairAsset = elementary ? "assets/elementary-pair.webp" : "assets/learner-pair.webp";
   const pathSegments = Array.from({ length: 5 }, (_, index) => `<i class="path-segment path-segment-${index + 1} ${index < progress ? "lit" : index === progress && !gateOpen ? "current" : ""}"></i>`).join("");
   return `<div class="trail-world ${elementary ? "elementary-world" : "junior-world"} ${gateOpen ? "gate-open" : ""}" aria-hidden="true">
     <div class="path-glow" style="--progress:${progress / 5}"></div>
@@ -847,14 +847,14 @@ function projectScreen() {
   const active = profile.appliedProjects?.active;
   if (!active) {
     const domains = domainCompletion(profile);
-    return `<main class="scene project-scene project-intro-scene" id="main-content"><div class="project-world-shade"></div><section class="project-intro-card network-intro-card guided-project-start"><p class="eyebrow">${icon("map", 16)} Career Projects</p><h1>Start here.</h1><p class="network-start-note">Choose the gold button. You will get one short real-world assignment, and the game will explain what to do at every step.</p><div class="project-purpose"><strong>What happens in a project?</strong><p>You read a situation, review evidence, learn precise vocabulary, and make a recommendation. You do not need to know the career beforehand.</p></div><button class="primary-action network-start-action" data-action="start-project">Start my first project ${icon("arrow", 18)}</button><p class="network-domain-heading">Projects can come from these career areas:</p><div class="network-domain-list large-domain-list">${domains.map((domain) => `<span class="${domain.completed ? "touched" : ""}"><b>${escapeHTML(domain.shortName)}</b><em>${domain.completed ? `${domain.completed} completed` : "Projects waiting"}</em></span>`).join("")}</div></section><div class="project-intro-pair" aria-hidden="true"><img src="/apps/vocabulary-adventure/assets/high-school-pair.webp" alt=""></div></main>${bottomNavigation("project")}`;
+    return `<main class="scene project-scene project-intro-scene" id="main-content"><div class="project-world-shade"></div><section class="project-intro-card network-intro-card guided-project-start"><p class="eyebrow">${icon("map", 16)} Career Projects</p><h1>Start here.</h1><p class="network-start-note">Choose the gold button. You will get one short real-world assignment, and the game will explain what to do at every step.</p><div class="project-purpose"><strong>What happens in a project?</strong><p>You read a situation, review evidence, learn precise vocabulary, and make a recommendation. You do not need to know the career beforehand.</p></div><button class="primary-action network-start-action" data-action="start-project">Start my first project ${icon("arrow", 18)}</button><p class="network-domain-heading">Projects can come from these career areas:</p><div class="network-domain-list large-domain-list">${domains.map((domain) => `<span class="${domain.completed ? "touched" : ""}"><b>${escapeHTML(domain.shortName)}</b><em>${domain.completed ? `${domain.completed} completed` : "Projects waiting"}</em></span>`).join("")}</div></section><div class="project-intro-pair" aria-hidden="true"><img src="assets/high-school-pair.webp" alt=""></div></main>${bottomNavigation("project")}`;
   }
   const baseProject = getCivicProject(active.briefId);
   const project = appliedProjectView(baseProject, active).project;
   const progress = Math.round(((active.stepIndex + 1) / 10) * 100);
   return `<main class="scene project-scene domain-${escapeHTML(project.domainId)}" id="main-content">
     <div class="project-world-shade"></div>
-    <div class="project-pair" aria-hidden="true"><img src="/apps/vocabulary-adventure/assets/high-school-pair.webp" alt=""></div>
+    <div class="project-pair" aria-hidden="true"><img src="assets/high-school-pair.webp" alt=""></div>
     <aside class="project-brief-rail"><p class="eyebrow">${escapeHTML(project.district)}</p><span class="domain-badge">${escapeHTML(project.domainName)}</span><span class="rail-scenario">${escapeHTML(project.scenarioLabel || "Core field condition")}</span><div class="role-line"><span>TEAM ROLE</span><strong>${escapeHTML(project.role)}</strong></div><strong>${escapeHTML(project.briefNumber)}</strong><p>${escapeHTML(project.objective)}</p><div class="field-label-stack">${project.labels.map((label) => `<span>${escapeHTML(label)}</span>`).join("")}</div><button class="text-action" data-action="go-home">Save & leave field review</button></aside>
     <section class="project-tablet">${renderProjectStep(project, active)}</section>
     <footer class="project-progress"><span>Project Progress</span><div class="project-progress-track"><i style="width:${progress}%"></i>${Array.from({length:10}, (_, index) => `<b class="${index < active.stepIndex ? "done" : index === active.stepIndex ? "current" : ""}" title="${projectStepLabel(index)}"></b>`).join("")}</div><strong>${active.stepIndex + 1} of 10 · ${escapeHTML(projectStepLabel(active.stepIndex))}</strong></footer>
@@ -876,7 +876,7 @@ function shopScreen() {
   const ownedCount = allItems.filter((item) => profile.ownedItems.includes(item.id)).length;
   const milestone = getPropertyMilestone(profile.stage, profile.ownedItems, profile.construction);
   const completion = allItems.length ? Math.round((milestone.finishedCount / allItems.length) * 100) : 0;
-  const previewImage = selected?.placement === "interior" ? "/apps/vocabulary-adventure/assets/word-library.webp" : elementary ? "/apps/vocabulary-adventure/assets/elementary-orchard.webp" : "/apps/vocabulary-adventure/assets/garden-house.webp";
+  const previewImage = selected?.placement === "interior" ? "assets/word-library.webp" : elementary ? "assets/elementary-orchard.webp" : "assets/garden-house.webp";
   return `<main class="scene page-scene shop-scene" id="main-content">
     ${pageBack()}
     <section class="page-heading"><p class="eyebrow">${icon("shop", 15)} ${elementary ? "Garden Shop" : "Lifestyle Shop"}</p><h1>${elementary ? `Choose something<br><i>your learning can grow.</i>` : `Build a place<br><i>worth returning to.</i>`}</h1><p>${elementary ? "Estate Credits come only from learning. Every purchase becomes a persistent part of the Cottage Garden." : "Estate improvements are earned only through learning. Architecture, interiors, gardens, recreation, water, and mobility now build one persistent estate."}</p></section>
@@ -1255,7 +1255,22 @@ function decorateKeyboardChoices() {
   if (speak) speak.setAttribute("aria-keyshortcuts", "P");
 }
 
+function resolveScreen(requested) {
+  if (!profile.onboardingComplete) return "home";
+  const highSchool = profile.stage === "High School";
+  if (highSchool && (requested === "trail" || requested === "shop")) return "project";
+  if (!highSchool && requested === "project") return "home";
+  if (requested === "summary") {
+    const hasSummary = highSchool
+      ? (profile.appliedProjects?.history || []).length > 0
+      : Boolean(profile.lastSession) && (!profile.lastSession.stage || profile.lastSession.stage === profile.stage);
+    if (!hasSummary) return "home";
+  }
+  return requested;
+}
+
 function render(focusHeading = false, focusSelector = null) {
+  screen = resolveScreen(screen);
   document.documentElement.dataset.reducedMotion = String(profile.settings.reducedMotion);
   document.documentElement.dataset.largeText = String(profile.settings.largeText);
   document.documentElement.dataset.highContrast = String(profile.settings.highContrast);
@@ -1292,10 +1307,10 @@ function render(focusHeading = false, focusSelector = null) {
 }
 
 function go(destination, options = {}) {
-  screen = destination;
+  screen = resolveScreen(destination);
   ui = { ...freshTransientState(), previewItemId: options.previewItemId || null };
   const url = new URL(window.location.href);
-  url.searchParams.set("screen", destination);
+  url.searchParams.set("screen", screen);
   window.history.replaceState({}, "", url);
   render(true);
 }
@@ -1692,6 +1707,10 @@ window.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && ((screen === "trail" && profile.activeSession) || (screen === "project" && profile.appliedProjects?.active))) {
     event.preventDefault();
     return go("home");
+  }
+  if (event.key === "Enter" && event.target?.closest?.("[data-response-input]") && ui.typedResponse.trim() && !ui.feedback) {
+    event.preventDefault();
+    return resolveActiveChallenge();
   }
   if (isTextEntryTarget(event.target) || event.ctrlKey || event.metaKey || event.altKey) return;
   if (screen === "trail" && event.key.toLowerCase() === "p" && activeChallengeState()) {
