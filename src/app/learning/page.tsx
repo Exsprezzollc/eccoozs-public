@@ -110,46 +110,8 @@ export default function Learning() {
       </section>
 
       <section className="main">
-        <section className="feature" aria-label="Reading Detective coming soon">
-          <div className="featureArt">
-            <img
-              src="/learning-assets/reading-detective-hero.png"
-              alt="ECCOOZS Reading Detective preview artwork"
-            />
-          </div>
-          <div className="featureCopy">
-            <div className="featureIntro">
-              <div className="featureKicker">IN DEVELOPMENT</div>
-              <h2>Reading Detective</h2>
-              <p>
-                Reading Detective is being refined before public release. The experience is temporarily unavailable while we improve the learning flow, detective guides, audio, and accessibility.
-              </p>
-            </div>
-            <div className="paths">
-              <article className="path">
-                <div className="pathNum">01</div>
-                <h3>Young Investigator</h3>
-                <p>Foundations &amp; Discovery</p>
-              </article>
-              <article className="path">
-                <div className="pathNum">02</div>
-                <h3>Investigator</h3>
-                <p>Comprehension &amp; Evidence</p>
-              </article>
-              <article className="path">
-                <div className="pathNum">03</div>
-                <h3>Lead Investigator</h3>
-                <p>Research &amp; Decision</p>
-              </article>
-            </div>
-            <span className="featureBtn" style={{ opacity: .6, cursor: "default" }}>
-              Coming Soon
-            </span>
-          </div>
-        </section>
-
         <div className="sectionHead">
-          <h2>More learning experiences.</h2>
+          <h2>Learning experiences.</h2>
           <p>Math, speech, English practice, and communication support — each built as its own focused experience.</p>
         </div>
 
