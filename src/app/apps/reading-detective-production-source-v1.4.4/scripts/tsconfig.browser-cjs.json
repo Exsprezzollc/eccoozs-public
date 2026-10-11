@@ -1,0 +1,15 @@
+{
+  "extends": "../tsconfig.app.json",
+  "compilerOptions": {
+    "typeRoots": ["./type-stubs"],
+    "noEmit": false,
+    "outDir": "../dist-browser-qa/cjs",
+    "rootDir": "../src",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "jsx": "react-jsx",
+    "declaration": false,
+    "sourceMap": false
+  },
+  "include": ["../src"]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "ECCOOZS Reading Detective",
+  "short_name": "Reading Detective",
+  "description": "Evidence-based reading, comprehension, source reasoning, and real-world document literacy.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4efe5",
+  "theme_color": "#06192c"
+}

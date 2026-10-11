@@ -1,0 +1,156 @@
+Reading Detective v1.4.4 — Production Hardening
+Authoritative gate: npm ci, npm run qa:production, npm run build
+Recorded: 2026-09-22T17:18Z | Node v22.22.2 | npm 10.9.7 | Python 3.12.3 | Chromium 131 (headless, Playwright)
+
+> npm ci
+added 100 packages in 4s
+
+
+> eccoozs-reading-detective@1.4.4 qa:production
+> npm run verify:all && npm run verify:browser-qa
+
+
+> eccoozs-reading-detective@1.4.4 verify:all
+> npm run verify:core && npm run verify:vertical && npm run verify:placement && npm run verify:variation-routing && npm run verify:curriculum-evidence && npm run verify:teaching && npm run verify:educator-insight && npm run verify:junior-source && npm run verify:high-school-document && npm run verify:research-media-decision && npm run verify:curriculum-completeness && npm run verify:capstone-qa && npm run verify:production-assets && npm run verify:learning-repair && npm run verify:prereader-ux && npm run verify:content-stress && npm run verify:phoneme-audio && npm run verify:encoding && npm run verify:narration-motion && npm run verify:ui-static
+
+
+> eccoozs-reading-detective@1.4.4 verify:core
+> tsc -p tsconfig.core.json && node scripts/verify-core.cjs
+
+Reading Detective core verification: PASS
+Verified: append-only evidence, mastery gates, read-aloud guard, case schemas, age-dignity routing, support ladder, probes, Repair & Return, transfer, review scheduling, notebook, and persistence.
+
+> eccoozs-reading-detective@1.4.4 verify:vertical
+> tsc -p tsconfig.core.json && node scripts/verify-vertical.cjs
+
+Reading Detective vertical-slice verification: PASS
+Verified: support ladder -> diagnostic probe -> targeted Clue Lab -> guided practice -> transfer -> exact Repair & Return -> age-respecting continuation, plus resumable state and review metadata.
+
+> eccoozs-reading-detective@1.4.4 verify:placement
+> tsc -p tsconfig.core.json && node scripts/verify-placement.cjs
+
+Reading Detective adaptive-placement verification: PASS
+Verified: stage-safe adaptive placement, print/listening separation, foundational routing without demotion, no mastery inflation, structural plan validation, and resumable placement state.
+
+> eccoozs-reading-detective@1.4.4 verify:variation-routing
+> tsc -p tsconfig.core.json && node scripts/verify-variation-routing.cjs
+
+Reading Detective content-variation + review-routing verification: PASS
+Verified: deterministic controlled variation, non-repeating scenarios, shuffled answer position, valid correctness contracts, review deduplication, repair-first due routing, resume priority, natural review insertion, secure-skill skipping, transfer sampling, and no manufactured busywork.
+
+> eccoozs-reading-detective@1.4.4 verify:curriculum-evidence
+> tsc -p tsconfig.core.json && node scripts/verify-curriculum-evidence-board.cjs
+
+Reading Detective curriculum-expansion + evidence-board verification: PASS
+Verified: 82 skills, 36 cases, acyclic prerequisites, stage-compatible curriculum strands, sort/compare boards, source→sentence→phrase zoom, board grading, and resumable board state.
+
+> eccoozs-reading-detective@1.4.4 verify:teaching
+> tsc -p tsconfig.core.json && node scripts/verify-teaching-engine.cjs
+
+Reading Detective teaching-engine verification: PASS
+Verified: teach-first sequencing, adaptive phase entry, instruction/mastery separation, age-respecting foundational teaching, router-before-case instruction, transfer evidence, and content-name hygiene.
+
+> eccoozs-reading-detective@1.4.4 verify:educator-insight
+> tsc -p tsconfig.core.json && node scripts/verify-curriculum-educator-insight.cjs
+
+Reading Detective curriculum-teaching-coverage + educator-insight verification: PASS
+Verified: 30/30 foundation skills have Teach-First coverage across all 3 presentation stages; phonemic modules are audio-first; educator insights separate independent/support evidence, require misconception confirmation, surface repairs and repeated modality patterns without diagnosing, and preserve age-dignity.
+
+> eccoozs-reading-detective@1.4.4 verify:junior-source
+> tsc -p tsconfig.core.json && node scripts/verify-junior-source-intelligence.cjs
+
+Reading Detective Junior High teaching-coverage + source-intelligence verification: PASS
+Verified: 33/33 Junior High skills have Teach-First coverage in Investigator + Lead Investigator presentations; source usefulness changes by question; provenance prevents reposts from faking corroboration; independent agreement and conflict are represented without global reliability scores.
+
+> eccoozs-reading-detective@1.4.4 verify:high-school-document
+> tsc -p tsconfig.core.json && node scripts/verify-high-school-document-intelligence.cjs
+
+Reading Detective High School teaching-coverage + document-intelligence verification: PASS
+Verified: all 54 current Lead Investigator skills have Teach-First coverage; document search, defined terms, party/rule mapping, waiver/liability scope, arbitration exceptions, governing-law language, and professional-review guardrails are encoded without a legal-verdict engine.
+
+> eccoozs-reading-detective@1.4.4 verify:research-media-decision
+> tsc -p tsconfig.core.json && node scripts/verify-research-media-decision-intelligence.cjs
+
+Reading Detective Research, Media & Decision Intelligence verification: PASS
+Verified: 54/54 Lead Investigator skills have Teach-First coverage; study/headline calibration, correlation-vs-causation, sample scope, conflict-of-interest context, absolute/relative framing, graph scale, assumptions/rebuttals/reasoning flaws, AI-source verification, evidence-weighted decisions, defensible tradeoffs, multiple defensible conclusions, and insufficient-evidence conclusions are encoded.
+
+> eccoozs-reading-detective@1.4.4 verify:curriculum-completeness
+> tsc -p tsconfig.core.json && node scripts/verify-curriculum-completeness-applied-literature.cjs
+
+Reading Detective Curriculum Completeness + Literature/Applied Reading verification: PASS
+Verified: 82 skills, 36 cases, 30/30 Young, 33/33 Junior, and 54/54 Lead stage skills have Teach-First coverage; foundational fluency/punctuation/tricky-word gaps, evidence-based literary interpretation, procedures, forms, certifications, and civic notices are encoded.
+
+> eccoozs-reading-detective@1.4.4 verify:capstone-qa
+> tsc -p tsconfig.core.json && node scripts/verify-capstone-production-qa.cjs
+
+Reading Detective Capstone Progression + Graduation + Production QA verification: PASS
+Verified: capstone readiness gates, evidence-based unlocking, mentor fade to on-request, cross-domain Final Case, independent graduation evaluation, scaffold-sensitive graduation, and production QA across 82 skills / 36 cases.
+
+> eccoozs-reading-detective@1.4.4 verify:production-assets
+> tsc -p tsconfig.core.json && node scripts/verify-production-assets.cjs
+
+Reading Detective production asset + voice contract verification: PASS
+Verified 36 local detective portrait assets, 4 environment assets, voice preview contracts, safe degradation without browser speech synthesis, approved visual reference, and deployment config.
+
+> eccoozs-reading-detective@1.4.4 verify:learning-repair
+> tsc -p tsconfig.core.json && node scripts/verify-production-learning-repair.cjs
+
+Reading Detective visual world + narration + interaction repair verification: PASS
+Verified 3 stage environments and 19 non-choice teaching interactions, plus automatic narration, replay controls, and mentor-presence contracts.
+
+> eccoozs-reading-detective@1.4.4 verify:prereader-ux
+> node scripts/verify-prereader-ux.cjs
+
+Reading Detective pre-reader-first UX verification: PASS
+Verified: voice + visual critical directions, child HQ, child controls, narrated repair, mixed-modality evidence, and early tactile CVC practice.
+
+> eccoozs-reading-detective@1.4.4 verify:content-stress
+> tsc -p tsconfig.core.json && node scripts/verify-content-stress.cjs
+
+Reading Detective content stress verification: PASS
+Generated 30300 controlled review items across 143 stage-compatible scenario fingerprints; validated 36 cases and 1,500 randomized learner routes.
+
+> eccoozs-reading-detective@1.4.4 verify:phoneme-audio
+> tsc -p tsconfig.core.json && node scripts/verify-phoneme-audio.cjs
+
+Reading Detective phoneme-audio architecture verification: PASS
+Verified: 30 phonics assets (30 pending recordings), curriculum-token coverage for 57 pronunciation-critical tokens, narration/authoritative separation, and no-silent-TTS-as-authoritative guarantee.
+
+> eccoozs-reading-detective@1.4.4 verify:encoding
+> tsc -p tsconfig.core.json && node scripts/verify-encoding-activities.cjs
+
+Reading Detective encoding/production activities verification: PASS
+Verified 1 word-building, 1 spelling, and 31 connected-text activities, structural validity, renderer wiring, and preserved mastery protections.
+
+> eccoozs-reading-detective@1.4.4 verify:narration-motion
+> tsc -p tsconfig.core.json && node scripts/verify-narration-motion.cjs
+
+Reading Detective narration + motion regression verification: PASS
+Verified: narration start/end/error/repeat/disabled/unsupported callback lifecycle, app-speaking state guarding, reduced-motion kill-switches, 11 retained keyframe animations, and non-blocking/non-looping motion contracts.
+
+> eccoozs-reading-detective@1.4.4 verify:ui-static
+> tsc -p tsconfig.ui-static.json --pretty false
+
+
+> eccoozs-reading-detective@1.4.4 verify:browser-qa
+> node scripts/build-browser-bundle.cjs && python scripts/verify-browser-interactive.py
+
+Built browser QA CommonJS bundle: 124 modules
+Reading Detective interactive browser + responsive + accessibility QA: PASS
+Verified: three age presentations (stage-aware Headquarters/continue wording), detective/appearance selection, adaptive placement, case runtime, keyboard skip link + visible focus, accessible button names, decorative-image labelling, child + analyst accessibility panels, grown-up gate + destructive-action confirmation + executed reset/delete scope, reduced-motion behaviour, narration speaking-state lifecycle, rendered WCAG AA text contrast, touch targets, and 360/768/1440px overflow.
+
+> eccoozs-reading-detective@1.4.4 build
+> tsc -b && vite build
+
+[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+vite v5.4.14 building for production...
+transforming...
+✓ 153 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.65 kB │ gzip:   0.38 kB
+dist/assets/index-Db1bCp5P.css   40.79 kB │ gzip:   9.80 kB
+dist/assets/index-BF4jof0p.js   797.32 kB │ gzip: 218.86 kB
+✓ built in 2.80s
+
+RESULT: npm ci exit=0 | qa:production exit=0 | build exit=0
