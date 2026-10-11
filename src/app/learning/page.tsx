@@ -74,15 +74,17 @@ export default function Learning() {
         .intro{padding:54px 5.5% 36px;background:radial-gradient(circle at 18% 0%,rgba(31,71,224,.08),transparent 34%),radial-gradient(circle at 84% 10%,rgba(93,141,109,.09),transparent 32%),#fbfcff;border-bottom:1px solid #e5eaf2}
         .introInner{max-width:1180px;margin:auto;text-align:center}.introKicker{font-size:11px;letter-spacing:.22em;font-weight:950;color:#2b5ee7}.intro h1{font-family:Georgia,serif;font-size:clamp(3rem,5.7vw,5.1rem);line-height:.96;margin:12px 0 14px;color:#0c1735}.intro p{max-width:780px;margin:0 auto;color:#6579a3;font-size:17px;line-height:1.68}
         .main{max-width:1240px;margin:auto;padding:30px 4% 84px}
-        .feature{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.65fr);overflow:hidden;border:1px solid #dce5e0;border-radius:28px;background:#fff;box-shadow:0 24px 70px rgba(32,55,71,.12)}
-        .featureCopy{padding:42px 38px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(180deg,#fff 0%,#f6faf7 100%)}.featureKicker{font-size:11px;letter-spacing:.18em;font-weight:950;color:#3d715d}.featureCopy h2{font-family:Georgia,serif;font-size:clamp(2.8rem,4.1vw,4.2rem);line-height:.98;margin:10px 0 14px;color:#173d32}.featureCopy p{margin:0;color:#60766f;font-size:15px;line-height:1.7;max-width:470px}.featureBtn{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;min-height:48px;margin-top:24px;padding:0 18px;border-radius:11px;background:#174f3d;color:#fff;text-decoration:none;font-weight:900;box-shadow:0 10px 24px rgba(23,79,61,.18)}
-        .featureArt{min-height:470px;background:#eef3ef;overflow:hidden}.featureArt img{width:100%;height:100%;object-fit:cover;display:block}
-        .paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:20px}.path{padding:12px 11px;border-radius:12px;border:1px solid #d8e4dc;background:#fff}.pathNum{font-size:9px;letter-spacing:.16em;font-weight:950;color:#739083}.path h3{margin:5px 0 2px;font-size:14px;color:#1f493c}.path p{margin:0!important;font-size:11px!important;line-height:1.4!important;color:#6e847c!important}
+        .feature{display:flex;flex-direction:column;overflow:hidden;border:1px solid #dce5e0;border-radius:28px;background:#fff;box-shadow:0 24px 70px rgba(32,55,71,.12)}
+        .featureArt{order:1;display:block;aspect-ratio:16/7;background:#eef3ef;overflow:hidden}.featureArt img{width:100%;height:100%;object-fit:cover;display:block}
+        .featureCopy{order:2;padding:28px 30px 26px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(420px,1.6fr) auto;gap:26px;align-items:center;background:linear-gradient(180deg,#fff 0%,#f7faf8 100%);border-top:1px solid #e3ebe6}
+        .featureIntro{min-width:0}.featureKicker{font-size:10px;letter-spacing:.18em;font-weight:950;color:#3d715d}.featureCopy h2{font-family:Georgia,serif;font-size:clamp(2.1rem,3vw,3.1rem);line-height:1;margin:8px 0 10px;color:#173d32}.featureCopy p{margin:0;color:#60766f;font-size:14px;line-height:1.6;max-width:520px}
+        .featureBtn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border-radius:11px;background:#174f3d;color:#fff;text-decoration:none;font-weight:900;box-shadow:0 10px 24px rgba(23,79,61,.18);white-space:nowrap}
+        .paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:0}.path{padding:12px 11px;border-radius:12px;border:1px solid #d8e4dc;background:#fff}.pathNum{font-size:9px;letter-spacing:.16em;font-weight:950;color:#739083}.path h3{margin:5px 0 2px;font-size:14px;color:#1f493c}.path p{margin:0!important;font-size:11px!important;line-height:1.4!important;color:#6e847c!important}
         .sectionHead{text-align:center;margin:56px 0 24px}.sectionHead h2{font-family:Georgia,serif;font-size:clamp(2rem,3.4vw,3rem);margin:0 0 8px;color:#0d1a3d}.sectionHead p{max-width:620px;margin:0 auto;color:#6d7fa5;line-height:1.6}
         .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.card{background:#fff;border:1px solid #e1e7f1;border-radius:22px;overflow:hidden;box-shadow:0 16px 48px rgba(29,48,81,.08);display:flex;flex-direction:column;transition:transform .22s,box-shadow .22s}.card:hover{transform:translateY(-4px);box-shadow:0 22px 62px rgba(29,48,81,.14)}.visual{aspect-ratio:16/10;overflow:hidden;background:#eef3fb}.visual img{width:100%;height:100%;object-fit:cover;display:block}.body{padding:21px;display:flex;flex-direction:column;flex:1}.label{font-size:10px;font-weight:950;letter-spacing:.12em;color:#2b5ee7}.card.youth .label{color:#7140d9}.card.adult .label{color:#5545a5}.body h3{font-size:24px;margin:8px 0;color:#111d43}.body p{color:#6b7ea6;line-height:1.58;font-size:14px;flex:1}.actions{margin-top:16px}.btn{display:inline-flex;align-items:center;min-height:43px;padding:0 15px;border-radius:10px;text-decoration:none;font-weight:900;color:#fff;background:#2b5ee7}.card.youth .btn{background:#7140d9}.card.adult .btn{background:#30236f}
         .note{margin-top:28px;padding:17px 19px;border:1px solid #e1e7f1;border-radius:14px;background:#fff;color:#6c7fa4;line-height:1.65}.note strong{color:#172349}.back{margin-top:30px;text-align:center}.back a{color:#2b5ee7;font-weight:850;text-decoration:none}
-        @media(max-width:980px){.feature{grid-template-columns:1fr}.featureArt{order:-1;min-height:360px}.paths{grid-template-columns:repeat(3,minmax(0,1fr))}.grid{grid-template-columns:1fr 1fr}.card.adult{grid-column:1/-1;max-width:620px;margin:auto}}
-        @media(max-width:720px){.nav{padding:0 4%;height:68px}.brand{gap:9px}.brandLogo{width:138px}.brand span{font-size:10px}.intro{padding:42px 6% 32px}.intro p{font-size:15px}.main{padding:22px 4% 68px}.feature{border-radius:20px}.featureArt{min-height:260px}.featureCopy{padding:28px 22px}.paths{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.card.adult{grid-column:auto;max-width:none}.sectionHead{margin-top:44px}}
+        @media(max-width:980px){.featureCopy{grid-template-columns:1fr;gap:18px}.featureArt{aspect-ratio:16/8}.paths{grid-template-columns:repeat(3,minmax(0,1fr))}.featureBtn{justify-self:start}.grid{grid-template-columns:1fr 1fr}.card.adult{grid-column:1/-1;max-width:620px;margin:auto}}
+        @media(max-width:720px){.nav{padding:0 4%;height:68px}.brand{gap:9px}.brandLogo{width:138px}.brand span{font-size:10px}.intro{padding:42px 6% 32px}.intro p{font-size:15px}.main{padding:22px 4% 68px}.feature{border-radius:20px}.featureArt{aspect-ratio:16/10}.featureCopy{padding:24px 20px}.paths{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.card.adult{grid-column:auto;max-width:none}.sectionHead{margin-top:44px}}
         @media(max-width:470px){.brand span{display:none}.nav a{font-size:14px}.intro h1{font-size:3rem}}
       `}</style>
 
@@ -109,14 +111,22 @@ export default function Learning() {
 
       <section className="main">
         <section className="feature" aria-label="Reading Detective">
+          <a className="featureArt" href="/apps/reading-detective/" aria-label="Open ECCOOZS Reading Detective">
+            <img
+              src="/learning-assets/reading-detective-hero.png"
+              alt="ECCOOZS Reading Detective learning experience with Detective Bo, case solving, investigator levels, and reading skill progression"
+            />
+          </a>
           <div className="featureCopy">
-            <div className="featureKicker">FEATURED LEARNING EXPERIENCE</div>
-            <h2>Reading Detective</h2>
-            <p>
-              Reading becomes an investigation. Learners build comprehension, vocabulary,
-              evidence skills, source awareness, and reasoning by solving cases instead of
-              completing disconnected drills.
-            </p>
+            <div className="featureIntro">
+              <div className="featureKicker">FEATURED LEARNING EXPERIENCE</div>
+              <h2>Reading Detective</h2>
+              <p>
+                Reading becomes an investigation. Learners build comprehension, vocabulary,
+                evidence skills, source awareness, and reasoning by solving cases instead of
+                completing disconnected drills.
+              </p>
+            </div>
             <div className="paths">
               {stages.map((stage) => (
                 <article className="path" key={stage.name}>
@@ -130,12 +140,6 @@ export default function Learning() {
               Open Reading Detective →
             </a>
           </div>
-          <a className="featureArt" href="/apps/reading-detective/" aria-label="Open ECCOOZS Reading Detective">
-            <img
-              src="/learning-assets/reading-detective-hero.png"
-              alt="ECCOOZS Reading Detective learning experience with Detective Bo, case solving, investigator levels, and reading skill progression"
-            />
-          </a>
         </section>
 
         <div className="sectionHead">
