@@ -9,7 +9,7 @@ import {
 export const metadata: Metadata = {
   title: "ECCOOZS Learning Apps",
   description:
-    "Vocabulary Adventure, Math Trail, My Voice Journey Youth, and My Voice Journey for adults.",
+    "Reading Detective, Math Trail, My Voice Journey Youth, and My Voice Journey for adults.",
 };
 
 const apps = [
@@ -45,21 +45,21 @@ const apps = [
 const stages = [
   {
     number: "01",
-    name: "Elementary",
-    subtitle: "Explore & Learn",
-    copy: "Meet new words in clear, guided steps and begin growing the Cottage Garden.",
+    name: "Young Investigator",
+    subtitle: "Foundations & Discovery",
+    copy: "Build true reading foundations with voice-and-visual-first teaching, decoding, meaning, and guided case solving.",
   },
   {
     number: "02",
-    name: "Junior High",
-    subtitle: "Discover & Reason",
-    copy: "Strengthen spelling, meaning, contrast and independent word use as the Garden Estate expands.",
+    name: "Investigator",
+    subtitle: "Comprehension & Evidence",
+    copy: "Strengthen comprehension, source reading, evidence use, vocabulary, and independent reasoning through real cases.",
   },
   {
     number: "03",
-    name: "High School",
-    subtitle: "Apply & Decide",
-    copy: "Use advanced vocabulary to evaluate evidence, explain decisions and complete real-world projects.",
+    name: "Lead Investigator",
+    subtitle: "Research & Decision",
+    copy: "Analyze documents, research, media, arguments, and evidence to make and defend well-supported decisions.",
   },
 ] as const;
 
@@ -77,7 +77,7 @@ export default function Learning() {
         .featureWrap{margin-bottom:20px}
         .featureArt{position:relative;display:block;overflow:hidden;border-radius:30px;border:1px solid rgba(64,102,77,.22);box-shadow:0 28px 76px rgba(17,47,39,.2);background:#eef2ea;text-decoration:none}
         .featureArt img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
-        .featureArt:after{content:'OPEN VOCABULARY ADVENTURE  →';position:absolute;right:22px;top:22px;padding:12px 17px;border-radius:999px;background:rgba(9,52,39,.92);border:1px solid rgba(235,196,99,.85);color:#fff;font:900 11px/1 Arial,sans-serif;letter-spacing:.08em;box-shadow:0 9px 24px rgba(0,0,0,.2)}
+        .featureArt:after{content:'OPEN READING DETECTIVE  →';position:absolute;right:22px;top:22px;padding:12px 17px;border-radius:999px;background:rgba(9,52,39,.92);border:1px solid rgba(235,196,99,.85);color:#fff;font:900 11px/1 Arial,sans-serif;letter-spacing:.08em;box-shadow:0 9px 24px rgba(0,0,0,.2)}
         .featureArt:hover{transform:translateY(-2px);box-shadow:0 34px 88px rgba(17,47,39,.25)}.featureArt{transition:transform .2s,box-shadow .2s}
         .featureCaption{text-align:center;color:#557064;font-size:13px;font-weight:750;margin:14px 0 0}.featureCaption strong{color:#174f3d}
         .stageStory{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin:22px 0 52px}
@@ -115,16 +115,16 @@ export default function Learning() {
         <div className="featureWrap">
           <a
             className="featureArt"
-            href="/apps/vocabulary-adventure"
-            aria-label="Play ECCOOZS Vocabulary Adventure"
+            href="/apps/reading-detective/"
+            aria-label="Open ECCOOZS Reading Detective"
           >
             <img
-              src="/learning-assets/vocabulary-adventure-feature-fixed.webp"
-              alt="ECCOOZS Vocabulary Adventure showing Foundational Black American learners progressing from Elementary through Junior High and High School in the Garden Estate world"
+              src="/apps/reading-detective/assets/reference/detective-selection-approved.jpg"
+              alt="ECCOOZS Reading Detective investigator selection experience"
             />
           </a>
           <p className="featureCaption">
-            <strong>Learn vocabulary</strong> · Earn Estate Credits · Grow your garden, estate and accomplishments
+            <strong>Investigate what you read</strong> · Build evidence skills · Strengthen comprehension and reasoning
           </p>
         </div>
 
@@ -138,7 +138,7 @@ export default function Learning() {
           ))}
         </div>
 
-        <p className="promise">The more you learn, the more your world grows.</p>
+        <p className="promise">The more you investigate, the stronger your reading toolkit becomes.</p>
 
         <div className="moreHead">
           <h2>More learning journeys.</h2>
