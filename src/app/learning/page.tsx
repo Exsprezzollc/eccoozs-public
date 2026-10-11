@@ -68,27 +68,22 @@ export default function Learning() {
     <main className="learn">
       <style>{`
         *{box-sizing:border-box}
-        .learn{margin:0;min-height:100vh;font-family:Arial,sans-serif;color:#071240;background:linear-gradient(180deg,#f7f9ff 0%,#fffdf8 45%,#f6f9ff 100%)}
-        .nav{height:76px;padding:0 5%;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.97);border-bottom:1px solid #e7ebf5;position:sticky;top:0;z-index:30;backdrop-filter:blur(12px)}
-        .brand{display:flex;align-items:center;gap:15px}.brandLogo{display:block;width:156px;height:auto}.brand span{font-size:13px;font-weight:900;color:#6070a0;letter-spacing:.16em;white-space:nowrap}.nav a{color:#071240;text-decoration:none;font-weight:800}
-        .intro{text-align:center;padding:50px 5% 34px;background:radial-gradient(circle at 18% 0%,rgba(31,71,224,.09),transparent 34%),radial-gradient(circle at 82% 10%,rgba(91,147,105,.11),transparent 30%)}
-        .introKicker{font-size:12px;letter-spacing:.22em;font-weight:950;color:#1f47e0}.intro h1{font-family:Georgia,serif;font-size:clamp(3rem,5.7vw,5.1rem);line-height:.96;margin:12px 0 15px}.intro p{max-width:820px;margin:0 auto;color:#607ab5;font-size:17px;line-height:1.65}
-        .main{max-width:1320px;margin:auto;padding:24px 4% 90px}
-        .featureWrap{margin:0 0 26px}
-        .featurePanel{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.3fr);align-items:stretch;overflow:hidden;border-radius:30px;border:1px solid #dce5df;background:linear-gradient(135deg,#f8fbf8 0%,#eef5ef 100%);box-shadow:0 24px 70px rgba(17,47,39,.14)}
-        .featureCopy{padding:42px 38px 38px;display:flex;flex-direction:column;justify-content:center}.featureKicker{font-size:11px;letter-spacing:.18em;font-weight:950;color:#2f6a54}.featureCopy h2{font-family:Georgia,serif;font-size:clamp(2.4rem,4vw,4rem);line-height:.98;margin:10px 0 16px;color:#113b30}.featureCopy p{margin:0;color:#5e766e;font-size:15px;line-height:1.7;max-width:560px}.featurePoints{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0}.featurePoints span{padding:8px 11px;border-radius:999px;border:1px solid #cbdacf;background:#fff;color:#315e4f;font-size:12px;font-weight:850}.featureBtn{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;min-height:48px;padding:0 18px;border-radius:12px;background:#123f33;color:#fff;text-decoration:none;font-weight:900;box-shadow:0 9px 22px rgba(18,63,51,.16)}
-        .featureArt{display:block;min-height:430px;background:#dfe9e1;overflow:hidden}.featureArt img{width:100%;height:100%;object-fit:cover;display:block}
-        .featureCaption{text-align:center;color:#557064;font-size:13px;font-weight:750;margin:14px 0 0}.featureCaption strong{color:#174f3d}
-        .stageStory{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin:22px 0 52px}
-        .stageCard{position:relative;padding:20px 22px 21px;border-radius:19px;background:rgba(255,255,255,.93);border:1px solid #e0e8df;box-shadow:0 12px 36px rgba(24,54,47,.07)}
-        .stageCard:before{content:'';position:absolute;top:0;left:22px;width:46px;height:3px;background:#d3a44a;border-radius:0 0 4px 4px}.stageNum{font-size:10px;letter-spacing:.17em;font-weight:950;color:#72917f}.stageCard h3{margin:7px 0 5px;color:#153d32;font-size:18px}.stageCard h3 span{color:#b47a29}.stageCard p{margin:0;color:#667d75;font-size:13px;line-height:1.55}
-        .promise{font-family:Georgia,serif;text-align:center;color:#12372e;font-size:clamp(1.75rem,3vw,2.7rem);margin:0 0 54px}
-        .moreHead{text-align:center;margin-bottom:28px}.moreHead h2{font-family:Georgia,serif;font-size:42px;margin:0 0 8px}.moreHead p{color:#607ab5;line-height:1.65;margin:0}
-        .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.card{background:#fff;border:1px solid #e1e7f3;border-radius:24px;overflow:hidden;box-shadow:0 18px 54px #07124012;display:flex;flex-direction:column;transition:transform .22s,box-shadow .22s}.card:hover{transform:translateY(-4px);box-shadow:0 24px 68px #07124020}.visual{aspect-ratio:4/3;overflow:hidden;background:#eef3ff}.visual img{width:100%;height:100%;object-fit:cover;display:block}.body{padding:23px;display:flex;flex-direction:column;flex:1}.label{font-size:11px;font-weight:950;letter-spacing:.12em;color:#1f47e0}.card.youth .label{color:#7140d9}.card.adult .label{color:#5545a5}.body h3{font-size:27px;margin:8px 0}.body p{color:#607ab5;line-height:1.65;font-size:14px;flex:1}.actions{margin-top:18px}.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:11px;text-decoration:none;font-weight:900;color:#fff;background:#1f47e0}.card.youth .btn{background:#7140d9}.card.adult .btn{background:#30236f}
-        .note{margin-top:28px;padding:18px 20px;border:1px solid #e1e7f3;border-radius:16px;background:#fff;color:#607ab5;line-height:1.65}.back{margin-top:32px;text-align:center}.back a{color:#1f47e0;font-weight:850;text-decoration:none}
-        @media(max-width:900px){.grid{grid-template-columns:1fr 1fr}.card.adult{grid-column:1/-1;max-width:620px;margin:auto}.featurePanel{grid-template-columns:1fr}.featureArt{min-height:360px;order:-1}.featureCopy{padding:30px}}
-        @media(max-width:720px){.nav{padding:0 4%;height:70px}.brand{gap:10px}.brandLogo{width:134px}.brand span{font-size:11px;letter-spacing:.12em}.intro{padding:42px 6% 30px}.intro p{font-size:15px}.main{padding:18px 4% 72px}.featurePanel{border-radius:20px}.featureArt{min-height:280px}.featureCopy{padding:25px 22px 27px}.featureCopy h2{font-size:2.55rem}.stageStory{grid-template-columns:1fr;margin-bottom:46px}.grid{grid-template-columns:1fr}.card.adult{grid-column:auto;max-width:none}.moreHead h2{font-size:35px}}
-        @media(max-width:470px){.brand span{display:none}.brandLogo{width:142px}.nav a{font-size:14px}.intro h1{font-size:3rem}.featureCaption{font-size:11px}.stageCard{padding:18px}}
+        .learn{margin:0;min-height:100vh;font-family:Arial,sans-serif;color:#eef5ff;background:#020b1c}
+        .nav{height:74px;padding:0 5.2%;display:flex;align-items:center;justify-content:space-between;background:rgba(2,9,24,.96);border-bottom:1px solid #16335f;position:sticky;top:0;z-index:30;backdrop-filter:blur(14px)}
+        .brand{display:flex;align-items:center;gap:14px}.brandLogo{display:block;width:158px;height:auto}.brand span{font-size:12px;font-weight:900;color:#8fb6ff;letter-spacing:.18em;white-space:nowrap}.nav a{color:#eef5ff;text-decoration:none;font-weight:800}
+        .intro{padding:62px 5.5% 46px;background:radial-gradient(circle at 18% 0%,rgba(37,91,255,.22),transparent 34%),radial-gradient(circle at 85% 15%,rgba(25,115,255,.1),transparent 26%),#041126;border-bottom:1px solid #183765}
+        .introInner{max-width:1180px;margin:auto}.introKicker{font-size:11px;letter-spacing:.22em;font-weight:950;color:#64a5ff}.intro h1{font-family:Georgia,serif;font-size:clamp(3.2rem,6.1vw,5.6rem);line-height:.96;margin:12px 0 16px;color:#fffaf0;max-width:850px}.intro p{max-width:760px;margin:0;color:#a7c5f5;font-size:17px;line-height:1.7}
+        .main{max-width:1240px;margin:auto;padding:34px 4% 86px}
+        .feature{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.35fr);gap:0;overflow:hidden;border:1px solid #214978;border-radius:28px;background:linear-gradient(145deg,#07162f 0%,#0a1d3b 100%);box-shadow:0 30px 90px rgba(0,0,0,.38)}
+        .featureCopy{padding:46px 42px 42px;display:flex;flex-direction:column;justify-content:center}.featureKicker{font-size:11px;letter-spacing:.18em;font-weight:950;color:#61a1ff}.featureCopy h2{font-family:Georgia,serif;font-size:clamp(2.8rem,4.3vw,4.5rem);line-height:.98;margin:10px 0 16px;color:#fffaf0}.featureCopy p{margin:0;color:#b3c9ea;font-size:15px;line-height:1.72;max-width:520px}.featureBtn{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;min-height:50px;margin-top:24px;padding:0 20px;border-radius:12px;background:#2452ff;color:#fff;text-decoration:none;font-weight:900;box-shadow:0 12px 28px rgba(36,82,255,.28)}
+        .featureArt{min-height:480px;background:#08162c}.featureArt img{width:100%;height:100%;object-fit:cover;display:block}
+        .paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px}.path{padding:15px 14px;border-radius:14px;border:1px solid #214978;background:rgba(4,17,39,.76)}.pathNum{font-size:10px;letter-spacing:.16em;font-weight:950;color:#67a6ff}.path h3{margin:6px 0 4px;font-size:16px;color:#fff}.path p{margin:0!important;font-size:12px!important;line-height:1.5!important;color:#8eb1df!important}
+        .sectionHead{display:flex;align-items:end;justify-content:space-between;gap:24px;margin:58px 0 22px}.sectionHead h2{font-family:Georgia,serif;font-size:clamp(2rem,3.4vw,3.1rem);margin:0;color:#fffaf0}.sectionHead p{max-width:560px;margin:0;color:#8fb0df;line-height:1.6;text-align:right}
+        .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.card{background:#07162e;border:1px solid #1a3f6d;border-radius:22px;overflow:hidden;box-shadow:0 18px 52px rgba(0,0,0,.22);display:flex;flex-direction:column;transition:transform .22s,box-shadow .22s}.card:hover{transform:translateY(-4px);box-shadow:0 24px 68px rgba(0,0,0,.32)}.visual{aspect-ratio:16/10;overflow:hidden;background:#0b1d39}.visual img{width:100%;height:100%;object-fit:cover;display:block}.body{padding:22px;display:flex;flex-direction:column;flex:1}.label{font-size:10px;font-weight:950;letter-spacing:.12em;color:#64a5ff}.body h3{font-size:25px;margin:8px 0;color:#fff}.body p{color:#9fbae2;line-height:1.6;font-size:14px;flex:1}.actions{margin-top:18px}.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:10px;text-decoration:none;font-weight:900;color:#fff;background:#2452ff}
+        .note{margin-top:28px;padding:17px 19px;border:1px solid #1a3f6d;border-radius:14px;background:#06142b;color:#89a9d5;line-height:1.65}.note strong{color:#fff}.back{margin-top:30px;text-align:center}.back a{color:#77adff;font-weight:850;text-decoration:none}
+        @media(max-width:950px){.feature{grid-template-columns:1fr}.featureArt{order:-1;min-height:360px}.paths{grid-template-columns:1fr 1fr 1fr}.grid{grid-template-columns:1fr 1fr}.card.adult{grid-column:1/-1;max-width:620px;margin:auto}.sectionHead{align-items:start;flex-direction:column}.sectionHead p{text-align:left}}
+        @media(max-width:720px){.nav{padding:0 4%;height:68px}.brand{gap:9px}.brandLogo{width:138px}.brand span{font-size:10px}.intro{padding:42px 6% 34px}.intro p{font-size:15px}.main{padding:22px 4% 68px}.feature{border-radius:20px}.featureArt{min-height:260px}.featureCopy{padding:28px 22px}.paths{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.card.adult{grid-column:auto;max-width:none}.sectionHead{margin-top:44px}}
+        @media(max-width:470px){.brand span{display:none}.nav a{font-size:14px}.intro h1{font-size:3.2rem}}
       `}</style>
 
       <nav className="nav">
@@ -102,65 +97,50 @@ export default function Learning() {
       </nav>
 
       <section className="intro">
-        <div className="introKicker">ECCOOZS LEARNING APPS</div>
-        <h1>Explore. Practice. Grow.</h1>
-        <p>
-          Friendly learning tools that teach clearly, build confidence, and grow
-          with the learner — from first foundations to real-world application.
-        </p>
+        <div className="introInner">
+          <div className="introKicker">ECCOOZS LEARNING APPS</div>
+          <h1>Learning that feels like doing.</h1>
+          <p>
+            Reading, math, speech, and communication experiences designed to teach clearly,
+            build confidence, and help learners use what they know in the real world.
+          </p>
+        </div>
       </section>
 
       <section className="main">
-        <div className="featureWrap">
-          <section className="featurePanel" aria-label="Reading Detective">
-            <div className="featureCopy">
-              <div className="featureKicker">FEATURED LEARNING EXPERIENCE</div>
-              <h2>Reading Detective</h2>
-              <p>
-                Reading becomes an investigation. Learners build comprehension, vocabulary,
-                evidence skills, source awareness, and reasoning by solving cases instead of
-                completing disconnected drills.
-              </p>
-              <div className="featurePoints">
-                <span>Young Investigator</span>
-                <span>Investigator</span>
-                <span>Lead Investigator</span>
-              </div>
-              <a className="featureBtn" href="/apps/reading-detective/">
-                Open Reading Detective →
-              </a>
+        <section className="feature" aria-label="Reading Detective">
+          <div className="featureCopy">
+            <div className="featureKicker">FEATURED LEARNING EXPERIENCE</div>
+            <h2>Reading Detective</h2>
+            <p>
+              Reading becomes an investigation. Learners build comprehension, vocabulary,
+              evidence skills, source awareness, and reasoning by solving cases instead of
+              completing disconnected drills.
+            </p>
+            <div className="paths">
+              {stages.map((stage) => (
+                <article className="path" key={stage.name}>
+                  <div className="pathNum">{stage.number}</div>
+                  <h3>{stage.name}</h3>
+                  <p>{stage.subtitle}</p>
+                </article>
+              ))}
             </div>
-            <a
-              className="featureArt"
-              href="/apps/reading-detective/"
-              aria-label="Open ECCOOZS Reading Detective"
-            >
-              <img
-                src="/learning-assets/reading-detective-feature.jpg"
-                alt="ECCOOZS Reading Detective investigator selection experience"
-              />
+            <a className="featureBtn" href="/apps/reading-detective/">
+              Open Reading Detective →
             </a>
-          </section>
-          <p className="featureCaption">
-            <strong>Investigate what you read</strong> · Build evidence skills · Strengthen comprehension and reasoning
-          </p>
-        </div>
+          </div>
+          <a className="featureArt" href="/apps/reading-detective/" aria-label="Open ECCOOZS Reading Detective">
+            <img
+              src="/learning-assets/reading-detective-feature.jpg"
+              alt="ECCOOZS Reading Detective investigator selection experience"
+            />
+          </a>
+        </section>
 
-        <div className="stageStory">
-          {stages.map((stage) => (
-            <article className="stageCard" key={stage.name}>
-              <div className="stageNum">{stage.number} · {stage.name.toUpperCase()}</div>
-              <h3>{stage.name} — <span>{stage.subtitle}</span></h3>
-              <p>{stage.copy}</p>
-            </article>
-          ))}
-        </div>
-
-        <p className="promise">The more you investigate, the stronger your reading toolkit becomes.</p>
-
-        <div className="moreHead">
-          <h2>More learning journeys.</h2>
-          <p>Math, speech, English practice and communication support remain easy to find.</p>
+        <div className="sectionHead">
+          <h2>More learning experiences.</h2>
+          <p>Math, speech, English practice, and communication support — each built as its own focused experience.</p>
         </div>
 
         <div className="grid">
