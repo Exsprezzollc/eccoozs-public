@@ -132,8 +132,8 @@ export default function Learning() {
           </div>
           <a className="featureArt" href="/apps/reading-detective/" aria-label="Open ECCOOZS Reading Detective">
             <img
-              src="/learning-assets/reading-detective-feature.jpg"
-              alt="ECCOOZS Reading Detective investigator selection experience"
+              src="/learning-assets/reading-detective-hero.png"
+              alt="ECCOOZS Reading Detective learning experience with Detective Bo, case solving, investigator levels, and reading skill progression"
             />
           </a>
         </section>
