@@ -110,35 +110,41 @@ export default function Learning() {
       </section>
 
       <section className="main">
-        <section className="feature" aria-label="Reading Detective">
-          <a className="featureArt" href="/apps/reading-detective/" aria-label="Open ECCOOZS Reading Detective">
+        <section className="feature" aria-label="Reading Detective coming soon">
+          <div className="featureArt">
             <img
               src="/learning-assets/reading-detective-hero.png"
-              alt="ECCOOZS Reading Detective learning experience with Detective Bo, case solving, investigator levels, and reading skill progression"
+              alt="ECCOOZS Reading Detective preview artwork"
             />
-          </a>
+          </div>
           <div className="featureCopy">
             <div className="featureIntro">
-              <div className="featureKicker">FEATURED LEARNING EXPERIENCE</div>
+              <div className="featureKicker">IN DEVELOPMENT</div>
               <h2>Reading Detective</h2>
               <p>
-                Reading becomes an investigation. Learners build comprehension, vocabulary,
-                evidence skills, source awareness, and reasoning by solving cases instead of
-                completing disconnected drills.
+                Reading Detective is being refined before public release. The experience is temporarily unavailable while we improve the learning flow, detective guides, audio, and accessibility.
               </p>
             </div>
             <div className="paths">
-              {stages.map((stage) => (
-                <article className="path" key={stage.name}>
-                  <div className="pathNum">{stage.number}</div>
-                  <h3>{stage.name}</h3>
-                  <p>{stage.subtitle}</p>
-                </article>
-              ))}
+              <article className="path">
+                <div className="pathNum">01</div>
+                <h3>Young Investigator</h3>
+                <p>Foundations &amp; Discovery</p>
+              </article>
+              <article className="path">
+                <div className="pathNum">02</div>
+                <h3>Investigator</h3>
+                <p>Comprehension &amp; Evidence</p>
+              </article>
+              <article className="path">
+                <div className="pathNum">03</div>
+                <h3>Lead Investigator</h3>
+                <p>Research &amp; Decision</p>
+              </article>
             </div>
-            <a className="featureBtn" href="/apps/reading-detective/">
-              Open Reading Detective →
-            </a>
+            <span className="featureBtn" style={{ opacity: .6, cursor: "default" }}>
+              Coming Soon
+            </span>
           </div>
         </section>
 
