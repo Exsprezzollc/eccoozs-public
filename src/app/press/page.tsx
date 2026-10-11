@@ -62,11 +62,7 @@ export default function PressPage() {
           <a href="/welcome">ECCOOZS Social</a>
           <a href="/blog">Journal</a>
           <a href="/house-of-eccoozs">House of ECCOOZS</a>
-<<<<<<< HEAD
           <a href="https://eccoozstechnologies.com/">ECCOOZS Technologies</a>
-=======
-          <a href="/">ECCOOZS Technologies</a>
->>>>>>> f28d31235d9dc9baec4390c957a8a141e7f4eaaf
         </nav>
       </header>
 
