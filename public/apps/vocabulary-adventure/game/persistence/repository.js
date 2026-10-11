@@ -369,12 +369,30 @@ export function normalizeProfile(candidate) {
   return migrateLegacy(candidate);
 }
 
-export function createPlayerRepository(storage = globalThis.localStorage) {
+function defaultStorage() {
+  // Reading localStorage can throw (blocked cookies, sandboxed frames, some private modes).
+  try {
+    return globalThis.localStorage ?? null;
+  } catch {
+    return null;
+  }
+}
+
+export function createPlayerRepository(storage = defaultStorage()) {
   function readKey(key) {
+    let raw = null;
     try {
-      const raw = storage?.getItem(key);
+      raw = storage?.getItem(key);
       return raw ? JSON.parse(raw) : null;
     } catch {
+      // Unreadable saved data: keep a copy so it is not silently overwritten by a fresh profile.
+      if (raw) {
+        try {
+          storage?.setItem(`${key}.unreadable-${Date.now()}`, raw);
+        } catch {
+          // Storage full or blocked; nothing more we can do.
+        }
+      }
       return null;
     }
   }
