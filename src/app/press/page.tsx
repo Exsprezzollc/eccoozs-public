@@ -36,8 +36,8 @@ const productAreas = [
     copy: "A dedicated conversation and reshare layer designed to add context rather than reward chaos.",
   },
   {
-    title: "Newsroom",
-    copy: "A news and information surface that helps people discover stories and move them into conversation.",
+    title: "Circles",
+    copy: "Organized communities where members gather around shared interests, businesses, hobbies, ideas, and experiences.",
   },
   {
     title: "Soundrooms",
@@ -170,48 +170,43 @@ export default function PressPage() {
             <p className="eyebrow">PRODUCT VIEW</p>
             <h2>ECCOOZS across the social experience.</h2>
             <p>
-              Home, profiles, Soundrooms, messaging, Explore, and news/discovery surfaces are
-              designed as connected parts of one platform.
+              Home, profiles, Soundrooms, messaging, Explore, Ecco, and Circles are designed
+              as connected parts of one platform.
             </p>
           </div>
           <img
             className="phone-collage"
             src="/phone/phones_display.png"
-            alt="ECCOOZS product screens showing Home, profile, Soundrooms, messaging, Explore, and news discovery"
+            alt="ECCOOZS product screens showing Home, profile, Soundrooms, messaging, and Explore"
           />
         </div>
       </section>
 
       <section className="wrap newsroom-feature">
         <div className="newsroom-copy">
-          <p className="eyebrow">FEATURED SURFACE</p>
-          <h2>ECCOOZS Newsroom</h2>
-          <p className="newsroom-lede">News discovery without losing the conversation.</p>
+          <p className="eyebrow">FEATURED COMMUNITY SURFACE</p>
+          <h2>ECCOOZS Circles</h2>
+          <p className="newsroom-lede">A clear place for shared interests to become ongoing community.</p>
           <p>
-            ECCOOZS Newsroom gives members a dedicated place to discover current stories,
-            browse by topic, read at the source, save articles, and move stories into ECCOOZS
-            conversation when they want to discuss them with the community.
+            Circles give members organized spaces for continuing conversations around shared
+            interests, businesses, hobbies, ideas, and experiences. An Ecco can start a public
+            conversation today; a Circle gives people a place to keep building that community
+            over time.
           </p>
           <div className="newsroom-points">
             <div>
-              <strong>Read at the source</strong>
-              <span>Follow stories back to original reporting and source material.</span>
+              <strong>Organized communities</strong>
+              <span>Keep recurring conversations together instead of scattering them across the feed.</span>
             </div>
             <div>
-              <strong>Discover by topic</strong>
-              <span>Browse politics, business, finance, science, technology, health, sports, arts, and more.</span>
+              <strong>Flexible participation</strong>
+              <span>Circles can support public, approval-based, or private membership depending on the community.</span>
             </div>
             <div>
-              <strong>Bring news into community discussion</strong>
-              <span>Save a story or move it into Ecco when the community wants to talk about it.</span>
+              <strong>Built for continuity</strong>
+              <span>Members can return to the same people, topic, or purpose without recreating the conversation.</span>
             </div>
           </div>
-        </div>
-        <div className="newsroom-visual">
-          <img
-            src="/phone/newsroom_page.png"
-            alt="ECCOOZS Newsroom shown on a laptop with topic navigation, trending stories, most popular stories, and latest news"
-          />
         </div>
       </section>
 
@@ -225,7 +220,7 @@ export default function PressPage() {
             <span className="copy-label">One sentence</span>
             <p>
               ECCOOZS is a Foundational Black American-centered general social network built for
-              conversation, discovery, culture, creators, business discovery, and live audio.
+              conversation, discovery, Circles, culture, creators, business discovery, and live audio.
             </p>
           </article>
           <article className="card copy-card">
@@ -233,7 +228,7 @@ export default function PressPage() {
             <p>
               ECCOOZS Social is a community-first general social network rooted in Foundational
               Black American culture and perspective. It brings together conversation, discovery,
-              creators, business visibility, and Soundrooms while welcoming respectful
+              Circles, creators, business visibility, and Soundrooms while welcoming respectful
               participation from people of all backgrounds.
             </p>
           </article>
@@ -242,7 +237,7 @@ export default function PressPage() {
             <p>
               ECCOOZS Social is the flagship social platform of ECCOOZS Technologies LLC, a
               Michigan-based technology company. ECCOOZS combines everyday social participation
-              with conversation, discovery, live audio through Soundrooms, creator opportunity,
+              with conversation, discovery, Circles, live audio through Soundrooms, creator opportunity,
               and integrated business discovery. The platform is centered in Foundational Black
               American culture and perspective and is informed by traditional Christian morals,
               values, and beliefs of the culture, with an emphasis on dignity, respect,
@@ -278,10 +273,6 @@ export default function PressPage() {
           <a className="asset-card" href="/phone/explore_page.png" target="_blank" rel="noreferrer">
             <strong>Explore</strong>
             <span>Discovery surface</span>
-          </a>
-          <a className="asset-card" href="/phone/newsroom_page.png" target="_blank" rel="noreferrer">
-            <strong>Newsroom</strong>
-            <span>Desktop news and information surface</span>
           </a>
           <a className="asset-card" href="/phone/message_page.png" target="_blank" rel="noreferrer">
             <strong>Messages</strong>

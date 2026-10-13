@@ -102,7 +102,7 @@ export const welcomeV6Markup = String.raw`
         <div class="app-feature"><i data-lucide="compass"></i><div><strong>Explore</strong><span>Discover people, topics, and trends.</span></div></div>
         <div class="app-feature"><i data-lucide="repeat-2"></i><div><strong>Ecco</strong><span>Turn posts into conversations with context.</span></div></div>
         <div class="app-feature"><i data-lucide="mic-2"></i><div><strong>Soundrooms</strong><span>Join live audio rooms and conversations.</span></div></div>
-        <div class="app-feature"><i data-lucide="newspaper"></i><div><strong>Newsroom</strong><span>Stay informed with real stories and updates.</span></div></div>
+        <div class="app-feature"><i data-lucide="users-round"></i><div><strong>Circles</strong><span>Join organized communities built around shared interests and purpose.</span></div></div>
         <div class="app-feature"><i data-lucide="store"></i><div><strong>Business Directory</strong><span>Find and support trusted businesses.</span></div></div>
       </div>
       <a class="btn-p" href="#download">Get Early Access <i data-lucide="arrow-right"></i></a>
