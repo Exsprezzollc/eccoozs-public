@@ -49,41 +49,39 @@ export const welcomeLightBlueTheme = String.raw`
 }
 @media (prefers-reduced-motion:reduce){.social-feature,.social-phone-showcase{transition:none!important}}
 
-/* ECCOOZS community: a single full-bleed photographic banner, not split columns. */
+/* ECCOOZS approved campus scene: readable copy LEFT, five students RIGHT. */
 .eccoozs-v6-root .social-connect-section{
-  position:relative!important; display:flex!important; align-items:center!important;
-  justify-content:flex-end!important; isolation:isolate; overflow:hidden;
-  min-height:clamp(360px,31vw,465px)!important;
-  background:#eaf3ff url('/brand/eccoozs-community-connect.png') center center / cover no-repeat!important;
-  border-bottom:1px solid #c7daf5;
+ position:relative!important;display:flex!important;align-items:center!important;
+ justify-content:flex-start!important;isolation:isolate;overflow:hidden;
+ min-height:clamp(440px,35vw,550px)!important;
+ background-color:#eaf3ff!important;
+ background-image:linear-gradient(90deg,#edf5ff 0%,#edf5ff 26%,rgba(237,245,255,.96) 35%,rgba(237,245,255,.35) 47%,rgba(237,245,255,0) 57%),url('/brand/eccoozs-campus-five-students.png')!important;
+ background-size:100% 100%,68% auto!important;background-position:center center,right center!important;
+ background-repeat:no-repeat!important;border-bottom:1px solid #c7daf5;
 }
-/* Right-side wash creates a legible copy area while leaving the people visible on the left. */
-.eccoozs-v6-root .social-connect-section::before{
-  content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background:linear-gradient(90deg,rgba(237,245,255,0) 0%,rgba(237,245,255,.06) 44%,rgba(237,245,255,.78) 64%,rgba(237,245,255,.98) 80%,#edf5ff 100%);
-}
+.eccoozs-v6-root .social-connect-section::before{display:none!important}
 .eccoozs-v6-root .social-connect-scene{display:none!important}
 .eccoozs-v6-root .social-connect-content{
-  position:relative;z-index:1;box-sizing:border-box;width:42%;min-width:0;
-  padding:32px clamp(24px,3.7vw,58px)!important;
-  display:flex;flex-direction:column;align-items:flex-start;justify-content:center;
-  background:none!important;
+ position:relative;z-index:1;box-sizing:border-box;width:43%;min-width:0;
+ padding:36px clamp(24px,4vw,70px)!important;
+ display:flex;flex-direction:column;align-items:flex-start;justify-content:center;
+ background:transparent!important;
 }
 .eccoozs-v6-root .social-connect-content h2{color:#112b58!important;font-family:Georgia,'Times New Roman',serif;font-weight:400;letter-spacing:-.04em;line-height:1.04;font-size:clamp(34px,3.05vw,50px);margin:8px 0 14px}
 .eccoozs-v6-root .social-connect-content p{color:#294d7c!important;max-width:530px;font-size:clamp(14px,1.06vw,17px);line-height:1.55;margin:0}
 .eccoozs-v6-root .social-connect-content .social-kicker{color:#2454f5!important;letter-spacing:.12em;font-size:.74rem}
 .eccoozs-v6-root .social-connect-content .social-hero-actions{margin-top:22px}
 .eccoozs-v6-root .social-connect-content .btn-g{background:white!important;color:#1744a7!important;border:1px solid #a8c5f1!important}
-.eccoozs-v6-root .nav-logo .social-prestige-logo{display:block;width:172px!important;max-width:100%;height:auto!important;aspect-ratio:auto;object-fit:contain;filter:drop-shadow(0 0 7px rgba(33,112,255,.22))}
+.eccoozs-v6-root .nav-logo .social-prestige-logo{display:block;width:172px!important;max-width:100%;height:auto!important;aspect-ratio:auto;object-fit:contain}
 @media(max-width:900px){
- .eccoozs-v6-root .social-connect-section{min-height:540px!important;align-items:flex-end!important;background-position:40% center!important}
- .eccoozs-v6-root .social-connect-section::before{background:linear-gradient(180deg,rgba(237,245,255,0) 0%,rgba(237,245,255,.08) 28%,rgba(237,245,255,.95) 65%,#edf5ff 100%)}
- .eccoozs-v6-root .social-connect-content{width:100%;padding:190px 7vw 28px!important}
+ .eccoozs-v6-root .social-connect-section{min-height:690px!important;align-items:flex-start!important;
+ background-image:linear-gradient(180deg,#edf5ff 0%,#edf5ff 28%,rgba(237,245,255,.97) 39%,rgba(237,245,255,0) 65%),url('/brand/eccoozs-campus-five-students.png')!important;
+ background-size:100% 100%,100% auto!important;background-position:center,center bottom!important}
+ .eccoozs-v6-root .social-connect-content{width:100%;padding:30px 7vw 22px!important;max-width:680px}
 }
 @media(max-width:560px){
  .eccoozs-v6-root .nav-logo .social-prestige-logo{width:126px!important}
- .eccoozs-v6-root .social-connect-section{min-height:520px!important;background-position:42% top!important}
- .eccoozs-v6-root .social-connect-content{padding:205px 7vw 30px!important}
+ .eccoozs-v6-root .social-connect-section{min-height:640px!important;background-size:100% 100%,auto 55%!important;background-position:center,center bottom!important}
  .eccoozs-v6-root .social-connect-content h2{font-size:clamp(31px,8vw,42px)}
+ .eccoozs-v6-root .social-connect-content .social-hero-actions{flex-wrap:wrap}
 }
-`;

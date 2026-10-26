@@ -53,7 +53,7 @@ html = replaceSection(
   html,
   "hero",
   String.raw`<section id="hero" class="social-connect-section" aria-labelledby="connect-title">
-  <div class="social-connect-scene" role="img" aria-label="Three ECCOOZS community members connecting around a phone and laptop"></div>
+  <div class="social-connect-scene" role="img" aria-label="Five college-age ECCOOZS community members collaborating in a campus lounge"></div>
   <div class="social-connect-content rv">
     <div class="social-kicker">REAL PEOPLE. REAL CONNECTIONS.</div>
     <h2 id="connect-title">Your people.<br/>Your conversations.<br/>Your space.</h2>
