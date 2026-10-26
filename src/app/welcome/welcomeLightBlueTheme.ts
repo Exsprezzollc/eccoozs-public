@@ -86,14 +86,28 @@ export const welcomeLightBlueTheme = String.raw`
  .eccoozs-v6-root .social-connect-content .social-hero-actions{flex-wrap:wrap}
 }
 
-/* Approved Our Story layout: text left; five college-age students right. */
-.eccoozs-v6-root .social-story-shell{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;align-items:center!important;gap:clamp(25px,4vw,65px)!important}
-.eccoozs-v6-root .social-story-copy{grid-column:1!important;grid-row:1!important;min-width:0!important}
-.eccoozs-v6-root .social-story-image{grid-column:2!important;grid-row:1!important;min-width:0!important;width:100%!important;overflow:hidden!important;border-radius:22px!important}
-.eccoozs-v6-root .social-story-image img{display:block!important;width:100%!important;height:auto!important;aspect-ratio:1230/756!important;object-fit:cover!important;object-position:center!important}
+/* Our Story: large full-width campus backdrop, copy anchored at left. */
+.eccoozs-v6-root .social-story-section{
+ position:relative!important;
+ min-height:clamp(510px,45vw,690px)!important;
+ display:flex!important;align-items:center!important;
+ background-image:linear-gradient(90deg,#eaf3ff 0%,#eaf3ff 28%,rgba(234,243,255,.95) 37%,rgba(234,243,255,.20) 62%,rgba(234,243,255,0) 78%),url('/brand/eccoozs-campus-five-students-clean.png')!important;
+ background-position:center,right center!important;
+ background-size:100% 100%,auto 100%!important;
+ background-repeat:no-repeat!important;
+ overflow:hidden!important;
+}
+.eccoozs-v6-root .social-story-shell{display:block!important;width:100%!important;max-width:1450px!important;margin:auto!important;padding:58px clamp(24px,5vw,75px)!important}
+.eccoozs-v6-root .social-story-copy{width:min(47%,560px)!important;max-width:560px!important;position:relative!important;z-index:2!important}
+.eccoozs-v6-root .social-story-image{display:none!important}
+.eccoozs-v6-root .social-story-copy h2{font-size:clamp(36px,4.2vw,64px)!important;line-height:1.06!important}
+.eccoozs-v6-root .social-story-quote,.eccoozs-v6-root .social-story-body{max-width:510px!important}
 @media(max-width:800px){
- .eccoozs-v6-root .social-story-shell{grid-template-columns:1fr!important}
- .eccoozs-v6-root .social-story-copy{grid-column:1!important;grid-row:1!important}
- .eccoozs-v6-root .social-story-image{grid-column:1!important;grid-row:2!important}
+ .eccoozs-v6-root .social-story-section{min-height:760px!important;align-items:flex-start!important;
+ background-image:linear-gradient(180deg,#eaf3ff 0%,#eaf3ff 38%,rgba(234,243,255,.85) 48%,rgba(234,243,255,0) 68%),url('/brand/eccoozs-campus-five-students-clean.png')!important;
+ background-size:100% 100%,auto 48%!important;background-position:center,center bottom!important}
+ .eccoozs-v6-root .social-story-shell{padding:34px 6vw!important}
+ .eccoozs-v6-root .social-story-copy{width:100%!important;max-width:640px!important}
+ .eccoozs-v6-root .social-story-copy h2{font-size:clamp(32px,7vw,45px)!important}
 }
 `;
