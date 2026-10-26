@@ -85,3 +85,4 @@ export const welcomeLightBlueTheme = String.raw`
  .eccoozs-v6-root .social-connect-content h2{font-size:clamp(31px,8vw,42px)}
  .eccoozs-v6-root .social-connect-content .social-hero-actions{flex-wrap:wrap}
 }
+`;
