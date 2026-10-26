@@ -27,7 +27,25 @@ export const welcomeLightBlueTheme = String.raw`
 .social-access-section .waitlist-input::placeholder{color:#6b82a3!important}
 .waitlist-more{background:#eef5ff!important;border-color:#c3d8f7!important}
 .waitlist-more summary{color:#29538b!important}
-/* Preserve the dark photo-led opening hero for readable text over its imagery. */
-.social-hero{background:#071a3d!important}
+/* Light, legible photo-led opening hero. The photo stays on the right. */
+.eccoozs-v6-root .social-hero{background:linear-gradient(125deg,#f6faff 0%,#e6f1ff 60%,#d8e9ff 100%)!important}
+.eccoozs-v6-root .social-hero-wash{background:linear-gradient(90deg,#f6faff 0%,rgba(246,250,255,.99) 27%,rgba(239,247,255,.91) 40%,rgba(234,244,255,.58) 53%,rgba(234,244,255,.08) 72%,transparent 100%)!important}
+.eccoozs-v6-root .social-hero-copy h1{color:#10244a!important;text-shadow:none!important}
+.eccoozs-v6-root .social-hero-copy>p{color:#24466f!important;text-shadow:none!important}
+.eccoozs-v6-root .social-hero .social-eyebrow,.eccoozs-v6-root .social-hero .eyebrow{color:#2454f5!important}
+.eccoozs-v6-root .social-values{color:#365e91!important;border-top-color:#bdd4f5!important}
+.eccoozs-v6-root .social-values span+span:before{background:#bdd4f5!important}
+/* Pearl-white footer, retaining wordmark and all original links. */
+.eccoozs-v6-root footer{background:linear-gradient(180deg,#f8fbff 0%,#eaf3ff 100%)!important;border-top:1px solid #bfd5f5!important;color:#19365c!important}
+.eccoozs-v6-root footer .fct{color:#1744a7!important}
+.eccoozs-v6-root footer a,.eccoozs-v6-root footer .ftagline,.eccoozs-v6-root footer .fcp{color:#425e86!important}
+.eccoozs-v6-root footer a:hover{color:#2454f5!important}
+.eccoozs-v6-root footer .footer-inner{color:#19365c!important}
+.eccoozs-v6-root footer .footer-bottom,.eccoozs-v6-root footer .fbottom{border-top-color:#cfddf1!important}
+@media(max-width:860px){
+ .eccoozs-v6-root .social-hero{background:#f3f8ff!important}
+ .eccoozs-v6-root .social-hero-wash{background:linear-gradient(180deg,#f6faff 0%,rgba(246,250,255,.99) 34%,rgba(246,250,255,.90) 48%,rgba(246,250,255,.18) 69%,#e5f0ff 100%)!important}
+ .eccoozs-v6-root .social-hero-copy h1{color:#10244a!important}
+}
 @media (prefers-reduced-motion:reduce){.social-feature,.social-phone-showcase{transition:none!important}}
 `;
