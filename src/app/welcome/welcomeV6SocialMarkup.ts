@@ -53,7 +53,7 @@ html = replaceSection(
   html,
   "hero",
   String.raw`<section id="hero" class="social-connect-section" aria-labelledby="connect-title">
-  <div class="social-connect-scene" role="img" aria-label="Five college-age ECCOOZS community members collaborating in a campus lounge"></div>
+  <div class="social-connect-scene" role="img" aria-label="Three ECCOOZS professionals connecting over a phone and laptop"></div>
   <div class="social-connect-content rv">
     <div class="social-kicker">REAL PEOPLE. REAL CONNECTIONS.</div>
     <h2 id="connect-title">Your people.<br/>Your conversations.<br/>Your space.</h2>
@@ -132,13 +132,14 @@ html = replaceSection(
   "community",
   String.raw`<section id="community" class="social-story-section">
   <div class="social-section-shell social-story-shell">
-    <div class="social-story-image rv"><img alt="Diverse ECCOOZS community gathered around a laptop" src="/phone/friends_laughing_around_a_laptop.png"/></div>
+    
     <div class="social-story-copy rv">
       <div class="social-kicker">OUR STORY</div>
       <h2>Built from within.<br/>For all who walk<br/>with respect.</h2>
       <p class="social-story-quote">“I didn't build this to go viral. I built it because there was no place left for our voices to breathe.”</p>
       <p class="social-story-body">ECCOOZS was built by Foundational Black Americans as a digital sanctuary for culture, faith, and truth. But ALL ARE WELCOME HERE who walk in respect.</p>
     </div>
+    <div class="social-story-image rv"><img alt="Five college-age students connecting in a campus lounge" src="/brand/eccoozs-campus-five-students.png"/></div>
   </div>
 </section>`
 );

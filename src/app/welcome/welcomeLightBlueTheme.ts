@@ -55,7 +55,7 @@ export const welcomeLightBlueTheme = String.raw`
  justify-content:flex-start!important;isolation:isolate;overflow:hidden;
  min-height:clamp(440px,35vw,550px)!important;
  background-color:#eaf3ff!important;
- background-image:linear-gradient(90deg,#edf5ff 0%,#edf5ff 26%,rgba(237,245,255,.96) 35%,rgba(237,245,255,.35) 47%,rgba(237,245,255,0) 57%),url('/brand/eccoozs-campus-five-students.png')!important;
+ background-image:linear-gradient(90deg,#edf5ff 0%,#edf5ff 26%,rgba(237,245,255,.96) 35%,rgba(237,245,255,.35) 47%,rgba(237,245,255,0) 57%),url('/brand/eccoozs-community-professionals.png')!important;
  background-size:100% 100%,auto 100%!important;background-position:center center,right center!important;
  background-repeat:no-repeat!important;border-bottom:1px solid #c7daf5;
 }
@@ -75,7 +75,7 @@ export const welcomeLightBlueTheme = String.raw`
 .eccoozs-v6-root .nav-logo .social-prestige-logo{display:block;width:172px!important;max-width:100%;height:auto!important;aspect-ratio:auto;object-fit:contain}
 @media(max-width:900px){
  .eccoozs-v6-root .social-connect-section{min-height:690px!important;align-items:flex-start!important;
- background-image:linear-gradient(180deg,#edf5ff 0%,#edf5ff 28%,rgba(237,245,255,.97) 39%,rgba(237,245,255,0) 65%),url('/brand/eccoozs-campus-five-students.png')!important;
+ background-image:linear-gradient(180deg,#edf5ff 0%,#edf5ff 28%,rgba(237,245,255,.97) 39%,rgba(237,245,255,0) 65%),url('/brand/eccoozs-community-professionals.png')!important;
  background-size:100% 100%,auto 60%!important;background-position:center,center bottom!important}
  .eccoozs-v6-root .social-connect-content{width:100%;padding:30px 7vw 22px!important;max-width:680px}
 }
@@ -84,5 +84,16 @@ export const welcomeLightBlueTheme = String.raw`
  .eccoozs-v6-root .social-connect-section{min-height:640px!important;background-size:100% 100%,auto 52%!important;background-position:center,center bottom!important}
  .eccoozs-v6-root .social-connect-content h2{font-size:clamp(31px,8vw,42px)}
  .eccoozs-v6-root .social-connect-content .social-hero-actions{flex-wrap:wrap}
+}
+
+/* Approved Our Story layout: text left; five college-age students right. */
+.eccoozs-v6-root .social-story-shell{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;align-items:center!important;gap:clamp(25px,4vw,65px)!important}
+.eccoozs-v6-root .social-story-copy{grid-column:1!important;grid-row:1!important;min-width:0!important}
+.eccoozs-v6-root .social-story-image{grid-column:2!important;grid-row:1!important;min-width:0!important;width:100%!important;overflow:hidden!important;border-radius:22px!important}
+.eccoozs-v6-root .social-story-image img{display:block!important;width:100%!important;height:auto!important;aspect-ratio:1230/756!important;object-fit:cover!important;object-position:center!important}
+@media(max-width:800px){
+ .eccoozs-v6-root .social-story-shell{grid-template-columns:1fr!important}
+ .eccoozs-v6-root .social-story-copy{grid-column:1!important;grid-row:1!important}
+ .eccoozs-v6-root .social-story-image{grid-column:1!important;grid-row:2!important}
 }
 `;
