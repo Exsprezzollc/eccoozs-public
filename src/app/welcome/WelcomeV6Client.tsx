@@ -6,6 +6,7 @@ import { welcomeV6SocialMarkup } from "./welcomeV6SocialMarkup";
 import { welcomeV6Styles } from "./welcomeV6Styles";
 import { welcomeSocialOverrides } from "./welcomeSocialOverrides";
 import { welcomeSocialViewportFix } from "./welcomeSocialViewportFix";
+import { welcomeLightBlueTheme } from "./welcomeLightBlueTheme";
 import { trackEccoozsEvent } from "@/lib/analytics";
 
 declare global {
@@ -120,7 +121,7 @@ export default function WelcomeV6Client() {
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: `${welcomeV6Styles}\n${welcomeSocialOverrides}\n${welcomeSocialViewportFix}` }} />
+      <style dangerouslySetInnerHTML={{ __html: `${welcomeV6Styles}\n${welcomeSocialOverrides}\n${welcomeSocialViewportFix}\n${welcomeLightBlueTheme}` }} />
       <Script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" strategy="afterInteractive" onLoad={() => setIconsReady(true)} />
       <div className="eccoozs-v6-root" dangerouslySetInnerHTML={{ __html: welcomeV6SocialMarkup }} />
     </>
