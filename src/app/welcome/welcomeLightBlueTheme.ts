@@ -49,17 +49,41 @@ export const welcomeLightBlueTheme = String.raw`
 }
 @media (prefers-reduced-motion:reduce){.social-feature,.social-phone-showcase{transition:none!important}}
 
-/* Community feature: full-size, balanced photo and copy, no letterboxing. */
-.eccoozs-v6-root .social-connect-section{display:grid!important;grid-template-columns:minmax(0,58%) minmax(0,42%)!important;align-items:stretch!important;min-height:340px!important;background:linear-gradient(110deg,#f9fcff,#e7f2ff)!important;border-bottom:1px solid #c7daf5;overflow:hidden}
-.eccoozs-v6-root .social-connect-scene{position:relative!important;width:100%!important;height:100%!important;min-height:340px!important;aspect-ratio:auto!important;align-self:stretch!important;overflow:hidden!important;background:#eaf3ff!important}
-.eccoozs-v6-root .social-connect-scene img{display:block!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:none!important;object-fit:cover!important;object-position:center center!important}
-.eccoozs-v6-root .social-connect-content{padding:32px clamp(28px,3.6vw,56px)!important;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-width:0}
+/* ECCOOZS community: a single full-bleed photographic banner, not split columns. */
+.eccoozs-v6-root .social-connect-section{
+  position:relative!important; display:flex!important; align-items:center!important;
+  justify-content:flex-end!important; isolation:isolate; overflow:hidden;
+  min-height:clamp(360px,31vw,465px)!important;
+  background:#eaf3ff url('/brand/eccoozs-community-connect.png') center center / cover no-repeat!important;
+  border-bottom:1px solid #c7daf5;
+}
+/* Right-side wash creates a legible copy area while leaving the people visible on the left. */
+.eccoozs-v6-root .social-connect-section::before{
+  content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(90deg,rgba(237,245,255,0) 0%,rgba(237,245,255,.06) 44%,rgba(237,245,255,.78) 64%,rgba(237,245,255,.98) 80%,#edf5ff 100%);
+}
+.eccoozs-v6-root .social-connect-scene{display:none!important}
+.eccoozs-v6-root .social-connect-content{
+  position:relative;z-index:1;box-sizing:border-box;width:42%;min-width:0;
+  padding:32px clamp(24px,3.7vw,58px)!important;
+  display:flex;flex-direction:column;align-items:flex-start;justify-content:center;
+  background:none!important;
+}
 .eccoozs-v6-root .social-connect-content h2{color:#112b58!important;font-family:Georgia,'Times New Roman',serif;font-weight:400;letter-spacing:-.04em;line-height:1.04;font-size:clamp(34px,3.05vw,50px);margin:8px 0 14px}
 .eccoozs-v6-root .social-connect-content p{color:#294d7c!important;max-width:530px;font-size:clamp(14px,1.06vw,17px);line-height:1.55;margin:0}
 .eccoozs-v6-root .social-connect-content .social-kicker{color:#2454f5!important;letter-spacing:.12em;font-size:.74rem}
 .eccoozs-v6-root .social-connect-content .social-hero-actions{margin-top:22px}
 .eccoozs-v6-root .social-connect-content .btn-g{background:white!important;color:#1744a7!important;border:1px solid #a8c5f1!important}
 .eccoozs-v6-root .nav-logo .social-prestige-logo{display:block;width:172px!important;max-width:100%;height:auto!important;aspect-ratio:auto;object-fit:contain;filter:drop-shadow(0 0 7px rgba(33,112,255,.22))}
-@media(max-width:900px){.eccoozs-v6-root .social-connect-section{grid-template-columns:1fr!important}.eccoozs-v6-root .social-connect-scene{height:clamp(230px,48vw,360px)!important;min-height:0!important}.eccoozs-v6-root .social-connect-content{padding:26px 7vw 34px!important}}
-@media(max-width:560px){.eccoozs-v6-root .nav-logo .social-prestige-logo{width:126px!important}.eccoozs-v6-root .social-connect-content h2{font-size:clamp(32px,8vw,42px)}.eccoozs-v6-root .social-connect-scene{height:240px!important}}
+@media(max-width:900px){
+ .eccoozs-v6-root .social-connect-section{min-height:540px!important;align-items:flex-end!important;background-position:40% center!important}
+ .eccoozs-v6-root .social-connect-section::before{background:linear-gradient(180deg,rgba(237,245,255,0) 0%,rgba(237,245,255,.08) 28%,rgba(237,245,255,.95) 65%,#edf5ff 100%)}
+ .eccoozs-v6-root .social-connect-content{width:100%;padding:190px 7vw 28px!important}
+}
+@media(max-width:560px){
+ .eccoozs-v6-root .nav-logo .social-prestige-logo{width:126px!important}
+ .eccoozs-v6-root .social-connect-section{min-height:520px!important;background-position:42% top!important}
+ .eccoozs-v6-root .social-connect-content{padding:205px 7vw 30px!important}
+ .eccoozs-v6-root .social-connect-content h2{font-size:clamp(31px,8vw,42px)}
+}
 `;
