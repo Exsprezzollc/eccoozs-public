@@ -49,16 +49,18 @@ export const welcomeLightBlueTheme = String.raw`
 }
 @media (prefers-reduced-motion:reduce){.social-feature,.social-phone-showcase{transition:none!important}}
 
-/* Refined three-person connection banner, positioned after the phone showcase. */
-.eccoozs-v6-root .social-connect-section{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(360px,.9fr);align-items:stretch;min-height:365px;background:linear-gradient(110deg,#f9fcff,#e7f2ff)!important;border-bottom:1px solid #c7daf5;overflow:hidden}
-.eccoozs-v6-root .social-connect-scene{position:relative;min-height:365px;overflow:hidden}
-.eccoozs-v6-root .social-connect-scene img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
-.eccoozs-v6-root .social-connect-content{padding:40px clamp(28px,4.1vw,70px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-width:0}
-.eccoozs-v6-root .social-connect-content h2{color:#112b58!important;font-family:Georgia,'Times New Roman',serif;font-weight:400;letter-spacing:-.045em;line-height:1.04;font-size:clamp(37px,3.3vw,59px);margin:5px 0 15px}
-.eccoozs-v6-root .social-connect-content p{color:#294d7c!important;max-width:530px;font-size:clamp(14px,1.06vw,17px);line-height:1.58;margin:0}
+/* Compact, natural-aspect lifestyle image: preserve all three people, no oversized close-up. */
+.eccoozs-v6-root .social-connect-section{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(370px,.9fr);align-items:center;min-height:0;background:linear-gradient(110deg,#f9fcff,#e7f2ff)!important;border-bottom:1px solid #c7daf5;overflow:hidden}
+.eccoozs-v6-root .social-connect-scene{position:relative;min-height:0;height:auto;aspect-ratio:1490/328;align-self:center;overflow:hidden;background:#eaf3ff}
+.eccoozs-v6-root .social-connect-scene img{display:block;position:static;width:100%;height:100%;object-fit:contain;object-position:center;max-width:100%}
+.eccoozs-v6-root .social-connect-content{padding:25px clamp(24px,3.3vw,52px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-width:0}
+.eccoozs-v6-root .social-connect-content h2{color:#112b58!important;font-family:Georgia,'Times New Roman',serif;font-weight:400;letter-spacing:-.04em;line-height:1.05;font-size:clamp(30px,2.9vw,47px);margin:5px 0 10px}
+.eccoozs-v6-root .social-connect-content p{color:#294d7c!important;max-width:530px;font-size:clamp(13px,.98vw,16px);line-height:1.5;margin:0}
 .eccoozs-v6-root .social-connect-content .social-kicker{color:#2454f5!important;letter-spacing:.12em;font-size:.7rem}
-.eccoozs-v6-root .social-connect-content .social-hero-actions{margin-top:20px}
+.eccoozs-v6-root .social-connect-content .social-hero-actions{margin-top:14px}
 .eccoozs-v6-root .social-connect-content .btn-g{background:white!important;color:#1744a7!important;border:1px solid #a8c5f1!important}
-@media(max-width:900px){.eccoozs-v6-root .social-connect-section{grid-template-columns:1fr}.eccoozs-v6-root .social-connect-scene{min-height:300px}.eccoozs-v6-root .social-connect-content{padding:28px 7vw 38px}}
-@media(max-width:560px){.eccoozs-v6-root .social-connect-scene{min-height:230px}.eccoozs-v6-root .social-connect-content h2{font-size:clamp(36px,9vw,47px)}}
+/* Original PNG wordmark should never be independently squeezed to fixed width and height. */
+.eccoozs-v6-root .nav-logo .social-prestige-logo{display:block;width:172px!important;max-width:100%;height:auto!important;aspect-ratio:auto;object-fit:contain;filter:drop-shadow(0 0 7px rgba(33,112,255,.22))}
+@media(max-width:900px){.eccoozs-v6-root .social-connect-section{grid-template-columns:1fr}.eccoozs-v6-root .social-connect-scene{width:100%;aspect-ratio:1490/328}.eccoozs-v6-root .social-connect-content{padding:22px 7vw 32px}}
+@media(max-width:560px){.eccoozs-v6-root .nav-logo .social-prestige-logo{width:126px!important}.eccoozs-v6-root .social-connect-content h2{font-size:clamp(32px,8vw,42px)}}
 `;
