@@ -54,18 +54,18 @@ html = html.replace(
 html = replaceSection(
   html,
   "hero",
-  String.raw`<section id="hero" class="social-hero">
-  <div class="social-hero-photo"><img alt="ECCOOZS community using the social platform, including Ecco and Soundrooms" src="/phone/eccoozs_hero.png"/></div>
-  <div class="social-hero-wash"></div>
-  <div class="social-hero-copy rv">
-    <div class="social-kicker">ECCOOZS SOCIAL</div>
-    <h1>Culture.<br/>Community.<br/>Connection.</h1>
-    <p>ECCOOZS is a Foundational Black American-centered, community-first general social network for conversation, discovery, culture, business discovery, creator opportunity, and live audio. Rooted in FBA culture and perspective, ECCOOZS welcomes respectful participation from people of all backgrounds.</p>
+  String.raw`<section id="hero" class="social-connect-section" aria-labelledby="connect-title">
+  <div class="social-connect-scene">
+    <img src="/brand/eccoozs-community-connect.png" alt="Three ECCOOZS community members connecting around a phone and laptop" loading="lazy" />
+  </div>
+  <div class="social-connect-content rv">
+    <div class="social-kicker">REAL PEOPLE. REAL CONNECTIONS.</div>
+    <h2 id="connect-title">Your people.<br/>Your conversations.<br/>Your space.</h2>
+    <p>From everyday moments to shared interests, cultural discoveries, and real opportunities, ECCOOZS brings it all together.</p>
     <div class="social-hero-actions">
       <a class="btn-p" href="#download">Join Early Access <i data-lucide="arrow-right"></i></a>
-      <a class="btn-g" href="#eccoozs-app">See What's Inside</a>
+      <a class="btn-g" href="#community">Learn More</a>
     </div>
-    <div class="social-values"><span>Real People</span><span>Stronger Communities</span><span>A Brighter Tomorrow</span></div>
   </div>
 </section>`
 );
@@ -79,7 +79,7 @@ html = replaceSection(
       <div class="social-app-intro rv">
         <div class="social-kicker">THE ECCOOZS APP</div>
         <h2>One social network.<br/>More ways to take part.</h2>
-        <p class="social-lede">Move from discovery to conversation, Circles, live audio, business, creator opportunity, and community without leaving the ECCOOZS experience.</p>
+        <p class="social-lede">Move from discovery to conversation, live audio, news, business, creator opportunity, and community without leaving the ECCOOZS experience.</p>
         <div class="social-app-actions">
           <a class="btn-p" href="#download">Join Early Access <i data-lucide="arrow-right"></i></a>
           <a class="btn-g" href="#business">Explore the App</a>
@@ -93,12 +93,13 @@ html = replaceSection(
     </div>
 
     <div class="social-feature-grid social-feature-grid-wide rv">
-      <div class="social-feature"><i data-lucide="home"></i><div><strong>Home</strong><span>Posts, pictures, video, people, and ideas from your network.</span></div></div>
+      <div class="social-feature"><i data-lucide="home"></i><div><strong>Home</strong><span>Posts, pictures, video, news, people, and ideas.</span></div></div>
       <div class="social-feature"><i data-lucide="compass"></i><div><strong>Explore</strong><span>Discover what is happening across ECCOOZS.</span></div></div>
       <div class="social-feature"><i data-lucide="repeat-2"></i><div><strong>Ecco</strong><span>Turn posts into organized conversations with context.</span></div></div>
       <div class="social-feature"><i data-lucide="mic-2"></i><div><strong>Soundrooms</strong><span>Host, listen, speak, chat, and connect live.</span></div></div>
-      <div class="social-feature"><i data-lucide="users-round"></i><div><strong>Circles</strong><span>Join organized communities around shared interests, ideas, businesses, and experiences.</span></div></div>
+      <div class="social-feature"><i data-lucide="newspaper"></i><div><strong>Newsroom</strong><span>Stories, articles, topics, and perspectives.</span></div></div>
       <div class="social-feature"><i data-lucide="store"></i><div><strong>Business</strong><span>Find and support trusted businesses.</span></div></div>
+      <div class="social-feature"><i data-lucide="users"></i><div><strong>Community</strong><span>Real connections, shared interests, stronger together.</span></div></div>
     </div>
   </div>
 </section>`
@@ -215,4 +216,16 @@ html = html.replace(
 </footer>`
 );
 
+// Keep the phone showcase as the first section after navigation.
+const heroStart = html.indexOf('<section id="hero"');
+const heroEnd = html.indexOf('</section>', heroStart) + '</section>'.length;
+if (heroStart >= 0 && heroEnd > heroStart) {
+  const connectSection = html.slice(heroStart, heroEnd);
+  html = html.slice(0, heroStart) + html.slice(heroEnd);
+  const appStart = html.indexOf('<section id="eccoozs-app"');
+  const appEnd = html.indexOf('</section>', appStart) + '</section>'.length;
+  if (appStart >= 0 && appEnd > appStart) {
+    html = html.slice(0, appEnd) + connectSection + html.slice(appEnd);
+  }
+}
 export const welcomeV6SocialMarkup = html;
