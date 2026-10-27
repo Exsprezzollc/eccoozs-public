@@ -93,7 +93,7 @@ html = replaceSection(
       <div class="social-feature"><i data-lucide="compass"></i><div><strong>Explore</strong><span>Discover what is happening across ECCOOZS.</span></div></div>
       <div class="social-feature"><i data-lucide="repeat-2"></i><div><strong>Ecco</strong><span>Turn posts into organized conversations with context.</span></div></div>
       <div class="social-feature"><i data-lucide="mic-2"></i><div><strong>Soundrooms</strong><span>Host, listen, speak, chat, and connect live.</span></div></div>
-      <div class="social-feature"><i data-lucide="newspaper"></i><div><strong>Newsroom</strong><span>Stories, articles, topics, and perspectives.</span></div></div>
+      <div class="social-feature"><i data-lucide="users-round"></i><div><strong>Circles</strong><span>Join communities around shared interests, ideas, and goals.</span></div></div>
       <div class="social-feature"><i data-lucide="store"></i><div><strong>Business</strong><span>Find and support trusted businesses.</span></div></div>
       <div class="social-feature"><i data-lucide="users"></i><div><strong>Community</strong><span>Real connections, shared interests, stronger together.</span></div></div>
     </div>
