@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import styles from "./GoogleAnalyticsConsent.module.css";
 
-const MEASUREMENT_ID = "G-MK8CE7ED6J";
+const MEASUREMENT_ID = "G-CDXQ0PEMC7";
 const STORAGE_KEY = "eccoozs.analytics.consent";
 const CONSENT_COOKIE = "eccoozs_analytics_consent";
 
